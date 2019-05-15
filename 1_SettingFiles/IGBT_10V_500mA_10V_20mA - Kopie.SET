@@ -1,0 +1,41 @@
+Please don't change me! Especially when you don't know how I work!
+##################################################################
+Date of Edit/Creat:               30.10.2018  13:21:45
+##################################################################
+TTA:
+Device Type:                      MOSFET
+Heat Time:                        1200 ms
+Heat Current:                     500 mA
+Heat Voltage:                     11.64 V
+Meas Time:                        1200 ms
+Meas Current:                     20 mA
+Meas Voltage:                     11.2 V
+Offset Voltage:                   7400 V
+Number of Cycles:                 1
+##################################################################
+Temperature:
+Temperature for TTA:              25 °C
+TEC is switched on:               True
+FAN is enabled:                   True
+Temperature Sensitivity Start:    25 °C
+Temperature Sensitivity End:      65 °C
+Temperature Sensitivity Steps:    5
+##################################################################
+Which files should be saved:
+Cooling curve(s):                 True
+Heating curve(s):                 False
+Compressed file(s):               True
+Uncompressed file(s):             False
+Averaged file(s):                 True
+Single meas. curve(s):            False
+Folder name for File(s):          C:\Users\schmidm\Desktop\ATIM_Software
+File name:                        IGBT_%L2
+##################################################################
+GerberFile Infos:
+Path for gerber file:             C:\Users\schmidm\Desktop\ATIM_Software\2_DrivingFiles\MOSFET_all.txt
+##################################################################
+Spectrum settings:
+Spectrum meas. range:             +/- 2V
+Spectrum sample frequency:        500kHz
+Spectrum trigger level:           7.0 V
+##################################################################

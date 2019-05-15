@@ -1,0 +1,39 @@
+Please don't change me! Especially when you don't know how I work!
+##################################################################
+Date of Edit/Creat:               19.07.2018  15:52:39
+##################################################################
+TTA:
+Device Type:                      MOSFET
+Heat Time:                        5000 ms
+Heat Current:                     1000 mA
+Heat Voltage:                     11.64 V
+Meas Time:                        5000 ms
+Meas Current:                     10 mA
+Meas Voltage:                     11.2 V
+Offset Voltage:                   2200 V
+Number of Cycles:                 1
+##################################################################
+Temperature:
+Temperature for TTA:              25 °C
+TEC is switched on:               True
+FAN is enabled:                   True
+Temperature Sensitivity Start:    25 °C
+Temperature Sensitivity End:      55 °C
+Temperature Sensitivity Steps:    4
+##################################################################
+Which files should be saved:
+Cooling curve(s):                 True
+Heating curve(s):                 False
+Compressed file(s):               True
+Uncompressed file(s):             False
+Averaged file(s):                 True
+Single meas. curve(s):            False
+##################################################################
+GerberFile Infos:
+Path for gerber file:             
+##################################################################
+Spectrum settings:
+Spectrum meas. range:             +/- 1 V
+Spectrum sample frequency:        10 MHz
+Spectrum trigger level:           2.7 V
+##################################################################

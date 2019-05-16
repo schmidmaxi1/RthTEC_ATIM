@@ -101,7 +101,7 @@ using ATIM_GUI._4_Settings;
 
 using ATIM_GUI._05_XYZ;
 
-
+using Power_Supply_HamegHMP;
 
 
 namespace ATIM_GUI
@@ -112,6 +112,7 @@ namespace ATIM_GUI
         //                                          Variablen
         //**************************************************************************************************
 
+
         #region Variablen
 
         //Devices  
@@ -121,6 +122,8 @@ namespace ATIM_GUI
         public _8_Rth_TEC_Rack.RthTEC_Rack rthTEC_Rack1;
         public _09_DAQ_Unit.DAQ_Unit DAQ_Unit;
         public DXApplication3._10_Camera.Camera_Gerber camera_Gerber1;
+
+
 
 
         //Settings

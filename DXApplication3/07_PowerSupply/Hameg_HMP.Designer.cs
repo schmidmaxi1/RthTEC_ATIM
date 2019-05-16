@@ -67,6 +67,7 @@
             this.groupBox_HMT.TabIndex = 1;
             this.groupBox_HMT.TabStop = false;
             this.groupBox_HMT.Text = "Power Supply";
+            this.groupBox_HMT.Enter += new System.EventHandler(this.groupBox_HMT_Enter);
             // 
             // OpenClose
             // 
@@ -130,6 +131,7 @@
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(254, 0);
+            this.barDockControlTop.Click += new System.EventHandler(this.barDockControlTop_Click);
             // 
             // barDockControlBottom
             // 
@@ -138,6 +140,7 @@
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 130);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(254, 0);
+            this.barDockControlBottom.Click += new System.EventHandler(this.barDockControlBottom_Click);
             // 
             // barDockControlLeft
             // 
@@ -146,6 +149,7 @@
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 130);
+            this.barDockControlLeft.Click += new System.EventHandler(this.barDockControlLeft_Click);
             // 
             // barDockControlRight
             // 
@@ -154,6 +158,7 @@
             this.barDockControlRight.Location = new System.Drawing.Point(254, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 130);
+            this.barDockControlRight.Click += new System.EventHandler(this.barDockControlRight_Click);
             // 
             // ComPort_select
             // 
@@ -163,6 +168,7 @@
             this.ComPort_select.Name = "ComPort_select";
             this.ComPort_select.Size = new System.Drawing.Size(95, 21);
             this.ComPort_select.TabIndex = 8;
+            this.ComPort_select.SelectedIndexChanged += new System.EventHandler(this.ComPort_select_SelectedIndexChanged);
             // 
             // Voltage_Supply
             // 
@@ -196,6 +202,7 @@
             this.label2.Size = new System.Drawing.Size(70, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "V_Supply:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Voltage_Heat
             // 
@@ -230,6 +237,7 @@
             this.label1.Size = new System.Drawing.Size(57, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "V_Heat:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Hameg_HMP
             // 
@@ -261,7 +269,6 @@
         public System.Windows.Forms.NumericUpDown Voltage_Heat;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.ComboBox ComPort_select;
-        private DevExpress.XtraEditors.DropDownButton OpenClose;
         private DevExpress.XtraBars.PopupMenu popupMenu_Hameg;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Detailed;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_LOG;
@@ -270,5 +277,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraEditors.DropDownButton OpenClose;
     }
 }

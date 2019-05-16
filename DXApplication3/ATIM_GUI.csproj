@@ -615,6 +615,12 @@
   <ItemGroup>
     <None Include="Resources\Warning_16x16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Power_Supply_HamegHMP\Power_Supply_HamegHMP.csproj">
+      <Project>{8f71037f-2ab4-47a7-8fe3-c30c929c6642}</Project>
+      <Name>Power_Supply_HamegHMP</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

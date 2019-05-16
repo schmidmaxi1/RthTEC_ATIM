@@ -202,3 +202,6 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\bin\Debug\ru\DevExpress.XtraVerticalGrid.v18.1.resources.dll
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\obj\Debug\ATIM_GUI.exe
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\obj\Debug\ATIM_GUI.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\bin\Debug\Power_Supply_HamegHMP.exe
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\bin\Debug\Power_Supply_HamegHMP.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\bin\Debug\Power_Supply_HamegHMP.exe.config

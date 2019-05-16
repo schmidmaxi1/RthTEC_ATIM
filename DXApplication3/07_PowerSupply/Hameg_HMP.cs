@@ -427,7 +427,45 @@ namespace ATIM_GUI._7_PowerSupply
             return "";
         }
 
+        private void groupBox_HMT_Enter(object sender, EventArgs e)
+        {
 
+        }
+
+        private void barDockControlTop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barDockControlBottom_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barDockControlLeft_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barDockControlRight_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComPort_select_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Power_Supply_HamegHMP", "Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Umgebung", "Test_Umgebung\Test_Umgebung.csproj", "{014142F9-559F-4C42-B4E7-B68945D8CE90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Read_Coordinates", "Read_Coordinates\Read_Coordinates.csproj", "{9F38BF61-F650-4827-B484-74ACFC0F54FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{014142F9-559F-4C42-B4E7-B68945D8CE90}.Release|x64.Build.0 = Release|Any CPU
 		{014142F9-559F-4C42-B4E7-B68945D8CE90}.Release|x86.ActiveCfg = Release|Any CPU
 		{014142F9-559F-4C42-B4E7-B68945D8CE90}.Release|x86.Build.0 = Release|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Debug|x64.Build.0 = Debug|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Debug|x86.Build.0 = Debug|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Release|x64.ActiveCfg = Release|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Release|x64.Build.0 = Release|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Release|x86.ActiveCfg = Release|Any CPU
+		{9F38BF61-F650-4827-B484-74ACFC0F54FD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

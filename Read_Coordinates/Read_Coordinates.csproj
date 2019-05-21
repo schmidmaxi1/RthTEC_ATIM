@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{014142F9-559F-4C42-B4E7-B68945D8CE90}</ProjectGuid>
+    <ProjectGuid>{9F38BF61-F650-4827-B484-74ACFC0F54FD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Test_Umgebung</RootNamespace>
-    <AssemblyName>Test_Umgebung</AssemblyName>
+    <RootNamespace>Read_Coordinates</RootNamespace>
+    <AssemblyName>Read_Coordinates</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,16 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Window_Testumgebung.cs">
+    <Compile Include="Form_ReadCoordinates.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Window_Testumgebung.Designer.cs">
-      <DependentUpon>Window_Testumgebung.cs</DependentUpon>
+    <Compile Include="Form_ReadCoordinates.Designer.cs">
+      <DependentUpon>Form_ReadCoordinates.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Window_Testumgebung.resx">
-      <DependentUpon>Window_Testumgebung.cs</DependentUpon>
+    <Compile Include="ReadBox_Movement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReadBox_Movement.Designer.cs">
+      <DependentUpon>ReadBox_Movement.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form_ReadCoordinates.resx">
+      <DependentUpon>Form_ReadCoordinates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -64,7 +70,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReadBox_Movement.resx">
+      <DependentUpon>ReadBox_Movement.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -79,14 +89,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Power_Supply_HamegHMP\Power_Supply_HamegHMP.csproj">
-      <Project>{8f71037f-2ab4-47a7-8fe3-c30c929c6642}</Project>
-      <Name>Power_Supply_HamegHMP</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Read_Coordinates\Read_Coordinates.csproj">
-      <Project>{9f38bf61-f650-4827-b484-74acfc0f54fd}</Project>
-      <Name>Read_Coordinates</Name>
-    </ProjectReference>
+    <None Include="Resources\Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apply_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

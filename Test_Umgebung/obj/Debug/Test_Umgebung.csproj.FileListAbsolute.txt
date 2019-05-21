@@ -42,3 +42,6 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\o
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\obj\Debug\Test_Umgebung.csproj.GenerateResource.Cache
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\obj\Debug\Test_Umgebung.exe
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\obj\Debug\Test_Umgebung.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\bin\Debug\Read_Coordinates.exe
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\bin\Debug\Read_Coordinates.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\bin\Debug\Read_Coordinates.exe.config

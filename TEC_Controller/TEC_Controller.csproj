@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F1C5FB4-2AFA-4484-8C8F-30D1FE6F21FB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TEC_Controller</RootNamespace>
+    <AssemblyName>TEC_Controller</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.Charts.v18.2.Core">
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.Data.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v18.2.UI">
+    </Reference>
+    <Reference Include="DevExpress.Diagram.v18.2.Core">
+    </Reference>
+    <Reference Include="DevExpress.Images.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.Office.v18.2.Core">
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v18.2.Core">
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v18.2.Core">
+    </Reference>
+    <Reference Include="DevExpress.Printing.v18.2.Core">
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v18.2.Core">
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v18.2.Core">
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.2.UI">
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.2.Extensions">
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.2.UI">
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.2.Wizard">
+    </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v18.2.Core">
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v18.2.Extensions">
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v18.2.Core">
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v18.2">
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v18.2">
+    </Reference>
+    <Reference Include="MeSoft.Core">
+      <HintPath>..\DXApplication3\bin\Debug\MeSoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MeSoft.MeCom.Core">
+      <HintPath>..\DXApplication3\bin\Debug\MeSoft.MeCom.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MeSoft.MeCom.PhyWrapper">
+      <HintPath>..\DXApplication3\bin\Debug\MeSoft.MeCom.PhyWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="I_TEC_Controller.cs" />
+    <Compile Include="Meerstetter_2fach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Meerstetter_2fach.Designer.cs">
+      <DependentUpon>Meerstetter_2fach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meerstetter_4fach_Detailed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meerstetter_4fach_Detailed.Designer.cs">
+      <DependentUpon>Meerstetter_4fach_Detailed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Parallel_Thread.cs" />
+    <Compile Include="Meerstetter_4fach.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Meerstetter_4fach.designer.cs">
+      <DependentUpon>Meerstetter_4fach.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meerstetter_Registers.cs" />
+    <Compile Include="Test_Form_TEC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test_Form_TEC.Designer.cs">
+      <DependentUpon>Test_Form_TEC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Meerstetter_2fach_Detailed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Meerstetter_2fach_Detailed.Designer.cs">
+      <DependentUpon>Meerstetter_2fach_Detailed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Meerstetter_2fach.resx">
+      <DependentUpon>Meerstetter_2fach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meerstetter_4fach_Detailed.resx">
+      <DependentUpon>Meerstetter_4fach_Detailed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Meerstetter_4fach.resx">
+      <DependentUpon>Meerstetter_4fach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Test_Form_TEC.resx">
+      <DependentUpon>Test_Form_TEC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meerstetter_2fach_Detailed.resx">
+      <DependentUpon>Meerstetter_2fach_Detailed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fan_16x16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OnOff_16x16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

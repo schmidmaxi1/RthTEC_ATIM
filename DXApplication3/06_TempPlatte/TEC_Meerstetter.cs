@@ -51,7 +51,7 @@ namespace ATIM_GUI._6_TempPlatte
         private float New_Temp_kFactor { get; set; } = 0;
 
         //Liste mit allen Registern
-        private string path_Init_File = @"C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\0_Initialisation_Files\TEC.ini";
+        private string path_Init_File = @"C:\Users\schmidm\Desktop\ATIM_GIT\0_Initialisation_Files\TEC.ini";
         private string[] initalisationFile;
         public List<TEC_Register> registers = new List<TEC_Register>();
 

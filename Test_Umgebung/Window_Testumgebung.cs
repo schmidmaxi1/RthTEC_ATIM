@@ -10,17 +10,24 @@ using System.Windows.Forms;
 
 using Power_Supply_HamegHMP;
 
+using TEC_Controller;
+
 namespace Test_Umgebung
 {
     public partial class Window_Testumgebung : Form
     {
-        PowerSupply_HMP mySupply = new PowerSupply_HMP();
+        PowerSupply_HMP mySupply;
+        UserControl myTEC;
+
 
         public Window_Testumgebung()
         {
             InitializeComponent();
 
-            PowerSupply_HMP mySupply = new PowerSupply_HMP(this, 10, 10);
+            mySupply = new PowerSupply_HMP(this, 10, 10);
+
+            myTEC = new Meerstetter_4fach(this, 10, 100);
+            
         }
     }
 }

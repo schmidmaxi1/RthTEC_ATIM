@@ -28,7 +28,7 @@ namespace ATIM_GUI._05_XYZ
             Grenze_Y_pos = 259;
             Grenze_Y_neg  = 0;
             Grenze_Z_pos  = 0;
-            Grenze_Z_neg  = -80;
+            Grenze_Z_neg  = -120;
             Grenze_A_neg = 0;
             Grenze_A_pos = 360;
          }

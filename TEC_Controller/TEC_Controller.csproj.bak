@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F1C5FB4-2AFA-4484-8C8F-30D1FE6F21FB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TEC_Controller</RootNamespace>
+    <AssemblyName>TEC_Controller</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.BonusSkins.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v18.1.Core">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Charts.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.CodeParser.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Data.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.DataAccess.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v18.1.UI">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.DataAccess.v18.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Diagram.v18.1.Core">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Diagram.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Images.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v18.1.Core">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Office.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v18.1.Core">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Pdf.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v18.1.Core">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.PivotGrid.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v18.1.Core">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Printing.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v18.1.Core">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.RichEdit.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v18.1.Core">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Sparkline.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Utils.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v18.1.UI">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Utils.v18.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.Xpo.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraBars.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraCharts.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.1.Extensions">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraCharts.v18.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.1.UI">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraCharts.v18.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v18.1.Wizard">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraCharts.v18.1.Wizard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraDiagram.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraDiagram.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraEditors.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v18.1.Core">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraGauges.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraGrid.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraLayout.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraNavBar.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraPivotGrid.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraPrinting.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraReports.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v18.1.Extensions">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraReports.v18.1.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraRichEdit.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraScheduler.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v18.1.Core">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraScheduler.v18.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraTreeList.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v18.1">
+      <HintPath>..\DXApplication3\bin\Debug\DevExpress.XtraVerticalGrid.v18.1.dll</HintPath>
+    </Reference>
+    <Reference Include="MeSoft.Core">
+      <HintPath>..\DXApplication3\bin\Debug\MeSoft.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MeSoft.MeCom.Core">
+      <HintPath>..\DXApplication3\bin\Debug\MeSoft.MeCom.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MeSoft.MeCom.PhyWrapper">
+      <HintPath>..\DXApplication3\bin\Debug\MeSoft.MeCom.PhyWrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="I_TEC_Controller.cs" />
+    <Compile Include="Meerstetter2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Meerstetter4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Parallel_Thread.cs" />
+    <Compile Include="TECMeerstetter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TECMeerstetter.designer.cs">
+      <DependentUpon>TECMeerstetter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TEC_Register.cs" />
+    <Compile Include="Window_TEC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window_TEC.Designer.cs">
+      <DependentUpon>Window_TEC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Meerstetter2.resx">
+      <DependentUpon>Meerstetter2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Meerstetter4.resx">
+      <DependentUpon>Meerstetter4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="TECMeerstetter.resx">
+      <DependentUpon>TECMeerstetter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window_TEC.resx">
+      <DependentUpon>Window_TEC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -111,3 +111,6 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\b
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\bin\Debug\Read_Coordinates.pdb
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\bin\Debug\Read_Coordinates.exe.config
 >>>>>>> 635ae0261fbcdedc98392f70a69617626c53d66d
+C:\Users\schmidm\Desktop\ATIM_GIT\Test_Umgebung\bin\Debug\Read_Coordinates.exe
+C:\Users\schmidm\Desktop\ATIM_GIT\Test_Umgebung\bin\Debug\Read_Coordinates.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\Test_Umgebung\bin\Debug\Read_Coordinates.exe.config

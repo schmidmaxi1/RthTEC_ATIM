@@ -1,0 +1,10 @@
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Read_Coordinates\bin\Debug\Read_Coordinates.exe.config
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Read_Coordinates\bin\Debug\Read_Coordinates.exe
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Read_Coordinates\bin\Debug\Read_Coordinates.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Read_Coordinates\obj\Debug\Read_Coordinates.Form_ReadCoordinates.resources
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Read_Coordinates\obj\Debug\Read_Coordinates.Properties.Resources.resources
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Read_Coordinates\obj\Debug\Read_Coordinates.csproj.GenerateResource.Cache
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Read_Coordinates\obj\Debug\Read_Coordinates.exe
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Read_Coordinates\obj\Debug\Read_Coordinates.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Read_Coordinates\obj\Debug\Read_Coordinates.csprojResolveAssemblyReference.cache
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Read_Coordinates\obj\Debug\Read_Coordinates.ReadBox_Movement.resources

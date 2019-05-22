@@ -42,6 +42,7 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\o
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\obj\Debug\Test_Umgebung.csproj.GenerateResource.Cache
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\obj\Debug\Test_Umgebung.exe
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\obj\Debug\Test_Umgebung.pdb
+<<<<<<< HEAD
 C:\Users\schmidm\Desktop\ATIM_GIT\Test_Umgebung\obj\Debug\Test_Umgebung.csprojResolveAssemblyReference.cache
 C:\Users\schmidm\Desktop\ATIM_GIT\Test_Umgebung\obj\Debug\Test_Umgebung.Window_Testumgebung.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\Test_Umgebung\obj\Debug\Test_Umgebung.Properties.Resources.resources
@@ -105,3 +106,8 @@ C:\Users\schmidm\Desktop\ATIM_GIT\Test_Umgebung\bin\Debug\de\DevExpress.Pdf.v18.
 C:\Users\schmidm\Desktop\ATIM_GIT\Test_Umgebung\bin\Debug\es\DevExpress.Pdf.v18.2.Core.resources.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\Test_Umgebung\bin\Debug\ja\DevExpress.Pdf.v18.2.Core.resources.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\Test_Umgebung\bin\Debug\ru\DevExpress.Pdf.v18.2.Core.resources.dll
+=======
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\bin\Debug\Read_Coordinates.exe
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\bin\Debug\Read_Coordinates.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung\bin\Debug\Read_Coordinates.exe.config
+>>>>>>> 635ae0261fbcdedc98392f70a69617626c53d66d

@@ -10,7 +10,7 @@ using ATIM_GUI._0_Classes_Measurement;
 
 namespace ATIM_GUI
 {
-    public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class ATIM_MainWindow : DevExpress.XtraBars.Ribbon.RibbonForm
     {
 
         //**************************************************************************************************
@@ -149,7 +149,7 @@ namespace ATIM_GUI
             {
                 MyRack = rthTEC_Rack1,
                 MySpectrum = DAQ_Unit,
-                MyTEC = teC_Meerstetter1,
+                MyTEC = myTEC,
                 MyXYZ = xyZ_table1,
                 Output_File_Folder = textBox_Path.Text,
                 Output_File_Name = textBox_File.Text,

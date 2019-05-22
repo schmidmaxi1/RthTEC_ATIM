@@ -14,6 +14,8 @@ using _8_Rth_TEC_Rack;
 using ATIM_GUI._05_XYZ;
 using ATIM_GUI._09_DAQ_Unit;
 
+using TEC_Controller;
+
 namespace ATIM_GUI._0_Classes_Measurement
 {
     public class Sensitvity_Measurement
@@ -30,9 +32,10 @@ namespace ATIM_GUI._0_Classes_Measurement
         //Settings for measurement
         public RthTEC_Rack MyRack { get; set; }
         public DAQ_Unit MySpectrum { get; set; }
-        public TEC_Meerstetter MyTEC { get; set; }
+        //public TEC_Meerstetter MyTEC { get; set; }
+        public I_TEC_Controller MyTEC { get; set; }
         public XYZ_table MyXYZ { get; set; }
-        public Form1 GUI { get; set; }
+        public ATIM_MainWindow GUI { get; set; }
         public long Nr_of_samples { get; } = 100000;
         public decimal[,] MyMovement { get; set; }
 
@@ -107,7 +110,7 @@ namespace ATIM_GUI._0_Classes_Measurement
 
                 //Wait until temperature is stable (Cancel if temp no stable after 5 min)
                 int cancel_time = 0;
-                while (!GUI.teC_Meerstetter1.Stable_for_30sec)
+                while (!GUI.myTEC.Stable_for_30sec)
                 {
                     //Abfragen ob abbrechen
                     if (GUI.break_is_wished) { goto END_kFactor_all; }
@@ -244,7 +247,7 @@ namespace ATIM_GUI._0_Classes_Measurement
             for (Counter_TempStep = 0; Counter_TempStep < TempSteps.Count; Counter_TempStep++)
             {
                 //Set temperature to new target value
-                GUI.teC_Meerstetter1.SetTemperature_w_TimerStop((float)TempSteps[Counter_TempStep]);
+                GUI.myTEC.SetTemperature_w_TimerStop((float)TempSteps[Counter_TempStep]);
 
                 //Text StatusBar ändern
                 GUI.StatusBar_Sensitivity_all(0, Nr_of_LEDs, Counter_TempStep + 1, TempSteps.Count);
@@ -254,7 +257,7 @@ namespace ATIM_GUI._0_Classes_Measurement
 
                 //Wait until temperature is stable (Cancel if temp no stable after 5 min)
                 int cancel_time = 0;
-                while (!GUI.teC_Meerstetter1.Stable_for_30sec)
+                while (!GUI.myTEC.Stable_for_30sec)
                 {
                     //Abfragen ob abbrechen
                     if (GUI.break_is_wished) { goto END_kFactor_all; }
@@ -344,7 +347,7 @@ namespace ATIM_GUI._0_Classes_Measurement
             END_kFactor_all:
 
             //set start temperature to TEC controller
-            GUI.teC_Meerstetter1.SetTemperature_w_TimerStop((float)TempSteps[0]);
+            GUI.myTEC.SetTemperature_w_TimerStop((float)TempSteps[0]);
 
             //stop Plotting
             IsRunning = false;

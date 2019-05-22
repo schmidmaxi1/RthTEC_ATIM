@@ -133,23 +133,15 @@ namespace TEC_Controller
             //Hinzufügen
             callingForm.Controls.Add(this);
         }
-
-        /*
+        
         //Change Enable Status form MainForm
-        public void Change_Enabled(Boolean input, int x, int y)
+        public void Change_Enabled(Boolean input)
         {
             groupBox_TEC.Invoke((MethodInvoker)delegate
             {
                 groupBox_TEC.Enabled = input;
             });
-
-            //In GUI einfügen
-            this.Location = new System.Drawing.Point(x, y);
-            this.Name = "Hameg HMP 4040";
-            this.Size = new System.Drawing.Size(515, 80);
-            this.TabIndex = 30;
         }
-        */
 
         //********************************************************************************************************************
         //                                            GUI-Events
@@ -177,7 +169,7 @@ namespace TEC_Controller
                     //TEC anschalten
                     Switch_Channel_OnOff(true);
                     //Fan anschalten
-                    Switch_Fan_OnOff(true);
+                    Switch_Fan_OnOff(true);                  
                 }
             }
 
@@ -261,7 +253,7 @@ namespace TEC_Controller
 
             threath_05sec_timer.timer_05sec.Start();
             */
-        }
+    }
 
         public void SetTemperature(float newTemp)
         {
@@ -480,6 +472,13 @@ namespace TEC_Controller
                 ChangeRegister_int("Status", channel_new, 1, tEC_Nr);
             else
                 ChangeRegister_int("Status", channel_new, 0, tEC_Nr);
+
+            //Wenn alle an dann Flag IsRunning setzen
+            Boolean temp_flag = true;
+            foreach (Boolean single_flag in TEC_on)
+                temp_flag = temp_flag & single_flag;
+
+            IsRunning = temp_flag;
         }
 
         public void Switch_Fan_OnOff(bool switch_on, int channel)

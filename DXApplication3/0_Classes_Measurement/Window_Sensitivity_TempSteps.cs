@@ -35,16 +35,16 @@ namespace ATIM_GUI._0_Classes_Measurement
         public List<Decimal> temperaturen;
 
         //Verweis auf Hauptfenster
-        Form1 mainForm = null;
+        ATIM_MainWindow mainForm = null;
 
         //**************************************************************************************************
         //                                      Konstruktor
         //**************************************************************************************************
 
-        public Window_Sensitivity_TempStepSelect(Form1 callingForm)
+        public Window_Sensitivity_TempStepSelect(ATIM_MainWindow callingForm)
         {
             //Referenz für calling Form
-            mainForm = callingForm as Form1;
+            mainForm = callingForm as ATIM_MainWindow;
 
             //Fenster initialisieren
             InitializeComponent();

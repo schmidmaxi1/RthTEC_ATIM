@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TEC_Controller
 {
-    interface I_TEC_Controller
+    public interface I_TEC_Controller
     {
         //***********************Variablen********************************************
         bool IsConnected { get; }
@@ -26,8 +26,9 @@ namespace TEC_Controller
         void Switch_Channel_OnOff(bool switch_on);
         void Switch_Fan_OnOff(bool switch_on);
 
-        //string AutoOpen(Load_Screen myLoadScreen)
+        void Change_Enabled(Boolean input);
 
+        //string AutoOpen(Load_Screen myLoadScreen);
 
     }
 }

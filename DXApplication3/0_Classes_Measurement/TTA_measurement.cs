@@ -19,7 +19,7 @@ namespace ATIM_GUI._0_Classes_Measurement
         public RthTEC_Rack MyRack { get; set; }
         public DAQ_Unit MyDAQ { get; set; }
         public XYZ_table MyXYZ { get; set; }
-        public Form1 GUI { get; set; }
+        public ATIM_MainWindow GUI { get; set; }
         public decimal[,] MyMovement { get; set; }
 
         public short[,] Binary_Raw_Files { get; set; }
@@ -655,14 +655,9 @@ namespace ATIM_GUI._0_Classes_Measurement
 
         private string Generate_Temperature_String()
         {
-            //Prüfen ob alle Elemente an waren
-            bool all_ON = true;
-            foreach (bool singel_ON in GUI.teC_Meerstetter1.TEC_on)
-                all_ON = all_ON & singel_ON;
-
             //Wenn alle an
-            if (all_ON)
-                return GUI.teC_Meerstetter1.Target_temp_aver.ToString() + " °C";
+            if (GUI.myTEC.IsRunning)
+                return GUI.myTEC.Target_temp_aver.ToString() + " °C";
             else
                 return "Not all Elements switched on";           
         }

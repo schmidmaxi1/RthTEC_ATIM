@@ -272,7 +272,7 @@ namespace ATIM_GUI._09_DAQ_Unit
             return true;
         }
 
-        public override bool Measure_TTA_Several_Cycles(TTA_measurement myTTA, Form1 GUI)
+        public override bool Measure_TTA_Several_Cycles(TTA_measurement myTTA, ATIM_MainWindow GUI)
         {
             //StatusBar anpassen
             GUI.StatusBar_TTA_Single(0, (int)myTTA.MyRack.Cycles);
@@ -422,7 +422,7 @@ namespace ATIM_GUI._09_DAQ_Unit
             return true;
         }
 
-        public override bool Measure_TTA_Several_Cycles_DEMO(TTA_measurement myTTA, Form1 GUI)
+        public override bool Measure_TTA_Several_Cycles_DEMO(TTA_measurement myTTA, ATIM_MainWindow GUI)
         {
             return true;
         }
@@ -434,7 +434,7 @@ namespace ATIM_GUI._09_DAQ_Unit
         {
             return true;
         }
-        public override bool Measure_Sensitivity(Sensitvity_Measurement mySensitivity, Form1 GUI)
+        public override bool Measure_Sensitivity(Sensitvity_Measurement mySensitivity, ATIM_MainWindow GUI)
         {
             return true;
         }
@@ -446,7 +446,7 @@ namespace ATIM_GUI._09_DAQ_Unit
         #endregion Globale_Messbefehle_Sensitivity
 
 
-        public override decimal Get_Constant_Voltage(TTA_measurement myTTA, Form1 GUI)
+        public override decimal Get_Constant_Voltage(TTA_measurement myTTA, ATIM_MainWindow GUI)
         {
             //Konstante Spannung über mehrere Samples messen 
 

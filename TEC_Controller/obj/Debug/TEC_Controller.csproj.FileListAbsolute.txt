@@ -7,9 +7,6 @@ C:\Users\schmidm\Desktop\ATIM_GIT\TEC_Controller\bin\Debug\TEC_Controller.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\TEC_Controller\bin\Debug\MeSoft.Core.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\TEC_Controller\bin\Debug\MeSoft.MeCom.Core.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\TEC_Controller\bin\Debug\MeSoft.MeCom.PhyWrapper.dll
-C:\Users\schmidm\Desktop\ATIM_GIT\TEC_Controller\bin\Debug\MeSoft.Core.xml
-C:\Users\schmidm\Desktop\ATIM_GIT\TEC_Controller\bin\Debug\MeSoft.MeCom.Core.xml
-C:\Users\schmidm\Desktop\ATIM_GIT\TEC_Controller\bin\Debug\MeSoft.MeCom.PhyWrapper.xml
 C:\Users\schmidm\Desktop\ATIM_GIT\TEC_Controller\obj\Debug\TEC_Controller.exe
 C:\Users\schmidm\Desktop\ATIM_GIT\TEC_Controller\obj\Debug\TEC_Controller.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\TEC_Controller\obj\Debug\TEC_Controller.Meerstetter_2fach.resources

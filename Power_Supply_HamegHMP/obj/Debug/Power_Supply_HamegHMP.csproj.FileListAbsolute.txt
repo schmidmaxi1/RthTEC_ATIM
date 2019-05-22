@@ -93,3 +93,4 @@ C:\Users\schmidm\Desktop\ATIM_GIT\Power_Supply_HamegHMP\bin\Debug\de\DevExpress.
 C:\Users\schmidm\Desktop\ATIM_GIT\Power_Supply_HamegHMP\bin\Debug\es\DevExpress.Pdf.v18.2.Core.resources.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\Power_Supply_HamegHMP\bin\Debug\ja\DevExpress.Pdf.v18.2.Core.resources.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\Power_Supply_HamegHMP\bin\Debug\ru\DevExpress.Pdf.v18.2.Core.resources.dll
+C:\Users\schmidm\Desktop\ATIM_GIT\Power_Supply_HamegHMP\obj\Debug\Power_Supply_HamegHMP.csprojResolveAssemblyReference.cache

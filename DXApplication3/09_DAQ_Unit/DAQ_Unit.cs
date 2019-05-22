@@ -155,13 +155,13 @@ namespace ATIM_GUI._09_DAQ_Unit
 
         public virtual bool Setting_for_TTA() { return false; }
         public virtual bool Setting_Trigger(RthTEC_Rack myRackSettings){ return false; }
-        public virtual bool Measure_TTA_Several_Cycles(TTA_measurement myTTA, Form1 GUI) { return false; }
-        public virtual bool Measure_TTA_Several_Cycles_DEMO(TTA_measurement myTTA, Form1 GUI){ return false; }   
+        public virtual bool Measure_TTA_Several_Cycles(TTA_measurement myTTA, ATIM_MainWindow GUI) { return false; }
+        public virtual bool Measure_TTA_Several_Cycles_DEMO(TTA_measurement myTTA, ATIM_MainWindow GUI){ return false; }   
         public virtual bool Setting_for_Sensitivity(Sensitvity_Measurement mySensitivity){ return false; }  
-        public virtual bool Measure_Sensitivity(Sensitvity_Measurement mySensitivity, Form1 GUI){ return false; }
+        public virtual bool Measure_Sensitivity(Sensitvity_Measurement mySensitivity, ATIM_MainWindow GUI){ return false; }
         public virtual bool Measure_Sensitivity_DEMO(Sensitvity_Measurement mySensitivity){ return false; }
 
-        public virtual decimal Get_Constant_Voltage(TTA_measurement myTTA, Form1 GUI) { return 0; }
+        public virtual decimal Get_Constant_Voltage(TTA_measurement myTTA, ATIM_MainWindow GUI) { return 0; }
 
         //********************************************************************************************************************
         //                                  Befehle die in jedem Typ anderst sind

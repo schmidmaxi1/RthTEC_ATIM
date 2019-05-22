@@ -14,7 +14,7 @@ using ATIM_GUI._4_Settings;
 
 namespace ATIM_GUI
 {
-    public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class ATIM_MainWindow : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         //**************************************************************************************************
         //                                      Ribbon Buttons
@@ -57,8 +57,9 @@ namespace ATIM_GUI
             //Power-Supply
             myLoadScreen.ChangeAll_newValue("Power Supply ...", "Starting Connection ...", 0);
 
-            if (!hameg_HMP1.IsConnected)
-                errorText += hameg_HMP1.AutoOpen(myLoadScreen);
+            if (!myPowerSupply.IsConnected)
+                //errorText += myPowerSupply.AutoOpen(myLoadScreen);
+                errorText += "HMP Powersupply Autoconnenct noch nicht realisiert";
 
             //Spectrum
             myLoadScreen.ChangeAll_newValue("Spectrum DAQ ...", "Starting Connection ...", 20);
@@ -69,10 +70,11 @@ namespace ATIM_GUI
             //TEC Controller
             myLoadScreen.ChangeAll_newValue("TEC Controller ...", "Starting Connection ...", 40);
 
-            if (!teC_Meerstetter1.IsConnected)
-                errorText += teC_Meerstetter1.AutoOpen(myLoadScreen);
+            if (!myTEC.IsConnected)
+                //errorText += myTEC.AutoOpen(myLoadScreen);
+                errorText += "TEC fehlt.";
 
-            //XYZ-Table
+                //XYZ-Table
             myLoadScreen.ChangeAll_newValue("XYZ table ...", "Starting Connection ...", 60);
 
             if (!xyZ_table1.IsConnected)

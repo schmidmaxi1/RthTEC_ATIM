@@ -12,7 +12,7 @@ using ATIM_GUI._0_Classes_Measurement;
 
 namespace ATIM_GUI
 {
-    public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class ATIM_MainWindow : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         //**************************************************************************************************
         //                                           Graphs

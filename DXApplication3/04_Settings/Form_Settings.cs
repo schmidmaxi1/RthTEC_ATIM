@@ -14,7 +14,7 @@ namespace ATIM_GUI._4_Settings
     public partial class Form_Settings : DevExpress.XtraEditors.XtraForm
     {
 
-        public Form_Settings(Form1 calling)
+        public Form_Settings(ATIM_MainWindow calling)
         {
             //Calling Form übernehmen um später auf die Settings zuzugreifen
             callingForm = calling;
@@ -34,7 +34,7 @@ namespace ATIM_GUI._4_Settings
 
         private string myPath = "";
         private Settings_ATIM mySettings;
-        private Form1 callingForm;
+        private ATIM_MainWindow callingForm;
 
         //**************************************************************************************************
         //                                Tool Bar -> Save & Open

@@ -31,13 +31,13 @@ namespace ATIM_GUI._1_Communication_Settings
         private string[] ports;
         private string[] channels;
 
-        Form1 myMainWindow;
+        ATIM_MainWindow myMainWindow;
 
         //********************************************************************************************************************
         //                                              Konstruktoren
         //********************************************************************************************************************
 
-        public Window_Communication_Settingscs(Form1 calling)
+        public Window_Communication_Settingscs(ATIM_MainWindow calling)
         {
             InitializeComponent();
 

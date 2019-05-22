@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Meerstetter_4fach));
             this.groupBox_TEC = new System.Windows.Forms.GroupBox();
             this.UI_MeasuredTemp2 = new System.Windows.Forms.TextBox();
             this.ComPort_select2 = new System.Windows.Forms.ComboBox();
             this.OpenClose = new DevExpress.XtraEditors.DropDownButton();
-            this.popupMenu_TEC = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.popupMenu_TEC = new DevExpress.XtraBars.PopupMenu();
             this.barButtonItem_OnOff = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_Fan = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_Detailed = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_Log = new DevExpress.XtraBars.BarButtonItem();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -70,7 +69,7 @@
             this.groupBox_TEC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox_TEC.Location = new System.Drawing.Point(0, 0);
             this.groupBox_TEC.Name = "groupBox_TEC";
-            this.groupBox_TEC.Size = new System.Drawing.Size(510, 87);
+            this.groupBox_TEC.Size = new System.Drawing.Size(510, 90);
             this.groupBox_TEC.TabIndex = 46;
             this.groupBox_TEC.TabStop = false;
             this.groupBox_TEC.Text = "TEC-Controller: Meerstetter 4fach";
@@ -179,7 +178,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 93);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 95);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(516, 0);
             // 
@@ -189,7 +188,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 93);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 95);
             // 
             // barDockControlRight
             // 
@@ -197,7 +196,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(516, 0);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 93);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 95);
             // 
             // label41
             // 
@@ -275,7 +274,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "Meerstetter_4fach";
-            this.Size = new System.Drawing.Size(516, 93);
+            this.Size = new System.Drawing.Size(516, 95);
             this.groupBox_TEC.ResumeLayout(false);
             this.groupBox_TEC.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu_TEC)).EndInit();

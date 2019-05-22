@@ -17,7 +17,8 @@ namespace Test_Umgebung
     public partial class Window_Testumgebung : Form
     {
         PowerSupply_HMP mySupply;
-        UserControl myTEC;
+        I_TEC_Controller myTEC;
+        
 
 
         public Window_Testumgebung()

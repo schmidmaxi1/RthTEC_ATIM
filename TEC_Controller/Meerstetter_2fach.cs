@@ -122,6 +122,15 @@ namespace TEC_Controller
             callingForm.Controls.Add(this);
         }
 
+        //Enablen
+        public void Change_Enabled(Boolean input)
+        {
+            groupBox_TEC.Invoke((MethodInvoker)delegate
+            {
+                groupBox_TEC.Enabled = input;
+            });
+        }
+
         //********************************************************************************************************************
         //                                            GUI-Events
         //********************************************************************************************************************
@@ -390,6 +399,13 @@ namespace TEC_Controller
                 ChangeRegister_int("Status", channel, 1);
             else
                 ChangeRegister_int("Status", channel, 0);
+
+            //Wenn alle an dann Flag IsRunning setzen
+            Boolean temp_flag = true;
+            foreach (Boolean single_flag in TEC_on)
+                temp_flag = temp_flag & single_flag;
+
+            IsRunning = temp_flag;
         }
 
         public void Switch_Fan_OnOff(bool switch_on, int channel)

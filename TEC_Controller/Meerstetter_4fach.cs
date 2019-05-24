@@ -57,9 +57,8 @@ namespace TEC_Controller
         private float New_Temp_kFactor { get; set; } = 0;
 
 
-
         //Liste mit allen Registern
-        private string path_Init_File = @"C:\Users\schmidm\Desktop\ATIM_GIT\0_Initialisation_Files\TEC.ini";
+        private string path_Init_File = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\0_Initialisation_Files\\TEC.ini";
         private string[] initalisationFile;
         public List<Meerstetter_Registers>[] registers = { new List<Meerstetter_Registers>(), new List<Meerstetter_Registers>() };
 
@@ -82,6 +81,7 @@ namespace TEC_Controller
 
         public Meerstetter_4fach()
         {
+
             InitializeComponent();
 
             //Alle ComPorts suchen

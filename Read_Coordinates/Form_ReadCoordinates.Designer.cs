@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.read_Movement1 = new Read_Coordinates.ReadBox_Movement();
+            this.fileSettings_Box1 = new Read_Coordinates.FileSettings_Box();
             this.SuspendLayout();
             // 
-            // read_Movement1
+            // fileSettings_Box1
             // 
-            this.read_Movement1.Location = new System.Drawing.Point(0, 0);
-            this.read_Movement1.Name = "read_Movement1";
-            this.read_Movement1.Size = new System.Drawing.Size(510, 40);
-            this.read_Movement1.TabIndex = 3;
+            this.fileSettings_Box1.Location = new System.Drawing.Point(2, 3);
+            this.fileSettings_Box1.Name = "fileSettings_Box1";
+            this.fileSettings_Box1.Size = new System.Drawing.Size(520, 110);
+            this.fileSettings_Box1.TabIndex = 0;
             // 
             // Form_ReadCoordinates
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(514, 41);
-            this.Controls.Add(this.read_Movement1);
+            this.ClientSize = new System.Drawing.Size(522, 111);
+            this.Controls.Add(this.fileSettings_Box1);
             this.Name = "Form_ReadCoordinates";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -51,7 +51,8 @@
         }
 
         #endregion
-        private ReadBox_Movement read_Movement1;
+
+        private FileSettings_Box fileSettings_Box1;
     }
 }
 

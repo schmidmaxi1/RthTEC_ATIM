@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Power_Supply_HamegHMP", "Po
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEC_Controller", "TEC_Controller\TEC_Controller.csproj", "{2F1C5FB4-2AFA-4484-8C8F-30D1FE6F21FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Read_Coordinates", "Read_Coordinates\Read_Coordinates.csproj", "{9F38BF61-F650-4827-B484-74ACFC0F54FD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "File Settings", "Read_Coordinates\File Settings.csproj", "{9F38BF61-F650-4827-B484-74ACFC0F54FD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Umgebung2", "Test_Umgebung2\Test_Umgebung2.csproj", "{CC4F44B4-3CE0-408C-A959-6FCDE2045011}"
 EndProject

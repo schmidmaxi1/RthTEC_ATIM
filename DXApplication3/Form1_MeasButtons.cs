@@ -29,6 +29,7 @@ namespace ATIM_GUI
 
         private void Button_Zth_signle_Click(object sender, EventArgs e)
         {
+
             //TTA-Mess-File erzeugen erzeugen
             myTTA = new TTA_measurement()
             {
@@ -84,11 +85,29 @@ namespace ATIM_GUI
 
         private void Button_Auto_Zth_Click(object sender, EventArgs e)
         {
+            //Abfrage ob alle nötigen Geräte angeschlossen (BSP alt)
+            /*
+            if (!Is_Spectrum_Activ()    ) { return; }
+            if (!Is_Heller_Activ()      ) { return; }
+            if (!Is_Power_Supply_Activ()) { return; }
+            if (!Is_XYZ_Aktive()        ) { return; }
+            if (!Is_Directory_Correct() ) { return; }
+            if (!Is_FileName_Correct()  ) { return; }
+            if (!Is_Gerber_Correct()    ) { return; }
+            */
+
+
             //TTA-Mess-File erzeugen erzeugen
             TTA_measurement myTTA = new TTA_measurement()
             {
                 MyRack = rthTEC_Rack1,
-                MyDAQ = DAQ_Unit
+                MyDAQ = DAQ_Unit,
+                MyXYZ = xyZ_table1,
+                Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath,
+                Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName,
+                GUI = this,
+                MyMovement = myFileSetting.readBox_Movement1.Movements_XYA
+     
             };
 
             //Plots initisieren
@@ -107,6 +126,9 @@ namespace ATIM_GUI
             //Aufgabe definieren
             myBackroundWorker.DoWork += new DoWorkEventHandler((state, args) =>
             {
+                //Messung für alle starten
+
+
                 //spectrum1.Measure_TTA_Several_Cycles_DEMO(myTTA, this);
                 DAQ_Unit.Measure_TTA_Several_Cycles(myTTA, this);
 
@@ -151,12 +173,13 @@ namespace ATIM_GUI
                 MySpectrum = DAQ_Unit,
                 MyTEC = myTEC,
                 MyXYZ = xyZ_table1,
-                Output_File_Folder = textBox_Path.Text,
-                Output_File_Name = textBox_File.Text,
+                Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath,
+                Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName,
                 GUI = this,
+                MyMovement = myFileSetting.readBox_Movement1.Movements_XYA,
+                MyFileNames = myFileSetting.readBox_Movement1.DUT_Name
             };
 
-            mySensitivity.MyMovement = myXYZ_Movements.Calculated_movements;
 
             //Temperatur-Schritte abfragen über Fenster
             Window_Sensitivity_TempStepSelect kFactorWindow = new Window_Sensitivity_TempStepSelect(this);
@@ -190,8 +213,7 @@ namespace ATIM_GUI
                 mySensitivity.Start_Measurement();
 
                 //Daten konvertieren und abarbeiten
-                //Buttons wieder aktiveren
-                Set_Old_Enable_Status();
+
 
                 //UI wieder aktiviern
                 Set_Old_Enable_Status();

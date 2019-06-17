@@ -106,8 +106,8 @@ namespace ATIM_GUI
 
         private void RibbonButton_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            myTTA.Output_File_Folder = this.textBox_Path.Text;
-            myTTA.Output_File_Name = this.textBox_File.Text;
+            myTTA.Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath;
+            myTTA.Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName;
 
             myTTA.Save_AllFiles();
         }

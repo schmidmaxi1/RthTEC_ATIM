@@ -85,9 +85,9 @@
       <Project>{8f71037f-2ab4-47a7-8fe3-c30c929c6642}</Project>
       <Name>Power_Supply_HamegHMP</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Read_Coordinates\Read_Coordinates.csproj">
+    <ProjectReference Include="..\Read_Coordinates\File Settings.csproj">
       <Project>{9f38bf61-f650-4827-b484-74acfc0f54fd}</Project>
-      <Name>Read_Coordinates</Name>
+      <Name>File Settings</Name>
     </ProjectReference>
     <ProjectReference Include="..\TEC_Controller\TEC_Controller.csproj">
       <Project>{2f1c5fb4-2afa-4484-8c8f-30d1fe6f21fb}</Project>

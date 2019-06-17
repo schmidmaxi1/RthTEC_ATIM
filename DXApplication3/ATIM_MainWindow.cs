@@ -104,6 +104,8 @@ using ATIM_GUI._05_XYZ;
 using Power_Supply_HamegHMP;
 using TEC_Controller;
 
+using Read_Coordinates;
+
 
 namespace ATIM_GUI
 {
@@ -127,13 +129,12 @@ namespace ATIM_GUI
         public PowerSupply_HMP myPowerSupply;
         public I_TEC_Controller myTEC;
 
-
+        public FileSettings_Box myFileSetting;
 
 
         //Settings
         public Settings_ATIM mySettings = null;
 
-        public Movement_Informations myXYZ_Movements;
 
         #endregion Variablen
 
@@ -167,6 +168,10 @@ namespace ATIM_GUI
 
             //Setting Window öffnen um Grundsettings zu laden
             mySettings = new Settings_ATIM();
+
+            // vorrübergehend  COM Port settings
+            //myPowerSupply.ComPort_select.SelectedIndex = 10;
+            
 
         }
 
@@ -222,7 +227,7 @@ namespace ATIM_GUI
             myTEC = new Meerstetter_4fach(this, 10, 245);
             myPowerSupply = new PowerSupply_HMP(this, 10, 345);
 
-
+            myFileSetting = new FileSettings_Box(this, 10, 140);
 
             #region Variablen_Setting
 
@@ -376,9 +381,9 @@ namespace ATIM_GUI
             rthTEC_Rack1.AutoSettings(this.mySettings);
             DAQ_Unit.AutoSettings(this.mySettings);
 
-            textBox_File.Text = this.mySettings.Save_FileName;
-            textBox_Path.Text = this.mySettings.Save_Folder;
-            textBox_Gerber.Text = this.mySettings.GerberFile_Path;          
+            myFileSetting.readBox_FileFolder1.textBox_FileName.Text = this.mySettings.Save_FileName;
+            myFileSetting.readBox_FileFolder1.textBox_Path.Text = this.mySettings.Save_Folder;
+            myFileSetting.readBox_Movement1.textBox_Gerber.Text = this.mySettings.GerberFile_Path;         
         }
 
         #endregion Adopt Funktionen
@@ -440,117 +445,6 @@ namespace ATIM_GUI
 
         #endregion Oberfläche deaktivieren
 
-
-        //**************************************************************************************************
-        //                                       File-Settings
-        //**************************************************************************************************
-
-        #region File-Settings
-
-        Image picture_Check = Properties.Resources.Apply_16x16;
-        Image picture_False = Properties.Resources.Delete_16x16;
-        Image picture_Warning = Properties.Resources.Warning_16x16;
-
-        //Image picture_Check = Image.FromFile("C:/Users/schmidm/Desktop/ATIM_Software/ATIM_Software 0.0.13/Icons/Apply_16x16.png");
-        //Image picture_False = Image.FromFile("C:/Users/schmidm/Desktop/ATIM_Software/ATIM_Software 0.0.13/Icons/Delete_16x16.png");
-
-        private void TextBox_Path_DoubleClick(object sender, EventArgs e)
-        {
-            //Dialog-Fenster öffnen
-            FolderBrowserDialog myFolderBrowserDialog = new FolderBrowserDialog();
-
-            //Prüfen obs funktioniert hat
-            if (myFolderBrowserDialog.ShowDialog() == DialogResult.OK)
-            {
-                textBox_Path.Text = myFolderBrowserDialog.SelectedPath;
-            }
-        }
-
-        private void TextBox_File_DoubleClick(object sender, EventArgs e)
-        {
-            //Dialog-Fenster öffnen
-            OpenFileDialog myOpenFileDialog = new OpenFileDialog()
-            {
-                Multiselect = false,
-                Title = "Select file (will be overwritten)",
-                InitialDirectory = "C:",
-                RestoreDirectory = false
-            };
-
-            //Prüfen obs funktioniert hat
-            if (myOpenFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                textBox_Path.Text = myOpenFileDialog.FileName;
-            }
-        }
-
-        private void TextBox_Gerber_DoubleClick(object sender, EventArgs e)
-        {
-            //Dialog-Fenster öffnen
-            OpenFileDialog myOpenFileDialog = new OpenFileDialog()
-            {
-                Multiselect = false,
-                Title = "Select driving file",
-                InitialDirectory = "C:\\Users\\schmidm\\Desktop\\ATIM_Software\\2_DrivingFiles",
-                Filter = "Driving files(*.txt)|*.txt|All files(*.*)|*.*",
-                FilterIndex = 0,
-                RestoreDirectory = false
-            };
-
-            //Prüfen obs funktioniert hat
-            if (myOpenFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                textBox_Gerber.Text = myOpenFileDialog.FileName;
-            }
-        }
-
-        private void TextBox_Path_TextChanged(object sender, EventArgs e)
-        {
-            //Prüfen ob Ordner ok ist
-            if (Directory.Exists(textBox_Path.Text))
-                pictureBox_Path.Image = picture_Check;
-            else
-                pictureBox_Path.Image = picture_False;
-
-        }
-
-        private void TextBox_File_TextChanged(object sender, EventArgs e)
-        {
-            //Prüfen ob %L[n] in File Name vorhanden
-            int index_Prozent_L = textBox_File.Text.IndexOf("%L");
-
-            if (index_Prozent_L < 0)
-            {
-                pictureBox1.Image = picture_False;
-                return;
-            }
-            try
-            {
-                var count = Convert.ToDecimal(textBox_File.Text.Substring(index_Prozent_L + 2, 1));
-                if (count == 0)
-                    throw new Exception();
-
-                pictureBox1.Image = picture_Check;
-            }
-            catch (Exception)
-            {
-                pictureBox1.Image = picture_False;
-            }                       
-        }
-
-        private void TextBox_Gerber_TextChanged(object sender, EventArgs e)
-        {
-            //Movement Informations generieren
-            myXYZ_Movements = new Movement_Informations(textBox_Gerber.Text);
-
-            //Häckchen setzen oder nicht
-            if (myXYZ_Movements.IsCorect)
-                pictureBox2.Image = picture_Check;
-            else
-                pictureBox2.Image = picture_False;
-        }
-
-        #endregion File-Settings
 
         //**************************************************************************************************
         //                                       Resize                                              (check)

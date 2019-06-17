@@ -37,7 +37,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(479, 10);
+            this.pictureBox2.Location = new System.Drawing.Point(474, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(21, 21);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -48,7 +48,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 14);
+            this.label3.Location = new System.Drawing.Point(2, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 10;
@@ -57,7 +57,7 @@
             // textBox_Gerber
             // 
             this.textBox_Gerber.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.textBox_Gerber.Location = new System.Drawing.Point(80, 10);
+            this.textBox_Gerber.Location = new System.Drawing.Point(75, 5);
             this.textBox_Gerber.Name = "textBox_Gerber";
             this.textBox_Gerber.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBox_Gerber.Size = new System.Drawing.Size(394, 21);
@@ -67,15 +67,15 @@
             this.textBox_Gerber.TextChanged += new System.EventHandler(this.TextBox_Gerber_TextChanged);
             this.textBox_Gerber.DoubleClick += new System.EventHandler(this.TextBox_Gerber_DoubleClick);
             // 
-            // Read_Movement
+            // ReadBox_Movement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_Gerber);
-            this.Name = "Read_Movement";
-            this.Size = new System.Drawing.Size(510, 40);
+            this.Name = "ReadBox_Movement";
+            this.Size = new System.Drawing.Size(500, 30);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -86,6 +86,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_Gerber;
+        public System.Windows.Forms.TextBox textBox_Gerber;
     }
 }

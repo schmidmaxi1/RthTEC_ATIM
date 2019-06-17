@@ -23,15 +23,17 @@ namespace ATIM_GUI._05_XYZ
 
             Init_GUI();
 
-            Grenze_X_pos = 260;
+            Grenze_X_pos = 300;
             Grenze_X_neg  = 0;
-            Grenze_Y_pos = 259;
+            Grenze_Y_pos = 300;
             Grenze_Y_neg  = 0;
             Grenze_Z_pos  = 0;
             Grenze_Z_neg  = -120;
             Grenze_A_neg = 0;
             Grenze_A_pos = 360;
-         }
+
+            Spindel_steigug  = 5;
+    }
 
 
         //********************************************************************************************************************
@@ -274,6 +276,7 @@ namespace ATIM_GUI._05_XYZ
             SendMessage_withAnswer("@0P", 25);
 
             //Positionen herauslösen
+
             if (Antwort.Length == 25)
             {
                 //Teil Strings herauslösen
@@ -288,11 +291,15 @@ namespace ATIM_GUI._05_XYZ
                 Akt_z_Koordinate = HexString_to_Decimal(position_Z_Teil) / (Schritt_pro_umdrehung_Linear / Spindel_steigug);
                 Akt_Winkel = HexString_to_Decimal(position_W_Teil) / (Schritt_pro_umdrehung_Rotation / Untersetzung_Rotation);
 
-                akt_Postition.Text =
-                    "X: " + Akt_x_Koordinate.ToString() + "mm; " +
-                    "Y: " + Akt_y_Koordinate.ToString() + "mm; " +
-                    "Z: " + Akt_z_Koordinate.ToString() + "mm; " +
-                    "A: " + Akt_Winkel.ToString() + "°; ";
+                akt_Postition.Invoke((MethodInvoker)delegate
+                {
+                    akt_Postition.Text =
+                        "X: " + Akt_x_Koordinate.ToString() + "mm; " +
+                        "Y: " + Akt_y_Koordinate.ToString() + "mm; " +
+                        "Z: " + Akt_z_Koordinate.ToString() + "mm; " +
+                        "A: " + Akt_Winkel.ToString() + "°; ";
+                });
+
             }
             else
             {

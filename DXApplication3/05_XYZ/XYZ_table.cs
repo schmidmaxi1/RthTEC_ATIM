@@ -57,7 +57,7 @@ namespace ATIM_GUI._05_XYZ
         //3. Umrechnung für Verfahrweg
         internal static decimal Schritt_pro_umdrehung_Linear { get; } = 800;        //Einstellbar über DIP-Schalter an den Endstufen
         internal static decimal Schritt_pro_umdrehung_Rotation { get; } = 2000;      
-        internal static decimal Spindel_steigug { get; } = 4;                       //Spindelsteigung so bestellt
+        internal static decimal Spindel_steigug { get; set; } = 4;                       //Spindelsteigung so bestellt
         internal static decimal Untersetzung_Rotation { get; } = 30;
 
         //4. Grenzen (Tischparameter) dürfen nicht überschritten werden
@@ -70,7 +70,7 @@ namespace ATIM_GUI._05_XYZ
         public decimal Grenze_A_pos { get; set; }
         public decimal Grenze_A_neg { get; set; }
 
-        public decimal Anfahrt_z { get; set; } = -30;                       //HöhenPosition des Boards
+        public decimal Anfahrt_z { get; set; } = -75;                       //HöhenPosition des Boards
 
         //5.Aktuelle Position
         public decimal Akt_x_Koordinate { get; internal set; }

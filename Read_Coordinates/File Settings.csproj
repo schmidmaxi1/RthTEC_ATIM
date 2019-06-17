@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileSettings_Box.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FileSettings_Box.Designer.cs">
+      <DependentUpon>FileSettings_Box.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_ReadCoordinates.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -53,12 +59,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadBox_FileFolder.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReadBox_FileFolder.Designer.cs">
+      <DependentUpon>ReadBox_FileFolder.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReadBox_Movement.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ReadBox_Movement.Designer.cs">
       <DependentUpon>ReadBox_Movement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FileSettings_Box.resx">
+      <DependentUpon>FileSettings_Box.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_ReadCoordinates.resx">
       <DependentUpon>Form_ReadCoordinates.cs</DependentUpon>
     </EmbeddedResource>
@@ -72,6 +87,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ReadBox_FileFolder.resx">
+      <DependentUpon>ReadBox_FileFolder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReadBox_Movement.resx">
       <DependentUpon>ReadBox_Movement.cs</DependentUpon>
     </EmbeddedResource>

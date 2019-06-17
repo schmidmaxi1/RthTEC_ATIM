@@ -444,3 +444,6 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\es\DevExpress.XtraVer
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\ja\DevExpress.XtraVerticalGrid.v18.2.resources.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\ru\DevExpress.XtraVerticalGrid.v18.2.resources.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.ATIM_MainWindow.resources
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Read_Coordinates.exe
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Read_Coordinates.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Read_Coordinates.exe.config

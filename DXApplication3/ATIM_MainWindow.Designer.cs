@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ATIM_MainWindow));
-            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonButton_ComSet = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonButton_AutoCon = new DevExpress.XtraBars.BarButtonItem();
@@ -41,16 +41,6 @@
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Path = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox_Gerber = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox_File = new System.Windows.Forms.TextBox();
-            this.textBox_Path = new System.Windows.Forms.TextBox();
             this.button_Single_Zth = new DevExpress.XtraEditors.SimpleButton();
             this.button_Single_Sensitivity = new DevExpress.XtraEditors.SimpleButton();
             this.button_Single_UI = new DevExpress.XtraEditors.SimpleButton();
@@ -71,10 +61,6 @@
             this.statusBar_ProgressBar = new System.Windows.Forms.ToolStripProgressBar();
             this.statusBar_Detailed = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Path)).BeginInit();
             this.groupBox_Single_Meas.SuspendLayout();
             this.groupBox_Automatic.SuspendLayout();
             this.groupBox_Cancel.SuspendLayout();
@@ -195,122 +181,6 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.ribbonButton_Save);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Save";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.pictureBox2);
-            this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.pictureBox_Path);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox_Gerber);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox_File);
-            this.groupBox2.Controls.Add(this.textBox_Path);
-            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.Location = new System.Drawing.Point(10, 135);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(510, 100);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "File settings:";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::ATIM_GUI.Properties.Resources.Delete_16x16;
-            this.pictureBox2.Location = new System.Drawing.Point(479, 70);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::ATIM_GUI.Properties.Resources.Delete_16x16;
-            this.pictureBox1.Location = new System.Drawing.Point(479, 45);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox_Path
-            // 
-            this.pictureBox_Path.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_Path.ErrorImage = global::ATIM_GUI.Properties.Resources.Delete_16x16;
-            this.pictureBox_Path.Image = global::ATIM_GUI.Properties.Resources.Delete_16x16;
-            this.pictureBox_Path.Location = new System.Drawing.Point(480, 20);
-            this.pictureBox_Path.Name = "pictureBox_Path";
-            this.pictureBox_Path.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox_Path.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Path.TabIndex = 6;
-            this.pictureBox_Path.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 74);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Board design:";
-            // 
-            // textBox_Gerber
-            // 
-            this.textBox_Gerber.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.textBox_Gerber.Location = new System.Drawing.Point(80, 70);
-            this.textBox_Gerber.Name = "textBox_Gerber";
-            this.textBox_Gerber.Size = new System.Drawing.Size(394, 21);
-            this.textBox_Gerber.TabIndex = 4;
-            this.textBox_Gerber.Text = "Double click";
-            this.textBox_Gerber.TextChanged += new System.EventHandler(this.TextBox_Gerber_TextChanged);
-            this.textBox_Gerber.DoubleClick += new System.EventHandler(this.TextBox_Gerber_DoubleClick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "File name:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Path:";
-            // 
-            // textBox_File
-            // 
-            this.textBox_File.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.textBox_File.Location = new System.Drawing.Point(80, 45);
-            this.textBox_File.Name = "textBox_File";
-            this.textBox_File.Size = new System.Drawing.Size(394, 21);
-            this.textBox_File.TabIndex = 1;
-            this.textBox_File.Text = "Double click (must contain %L[N], N = Number)";
-            this.textBox_File.TextChanged += new System.EventHandler(this.TextBox_File_TextChanged);
-            this.textBox_File.DoubleClick += new System.EventHandler(this.TextBox_File_DoubleClick);
-            // 
-            // textBox_Path
-            // 
-            this.textBox_Path.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.textBox_Path.Location = new System.Drawing.Point(80, 20);
-            this.textBox_Path.Name = "textBox_Path";
-            this.textBox_Path.Size = new System.Drawing.Size(394, 21);
-            this.textBox_Path.TabIndex = 0;
-            this.textBox_Path.Text = "Double click";
-            this.textBox_Path.TextChanged += new System.EventHandler(this.TextBox_Path_TextChanged);
-            this.textBox_Path.DoubleClick += new System.EventHandler(this.TextBox_Path_DoubleClick);
             // 
             // button_Single_Zth
             // 
@@ -442,9 +312,9 @@
             this.chartControl_RAW.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
             this.chartControl_RAW.Size = new System.Drawing.Size(991, 191);
             this.chartControl_RAW.TabIndex = 0;
-            chartTitle2.Text = "Test";
+            chartTitle1.Text = "Test";
             this.chartControl_RAW.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle2});
+            chartTitle1});
             // 
             // splitContainer2
             // 
@@ -527,7 +397,6 @@
             this.Controls.Add(this.groupBox_Cancel);
             this.Controls.Add(this.groupBox_Automatic);
             this.Controls.Add(this.groupBox_Single_Meas);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.ribbonControl1);
             this.Name = "ATIM_MainWindow";
             this.Ribbon = this.ribbonControl1;
@@ -536,11 +405,6 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Path)).EndInit();
             this.groupBox_Single_Meas.ResumeLayout(false);
             this.groupBox_Automatic.ResumeLayout(false);
             this.groupBox_Cancel.ResumeLayout(false);
@@ -568,9 +432,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox_File;
-        private System.Windows.Forms.TextBox textBox_Path;
         private DevExpress.XtraEditors.SimpleButton button_Single_Zth;
         private DevExpress.XtraEditors.SimpleButton button_Single_Sensitivity;
         private DevExpress.XtraEditors.SimpleButton button_Single_UI;
@@ -589,13 +450,6 @@
         private System.Windows.Forms.ToolStripStatusLabel statusBar_Headline;
         private System.Windows.Forms.ToolStripProgressBar statusBar_ProgressBar;
         private System.Windows.Forms.ToolStripStatusLabel statusBar_Detailed;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_Gerber;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox_Path;
         private DevExpress.XtraCharts.ChartControl chartControl_RAW;
         private DevExpress.XtraBars.BarButtonItem ribbonButton_ComSet;
         private DevExpress.XtraBars.BarButtonItem ribbonButton_AutoCon;

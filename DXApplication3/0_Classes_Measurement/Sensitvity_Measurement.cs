@@ -29,15 +29,20 @@ namespace ATIM_GUI._0_Classes_Measurement
         //                                          Variablen
         //**************************************************************************************************
 
-        //Settings for measurement
+        //Devices
         public RthTEC_Rack MyRack { get; set; }
         public DAQ_Unit MySpectrum { get; set; }
         //public TEC_Meerstetter MyTEC { get; set; }
         public I_TEC_Controller MyTEC { get; set; }
         public XYZ_table MyXYZ { get; set; }
+
+        //Main Window
         public ATIM_MainWindow GUI { get; set; }
+
+        //Info über Speichern und verfahren
         public long Nr_of_samples { get; } = 100000;
         public decimal[,] MyMovement { get; set; }
+        public string[] MyFileNames { get; set; }
 
         //Other variablens
         private int Counter_TempStep { get; set; }
@@ -138,7 +143,7 @@ namespace ATIM_GUI._0_Classes_Measurement
                 MyXYZ.Move2Position(MyXYZ.Akt_x_Koordinate, MyXYZ.Akt_y_Koordinate, 0, MyXYZ.Akt_Winkel);
 
                 //An Startpunkt fahren lassen (oberer Anschlag)
-                MyXYZ.Move2Position(MyMovement[0, 0], MyMovement[0, 1], 0, 0);
+                MyXYZ.Move2Position(MyMovement[0, 0], MyMovement[0, 1], -70, 0);
 
                 //Measure all LEDs after one other
                 Flag_LED_Measurement = true;
@@ -151,7 +156,7 @@ namespace ATIM_GUI._0_Classes_Measurement
                     GUI.StatusBar_Sensitivity_all(akt_DUT_Nr, Nr_of_LEDs, Counter_TempStep + 1, TempSteps.Count);
 
                     //Drive XYZ down to LED
-                    MyXYZ.MoveADistance(0, 0, MyXYZ.Anfahrt_z,0);
+                    MyXYZ.MoveADistance(0, 0, -25,0);
 
                     //Short break against starting oscillations (100ms)
                     System.Threading.Thread.Sleep(100);
@@ -170,7 +175,7 @@ namespace ATIM_GUI._0_Classes_Measurement
                     GUI.Update_Voltage_Plot_for_Sensitivity(this);
 
                     //Drive XYZ up
-                    MyXYZ.MoveADistance(0, 0, -MyXYZ.Anfahrt_z, 0);
+                    MyXYZ.MoveADistance(0, 0, 25, 0);
 
                     //Drive to next LED (exept at the end)
                     if (akt_DUT_Nr < Nr_of_LEDs)
@@ -459,13 +464,16 @@ namespace ATIM_GUI._0_Classes_Measurement
         private string Replace_DUT_Nr_in_String(string startString, int number)
         {
             //%L[n] durch zahl ersetzen
-            int place = startString.IndexOf("%L");                              //Stelle von %L
+            int place = startString.IndexOf("%R");                              //Stelle von %R
+
+            /*alt
             int digets = (int)Char.GetNumericValue(startString[place + 2]);     //Wert bestimmen
             string format = "";                                                 //Format
             for (int i = 0; i < digets; i++)
                 format += "0";
+             */
 
-            return startString.Substring(0, place-1) + number.ToString(format) + startString.Substring(place + 3);
+            return startString.Substring(0, place-1) + MyFileNames[number - 1] + startString.Substring(place + 1);
         }
 
         private String KFactor_Header(double sensitivity, double rsquared)

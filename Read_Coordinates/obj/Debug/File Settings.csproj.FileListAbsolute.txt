@@ -1,0 +1,11 @@
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\bin\Debug\Read_Coordinates.exe.config
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\bin\Debug\Read_Coordinates.exe
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\bin\Debug\Read_Coordinates.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\Read_Coordinates.FileSettings_Box.resources
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\Read_Coordinates.Form_ReadCoordinates.resources
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\Read_Coordinates.Properties.Resources.resources
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\Read_Coordinates.ReadBox_FileFolder.resources
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\Read_Coordinates.ReadBox_Movement.resources
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\File Settings.csproj.GenerateResource.Cache
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\Read_Coordinates.exe
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\Read_Coordinates.pdb

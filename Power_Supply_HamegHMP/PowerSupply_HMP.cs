@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 using System.IO.Ports;
 
+using Hilfsfunktionen;
+
 namespace Power_Supply_HamegHMP
 {
     public partial class PowerSupply_HMP : UserControl
@@ -68,10 +70,7 @@ namespace Power_Supply_HamegHMP
             InitializeComponent();
 
             //Alle ComPorts suchen
-            string[] ports = SerialPort.GetPortNames();
-            foreach (string port in ports)
-                ComPort_select.Items.Add(port);
-            ComPort_select.SelectedIndex = 0;
+            HelpFCT.SetComPortBox(ComPort_select);
 
             //In GUI einfügen
             this.Location = new System.Drawing.Point(x, y);

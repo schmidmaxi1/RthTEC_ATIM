@@ -209,5 +209,11 @@
   <ItemGroup>
     <None Include="Resources\OnOff_16x16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hilfsfunktionen\Hilfsfunktionen.csproj">
+      <Project>{f16101d2-d868-43bd-aee9-1509bc861499}</Project>
+      <Name>Hilfsfunktionen</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

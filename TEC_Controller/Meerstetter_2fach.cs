@@ -13,6 +13,8 @@ using System.IO.Ports;
 using MeSoft.MeCom.Core;
 using MeSoft.MeCom.PhyWrapper;
 
+using Hilfsfunktionen;
+
 namespace TEC_Controller
 {
     public partial class Meerstetter_2fach : UserControl, I_TEC_Controller
@@ -56,10 +58,10 @@ namespace TEC_Controller
         private bool Flag_Temp_Changed { get; set; } = false;
         private float New_Temp_kFactor { get; set; } = 0;
 
-        
+
 
         //Liste mit allen Registern
-        private string path_Init_File = @"C:\Users\schmidm\Desktop\ATIM_GIT\0_Initialisation_Files\TEC.ini";
+        private string path_Init_File = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\0_Initialisation_Files\\TEC.ini";
         private string[] initalisationFile;
         public List<Meerstetter_Registers> registers = new List<Meerstetter_Registers>();
 
@@ -85,10 +87,7 @@ namespace TEC_Controller
             InitializeComponent();
 
             //Alle ComPorts suchen
-            string[] ports = SerialPort.GetPortNames();
-            foreach (string port in ports)
-                ComPort_select.Items.Add(port);
-            ComPort_select.SelectedIndex = 0;
+            HelpFCT.SetComPortBox(ComPort_select);
 
             //Read Init-File und in lokale Register einsortieren
             initalisationFile = File.ReadAllLines(path_Init_File);
@@ -102,10 +101,7 @@ namespace TEC_Controller
             InitializeComponent();
 
             //Alle ComPorts suchen
-            string[] ports = SerialPort.GetPortNames();
-            foreach (string port in ports)
-                ComPort_select.Items.Add(port);
-            ComPort_select.SelectedIndex = 0;
+            HelpFCT.SetComPortBox(ComPort_select);
 
             //Read Init-File und in lokale Register einsortieren
             initalisationFile = File.ReadAllLines(path_Init_File);

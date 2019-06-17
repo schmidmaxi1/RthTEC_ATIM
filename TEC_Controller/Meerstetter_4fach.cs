@@ -9,6 +9,8 @@ using System.IO.Ports;
 
 using System.Windows.Forms;
 
+using Hilfsfunktionen;
+
 
 //using ATIM_GUI._2_AutoConnect;
 
@@ -57,16 +59,15 @@ namespace TEC_Controller
         private float New_Temp_kFactor { get; set; } = 0;
 
 
-
         //Liste mit allen Registern
-        private string path_Init_File = @"C:\Users\schmidm\Desktop\ATIM_GIT\0_Initialisation_Files\TEC.ini";
+        private string path_Init_File = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\0_Initialisation_Files\\TEC.ini";
         private string[] initalisationFile;
         public List<Meerstetter_Registers>[] registers = { new List<Meerstetter_Registers>(), new List<Meerstetter_Registers>() };
 
         //Connection-Variables
         private IMeComPhy[] TEC_Connection = new IMeComPhy[2];
         public MeComPhySerialPort[] MyMeComPhySerialPort { get; set; } = new MeComPhySerialPort[2];
-        
+
         //Timer Thread
         private Parallel_Thread_TEC threath_05sec_timer;
 
@@ -85,14 +86,9 @@ namespace TEC_Controller
             InitializeComponent();
 
             //Alle ComPorts suchen
-            string[] ports = SerialPort.GetPortNames();
-            foreach (string port in ports)
-                ComPort_select1.Items.Add(port);
-            ComPort_select1.SelectedIndex = 0;
+            HelpFCT.SetComPortBox(ComPort_select1);
+            HelpFCT.SetComPortBox(ComPort_select2);
 
-            foreach (string port in ports)
-                ComPort_select2.Items.Add(port);
-            ComPort_select2.SelectedIndex = 0;
 
             //Read Init-File und in lokale Register einsortieren
             initalisationFile = File.ReadAllLines(path_Init_File);
@@ -102,20 +98,15 @@ namespace TEC_Controller
             Fill_Register_Values(1);
         }
 
+
         //Einfaches einfügen in Andere Fenster
         public Meerstetter_4fach(Form callingForm, int x, int y)
         {
             InitializeComponent();
 
             //Alle ComPorts suchen
-            string[] ports = SerialPort.GetPortNames();
-            foreach (string port in ports)
-                ComPort_select1.Items.Add(port);
-            ComPort_select1.SelectedIndex = 0;
-
-            foreach (string port in ports)
-                ComPort_select2.Items.Add(port);
-            ComPort_select2.SelectedIndex = 0;
+            HelpFCT.SetComPortBox(ComPort_select1);
+            HelpFCT.SetComPortBox(ComPort_select2);
 
             //Read Init-File und in lokale Register einsortieren
             initalisationFile = File.ReadAllLines(path_Init_File);

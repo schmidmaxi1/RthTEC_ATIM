@@ -13,6 +13,8 @@ using Read_Coordinates;
 
 using TEC_Controller;
 
+using System.IO;
+
 namespace Test_Umgebung2
 {
     public partial class Form1 : Form
@@ -28,7 +30,16 @@ namespace Test_Umgebung2
 
             InitializeComponent();
 
-            mySupply = new PowerSupply_HMP(this, 10, 10);
+            string workingDirectory = Environment.CurrentDirectory;
+            // or: Directory.GetCurrentDirectory() gives the same result
+
+            // This will get the current PROJECT directory
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+
+
+
+
+            //mySupply = new PowerSupply_HMP(this, 10, 10);
 
             myTEC = new Meerstetter_4fach(this, 10, 100);
 

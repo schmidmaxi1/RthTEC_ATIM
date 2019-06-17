@@ -463,7 +463,6 @@ namespace ATIM_GUI._05_XYZ
                 myByte += 4;
 
             //Nachricht senden
-            string test = "@0B0," + myByte.ToString("X2");
             SendMessage_withAnswer("@0B0," + myByte.ToString("X2"));
         }
     }

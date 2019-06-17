@@ -37,7 +37,9 @@ namespace Test_Umgebung2
             string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
 
 
-            mySupply = new PowerSupply_HMP(this, 10, 10);
+
+
+            //mySupply = new PowerSupply_HMP(this, 10, 10);
 
             myTEC = new Meerstetter_4fach(this, 10, 100);
 

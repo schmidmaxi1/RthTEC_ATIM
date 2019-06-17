@@ -25,8 +25,10 @@ namespace ATIM_GUI._1_Communication_Settings
         public List<EthernetCommunicationDevice> ListEthernet { get; set; } = new List<EthernetCommunicationDevice>();
         public List<NI_CommunicationDevice> ListNI { get; set; } = new List<NI_CommunicationDevice>();
 
-      
-        string IniFile = Properties.Resources.ATIM_Communication_Settings;
+
+        //string IniFile = Properties.Resources.ATIM_Communication_Settings;
+        string myPath = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\0_Initialisation_Files\\ATIM_Communication_Settings.ini";
+        string []iniFile;
 
         private string[] ports;
         private string[] channels;
@@ -161,16 +163,18 @@ namespace ATIM_GUI._1_Communication_Settings
 
         public void Read_IniFile()
         {
+            iniFile = File.ReadAllLines(myPath);
 
             //Sting in Zeilen aufteilen
-            string[] lines = IniFile.Split(
+            /*
+            string[] lines = iniFile.Split(
                 new[] { "\r\n", "\r", "\n" },
                 StringSplitOptions.None
             );
-
+            */
 
             int elementCounter = 0;
-            foreach (string line in lines)
+            foreach (string line in iniFile)
             {
                 //Wenn Zeile mit '#' anfängt ist es ein Kommentar                    
                 if (line.StartsWith("#") | line == "")

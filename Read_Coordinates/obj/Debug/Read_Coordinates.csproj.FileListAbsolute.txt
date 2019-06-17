@@ -29,3 +29,13 @@ C:\Users\schmidm\Desktop\ATIM_GIT\ATIM_Git1\Read_Coordinates\obj\Debug\Read_Coor
 C:\Users\schmidm\Desktop\ATIM_GIT\ATIM_Git1\Read_Coordinates\obj\Debug\Read_Coordinates.csproj.CoreCompileInputs.cache
 C:\Users\schmidm\Desktop\ATIM_GIT\ATIM_Git1\Read_Coordinates\obj\Debug\Read_Coordinates.exe
 C:\Users\schmidm\Desktop\ATIM_GIT\ATIM_Git1\Read_Coordinates\obj\Debug\Read_Coordinates.pdb
+C:\Users\schmidm\Documents\RthTEC_ATIM\Read_Coordinates\bin\Debug\Read_Coordinates.exe.config
+C:\Users\schmidm\Documents\RthTEC_ATIM\Read_Coordinates\bin\Debug\Read_Coordinates.exe
+C:\Users\schmidm\Documents\RthTEC_ATIM\Read_Coordinates\bin\Debug\Read_Coordinates.pdb
+C:\Users\schmidm\Documents\RthTEC_ATIM\Read_Coordinates\obj\Debug\Read_Coordinates.Form_ReadCoordinates.resources
+C:\Users\schmidm\Documents\RthTEC_ATIM\Read_Coordinates\obj\Debug\Read_Coordinates.Properties.Resources.resources
+C:\Users\schmidm\Documents\RthTEC_ATIM\Read_Coordinates\obj\Debug\Read_Coordinates.ReadBox_Movement.resources
+C:\Users\schmidm\Documents\RthTEC_ATIM\Read_Coordinates\obj\Debug\Read_Coordinates.csproj.GenerateResource.cache
+C:\Users\schmidm\Documents\RthTEC_ATIM\Read_Coordinates\obj\Debug\Read_Coordinates.csproj.CoreCompileInputs.cache
+C:\Users\schmidm\Documents\RthTEC_ATIM\Read_Coordinates\obj\Debug\Read_Coordinates.exe
+C:\Users\schmidm\Documents\RthTEC_ATIM\Read_Coordinates\obj\Debug\Read_Coordinates.pdb

@@ -396,6 +396,73 @@ namespace ATIM_GUI._05_XYZ
 
         #endregion AutoOpen
 
-  
+
+        /// <summary>
+        /// Calculats the time in [ms] that is necessary for movement according to single the axis steps
+        /// </summary>
+        internal Int32 Calculate_Waiting_TIME(Int32 xSTeps, Int32 ySTeps, Int32 zSTeps, Int32 aSTeps)
+        {
+            //Zeit = Steps / Geschwindigkeit[steps/s] * 1000(umrechnung ms)
+            decimal time_x = Math.Abs(xSTeps) * 1000 / X_ges_schnell;
+            decimal time_y = Math.Abs(ySTeps) * 1000 / Y_ges_schnell;
+            decimal time_z = Math.Abs(zSTeps) * 1000 / Z_ges_schnell;
+            decimal time_a = Math.Abs(aSTeps) * 1000 / A_ges_schnell;
+
+            //Diese Funktion berechnet die Gesamtstrecke die Verfahren werden muss
+            //x und y Achse werden gleichzeit gefahren (Die Längere bestimmt die gesamtStecke)
+            //Anschließend wird die z-Achse verfahren (deshalb addiert)
+            //Anschließend wird die a-Achse verfahren (deshalb addiert)
+            //Toleranz-Faktor 1.1m
+            if (time_x > time_y)
+            {
+                return Convert.ToInt32((time_x + time_z + time_a) * 1.1m);
+            }
+            else
+            {
+                return Convert.ToInt32((time_y + time_z + time_a) * 1.1m);
+            }
+        }
+
+        internal bool CheckIfPointAllowed(decimal xKoordinate, decimal yKoordinate, decimal zKoordinate, decimal winkel)
+        {
+            //Überprüfen ob eine Achse aus dem Arbeitsbereich laufen würde
+            if (xKoordinate < Grenze_X_neg)
+            {
+                MessageBox.Show("x-Axis would leave working-area in negativ direction", "error");
+            }
+            else if (xKoordinate > Grenze_X_pos)
+            {
+                MessageBox.Show("x-Axis would leave working-area in positiv direction", "error");
+            }
+            else if (yKoordinate < Grenze_Y_neg)
+            {
+                MessageBox.Show("y-Axis would leave working-area in negativ direction", "error");
+            }
+            else if (yKoordinate > Grenze_Y_pos)
+            {
+                MessageBox.Show("y-Axis would leave working-area in positiv direction", "error");
+            }
+            else if (zKoordinate < Grenze_Z_neg)
+            {
+                MessageBox.Show("z-Axis would leave working-area in negativ direction", "error");
+            }
+            else if (zKoordinate > Grenze_Z_pos)
+            {
+                MessageBox.Show("z-Axis would leave working-area in positiv direction", "error");
+            }
+            else if (winkel < Grenze_A_neg)
+            {
+                MessageBox.Show("z-Axis would leave working-area in negativ direction", "error");
+            }
+            else if (winkel > Grenze_A_pos)
+            {
+                MessageBox.Show("z-Axis would leave working-area in positiv direction", "error");
+            }
+            else
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

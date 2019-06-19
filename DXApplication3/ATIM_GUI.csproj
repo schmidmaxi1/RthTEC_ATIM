@@ -262,6 +262,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="01_TTA\TTA_DataPoint.cs" />
+    <Compile Include="01_TTA\TTA_measurement_new.cs" />
     <Compile Include="09_DAQ_Unit\DAQ_Unit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -477,6 +479,10 @@
       <Project>{514f7601-ddc7-4f02-aae4-850b7445411f}</Project>
       <Name>Communication_Settings</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAQ_Unit\DAQ_Units.csproj">
+      <Project>{311634b1-6945-4b07-a37c-1b84fb634064}</Project>
+      <Name>DAQ_Units</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Power_Supply_HamegHMP\Power_Supply_HamegHMP.csproj">
       <Project>{8f71037f-2ab4-47a7-8fe3-c30c929c6642}</Project>
       <Name>Power_Supply_HamegHMP</Name>
@@ -493,6 +499,9 @@
       <Project>{a0062b16-d11f-4a6b-a07e-4085cbfc3b23}</Project>
       <Name>XYZ_Table</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="02_Sensitivity\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

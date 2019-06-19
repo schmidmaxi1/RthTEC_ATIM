@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DAQ_Unit
+namespace DAQ_Units
 {
     static class Program
     {

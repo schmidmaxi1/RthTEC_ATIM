@@ -14,7 +14,7 @@ using Spcm;
 using AutoConnect;
 using Communication_Settings;
 
-namespace DAQ_Unit
+namespace DAQ_Units
 {
     public partial class Spectrum30MHz : UserControl, I_DAQ
     {
@@ -51,6 +51,8 @@ namespace DAQ_Unit
 
         public long Trigger_Level_UI { get; internal set; }
 
+        public long Samples { get; set; }
+
         //Log
         public string Communication_LOG { get; internal set; }
 
@@ -67,7 +69,7 @@ namespace DAQ_Unit
         //Error-Code
         public uint ErrorCode_Spectrum { get; internal set; } = 0;
 
-        long samples;
+
         long postTriggerSamples;
 
         #endregion Variables
@@ -161,11 +163,11 @@ namespace DAQ_Unit
             //1. Parameter für Messlänge senden********************************************************************************
 
             //Sample Anzahl berechnen (Heizplus + Messpuls + Puffer[alle in ms]) * Frequenz 
-            samples = Decimal.ToInt64((t_heat_ms + t_meas_ms + 10m) / 1000 * Frequency);
+            Samples = Decimal.ToInt64((t_heat_ms + t_meas_ms + 10m) / 1000 * Frequency);
             //Sampels nach Trigger berechnen (100µs davor)
-            postTriggerSamples = samples - Decimal.ToInt64(0.0001m * Frequency);
+            postTriggerSamples = Samples - Decimal.ToInt64(0.0001m * Frequency);
 
-            error_Sum += Set_Sample_Count(samples);
+            error_Sum += Set_Sample_Count(Samples);
             error_Sum += Set_Samples_PostTrigger(postTriggerSamples);
 
             //Auf Errors checken
@@ -181,7 +183,7 @@ namespace DAQ_Unit
             }
         }
 
-        public bool TTA_set_Trigger(decimal frontend_gain, decimal forntend_offset)//RthTEC_Rack myRackSettings)
+        public bool TTA_set_Trigger(decimal frontend_gain, decimal forntend_offset)
         {
             //Mögliche Errors mitzählen
             uint error_Sum = 0;
@@ -211,180 +213,95 @@ namespace DAQ_Unit
 
         public bool TTA_wait_for_Trigger()
         {
-            //2. Feld für die Messdaten generiern******************************************************************************
-            //Pointer und Händler für Datenfeld
-            IntPtr daten_Pointer;
-            GCHandle hBufferHandle;
+            //Mögliche Errors mitzählen
+            uint error_Sum = 0;
 
-            //Zugehöriges Feld in Klasse TTA measurement erzeugen
-            myTTA.Creat_RowDataField(samples);
+            error_Sum += WaitTime_for_Trigger_inf();
+            error_Sum += Adopt_Settings();
+            error_Sum += Start_Card();
+            error_Sum += Wait_to_fill_PreTrigger();
+            error_Sum += Enable_Trigger();
+            error_Sum += Force_Trigger_after_time((long)Samples* 1000 /Frequency);
 
-            //Speicherplatz sperren
-            hBufferHandle = GCHandle.Alloc(myTTA.Binary_Raw_Files, GCHandleType.Pinned);
-            //Pointer für gesperten Speicherplatz suchen            
-            daten_Pointer = hBufferHandle.AddrOfPinnedObject();
-
-
-            //Init Stability Check (weiß nicht wozu)
-            //double stability_limit = 1; //1%
-            //bool[] no_stability = new bool[3];
-            //int[,] values_for_stability_check = new int[3, myTTA_Measurement.param.anzahl_Zyklen];
-
-            //3. Messung starten************************************************************************************************
-            for (int i = 0; i < myTTA.MyRack.Cycles; i++)
+            //Auf Errors checken
+            if (error_Sum != 0)
             {
-                //Falls über Cancel abgebrochen wurde --> Speicher freigeben
-                if (GUI.myBackroundWorker.CancellationPending)
-                {
-                    hBufferHandle.Free();
-                    return false;
-                }
+                MessageBox.Show("An Error occured while measurment!\n Error Code: ." + error_Sum.ToString(), "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                //Speicher lösen
+                H_BufferHandle.Free();
 
-                error_Sum += WaitTime_for_Trigger_inf();
-                error_Sum += Adopt_Settings();
-                error_Sum += Start_Card();
-                error_Sum += Wait_to_fill_PreTrigger();
-                error_Sum += Enable_Trigger();
-                error_Sum += Force_Trigger_after_time((long)myTTA.MyRack.Time_Heat);
+                return false;
+            }
+            else            
+                return true;
+            
 
-                //Zählvariablen in Button hochzählen
-                GUI.StatusBar_TTA_Single(i + 1, (int)myTTA.MyRack.Cycles);
+        }
 
+        public bool TTA_Collect_Data(short[,] data_out, int cycle)
+        {
+            uint error_Sum = 0;
 
-                //Stromquelle Pulsen
-                myTTA.MyRack.SinglePuls_withoutDelay();
+            //Wurde ein Trigger Event gefunden (wenn nich Rückgabewert ist 263)
+            if (Did_Trigger_Event_occured() == 263)
+            {
+                //Fehlermeldung
+                //SetAsyncText(Spectrum_answer, "Kein Trigger gefunden");
 
-                //Wurde ein Trigger Event gefunden (wenn nich Rückgabewert ist 263)
-                if (Did_Trigger_Event_occured() == 263)
-                {
-                    //Fehlermeldung
-                    //SetAsyncText(Spectrum_answer, "Kein Trigger gefunden");
-
-                    error_Sum += 263;
-                    error_Sum += Force_Trigger();
-                }
-
-
-                //4. Daten abholen**********************************************************************************************
-
-                //WArten bis alle Daten vorhanden sind (unendlich lang möglich)
-                error_Sum += WaitTime_for_Trigger_inf();
-                error_Sum += Wait_for_all_samples();
-
-                //Datentransfer einstellen (Datapointer enspricht der Stelle des ersten Samples im Array)
-                //Bei weiteren Zyklen muss dieser Pointer geändert werden
-                //DataPointer is [0,0]
-                //anzahl_samples entspricht der Länge einer Zeile
-                //2 ist notwendig für short (2byte)
-                //i ist die aktuelle Zeile (Zyklus)
-
-                IntPtr aktuellerPointer = new IntPtr(daten_Pointer.ToInt64() + 2 * i * samples);
-
-                //Daten für Demo erzeugen
-                /*
-                 * 
-                 *                 Random rnd = new Random();
-                int j = 0;
-                int help_t = 0;
-                for (; j < 1000; j++)
-                    myTTA.Spectrum_raw_files[i, j] = -32767;
-                for (; j < samples / 2; j++)
-                {
-                    help_t++;
-                    myTTA.Spectrum_raw_files[i, j] = (short)(10000 + 15000 * Math.Exp(-(double)help_t / 1500000) + rnd.Next(-100, 100));
-                }
-                help_t = 0;
-                for (; j < samples - 1000; j++)
-                {
-                    help_t++;
-                    myTTA.Spectrum_raw_files[i, j] = (short)(-10000 - 15000 * Math.Exp(-(double)help_t / 1500000) + rnd.Next(-100, 100));
-                }
-                for (; j < samples; j++)
-                    myTTA.Spectrum_raw_files[i, j] = -32767;
-                */
-                error_Sum += Send_Pointer_of_Array(aktuellerPointer, samples);
-                error_Sum += Get_Data();
-
-
-                //5. Auf Fehler prüfen*****************************************************************************************
-                /*
-                 * (Text in Antwortfenster ändern
-                if (error_Sum == 0) { SetAsyncText(Spectrum_answer, "Measurement correct\r\n"); }
-                else { SetAsyncText(Spectrum_answer, "Error while measurement\r\n"); }
-                */
-
-                //Gleich in Graph ausgeben
-                GUI.Add_Series_to_RAW(myTTA, i);
-
-                myTTA.ErrorCode = ErrorCheck_ShortOpen(myTTA, i);
-                //Wenn Short oder Open --> Abbruch (keine weiteren Zyklen)
-                if (myTTA.ErrorCode != 0)
-                    break;
-
+                error_Sum += 263;
+                error_Sum += Force_Trigger();
             }
 
-            //Stabilitäts-Check
-            //if (myTTA.ErrorCode == 0)
-            //  myTTA.ErrorCode = ErrorCheck_Instabil(myTTA);
 
-            hBufferHandle.Free();
+            //4. Daten abholen**********************************************************************************************
+
+            //WArten bis alle Daten vorhanden sind (unendlich lang möglich)
+            error_Sum += WaitTime_for_Trigger_inf();
+            error_Sum += Wait_for_all_samples();
+
+            //Datentransfer einstellen (Datapointer enspricht der Stelle des ersten Samples im Array)
+            //Bei weiteren Zyklen muss dieser Pointer geändert werden
+            //DataPointer is [0,0]
+            //anzahl_samples entspricht der Länge einer Zeile
+            //2 ist notwendig für short (2byte)
+            //i ist die aktuelle Zeile (Zyklus)
+
+            IntPtr aktuellerPointer = new IntPtr(Daten_Pointer.ToInt64() + 2 * cycle * Samples);
+
+            error_Sum += Send_Pointer_of_Array(aktuellerPointer, Samples);
+            error_Sum += Get_Data();
 
 
             //Auf Errors checken
             if (error_Sum != 0)
             {
-                MessageBox.Show("An Error occured while measurment!\n Error Code: ." + myTTA.ErrorCode.ToString(), "Warning",
+                MessageBox.Show("An Error occured while measurment!\n Error Code: ." + error_Sum.ToString(), "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                //Speicher lösen
+                H_BufferHandle.Free();
+
                 return false;
             }
             else
-            {
                 return true;
-            }
-
-
-
-            return false;
         }
 
-        public bool TTA_Collect_Data(short[,] data_out, int cycle)
+        public bool TTA_reserve_Storage(short[,] array) {
+            //Speicherplatz sperren
+            H_BufferHandle = GCHandle.Alloc(array, GCHandleType.Pinned);
+            //Pointer für gesperten Speicherplatz suchen            
+            Daten_Pointer = H_BufferHandle.AddrOfPinnedObject();
+            return true;
+        } 
+        public bool TTA_free_Storage(short[,] array)
         {
-            return false;
-        }
+            H_BufferHandle.Free();
+            return true;
+        } 
 
-        /*
-        private void TTA_auslagerung()
-        {
-            //StatusBar anpassen
-            GUI.StatusBar_TTA_Single(0, (int)myTTA.MyRack.Cycles);
-
-            Setting_for_TTA(1,1);
-            Setting_Trigger(1,1);
-
-            //Feld für Daten definieren (mit 100x max- beginnen)
-            myTTA.Creat_RowDataField(100 + anzahl_samples + sample_ueberschuss);
-
-            //3. Loop**********************************************************************************************************
-            for (int i = 0; i < myTTA.MyRack.Cycles; i++)
-            {
-                TTA_wait_for_Trigger();
-
-                //5. Puls starten**********************************************************************************************              
-                System.Threading.Thread.Sleep(300);
-                myTTA.MyRack.SinglePuls_withDelay();
-                System.Threading.Thread.Sleep(1000);
-
-                TTA_Collect_Data(myTTA.RawData, i);
-
-                //Gleich in Graph ausgeben
-                GUI.Add_Series_to_RAW(myTTA, i);
-
-                //7. StatusBar anpassen****************************************************************************************
-                GUI.StatusBar_TTA_Single(i + 1, (int)myTTA.MyRack.Cycles);
-            }
-        }
-        */
 
         #endregion TTA
 
@@ -392,6 +309,7 @@ namespace DAQ_Unit
 
         public bool Sensitivity_Set_Device()
         {
+            /*
             //1. Error Counter zurücksetzen**************************************************************************************************************
             uint error_Sum = 0;
 
@@ -420,7 +338,7 @@ namespace DAQ_Unit
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else
+            else*/
                 return true;
         }
         public bool Sensitivity_Set_Trigger()
@@ -431,6 +349,7 @@ namespace DAQ_Unit
         }
         public bool Sensitivity_Measure_and_Collect_Data(short[] output)
         {
+            /*
             //Mögliche Errors mitzählen
             uint error_Sum = 0;
 
@@ -460,7 +379,7 @@ namespace DAQ_Unit
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else
+            else*/
                 return true;
         }
 

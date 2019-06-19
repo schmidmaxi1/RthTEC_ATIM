@@ -780,9 +780,9 @@ namespace ATIM_GUI._09_DAQ_Unit
             //Mittelwert berechnen (Short und Open)
             for (int j = pre_points; j < myTTA.Binary_Raw_Files.GetLength(1); j++)
             {
-                raw_file_mean = raw_file_mean + myTTA.Binary_Raw_Files[MeasCycle, j];
+                raw_file_mean += + myTTA.Binary_Raw_Files[MeasCycle, j];
             }
-            raw_file_mean = raw_file_mean / (myTTA.Binary_Raw_Files.GetLength(1) - pre_points);
+            raw_file_mean /= (myTTA.Binary_Raw_Files.GetLength(1) - pre_points);
 
             //Short (2^15 = 32768 --> mit Puffer)
             if (raw_file_mean < -32000)

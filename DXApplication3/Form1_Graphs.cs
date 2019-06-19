@@ -9,6 +9,8 @@ using System.Drawing;
 using DevExpress.XtraCharts;
 using ATIM_GUI._0_Classes_Measurement;
 
+using ATIM_GUI._01_TTA;
+
 
 namespace ATIM_GUI
 {
@@ -514,6 +516,55 @@ namespace ATIM_GUI
         #region plot_in_Graphs
 
         public void Add_Series_to_RAW(TTA_measurement myTTA, int Messung)
+        {
+            //Es dürfen nich alle Pukte übertragen werden (Datenmenge)
+            //ungefähr 20Tausend DatenPunkte
+            int steps = myTTA.Binary_Raw_Files.GetLength(1) / 20000;
+            //Auf 10^x Wert runden
+            steps = (int)Math.Pow(10, Math.Round(Math.Log10(steps)));
+
+            //Daten in Passende Liste einfügen
+            List<RAW_DataPoint> myRawDataList = new List<RAW_DataPoint>();
+
+            for (int sample = 0; sample < myTTA.Binary_Raw_Files.GetLength(1); sample += steps)
+            {
+                myRawDataList.Add(
+                    new RAW_DataPoint()
+                    {
+                        Value = myTTA.Binary_Raw_Files[Messung, sample],
+                        Time = (decimal)sample / myTTA.MyDAQ.Frequency,
+                    }
+                    );
+            }
+
+            //Muss so kompliziert sein, da UI nicht im Thread liegt
+            chartControl_RAW.Invoke((MethodInvoker)delegate
+            {
+                var neueSerie = new Series("Cycle " + (Messung + 1).ToString(), ViewType.Line)
+                {
+                    CheckableInLegend = true,
+
+
+
+                    DataSource = myRawDataList,
+                    ArgumentScaleType = ScaleType.Numerical,
+                    ArgumentDataMember = "Time",
+                    ValueScaleType = ScaleType.Numerical,
+                };
+
+                neueSerie.ValueDataMembers.AddRange(new string[] { "Value" });
+
+                chartControl_RAW.Series.Add(neueSerie);
+
+                //Resize x-Achse 
+
+                //((LineSeriesView)neueSerie.View).LineMarkerOptions.Kind = MarkerKind.Triangle;
+                //((LineSeriesView)neueSerie.View).MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            });
+
+        }
+
+        public void Add_Series_to_RAW(TTA_measurement_new myTTA, int Messung)
         {
             //Es dürfen nich alle Pukte übertragen werden (Datenmenge)
             //ungefähr 20Tausend DatenPunkte

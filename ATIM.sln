@@ -21,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Communication_Settings", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoConnect", "AutoConnect\AutoConnect.csproj", "{449D380B-94CB-4959-A3BB-001E331C7D9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAQ_Unit", "DAQ_Unit\DAQ_Unit.csproj", "{311634B1-6945-4B07-A37C-1B84FB634064}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAQ_Units", "DAQ_Unit\DAQ_Units.csproj", "{311634B1-6945-4B07-A37C-1B84FB634064}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

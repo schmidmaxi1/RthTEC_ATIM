@@ -1,4 +1,4 @@
-﻿namespace DAQ_Unit
+﻿namespace DAQ_Units
 {
     partial class TestForm
     {

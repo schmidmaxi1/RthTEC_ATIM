@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DAQ_Unit
+namespace DAQ_Units
 {
     public partial class Detailed_Window : Form
     {

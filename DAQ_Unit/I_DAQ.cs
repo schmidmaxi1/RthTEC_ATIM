@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using AutoConnect;
 using Communication_Settings;
 
-namespace DAQ_Unit
+namespace DAQ_Units
 {
     public interface I_DAQ
     {
@@ -25,6 +25,8 @@ namespace DAQ_Unit
 
         long Trigger_Level_UI { get; }
 
+        long Samples { get; set; }
+
         //Log
         string Communication_LOG { get;  }
 
@@ -37,6 +39,9 @@ namespace DAQ_Unit
         bool TTA_set_Trigger(decimal frontend_gain, decimal forntend_offset);
         bool TTA_wait_for_Trigger();
         bool TTA_Collect_Data(short[,] data_out, int cycle);
+
+        bool TTA_reserve_Storage(short[,] array);
+        bool TTA_free_Storage(short[,] array);
 
         //Sensitivity
         bool Sensitivity_Set_Device();

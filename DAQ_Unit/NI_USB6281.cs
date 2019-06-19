@@ -15,7 +15,7 @@ using AutoConnect;
 using Communication_Settings;
 using Hilfsfunktionen;
 
-namespace DAQ_Unit
+namespace DAQ_Units
 {
     public partial class NI_USB6281 : UserControl, I_DAQ
     {
@@ -56,6 +56,8 @@ namespace DAQ_Unit
         //Log
         public string Communication_LOG { get; internal set; }
 
+        public long Samples { get; set; }
+
         //************************Special-Variablen*************************************
 
         //IP - Adresse Device
@@ -63,8 +65,7 @@ namespace DAQ_Unit
 
         private NationalInstruments.DAQmx.Task myTask_NI;
 
-        private int sample_count;
-        private double trigger_level_mV;
+ 
 
         //Übergabe-Parameter für NI-Karte definieren
         private IAsyncResult uebergabe_parameter_ReadWaveform = null;
@@ -157,14 +158,14 @@ namespace DAQ_Unit
             int sample_ueberschuss = 2000;
 
             //Zusammenzählen
-            int sample_count = anzahl_samples + sample_ueberschuss;
+            Samples = anzahl_samples + sample_ueberschuss;
             return true;
         }
 
         public bool TTA_set_Trigger(decimal frontend_gain, decimal forntend_offset)//RthTEC_Rack myRackSettings)
         {
             //Trigger berechnen
-            trigger_level_mV = decimal.ToDouble((Voltage_Trigger.Value - forntend_offset / 1000) * frontend_gain);
+            Trigger_Level_UI = (long)decimal.ToDouble((Voltage_Trigger.Value - forntend_offset / 1000) * frontend_gain);
             return true;
         }
 
@@ -200,7 +201,7 @@ namespace DAQ_Unit
                 //samplesPerChannel As int: Anzahl der Samples
                 //---------------------------------------------------------------------------------
                 myTask_NI.Timing.ConfigureSampleClock("", Frequency, SampleClockActiveEdge.Rising,
-                    SampleQuantityMode.FiniteSamples, sample_count);
+                    SampleQuantityMode.FiniteSamples, (int)Samples);
 
 
                 // Trigger definieren
@@ -210,7 +211,7 @@ namespace DAQ_Unit
                 //level As Double: Trigger Level (vorher bestimmt
                 //---------------------------------------------------------------------------------
                 myTask_NI.Triggers.StartTrigger.ConfigureAnalogEdgeTrigger(Channel_Name,
-                    AnalogEdgeStartTriggerSlope.Rising, trigger_level_mV);
+                    AnalogEdgeStartTriggerSlope.Rising, Trigger_Level_UI);
 
 
                 //Hysterese festlegen (keine Ahnung ob das Wichtig ist)
@@ -220,7 +221,7 @@ namespace DAQ_Unit
                 myTask_NI.Triggers.StartTrigger.AnalogEdge.Hysteresis = 0.05;
 
                 //TimeOut anpassen 
-                myTask_NI.Stream.Timeout = (Int32)(1.2m * (sample_count * 1000 / Frequency));
+                myTask_NI.Stream.Timeout = (Int32)(1.2m * (Samples * 1000 / Frequency));
 
                 // Verify the Task
                 myTask_NI.Control(TaskAction.Verify);
@@ -231,7 +232,7 @@ namespace DAQ_Unit
                 // Use SynchronizeCallbacks to specify that the object 
                 // marshals callbacks across threads appropriately.
                 messInfo_NI_SinglePulse.SynchronizeCallbacks = true;
-                uebergabe_parameter_ReadWaveform = messInfo_NI_SinglePulse.BeginReadWaveform(sample_count, null, null);
+                uebergabe_parameter_ReadWaveform = messInfo_NI_SinglePulse.BeginReadWaveform((int)Samples, null, null);
 
                 return true;
             }
@@ -283,38 +284,8 @@ namespace DAQ_Unit
             }
         }
 
-        /*
-        private void TTA_auslagerung()
-        {
-            //StatusBar anpassen
-            GUI.StatusBar_TTA_Single(0, (int)myTTA.MyRack.Cycles);
-
-            Setting_for_TTA(1,1);
-            Setting_Trigger(1,1);
-
-            //Feld für Daten definieren (mit 100x max- beginnen)
-            myTTA.Creat_RowDataField(100 + anzahl_samples + sample_ueberschuss);
-
-            //3. Loop**********************************************************************************************************
-            for (int i = 0; i < myTTA.MyRack.Cycles; i++)
-            {
-                TTA_wait_for_Trigger();
-
-                //5. Puls starten**********************************************************************************************              
-                System.Threading.Thread.Sleep(300);
-                myTTA.MyRack.SinglePuls_withDelay();
-                System.Threading.Thread.Sleep(1000);
-
-                TTA_Collect_Data(myTTA.RawData, i);
-
-                //Gleich in Graph ausgeben
-                GUI.Add_Series_to_RAW(myTTA, i);
-
-                //7. StatusBar anpassen****************************************************************************************
-                GUI.StatusBar_TTA_Single(i + 1, (int)myTTA.MyRack.Cycles);
-            }
-        }
-        */
+        public bool TTA_reserve_Storage(short[,] array) { return true;} //not neccessary for NI-USB6821
+        public bool TTA_free_Storage(short[,] array) { return true; } //not neccessary for NI-USB6821
 
         #endregion TTA
 

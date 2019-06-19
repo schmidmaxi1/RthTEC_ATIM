@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAQ_Unit.Properties
+namespace DAQ_Units.Properties
 {
 
 

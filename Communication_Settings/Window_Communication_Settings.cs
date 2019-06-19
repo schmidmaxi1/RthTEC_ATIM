@@ -12,7 +12,7 @@ using System.Reflection;
 using System.IO;
 using System.IO.Ports;
 using NationalInstruments.DAQmx;            //Eigeneintrag für NI-Karte
-using DevExpress;
+
 
 namespace Communication_Settings
 {
@@ -28,25 +28,31 @@ namespace Communication_Settings
 
 
         //string IniFile = Properties.Resources.ATIM_Communication_Settings;
-        string myPath = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\0_Initialisation_Files\\ATIM_Communication_Settings.ini";
+        private static string myPath = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\0_Initialisation_Files\\ATIM_Communication_Settings.ini";
         string []iniFile;
 
         private string[] ports;
         private string[] channels;
 
-        //ATIM_MainWindow myMainWindow;
+        //Von Main-Form übergebene Funktion die beim Schließen ausgeführt wird
+        private Func<Window_Communication_Settings, string> MyReturnFCT = null;
+
+
 
         //********************************************************************************************************************
         //                                              Konstruktoren
         //********************************************************************************************************************
 
-        //public Window_Communication_Settings(ATIM_MainWindow calling)
-        public Window_Communication_Settings(Form calling)
-        {
-           
+        /// <summary>
+        /// Der Konstruktor wird mit einem Funktion als Parameter aufgerufen, die beim schließen aufgerufen wird.
+        /// Die Funktion wird mit dieser Form aufgerufen
+        /// </summary>
+        /// <param name="closingFCT"></param>
+        public Window_Communication_Settings(Func<Window_Communication_Settings, string> closingFCT)
+        {           
             InitializeComponent();
 
-            //myMainWindow = calling;
+            MyReturnFCT = closingFCT;
 
             //Alle ComPorts suchen
             ports = SerialPort.GetPortNames();
@@ -59,7 +65,6 @@ namespace Communication_Settings
             catch (Exception){}
 
             Read_IniFile();
-
         }
 
         public Window_Communication_Settings()
@@ -80,7 +85,6 @@ namespace Communication_Settings
             catch (Exception) { }
 
             Read_IniFile();
-
         }
 
         //********************************************************************************************************************
@@ -170,32 +174,23 @@ namespace Communication_Settings
             }
 
             //Override aktuellen File
-            //System.IO.File.WriteAllText(path_Init_File, text);
+            System.IO.File.WriteAllText(myPath, text);
 
         }
 
         private void Window_Communication_Settingscs_FormClosing(object sender, FormClosingEventArgs e)
-        {     
-            //myMainWindow.Adopt_Communication_settings(ListeCOMs, ListEthernet, ListNI);
+        {
+            if(MyReturnFCT != null)
+                MyReturnFCT(this);
         }
 
         //********************************************************************************************************************
         //                                               Funktionen
         //********************************************************************************************************************
 
-
-
         public void Read_IniFile()
         {
             iniFile = File.ReadAllLines(myPath);
-
-            //Sting in Zeilen aufteilen
-            /*
-            string[] lines = iniFile.Split(
-                new[] { "\r\n", "\r", "\n" },
-                StringSplitOptions.None
-            );
-            */
 
             int elementCounter = 0;
             foreach (string line in iniFile)

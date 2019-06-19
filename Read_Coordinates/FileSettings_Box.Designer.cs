@@ -66,7 +66,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox);
             this.Name = "FileSettings_Box";
-            this.Size = new System.Drawing.Size(520, 110);
+            this.Size = new System.Drawing.Size(520, 105);
             this.groupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 

@@ -18,7 +18,7 @@ using _8_Rth_TEC_Rack;
 using DevExpress.XtraCharts;
 
 using ATIM_GUI._0_Classes_Measurement;
-using ATIM_GUI._2_AutoConnect;
+using AutoConnect;
 
 namespace ATIM_GUI._09_DAQ_Unit
 {
@@ -171,7 +171,7 @@ namespace ATIM_GUI._09_DAQ_Unit
 
         #region AutoOpen
 
-        public override string AutoOpen(Load_Screen myLoadScreen)
+        public override string AutoOpen(AutoConnect_Window myLoadScreen)
         {
 
             int iterration = 2;

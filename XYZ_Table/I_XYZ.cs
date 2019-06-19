@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Communication_Settings;
+using AutoConnect;
+
 namespace XYZ_Table
 {
-    public interface IXYZ
+    public interface I_XYZ
     {
 
         //********************************************************************************************************************
@@ -38,8 +41,11 @@ namespace XYZ_Table
 
         void Position_aktualisiern();
 
-        //public override string AutoOpen(Load_Screen myLoadScreen)
+        void Change_Enabled(Boolean input);
 
+        void Update_settings(SerialCommunicationDivice myInput);
+
+        string AutoOpen(AutoConnect_Window myLoadScreen);
 
     }
 }

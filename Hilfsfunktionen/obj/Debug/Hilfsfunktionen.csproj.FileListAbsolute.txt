@@ -7,3 +7,12 @@ C:\Users\schmidm\Documents\RthTEC_ATIM\Hilfsfunktionen\obj\Debug\Hilfsfunktionen
 C:\Users\schmidm\Documents\RthTEC_ATIM\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.csproj.CoreCompileInputs.cache
 C:\Users\schmidm\Documents\RthTEC_ATIM\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.exe
 C:\Users\schmidm\Documents\RthTEC_ATIM\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\bin\Debug\Hilfsfunktionen.exe.config
+C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\bin\Debug\Hilfsfunktionen.exe
+C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\bin\Debug\Hilfsfunktionen.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.Form1.resources
+C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.Properties.Resources.resources
+C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.csproj.GenerateResource.cache
+C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.csproj.CoreCompileInputs.cache
+C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.exe
+C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.pdb

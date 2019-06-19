@@ -19,7 +19,7 @@ namespace Test_Umgebung2
 {
     public partial class Form1 : Form
     {
-        PowerSupply_HMP mySupply;
+        //PowerSupply_HMP mySupply;
         I_TEC_Controller myTEC;
 
         ReadBox_Movement myMovement;

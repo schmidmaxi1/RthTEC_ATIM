@@ -102,7 +102,7 @@ namespace ATIM_GUI
             {
                 MyRack = rthTEC_Rack1,
                 MyDAQ = DAQ_Unit,
-                MyXYZ = xyZ_table1,
+                MyXYZ = myXYZ,
                 Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath,
                 Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName,
                 GUI = this,
@@ -172,7 +172,7 @@ namespace ATIM_GUI
                 MyRack = rthTEC_Rack1,
                 MySpectrum = DAQ_Unit,
                 MyTEC = myTEC,
-                MyXYZ = xyZ_table1,
+                MyXYZ = myXYZ,
                 Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath,
                 Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName,
                 GUI = this,

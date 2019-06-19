@@ -11,6 +11,11 @@ namespace Hilfsfunktionen
     public class HelpFCT
     {
         //Static ist notwendig, um Funktion auzurufen, ohne die klasse zu erzeugen
+
+        /// <summary>
+        /// Seraches all available COM-Ports, sorts them and adds them to the ComboBox
+        /// </summary>
+        /// <param name="input">ComboBox itself</param>
         public static void SetComPortBox(ComboBox input)
         {
             //Liste füllen
@@ -18,6 +23,7 @@ namespace Hilfsfunktionen
 
             //Liste sortieren (Alles größer 9 wird nach der 1 eingeordnet)
             Array.Sort(ports);
+            
 
             if (ports.Length == 0)
                 input.Items.Add("N/A");
@@ -27,6 +33,24 @@ namespace Hilfsfunktionen
 
             //Erstes auswehlen (NA oder COM x)
             input.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// Copys all Information form one ComboBox to the other.
+        /// </summary>
+        /// <param name="input"> Input ComboBox</param>
+        /// <param name="output"> Output ComboBox</param>
+        public static void SetComboBox2ComboBox(ComboBox input, ComboBox output)
+        {
+            //Alles aus alter ComboBox löschen
+            output.Items.Clear();
+
+            //Alle Items aus input übernehmen
+            foreach (var Text in input.Items)
+                output.Items.Add(Text);
+
+            //Auswahl übernehmen
+            output.Text = input.Text;
         }
     }
 }

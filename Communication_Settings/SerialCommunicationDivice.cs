@@ -60,7 +60,6 @@ namespace Communication_Settings
                 Parity.Odd.ToString(),
                 Parity.Space.ToString(),
             });
-
         }
 
         public SerialCommunicationDivice() {

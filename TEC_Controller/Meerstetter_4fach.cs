@@ -10,7 +10,8 @@ using System.IO.Ports;
 using System.Windows.Forms;
 
 using Hilfsfunktionen;
-
+using Communication_Settings;
+using AutoConnect;
 
 //using ATIM_GUI._2_AutoConnect;
 
@@ -96,8 +97,18 @@ namespace TEC_Controller
             Fill_Registers_without_Values(1);
             Fill_Register_Values(0);
             Fill_Register_Values(1);
-        }
 
+            //Neuen ComPort erstellen
+            MyMeComPhySerialPort[0] = new MeComPhySerialPort()
+            {
+                ReadTimeout = 500,
+            };
+            //Neuen ComPort erstellen
+            MyMeComPhySerialPort[1] = new MeComPhySerialPort()
+            {
+                ReadTimeout = 500,
+            };
+        }
 
         //Einfaches einfügen in Andere Fenster
         public Meerstetter_4fach(Form callingForm, int x, int y)
@@ -115,10 +126,21 @@ namespace TEC_Controller
             Fill_Register_Values(0);
             Fill_Register_Values(1);
 
+            //Neuen ComPort erstellen
+            MyMeComPhySerialPort[0] = new MeComPhySerialPort()
+            {
+                ReadTimeout = 500,
+            };
+            //Neuen ComPort erstellen
+            MyMeComPhySerialPort[1] = new MeComPhySerialPort()
+            {
+                ReadTimeout = 500,
+            };
+
             //In GUI einfügen
             this.Location = new System.Drawing.Point(x, y);
             this.Name = "Meerstetter_4fach";
-            this.Size = new System.Drawing.Size(515, 120);
+            this.Size = new System.Drawing.Size(515, 105);
             this.TabIndex = 30;
 
             //Hinzufügen
@@ -295,18 +317,6 @@ namespace TEC_Controller
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-
-            //Neuen ComPort erstellen
-            MyMeComPhySerialPort[0] = new MeComPhySerialPort()
-            {
-                ReadTimeout = 500,
-            };
-            //Neuen ComPort erstellen
-            MyMeComPhySerialPort[1] = new MeComPhySerialPort()
-            {
-                ReadTimeout = 500,
-            };
-
 
             //Verbindung aufbauen
             try
@@ -2178,7 +2188,7 @@ namespace TEC_Controller
                     UI_MeasuredTemp1.BackColor = Color.Orange;
 
                 if (!TEC_on[2] & !TEC_on[3])
-                    UI_MeasuredTemp1.BackColor = SystemColors.Control;
+                    UI_MeasuredTemp2.BackColor = SystemColors.Control;
                 else
                     UI_MeasuredTemp2.BackColor = Color.Orange;
 
@@ -2259,96 +2269,138 @@ namespace TEC_Controller
         //                                           AutoConnect
         //********************************************************************************************************************
 
-        /*
-    public string AutoOpen(Load_Screen myLoadScreen)
-    {
-        int iterration = 5;
-
-        if (ComPort_select.Text == "")   //Wenn kein Port gewählt ist
+        public void Update_settings(SerialCommunicationDivice myInput)
         {
-            return "TEC controller: No COM-Port selected!" + Environment.NewLine; 
+            int i = -1;
+            if (myInput.Name.Contains("1"))
+            {
+                i = 0;
+                //Combox übernehen
+                HelpFCT.SetComboBox2ComboBox(myInput.comboBox_Port, ComPort_select1);
+            }
+            else if (myInput.Name.Contains("2"))
+            {
+                i = 1;
+                //Combox übernehen
+                HelpFCT.SetComboBox2ComboBox(myInput.comboBox_Port, ComPort_select2);
+            }              
+            //COM-Port eigenschaften übernehmen
+            SerialPort help = myInput.ToSerialPort();
+            MyMeComPhySerialPort[i].Parity = help.Parity;
+            MyMeComPhySerialPort[i].ReadTimeout = help.ReadTimeout;
+            MyMeComPhySerialPort[i].DataBits = help.DataBits;
+            MyMeComPhySerialPort[i].StopBits = help.StopBits;
+            MyMeComPhySerialPort[i].BaudRate = help.BaudRate;
         }
 
-
-
-        //Neuen ComPort erstellen
-        meComPhySerialPort = new MeComPhySerialPort()
+        
+        public string AutoOpen(AutoConnect_Window myLoadScreen)
         {
-            ReadTimeout = 500,
-        };
+            int iterration = 5;
+
+            if (ComPort_select1.Text == "" | ComPort_select2.Text == "")      //Wenn kein Port gewählt ist
+            {
+                return "TEC controller: No COM-Port selected!" + Environment.NewLine; 
+            }
 
 
-        //Verbindung aufbauen
-        try
-        {
-            meComPhySerialPort.OpenWithDefaultSettings(ComPort_select.Text, 57600);
-            TEC_Connection = meComPhySerialPort;
+
+            //Verbindung aufbauen
+            try
+            {
+                MyMeComPhySerialPort[0].OpenWithDefaultSettings(ComPort_select1.Text, 57600);
+                MyMeComPhySerialPort[1].OpenWithDefaultSettings(ComPort_select2.Text, 57600);
+                TEC_Connection[0] = MyMeComPhySerialPort[0];
+                TEC_Connection[1] = MyMeComPhySerialPort[1];
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return "TEC controller: No COM-Port already in use!" + Environment.NewLine;
+            }
+            catch (System.IO.IOException)
+            {
+                return "TEC controller: No COM-Port is not available!" + Environment.NewLine;
+            }
+
+            myLoadScreen.ChangeTask( "Checking device ...", iterration);
+
+            //Abfragen ob richtiges Gerät
+            Int32[] diviceType = { 0, 0 };
+            try
+            {
+                diviceType[0] = ReadValueInt("DeviceType", 1, 0);
+                diviceType[1] = ReadValueInt("DeviceType", 1, 1);
+            }
+            catch (MeComPhyTimeoutException)
+            {
+                MyMeComPhySerialPort[0].Close();
+                MyMeComPhySerialPort[1].Close();
+
+                return "TEC controller: COM Port represents no Meerstetter TEC Controller!" + Environment.NewLine;
+            }
+            catch (ComCommandException)
+            {
+                MyMeComPhySerialPort[0].Close();
+                MyMeComPhySerialPort[1].Close();
+                return "TEC controller : COM Port represents no Meerstetter TEC Controller!" + Environment.NewLine;
+            }
+
+            if (diviceType[0] != 1122)
+            {
+                MyMeComPhySerialPort[0].Close();
+                MyMeComPhySerialPort[1].Close();
+
+                return "TEC controller1: Not Correct Device: TEC - " + diviceType.ToString() + "selected" + Environment.NewLine;
+            }
+
+            if (diviceType[1] != 1122)
+            {
+                MyMeComPhySerialPort[0].Close();
+                MyMeComPhySerialPort[1].Close();
+
+                return "TEC controller2: Not Correct Device: TEC - " + diviceType.ToString() + "selected" + Environment.NewLine;
+            }
+
+            myLoadScreen.ChangeTask("Loading init file ...", iterration);
+
+            //Jetzt ist verbunden
+            IsConnected = true;
+
+            //Alle Daten aus ini-File senden
+            SendRegisters2TEC_Controller(0);
+            SendRegisters2TEC_Controller(1);
+
+            myLoadScreen.ChangeTask( "Change GUI ...", iterration);
+
+
+            //Oberfläche anpassen
+            ComPort_select1.Enabled = false;
+            ComPort_select2.Enabled = false;
+            barButtonItem_Fan.Enabled = true;
+            barButtonItem_OnOff.Enabled = true;
+            UI_TargetTemp.Enabled = true;
+
+            OpenClose.Text = "Close";
+
+            //Eingestellte Temperatur auslesen
+            Target_temp_aver = (GetTargetTemperature(1) + GetTargetTemperature(2) + GetTargetTemperature(3) + GetTargetTemperature(4)) / 4;
+            UI_TargetTemp.Value = (decimal)Target_temp_aver;
+
+
+            //Timer Starten
+            threath_05sec_timer = new Parallel_Thread_TEC();
+            threath_05sec_timer.Event_OnParallelThread += new OnParaThreadHandler(OnThreath_05sec_timer);
+            threath_05sec_timer.timer_05sec.Start();
+
+            //TEC anschalten
+            Switch_Channel_OnOff(true);
+            //Fan anschalten
+            Switch_Fan_OnOff(true);
+
+            return "";
+
         }
-        catch (UnauthorizedAccessException)
-        {
-            return "TEC controller: No COM-Port already in use!" + Environment.NewLine;
-        }
-        catch (System.IO.IOException)
-        {
-            return "TEC controller: No COM-Port is not available!" + Environment.NewLine;
-        }
-
-        myLoadScreen.ChangeTask( "Checking device ...", iterration);
-
-        //Abfragen ob richtiges Gerät
-        Int32 diviceType = 0;
-        try
-        {
-            diviceType = ReadValueInt("DeviceType", 1);
-        }
-        catch (MeComPhyTimeoutException)
-        {
-            meComPhySerialPort.Close();
-            return "TEC controller: COM Port represents no Meerstetter TEC Controller!" + Environment.NewLine;
-        }
-        catch (ComCommandException)
-        {
-            meComPhySerialPort.Close();
-            return "TEC controller: COM Port represents no Meerstetter TEC Controller!" + Environment.NewLine;
-        }
-
-        if (diviceType != 1122)
-        {
-            meComPhySerialPort.Close();
-            return "TEC controller: Not Correct Device: TEC - " + diviceType.ToString() + "selected" + Environment.NewLine;
-        }
-
-        myLoadScreen.ChangeTask("Loading init file ...", iterration);
-
-        //Jetzt ist verbunden
-        IsConnected = true;
-
-        //Alle Daten aus ini-File senden
-        SendRegisters2TEC_Controller();
-
-        myLoadScreen.ChangeTask( "Change GUI ...", iterration);
-
-        //Eingestellte Temperatur auslesen
-        Target_temp_aver = (GetTargetTemperature(1) + GetTargetTemperature(2)) / 2;
-        UI_TargetTemp.Value = (decimal)Target_temp_aver;
-
-        //Oberfläche anpassen
-        ComPort_select.Enabled = false;
-        barButtonItem_Detailed.Enabled = true;
-        Switch_OnOff.Enabled = true;
-        UI_TargetTemp.Enabled = true;
-
-        OpenClose.Text = "Close";
-
-        //Timer Starten
-        threath_05sec_timer = new Parallel_Thread_TEC();
-        threath_05sec_timer.Event_OnParallelThread += new OnParaThreadHandler(OnThreath_05sec_timer);
-        threath_05sec_timer.timer_05sec.Start();
-
-        return "";
-
-    }
-    */
+    
 
 
     }

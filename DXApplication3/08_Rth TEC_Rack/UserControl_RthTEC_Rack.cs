@@ -10,9 +10,11 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Threading;
 
-using ATIM_GUI._2_AutoConnect;
-using ATIM_GUI._7_PowerSupply;
+
 using ATIM_GUI._4_Settings;
+
+using AutoConnect;
+using Power_Supply_HamegHMP;
 
 //using Hameg_HMP_namespace;
 
@@ -53,7 +55,7 @@ namespace _8_Rth_TEC_Rack
         public decimal Gain { get; internal set; } = 2;
 
         private bool HMP_on_GUI = false;
-        public Hameg_HMP usedHMP = null;
+        public PowerSupply_HMP usedHMP = null;
 
         private string str_slot = "0";
         private string str_type = "L";
@@ -665,7 +667,7 @@ namespace _8_Rth_TEC_Rack
         //                                           AutoConnect
         //********************************************************************************************************************
 
-        public string AutoOpen(Load_Screen myLoadScreen)
+        public string AutoOpen(AutoConnect_Window myLoadScreen)
         {
             int iterration = 5;
 

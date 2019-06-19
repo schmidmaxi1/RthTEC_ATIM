@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using System.IO.Ports;
 
 using Hilfsfunktionen;
+using Communication_Settings;
+using AutoConnect;
 
 namespace Power_Supply_HamegHMP
 {
@@ -75,7 +77,7 @@ namespace Power_Supply_HamegHMP
             //In GUI einfügen
             this.Location = new System.Drawing.Point(x, y);
             this.Name = "Hameg HMP 4040";
-            this.Size = new System.Drawing.Size(515, 80);
+            this.Size = new System.Drawing.Size(515, 75);
             this.TabIndex = 30;
 
             //Hinzufügen
@@ -378,68 +380,82 @@ namespace Power_Supply_HamegHMP
         //                                           AutoConnect
         //********************************************************************************************************************
 
-        /*
-    public string AutoOpen(Load_Screen myLoadScreen)
-    {
-        int iterration = 5;
+        #region AutoConnect
 
-        if (ComPort_select.Text == "")   //Wenn kein Port gewählt ist
+        public void Update_settings(SerialCommunicationDivice myInput)
         {
-            return "Power supply: No COM-Port selected!" + Environment.NewLine;
+            //COM-Port eigenschaften übernehmen
+            Serial_Interface = myInput.ToSerialPort();
+
+            //Combox übernehen
+            HelpFCT.SetComboBox2ComboBox(myInput.comboBox_Port, ComPort_select);
+        }
+        
+        /// <summary>
+        /// AutoConnects the HMP4040 Device with Loadscreen change
+        /// </summary>
+        /// <param name="myLoadScreen"> Window with ProgressBar </param>
+        /// <returns></returns>
+        public string AutoOpen(AutoConnect_Window myLoadScreen)
+        {
+            int iterration = 5;
+
+            if (ComPort_select.Text == "")   //Wenn kein Port gewählt ist
+            {
+                return "Power supply: No COM-Port selected!" + Environment.NewLine;
+            }
+
+            //COMPort anpassen
+            Serial_Interface.PortName = ComPort_select.Text;
+
+            //Verbindung herstellen
+            try
+            {
+                Serial_Interface.Open();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return "Power supply: COM_Port is already used" + Environment.NewLine; ;
+            }
+            catch (System.IO.IOException)
+            {
+                return "Power supply: No COM-Port is not available!" + Environment.NewLine; ;
+            }
+
+            myLoadScreen.ChangeTask("Checking device ...", iterration);
+
+            //Abfragen ob Power-Supply
+            Type = Write_N_Read("*IDN?");
+
+            //Checken ob vom richtigen Typ
+            if (!Type.Contains("HMP4040"))
+            {
+                Serial_Interface.Close();
+                return "Power supply: COM Port represents no Hameg HMP power source!" + Environment.NewLine; ;
+            }
+
+            myLoadScreen.ChangeTask("Adjusting GUI ...", iterration);
+
+            //Default Einstellungen setzen
+            //SetDefaultSetup();
+
+            //Oberfläche anpassen
+            IsConnected = true;
+
+            Voltage_Heat.Enabled = true;
+            barButtonItem_Detailed.Enabled = true;
+
+            ComPort_select.Enabled = false;
+
+            button_OpenClose.Text = "Close";
+
+            //Default Einstellungen setzen
+            SetDefaultSetup();
+
+            return "";
         }
 
-        //COMPort anpassen
-        Serial_Interface.PortName = ComPort_select.Text;
-
-        //Verbindung herstellen
-        try
-        {
-            Serial_Interface.Open();
-        }
-        catch (UnauthorizedAccessException)
-        {
-            return "Power supply: COM_Port is already used" + Environment.NewLine; ;
-        }
-        catch (System.IO.IOException)
-        {
-            return "Power supply: No COM-Port is not available!" + Environment.NewLine; ;
-        }
-
-        myLoadScreen.ChangeTask("Checking device ...", iterration);
-
-        //Abfragen ob Power-Supply
-        Type = Write_N_Read("*IDN?");
-
-        //Checken ob vom richtigen Typ
-        if (!Type.Contains("HMP4040"))
-        {
-            Serial_Interface.Close();
-            return "Power supply: COM Port represents no Hameg HMP power source!" + Environment.NewLine; ;
-        }
-
-        myLoadScreen.ChangeTask("Adjusting GUI ...", iterration);
-
-        //Default Einstellungen setzen
-        //SetDefaultSetup();
-
-        //Oberfläche anpassen
-        IsConnected = true;
-
-        Voltage_Heat.Enabled = true;
-        Voltage_Supply.Enabled = true;
-        barButtonItem_Detailed.Enabled = true;
-
-        ComPort_select.Enabled = false;
-
-        OpenClose.Text = "Close";
-
-        //Default Einstellungen setzen
-        SetDefaultSetup();
-
-        return "";
-    }
-    */
-
+        #endregion AutoConnect
 
     }
 }

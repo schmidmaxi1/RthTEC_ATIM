@@ -16,9 +16,9 @@ namespace XYZ_Table
     public partial class Window_XYZ_manuell_drive : Form
     {
 
-        private IXYZ myTable = null;
+        private I_XYZ myTable = null;
 
-        public Window_XYZ_manuell_drive(IXYZ callingTable)
+        public Window_XYZ_manuell_drive(I_XYZ callingTable)
         {
             myTable = callingTable;
             InitializeComponent();

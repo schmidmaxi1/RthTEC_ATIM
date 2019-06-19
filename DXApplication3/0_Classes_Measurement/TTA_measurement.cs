@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-using ATIM_GUI._05_XYZ;
 using System.IO;
+using XYZ_Table;
 
 namespace ATIM_GUI._0_Classes_Measurement
 {
@@ -18,7 +18,7 @@ namespace ATIM_GUI._0_Classes_Measurement
 
         public RthTEC_Rack MyRack { get; set; }
         public DAQ_Unit MyDAQ { get; set; }
-        public XYZ_table MyXYZ { get; set; }
+        public I_XYZ MyXYZ { get; set; }
         public ATIM_MainWindow GUI { get; set; }
         public decimal[,] MyMovement { get; set; }
 

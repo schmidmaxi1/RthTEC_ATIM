@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Hilfsfunktionen;
+using Communication_Settings;
+using AutoConnect;
 
 namespace XYZ_Table
 {
-    public partial class ISEL_3Axis : UserControl, IXYZ
+    public partial class ISEL_3Axis : UserControl, I_XYZ
     {
 
         //********************************************************************************************************************
@@ -83,11 +85,20 @@ namespace XYZ_Table
             //In GUI einfügen
             this.Location = new System.Drawing.Point(x, y);
             this.Name = "ISEL_3Axis";
-            this.Size = new System.Drawing.Size(515, 80);
+            this.Size = new System.Drawing.Size(515, 75);
             this.TabIndex = 33;
 
             //Hinzufügen
             callingForm.Controls.Add(this);
+        }
+
+        //Change Enable Status form MainForm
+        public void Change_Enabled(Boolean input)
+        {
+            groupBox_XYZ.Invoke((MethodInvoker)delegate
+            {
+                groupBox_XYZ.Enabled = input;
+            });
         }
 
         //********************************************************************************************************************
@@ -467,9 +478,19 @@ namespace XYZ_Table
             }
         }
 
+
         #region AutoOpen
 
-        /*public override string AutoOpen(Load_Screen myLoadScreen)
+        public void Update_settings(SerialCommunicationDivice myInput)
+        {
+            //COM-Port eigenschaften übernehmen
+            MyISEL.Serial_Interface = myInput.ToSerialPort();
+
+            //Combox übernehen
+            HelpFCT.SetComboBox2ComboBox(myInput.comboBox_Port, ComPort_select);
+        }
+
+        public string AutoOpen(AutoConnect_Window myLoadScreen)
         {
 
             //Schritte zum Hochzählen
@@ -481,12 +502,12 @@ namespace XYZ_Table
             }
 
             //COMPort anpassen
-            Serial_Interface.PortName = ComPort_select.Text;
+            MyISEL.Serial_Interface.PortName = ComPort_select.Text;
 
             //Verbindung herstellen
             try
             {
-                Serial_Interface.Open();
+                MyISEL.Serial_Interface.Open();
             }
             catch (UnauthorizedAccessException)
             {
@@ -500,14 +521,14 @@ namespace XYZ_Table
             myLoadScreen.ChangeTask("Checking device ...", iterration);
 
             //UserInfo Abfragen (ob es sich um einen XYZ Tisch handelt)
-            UserInfo = this.SendMessage_withAnswer("@0U");
+            UserInfo = this.MyISEL.SendMessage_withAnswer("@0U");
 
             //Überprüfen
             if (UserInfo.IndexOf("UserInfo") > 0)
                 IsConnected = true;
             else
             {
-                Serial_Interface.Close();
+                MyISEL.Serial_Interface.Close();
                 return "XYZ table: COM Port represents no XYZ table!" + Environment.NewLine;
             }
 
@@ -558,8 +579,7 @@ namespace XYZ_Table
 
             return "";
         }
-        */
-
+        
         #endregion AutoOpen
     }
 }

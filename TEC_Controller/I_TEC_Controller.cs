@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Communication_Settings;
+using AutoConnect;
+
 namespace TEC_Controller
 {
     public interface I_TEC_Controller
@@ -28,7 +31,9 @@ namespace TEC_Controller
 
         void Change_Enabled(Boolean input);
 
-        //string AutoOpen(Load_Screen myLoadScreen);
+        void Update_settings(SerialCommunicationDivice myInput);
+
+        string AutoOpen(AutoConnect_Window myLoadScreen);
 
     }
 }

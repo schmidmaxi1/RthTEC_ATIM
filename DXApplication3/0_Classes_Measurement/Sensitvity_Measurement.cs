@@ -8,13 +8,11 @@ using System.Windows.Forms;
 
 using System.IO;
 
-
-using ATIM_GUI._6_TempPlatte;
 using _8_Rth_TEC_Rack;
-using ATIM_GUI._05_XYZ;
 using ATIM_GUI._09_DAQ_Unit;
 
 using TEC_Controller;
+using XYZ_Table;
 
 namespace ATIM_GUI._0_Classes_Measurement
 {
@@ -34,7 +32,7 @@ namespace ATIM_GUI._0_Classes_Measurement
         public DAQ_Unit MySpectrum { get; set; }
         //public TEC_Meerstetter MyTEC { get; set; }
         public I_TEC_Controller MyTEC { get; set; }
-        public XYZ_table MyXYZ { get; set; }
+        public I_XYZ MyXYZ { get; set; }
 
         //Main Window
         public ATIM_MainWindow GUI { get; set; }

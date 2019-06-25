@@ -5,11 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 using DAQ_Units;
 using XYZ_Table;
 
 using _8_Rth_TEC_Rack;
+
+using Read_Coordinates;
 
 namespace ATIM_GUI._01_TTA
 {
@@ -24,7 +27,6 @@ namespace ATIM_GUI._01_TTA
         public I_DAQ MyDAQ { get; set; }
         public I_XYZ MyXYZ { get; set; }
         public ATIM_MainWindow GUI { get; set; }
-        public decimal[,] MyMovement { get; set; }
 
         public short[,] Binary_Raw_Files { get; set; }
 
@@ -45,9 +47,12 @@ namespace ATIM_GUI._01_TTA
         private static long Puffer_Messpunkte { get; } = 5; //Messpunkte vor eigentlichem Signal
         private static long Max_daten_dichte { get; } = 2000;
 
+
         //Datei-Namen usw.
         public string Output_File_Name { get; internal set; }
         public string Output_File_Folder { get; internal set; }
+
+        public Movement_Infos MyMovement {get; internal set;}
 
         //********************************************************************************************************************
         //                                           Konstruktor
@@ -96,7 +101,12 @@ namespace ATIM_GUI._01_TTA
                     return false;
 
                 //Puls starten (bei NI mit Warten sonst ohne)
-                MyRack.SinglePuls_withoutDelay();
+                //MyRack.SinglePuls_withoutDelay();
+
+                MyRack.SinglePuls_withDelay();
+
+                Thread.Sleep(300);
+
 
                 //Daten abholen
                 if (!MyDAQ.TTA_Collect_Data(Binary_Raw_Files, repetation_nr))
@@ -113,8 +123,11 @@ namespace ATIM_GUI._01_TTA
             }
 
             //DatenSatz auswerten
-            Convert_Data();
+            if (!Convert_Data())
+                return false;
 
+
+          
             //Speicher lösen
             MyDAQ.TTA_free_Storage(Binary_Raw_Files);
 
@@ -163,9 +176,9 @@ namespace ATIM_GUI._01_TTA
             Meas_to_End = new long[MyRack.Cycles];
 
             //Suchkriterien definiern
-            decimal schwelle_in_mV = MyDAQ.Trigger_Level_UI * 1000;
+            decimal schwelle_in_mV = MyDAQ.Trigger_Level_in_V * 1000;
 
-            short schwelle_in_Bit = (short)((schwelle_in_mV - MyRack.U_offset) / MyDAQ.Range * (decimal)Math.Pow(2, 15));
+            short schwelle_in_Bit = (short)((schwelle_in_mV) / MyDAQ.Range * (decimal)Math.Pow(2, 15));
             short hysterese = 3000;
 
             //Umschaltpunkte finden
@@ -532,7 +545,7 @@ namespace ATIM_GUI._01_TTA
             return
                 "#################################################################################" + newLine +
                 "#Time Stamp:       " + DateTime.Now.ToString("dd.MM.yyyy   HH:mm:ss") + newLine +
-                "#Equipment:        " + GUI.rthTEC_Rack1.DeviceType + " & " + GUI.DAQ_Unit.Name + newLine +
+                "#Equipment:        " + GUI.rthTEC_Rack1.DeviceType + " & " + /*GUI.DAQ_Unit.Name +*/ newLine +
                 "#Datei-Typ:        " + typ + newLine +
                 "#I_heat_current:   " + GUI.rthTEC_Rack1.I_Heat.ToString() + " mA" + newLine +
                 "#t_heat_puls:      " + GUI.rthTEC_Rack1.Time_Heat.ToString() + " ms" + newLine +
@@ -540,7 +553,7 @@ namespace ATIM_GUI._01_TTA
                 "#I_meas_current:   " + GUI.rthTEC_Rack1.I_Meas.ToString() + " mA" + newLine +
                 "#t_meas_puls:      " + GUI.rthTEC_Rack1.Time_Meas.ToString() + " ms" + newLine +
                 "#V_meas_voltage:   " + Calculate_MeasVoltage(out decimal my_VMeas) + newLine +
-                "#f_sampling:       " + GUI.DAQ_Unit.Frequency.ToString() + " Hz" + newLine +
+                "#f_sampling:       " + GUI.myDAQ.Frequency.ToString() + " Hz" + newLine +
                 "#Sensitivity:      " + Sensitiviy_from_File() + newLine +
                 "#Temperature:      " + Generate_Temperature_String() + newLine +
                 "#Power-Step:       " + CalculatePowerStep(my_VHeat, my_VMeas) + newLine +

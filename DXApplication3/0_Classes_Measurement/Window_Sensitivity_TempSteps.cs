@@ -96,7 +96,7 @@ namespace ATIM_GUI._0_Classes_Measurement
             if (dialogResult == DialogResult.Yes)
             {
                 //Return Temp-List
-                mainForm.mySensitivity.TempSteps = temperaturen;
+                mainForm.mySensitivity_new.TempSteps = temperaturen;
 
                 //Close window
                 this.Close();

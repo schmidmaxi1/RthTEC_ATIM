@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_GUI = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_Gerber = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GUI)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox2
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(474, 5);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.pictureBox_GUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox_GUI.Location = new System.Drawing.Point(474, 5);
+            this.pictureBox_GUI.Name = "pictureBox2";
+            this.pictureBox_GUI.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox_GUI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_GUI.TabIndex = 11;
+            this.pictureBox_GUI.TabStop = false;
             // 
             // label3
             // 
@@ -71,12 +71,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox_GUI);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_Gerber);
             this.Name = "ReadBox_Movement";
             this.Size = new System.Drawing.Size(500, 30);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GUI)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -84,7 +84,7 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox_GUI;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox textBox_Gerber;
     }

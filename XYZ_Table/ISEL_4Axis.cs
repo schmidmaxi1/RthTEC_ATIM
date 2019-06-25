@@ -47,7 +47,7 @@ namespace XYZ_Table
         public decimal Grenze_Y_pos { get; set; } = 259;
         public decimal Grenze_Y_neg { get; internal set; } = 0;
         public decimal Grenze_Z_pos { get; set; } = 0;
-        public decimal Grenze_Z_neg { get; set; } = -100;
+        public decimal Grenze_Z_neg { get; set; } = -120;
         public decimal Grenze_A_pos { get; set; } = 360;
         public decimal Grenze_A_neg { get; set; } = 0;
 
@@ -263,11 +263,24 @@ namespace XYZ_Table
                 Akt_z_Koordinate = ISEL.HexString_to_Decimal(position_Z_Teil) / (Schritt_pro_umdrehung_Linear / Spindel_steigug);
                 Akt_Winkel = ISEL.HexString_to_Decimal(position_W_Teil) / (Schritt_pro_umdrehung_Rotation / Untersetzung_Rotation);
 
-                akt_Position.Text =
-                    "X: " + Akt_x_Koordinate.ToString() + "mm; " +
-                    "Y: " + Akt_y_Koordinate.ToString() + "mm; " +
-                    "Z: " + Akt_z_Koordinate.ToString() + "mm; " +
-                    "A: " + Akt_Winkel.ToString() + "°; ";
+                //GUI Element updaten, bei bedarf mit Invoke (aus anderm Thread)
+                if (akt_Position.InvokeRequired)
+                {
+                    akt_Position.Invoke((MethodInvoker)delegate
+                    {
+                        akt_Position.Text =
+                        "X: " + Akt_x_Koordinate.ToString() + "mm; " +
+                        "Y: " + Akt_y_Koordinate.ToString() + "mm; " +
+                        "Z: " + Akt_z_Koordinate.ToString() + "mm; " +
+                        "A: " + Akt_Winkel.ToString() + "°; ";
+                    });
+                }
+                else
+                    akt_Position.Text =
+                        "X: " + Akt_x_Koordinate.ToString() + "mm; " +
+                        "Y: " + Akt_y_Koordinate.ToString() + "mm; " +
+                        "Z: " + Akt_z_Koordinate.ToString() + "mm; " +
+                        "A: " + Akt_Winkel.ToString() + "°; ";
             }
             else
             {

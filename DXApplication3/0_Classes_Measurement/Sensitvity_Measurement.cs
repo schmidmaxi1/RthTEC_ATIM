@@ -170,7 +170,8 @@ namespace ATIM_GUI._0_Classes_Measurement
                         Temperature = TempSteps[Counter_TempStep]
                     });
 
-                    GUI.Update_Voltage_Plot_for_Sensitivity(this);
+                    //Rausgeschmissen weil Funktion nicht mehr vorhanden
+                    //GUI.Update_Voltage_Plot_for_Sensitivity(this);
 
                     //Drive XYZ up
                     MyXYZ.MoveADistance(0, 0, 25, 0);
@@ -316,7 +317,9 @@ namespace ATIM_GUI._0_Classes_Measurement
                     //add Data to Series (Generate Name --> Add to Series --> Update plat)
                     //string name = "LED Nr. " + (akt_DUT_Nr).ToString("#0");
                     //AsyncChart_kFactor_Voltage(name, my_kFactor_Measurement.tempSteps[akt_Temp_Nr], my_kFactor_Measurement.voltageValues[akt_DUT_Nr - 1, akt_Temp_Nr]);
-                    GUI.Update_Voltage_Plot_for_Sensitivity(this);
+
+                    //Rausgeschmissen weil Funktion nicht mehr vorhanden
+                    //GUI.Update_Voltage_Plot_for_Sensitivity(this);
 
                     //Drive XYZ up
                     //GUI.xyZ_table1.MoveADistance(0, 0, -xyz_Tisch.anfahrt_z);
@@ -555,7 +558,8 @@ namespace ATIM_GUI._0_Classes_Measurement
                 Data_MeasurementMarker[i] = new List<Sensitivity_DataPoint_Temperature>();
 
             //Alle Serien zuweisen
-            GUI.Add_Series_to_Data(this);
+            //Rausgeschmissen weil Funktion nicht mehr vorhanden
+            //GUI.Add_Series_to_Data(this);
 
             //Threath neu erstellen
             thread_Temp_Plotting = new Sensitivity_Parallel_Thread();
@@ -592,7 +596,8 @@ namespace ATIM_GUI._0_Classes_Measurement
             }
 
             //Daten updaten
-            GUI.Update_Temperature_Plot_for_Sensitivity(this);
+            //Rausgeschmissen weil Funktion nicht mehr vorhanden
+            //GUI.Update_Temperature_Plot_for_Sensitivity(this);
         }
 
         #endregion Timer

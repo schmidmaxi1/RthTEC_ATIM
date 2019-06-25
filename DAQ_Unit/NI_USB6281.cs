@@ -31,8 +31,8 @@ namespace DAQ_Units
         public Boolean IsConnected { get; internal set; } = false;
 
         //Mess-Parameter
-        public long Range { get;  set; } = 1000;
-        public string[] RangeList { get; } = 
+        public long Range { get; set; } = 1000;
+        public string[] RangeList { get; } =
             {
                 "+/- 100mV",
                 "+/- 200mV",
@@ -43,7 +43,7 @@ namespace DAQ_Units
                 "+/- 10V"
             };
 
-        public long Frequency { get;  set; } = 500000;
+        public long Frequency { get; set; } = 500000;
         public string[] FrequencyList { get; } =
             {
                 "500kHz",
@@ -51,7 +51,9 @@ namespace DAQ_Units
                 "100kHz",
             };
 
-        public long Trigger_Level_UI { get; internal set; }
+        
+        public decimal Trigger_Level_in_V { get; internal set; }
+        //private double Trigger_Level_in_V_double { get; internal set; }
 
         //Log
         public string Communication_LOG { get; internal set; }
@@ -65,7 +67,7 @@ namespace DAQ_Units
 
         private NationalInstruments.DAQmx.Task myTask_NI;
 
- 
+
 
         //Übergabe-Parameter für NI-Karte definieren
         private IAsyncResult uebergabe_parameter_ReadWaveform = null;
@@ -108,6 +110,12 @@ namespace DAQ_Units
             {
                 groupBox1.Enabled = input;
             });
+        }
+
+        public void Change_ADR(string adr)
+        {
+            //ComboBox übernehmen
+            Channel_select.SelectedItem = adr;
         }
 
         //********************************************************************************************************************
@@ -165,7 +173,7 @@ namespace DAQ_Units
         public bool TTA_set_Trigger(decimal frontend_gain, decimal forntend_offset)//RthTEC_Rack myRackSettings)
         {
             //Trigger berechnen
-            Trigger_Level_UI = (long)decimal.ToDouble((Voltage_Trigger.Value - forntend_offset / 1000) * frontend_gain);
+            Trigger_Level_in_V = (Voltage_Trigger.Value - forntend_offset / 1000) * frontend_gain;
             return true;
         }
 
@@ -208,10 +216,10 @@ namespace DAQ_Units
                 //---------------------------------------------------------------------------------
                 //source As String: Herkuft des Triggers. Hier gleich wie Daten (Dev1/ai3)
                 //slope As AnalogEdgeStartTriggerSlope: Rising or Falling
-                //level As Double: Trigger Level (vorher bestimmt
+                //level As Double: Trigger Level (vorher bestimmt) im mV
                 //---------------------------------------------------------------------------------
                 myTask_NI.Triggers.StartTrigger.ConfigureAnalogEdgeTrigger(Channel_Name,
-                    AnalogEdgeStartTriggerSlope.Rising, Trigger_Level_UI);
+                    AnalogEdgeStartTriggerSlope.Rising, (double)Trigger_Level_in_V);
 
 
                 //Hysterese festlegen (keine Ahnung ob das Wichtig ist)
@@ -291,7 +299,7 @@ namespace DAQ_Units
 
         #region Sensitivity
 
-        public bool Sensitivity_Set_Device()
+        public bool Sensitivity_Set_Device(short[] array, long nr_of_samples)
         {
             //Nothing to do here
             //Task is done in "Sensitivity_Measure_and_Collect_Data"

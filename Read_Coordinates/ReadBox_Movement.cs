@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.IO;
+using System.Globalization;
+using System.Threading;
 
 namespace Read_Coordinates
 {
@@ -18,18 +20,42 @@ namespace Read_Coordinates
         //                                          Variablen
         //**************************************************************************************************
 
+        /// <summary>
+        /// Local Mofment Infos form File
+        /// </summary>
+        public Movement_Infos MyMovementInfo { get; internal set; }
+
+
+        private string MyPath { get;  set; }
+
+        //Ab hier kann weg
+
+        /*
         public Boolean IsCorect { get; internal set; } = false;
+
         public decimal[,] Movements_XYA { get; internal set; }
         public string[] DUT_Name { get; internal set; }
-        public string MyPath { get; internal set; }
+
+        public Measurement_Point_XYZA[] MyMeasurment_Point { get; internal set; }
+
+        public decimal BRD_Dimension_X { get; internal set; } = Decimal.MinValue;
+        public decimal BRD_Dimension_Y { get; internal set; } = Decimal.MinValue;
+
+        public PointF[] Feducials { get; internal set; } = new PointF[3];
+        public PointF QR_Code { get; internal set; }
+
+        public decimal TouchDown_Hight { get; internal set; } = Decimal.MinValue;
+        public decimal Driving_Hight { get; internal set; } = Decimal.MinValue;
+        */
+
 
         //**************************************************************************************************
         //                                    Hinterlegte Bilder
         //**************************************************************************************************
 
-        Image picture_Check = Properties.Resources.Apply_16x16;
-        Image picture_False = Properties.Resources.Delete_16x16;
-        Image picture_Warning = Properties.Resources.Warning_16x16;
+        static readonly Image picture_Check = Properties.Resources.Apply_16x16;
+        static readonly Image picture_False = Properties.Resources.Delete_16x16;
+        static readonly Image picture_Warning = Properties.Resources.Warning_16x16;
 
         //**************************************************************************************************
         //                                         Konstruktor
@@ -37,14 +63,17 @@ namespace Read_Coordinates
 
         public ReadBox_Movement()
         {
+            //Punkt statt Komma
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-Us");
+
             InitializeComponent();
-            pictureBox2.Image = picture_False;
+            pictureBox_GUI.Image = picture_False;
         }
 
         public ReadBox_Movement(Form callingForm, int x, int y)
         {
             InitializeComponent();
-            pictureBox2.Image = picture_False;
+            pictureBox_GUI.Image = picture_False;
 
             //In GUI einfügen
             this.Location = new System.Drawing.Point(x, y);
@@ -64,8 +93,15 @@ namespace Read_Coordinates
         {
             //Pfad übernehmen
             MyPath = textBox_Gerber.Text;
-            //Movement Informations berechnen
-            Calculate_Movement_from_ASCII_File();
+
+            MyMovementInfo = new Movement_Infos(MyPath);
+
+            //Wenn Korrekt dann Hacken in Bild, sonst Ausrufenzeichen
+            if (MyMovementInfo.IsCorect)
+                pictureBox_GUI.Image = picture_Check;
+            else
+                pictureBox_GUI.Image = picture_Warning;
+
         }
 
         private void TextBox_Gerber_DoubleClick(object sender, EventArgs e)
@@ -75,7 +111,7 @@ namespace Read_Coordinates
             {
                 Multiselect = false,
                 Title = "Select driving file",
-                InitialDirectory = "C:\\Users\\schmidm\\Desktop\\ATIM_Software\\2_DrivingFiles",
+                InitialDirectory = "C:\\Users\\schmidm\\Desktop\\ATIM_GIT\\2_DrivingFiles_neu",
                 Filter = "Driving files(*.txt)|*.txt|All files(*.*)|*.*",
                 FilterIndex = 0,
                 RestoreDirectory = false
@@ -88,68 +124,6 @@ namespace Read_Coordinates
             }
         }
 
-        //**************************************************************************************************
-        //                                      Lokale Funktion
-        //**************************************************************************************************
 
-        #region Local_Functions
-
-        private void Calculate_Movement_from_ASCII_File()
-        {
-            try
-            {
-                //Read all single Lines
-                string[] datei_Inhalt = File.ReadAllLines(MyPath);
-
-                //Kommentar-Zeilen (Beginnend mit # löschen)
-                //oder leere zeile enferen
-                for (int i = 0; i < datei_Inhalt.Length; i++)
-                {
-                    //Leerzeichen entfernen
-                    datei_Inhalt[i].Trim();
-                    //Prüfen
-                    if (datei_Inhalt[i].StartsWith("#") | String.IsNullOrEmpty(datei_Inhalt[i]))
-                    {
-                        datei_Inhalt = datei_Inhalt.Where(w => w != datei_Inhalt[i]).ToArray();
-                        i--;
-                    }
-                }
-
-                //Feld definieren
-                Movements_XYA = new decimal[datei_Inhalt.Length, 3];
-                DUT_Name = new string[datei_Inhalt.Length];
-
-                //Daten herauslösen
-                for (int i = 0; i < datei_Inhalt.Length; i++)
-                {
-                    int index_first_komma = datei_Inhalt[i].IndexOf(';', 0);
-                    int index_second_komma = datei_Inhalt[i].IndexOf(';', index_first_komma + 1);
-                    int index_third_komma = datei_Inhalt[i].IndexOf(';', index_second_komma + 1);
-
-                    Movements_XYA[i, 0] = Convert.ToDecimal(datei_Inhalt[i].Substring(0, index_first_komma));
-                    Movements_XYA[i, 1] = Convert.ToDecimal(datei_Inhalt[i].Substring(index_first_komma + 1, index_second_komma - index_first_komma - 1));
-                    Movements_XYA[i, 2] = Convert.ToDecimal(datei_Inhalt[i].Substring(index_second_komma + 1, index_third_komma - index_second_komma - 1));
-
-                    if (!String.IsNullOrEmpty((datei_Inhalt[i].Substring(index_third_komma + 1))))
-                        DUT_Name[i] = datei_Inhalt[i].Substring(index_third_komma + 1);
-                    else
-                        DUT_Name[i] = (i + 1).ToString();
-
-                }
-
-                //Wenn keine Exeption aufgetretten dann Correct
-                IsCorect = true;
-                pictureBox2.Image = picture_Check;
-            }
-            catch (Exception)
-            {
-                IsCorect = false;
-
-                pictureBox2.Image = picture_Warning;
-            }
-
-        }
-
-        #endregion Local_Functions
     }
 }

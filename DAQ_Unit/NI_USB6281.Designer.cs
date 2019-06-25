@@ -112,7 +112,7 @@
             this.Voltage_Trigger.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.Voltage_Trigger.UpDownAlign = System.Windows.Forms.LeftRightAlignment.Left;
             this.Voltage_Trigger.Value = new decimal(new int[] {
-            25,
+            28,
             0,
             0,
             65536});
@@ -128,12 +128,12 @@
             this.label1.TabIndex = 45;
             this.label1.Text = "Selected Channel:";
             // 
-            // ComPort_select
+            // Channel_select
             // 
             this.Channel_select.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Channel_select.FormattingEnabled = true;
             this.Channel_select.Location = new System.Drawing.Point(120, 34);
-            this.Channel_select.Name = "ComPort_select";
+            this.Channel_select.Name = "Channel_select";
             this.Channel_select.Size = new System.Drawing.Size(90, 21);
             this.Channel_select.TabIndex = 44;
             // 

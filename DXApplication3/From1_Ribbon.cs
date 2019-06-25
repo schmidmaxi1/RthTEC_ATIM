@@ -55,10 +55,10 @@ namespace ATIM_GUI
 
         private void RibbonButton_Save_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            myTTA.Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath;
-            myTTA.Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName;
+            myTTA_new.Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath;
+            myTTA_new.Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName;
 
-            myTTA.Save_AllFiles();
+            myTTA_new.Save_AllFiles();
         }
 
         #endregion RibbonButtons
@@ -90,11 +90,10 @@ namespace ATIM_GUI
 
 
             //Spectrum
-            myAutoConnect_Window.ChangeAll_newValue("Spectrum DAQ ...", "Starting Connection ...", 20);
+            myAutoConnect_Window.ChangeAll_newValue("DAQ-Unit ...", "Starting Connection ...", 20);
 
-            if (!DAQ_Unit.IsConnected)
-                //errorText += DAQ_Unit.AutoOpen(myAutoConnect_Window);
-                errorText += "DAQ fehlt.";
+            if (!myDAQ.IsConnected)
+                errorText += myDAQ.AutoOpen(myAutoConnect_Window);
 
             //TEC Controller
             myAutoConnect_Window.ChangeAll_newValue("TEC Controller ...", "Starting Connection ...", 40);
@@ -157,7 +156,7 @@ namespace ATIM_GUI
             {
                 if (element.Name.IndexOf("DAQ") >= 0)
                 {
-                    DAQ_Unit.VISA_or_Channel_Name = element.textBox_IP.Text;
+                    myDAQ.Change_ADR(element.textBox_IP.Text);
                 }
             }
 
@@ -165,7 +164,7 @@ namespace ATIM_GUI
             {
                 if (element.Name.IndexOf("DAQ") >= 0)
                 {
-                    DAQ_Unit.ComPort_select.Text = element.comboBox_Channel.Text;
+                    myDAQ.Change_ADR(element.comboBox_Channel.Text);                    
                 }
             }
 

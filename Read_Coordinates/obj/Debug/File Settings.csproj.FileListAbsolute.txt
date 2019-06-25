@@ -1,6 +1,7 @@
 C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\bin\Debug\Read_Coordinates.exe.config
 C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\bin\Debug\Read_Coordinates.exe
 C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\bin\Debug\Read_Coordinates.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\File Settings.csprojAssemblyReference.cache
 C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\Read_Coordinates.FileSettings_Box.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\Read_Coordinates.Form_ReadCoordinates.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\Read_Coordinates\obj\Debug\Read_Coordinates.Properties.Resources.resources

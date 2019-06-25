@@ -264,6 +264,10 @@
   <ItemGroup>
     <Compile Include="01_TTA\TTA_DataPoint.cs" />
     <Compile Include="01_TTA\TTA_measurement_new.cs" />
+    <Compile Include="02_Sensitivity\Sensitivity_DataPoint_Temperature.cs" />
+    <Compile Include="02_Sensitivity\Sensitivity_DataPoint_Voltage.cs" />
+    <Compile Include="02_Sensitivity\Sensitivity_Measurement_new.cs" />
+    <Compile Include="02_Sensitivity\Sensitivity_Parallel_Thread.cs" />
     <Compile Include="09_DAQ_Unit\DAQ_Unit.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -500,9 +504,7 @@
       <Name>XYZ_Table</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="02_Sensitivity\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -97,7 +97,10 @@ using ATIM_GUI._0_Classes_Measurement;
 using ATIM_GUI._3_Project;
 using ATIM_GUI._4_Settings;
 
+using ATIM_GUI._01_TTA;
+using ATIM_GUI._02_Sensitivity;
 
+using DAQ_Units;
 using Power_Supply_HamegHMP;
 using TEC_Controller;
 using XYZ_Table;
@@ -121,10 +124,11 @@ namespace ATIM_GUI
         public _09_DAQ_Unit.DAQ_Unit DAQ_Unit;
         public DXApplication3._10_Camera.Camera_Gerber camera_Gerber1;
 
-        //Devices new
+        //Devices new (müssen alles Interfaces sein für Varibilität)
         public PowerSupply_HMP myPowerSupply;
         public I_TEC_Controller myTEC;
         public I_XYZ myXYZ;
+        public I_DAQ myDAQ;
 
         public FileSettings_Box myFileSetting;
 
@@ -137,8 +141,10 @@ namespace ATIM_GUI
         public BackgroundWorker myBackroundWorker = null;
 
         public Sensitvity_Measurement mySensitivity;
+        public Sensitivity_Measurement_new mySensitivity_new;
 
         public TTA_measurement myTTA;
+        public TTA_measurement_new myTTA_new;
 
         //**************************************************************************************************
         //                                          Init
@@ -214,7 +220,8 @@ namespace ATIM_GUI
                 if (ethernetDevice.Name.Contains("DAQ"))
                 {
                     if (ethernetDevice.Name.Contains("Spectrum"))
-                        DAQ_Unit = new ATIM_GUI._09_DAQ_Unit.Spectrum();
+                        //DAQ_Unit = new ATIM_GUI._09_DAQ_Unit.Spectrum();
+                        myDAQ = new Spectrum30MHz(this, 10, 500);
                 }
             }
 
@@ -223,7 +230,8 @@ namespace ATIM_GUI
                 if (NIDevice.Name.Contains("DAQ"))
                 {
                     if (NIDevice.Name.Contains("NI-USB6281"))
-                        DAQ_Unit = new ATIM_GUI._09_DAQ_Unit.NI_USB6281();
+                        //DAQ_Unit = new ATIM_GUI._09_DAQ_Unit.NI_USB6281();
+                        myDAQ = new NI_USB6281(this, 10, 500);
                 }
             }
 
@@ -236,21 +244,23 @@ namespace ATIM_GUI
             // 
             // rthTEC_Rack1
             // 
-            this.rthTEC_Rack1.Location = new System.Drawing.Point(10, 500);
+            this.rthTEC_Rack1.Location = new System.Drawing.Point(10, 680);
             this.rthTEC_Rack1.Name = "rthTEC_Rack1";
             this.rthTEC_Rack1.Size = new System.Drawing.Size(250, 452);
             this.rthTEC_Rack1.TabIndex = 7;
             // 
             // DAQ-Unit
             // 
+            /*
             this.DAQ_Unit.Location = new System.Drawing.Point(270, 620);
             this.DAQ_Unit.Name = "spectrum1";
             this.DAQ_Unit.Size = new System.Drawing.Size(250, 160);
             this.DAQ_Unit.TabIndex = 9;
+            */
             // 
             // camera_Gerber1
             // 
-            this.camera_Gerber1.Location = new System.Drawing.Point(10, 980);
+            this.camera_Gerber1.Location = new System.Drawing.Point(10, 575);
             this.camera_Gerber1.Name = "camera_Gerber1";
             this.camera_Gerber1.Size = new System.Drawing.Size(521, 207);
             this.camera_Gerber1.TabIndex = 13;
@@ -258,7 +268,7 @@ namespace ATIM_GUI
             #endregion Variablen_Setting
 
             this.Controls.Add(this.rthTEC_Rack1);
-            this.Controls.Add(this.DAQ_Unit);
+            //this.Controls.Add(this.DAQ_Unit);
             this.Controls.Add(this.camera_Gerber1);
 
             //Auto-Setting schließen
@@ -271,14 +281,12 @@ namespace ATIM_GUI
         public void Adopt_Measurement_settings()
         {
             rthTEC_Rack1.AutoSettings(this.mySettings);
-            DAQ_Unit.AutoSettings(this.mySettings);
+            //DAQ_Unit.AutoSettings(this.mySettings);
 
             myFileSetting.readBox_FileFolder1.textBox_FileName.Text = this.mySettings.Save_FileName;
             myFileSetting.readBox_FileFolder1.textBox_Path.Text = this.mySettings.Save_Folder;
             myFileSetting.readBox_Movement1.textBox_Gerber.Text = this.mySettings.GerberFile_Path;         
         }
-
-
 
         //**************************************************************************************************
         //                          Oberfläche aktivieren/ deaktivieren                              (check)
@@ -292,7 +300,7 @@ namespace ATIM_GUI
             myXYZ.Change_Enabled(false);           
             myPowerSupply.Change_Enabled(false);
             myTEC.Change_Enabled(false);
-            DAQ_Unit.Change_Enabled(false);
+            myDAQ.Change_Enabled(false);
             camera_Gerber1.Change_Enabled(false);
             rthTEC_Rack1.Change_Enabled(false);
 
@@ -312,7 +320,7 @@ namespace ATIM_GUI
             myXYZ.Change_Enabled(true);
             myPowerSupply.Change_Enabled(true);
             myTEC.Change_Enabled(true);
-            DAQ_Unit.Change_Enabled(true);
+            myDAQ.Change_Enabled(true);
             camera_Gerber1.Change_Enabled(true);
             rthTEC_Rack1.Change_Enabled(true);
 
@@ -336,7 +344,6 @@ namespace ATIM_GUI
         }
 
         #endregion Oberfläche deaktivieren
-
 
         //**************************************************************************************************
         //                                       Resize                                              (check)

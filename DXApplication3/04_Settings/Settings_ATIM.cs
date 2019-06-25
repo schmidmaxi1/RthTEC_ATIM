@@ -30,7 +30,7 @@ namespace ATIM_GUI._4_Settings
         public UInt16 Temperature_SEN_Step { get; set; }
 
         //Eigenschaften Save
-        public bool Save_Aver_Cool { get; set; }
+        public bool Save_Aver_Cool { get; set; } = true;
         public bool Save_Aver_Heat { get; set; }
         public bool Save_Signle_Cool { get; set; }
         public bool Save_Single_Heat { get; set; }

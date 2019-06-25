@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Coordinate_XYZA.cs" />
     <Compile Include="FileSettings_Box.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -58,6 +59,7 @@
     <Compile Include="Form_ReadCoordinates.Designer.cs">
       <DependentUpon>Form_ReadCoordinates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movement_Infos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadBox_FileFolder.cs">

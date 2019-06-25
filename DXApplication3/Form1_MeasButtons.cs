@@ -5,8 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Windows.Forms;
 
 using ATIM_GUI._0_Classes_Measurement;
+
+using ATIM_GUI._01_TTA;
+using ATIM_GUI._02_Sensitivity;
 
 namespace ATIM_GUI
 {
@@ -27,6 +31,58 @@ namespace ATIM_GUI
 
         #region Z_th
 
+        private void Button_Zth_signle_Click(object sender, EventArgs e)
+        {
+            //TTA-Mess-Klasse erzeugen und Geräte übergeben
+            myTTA_new = new TTA_measurement_new()
+            {
+                MyRack = rthTEC_Rack1,
+                MyDAQ = myDAQ,
+                GUI = this,
+            };
+
+            //Plots initisieren
+            Graph_new_Measurment_for_TTA(myTTA_new);
+
+            //DAQ einstellen
+            myDAQ.TTA_set_Device(rthTEC_Rack1.Time_Heat, rthTEC_Rack1.Time_Meas);
+            myDAQ.TTA_set_Trigger(rthTEC_Rack1.Gain, rthTEC_Rack1.U_offset);
+
+            //Backroundworker definieren
+            myBackroundWorker = new BackgroundWorker()
+            {
+                WorkerSupportsCancellation = true,
+            };
+
+            //Aufgabe definieren
+            myBackroundWorker.DoWork += new DoWorkEventHandler((state, args) =>
+            {
+                bool noError = true;
+
+                //Messen 
+                if (noError)
+                    noError = myTTA_new.Start_Single_TTA();
+
+                //Graphen plotten                
+                if (noError)
+                {
+                    Add_Series_to_Data(myTTA_new);
+                    Update_Voltage_Plots_for_TTA();
+                }
+
+                //UI wieder aktiviern
+                Set_Old_Enable_Status();
+            }
+            );
+
+            //Alle Knöpfe deaktiveren
+            Disable_All_Controlls();
+
+            //Backroundworker starten
+            myBackroundWorker.RunWorkerAsync();
+        }
+
+        /* ALTE VERSION
         private void Button_Zth_signle_Click(object sender, EventArgs e)
         {
 
@@ -81,7 +137,7 @@ namespace ATIM_GUI
 
             //Backroundworker starten
             myBackroundWorker.RunWorkerAsync();
-        }
+        }*/
 
         private void Button_Auto_Zth_Click(object sender, EventArgs e)
         {
@@ -98,20 +154,20 @@ namespace ATIM_GUI
 
 
             //TTA-Mess-File erzeugen erzeugen
-            TTA_measurement myTTA = new TTA_measurement()
+            myTTA_new = new TTA_measurement_new()
             {
                 MyRack = rthTEC_Rack1,
-                MyDAQ = DAQ_Unit,
+                MyDAQ = myDAQ,
                 MyXYZ = myXYZ,
                 Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath,
                 Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName,
                 GUI = this,
-                MyMovement = myFileSetting.readBox_Movement1.Movements_XYA
+                MyMovement = myFileSetting.readBox_Movement1.MyMovementInfo
      
             };
 
             //Plots initisieren
-            Graph_new_Measurment_for_TTA(myTTA);
+            Graph_new_Measurment_for_TTA(myTTA_new);
 
             //Spectrum einstellen
             DAQ_Unit.Setting_for_TTA();
@@ -136,7 +192,7 @@ namespace ATIM_GUI
                 myTTA.Convert_Data();
 
                 //Graphen plotten
-                Add_Series_to_Data(myTTA);
+                Add_Series_to_Data(myTTA_new);
                 Update_Voltage_Plots_for_TTA();
 
                 //UI wieder aktiviern
@@ -161,44 +217,42 @@ namespace ATIM_GUI
 
         private void Button_Single_Sensitivity_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("Not relized yet");
         }
 
         private void Button_Auto_Sensitivity_Click(object sender, EventArgs e)
         {
             //Neues Mess-Klasse erzeugen
-            mySensitivity = new Sensitvity_Measurement()
+            mySensitivity_new = new Sensitivity_Measurement_new()
             {
                 MyRack = rthTEC_Rack1,
-                MySpectrum = DAQ_Unit,
+                MyDAQ = myDAQ,
                 MyTEC = myTEC,
                 MyXYZ = myXYZ,
                 Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath,
                 Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName,
                 GUI = this,
-                MyMovement = myFileSetting.readBox_Movement1.Movements_XYA,
-                MyFileNames = myFileSetting.readBox_Movement1.DUT_Name
+                MyMovement_Infos = myFileSetting.readBox_Movement1.MyMovementInfo,
             };
-
 
             //Temperatur-Schritte abfragen über Fenster
             Window_Sensitivity_TempStepSelect kFactorWindow = new Window_Sensitivity_TempStepSelect(this);
+
+            //Fenster öffnen und warten bis geschlossen
             kFactorWindow.ShowDialog();
 
             //Falls keine Temperatur-Schritte zurückgegeben werden, dann abbrechen
-            if (mySensitivity.TempSteps.Count == 0)
+            if (mySensitivity_new.TempSteps.Count == 0)
                 return;
 
-            //Graphen anpassen
+            //Graphen anpassen???????????????????????????????????????????????????????????????????????
             if (akt_Graph_Setup != "Sensitivity")
                 //Graphen anpassen
-                Graph_Init_for_Sensitivity(mySensitivity);
+                Graph_Init_for_Sensitivity(mySensitivity_new);
             else
                 //Nur leeren (muss noch angepasst werden)
-                Graph_Init_for_Sensitivity(mySensitivity);
+                Graph_Init_for_Sensitivity(mySensitivity_new);
 
-            //Spectrum einstellen
-            mySensitivity.MySpectrum.Setting_for_Sensitivity(mySensitivity);
 
             //Backroundworker definieren
             myBackroundWorker = new BackgroundWorker()
@@ -209,17 +263,12 @@ namespace ATIM_GUI
             //Aufgabe definieren
             myBackroundWorker.DoWork += new DoWorkEventHandler((state, args) =>
             {
-                //Messen --> aktuell noch DEMO
-                mySensitivity.Start_Measurement();
-
-                //Daten konvertieren und abarbeiten
-
+                //Messung starten
+                mySensitivity_new.Start_Measurement();
 
                 //UI wieder aktiviern
                 Set_Old_Enable_Status();
-
-            }
-            );
+            });
 
             //Alle Knöpfe deaktiveren
             Disable_All_Controlls();

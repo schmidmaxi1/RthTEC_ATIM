@@ -23,7 +23,7 @@ namespace DAQ_Units
         long Frequency { get; set; }
         string[] FrequencyList { get; }
 
-        long Trigger_Level_UI { get; }
+        decimal Trigger_Level_in_V { get; }
 
         long Samples { get; set; }
 
@@ -44,12 +44,14 @@ namespace DAQ_Units
         bool TTA_free_Storage(short[,] array);
 
         //Sensitivity
-        bool Sensitivity_Set_Device();
+        bool Sensitivity_Set_Device(short[] array, long nr_of_samples);
         bool Sensitivity_Set_Trigger();
         bool Sensitivity_Measure_and_Collect_Data(short[] output);
 
 
         //GUI
+        void Change_ADR(string adr);
+
         void Change_Enabled(Boolean input);
 
         void Update_settings(NI_CommunicationDevice myInput);

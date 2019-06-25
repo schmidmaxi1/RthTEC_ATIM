@@ -701,7 +701,8 @@ namespace ATIM_GUI._09_DAQ_Unit
             error_Sum += Get_Data();
 
             //Plot in Graph RAW
-            GUI.Add_Series_to_RAW(mySensitivity);
+            //Rausgeschmissen weil Funktion nicht mehr vorhanden
+            //GUI.Add_Series_to_RAW(mySensitivity);
 
             //Auf Errors checken
             if (error_Sum != 0)

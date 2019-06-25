@@ -230,19 +230,19 @@ namespace ATIM_GUI._4_Settings
         private void ComboBox_Settings_Range_Init()
         {
             //Mögliche Werte aus GUI holen
-            foreach (var item in callingForm.DAQ_Unit.comboBox_Range.Items)
+            foreach (var item in callingForm.myDAQ.RangeList)
                 comboBox_Setting_Spectrum_Range.Items.Add(item);
 
-            comboBox_Setting_Spectrum_Range.SelectedItem = callingForm.DAQ_Unit.comboBox_Range.SelectedItem;
+            //comboBox_Setting_Spectrum_Range.SelectedItem = callingForm.DAQ_Unit.comboBox_Range.SelectedItem;
         }
 
         private void ComboBox_Settings_Frequency_Init()
         {
             //Mögliche Werte aus GUI holen
-            foreach (var item in callingForm.DAQ_Unit.comboBox_Frequency.Items)
+            foreach (var item in callingForm.myDAQ.FrequencyList)
                 comboBox_Setting_Spectrum_frequency.Items.Add(item);
 
-            comboBox_Setting_Spectrum_frequency.SelectedItem = callingForm.DAQ_Unit.comboBox_Frequency.SelectedItem;
+            //comboBox_Setting_Spectrum_frequency.SelectedItem = callingForm.DAQ_Unit.comboBox_Frequency.SelectedItem;
         }
 
         private void ComboBox_Settings_Device_SelectedIndexChanged(object sender, EventArgs e)

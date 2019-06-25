@@ -10,6 +10,7 @@ using DevExpress.XtraCharts;
 using ATIM_GUI._0_Classes_Measurement;
 
 using ATIM_GUI._01_TTA;
+using ATIM_GUI._02_Sensitivity;
 
 
 namespace ATIM_GUI
@@ -26,7 +27,7 @@ namespace ATIM_GUI
 
         #region init_Graphs
 
-        private void Graph_new_Measurment_for_TTA(TTA_measurement myTTA)
+        private void Graph_new_Measurment_for_TTA(TTA_measurement_new myTTA)
         {
             //Abfragen ob Beschriftung vorhanden
             if (chartControl_DATA_Top.Titles.Count == 0)
@@ -60,7 +61,7 @@ namespace ATIM_GUI
 
         }
 
-        private void Graph_Init_for_TTA(TTA_measurement myTTA)
+        private void Graph_Init_for_TTA(TTA_measurement_new myTTA)
         {
             //Zwischenspeicher umschreiben
             akt_Graph_Setup = "TTA";
@@ -272,7 +273,7 @@ namespace ATIM_GUI
 
         }
 
-        private void Graph_Init_for_Sensitivity(Sensitvity_Measurement mySen)
+        private void Graph_Init_for_Sensitivity(Sensitivity_Measurement_new mySen)
         {
             //Zwischenspeicher umschreiben
             akt_Graph_Setup = "Sensitivity";
@@ -311,7 +312,7 @@ namespace ATIM_GUI
             xyDigaram_RAW.AxisY.Title.Font = myFont_Axis;
 
             //Min-Max - Achse
-            double zeit_max = (double)mySen.Nr_of_samples / mySen.MySpectrum.Frequency;
+            double zeit_max = (double)mySen.Nr_of_samples / mySen.MyDAQ.Frequency;
 
             xyDigaram_RAW.AxisX.VisibleInPanesSerializable = "-1";
             xyDigaram_RAW.AxisX.VisualRange.Auto = false;
@@ -613,7 +614,7 @@ namespace ATIM_GUI
 
         }
 
-        public void Add_Series_to_RAW(Sensitvity_Measurement mySensitivity)
+        public void Add_Series_to_RAW(Sensitivity_Measurement_new mySensitivity)
         {
             //Daten in Passende Liste einfügen
             List<RAW_DataPoint> myRawDataList = new List<RAW_DataPoint>();
@@ -625,7 +626,7 @@ namespace ATIM_GUI
                     new RAW_DataPoint()
                     {
                         Value = mySensitivity.RawData[sample],
-                        Time = (decimal)sample / mySensitivity.MySpectrum.Frequency,
+                        Time = (decimal)sample / mySensitivity.MyDAQ.Frequency,
                     }
                     );
             }
@@ -660,7 +661,7 @@ namespace ATIM_GUI
 
         }
 
-        public void Add_Series_to_Data(TTA_measurement myTTA)
+        public void Add_Series_to_Data(TTA_measurement_new myTTA)
         {
 
             chartControl_DATA_Top.Invoke((MethodInvoker)delegate
@@ -702,7 +703,7 @@ namespace ATIM_GUI
 
         }
 
-        public void Add_Series_to_Data(Sensitvity_Measurement mySensitivity)
+        public void Add_Series_to_Data(Sensitivity_Measurement_new mySensitivity)
         {
 
             chartControl_DATA_Top.Invoke((MethodInvoker)delegate
@@ -710,7 +711,7 @@ namespace ATIM_GUI
                 //*******************Haupt-Temperature-Graph************************************
                 for (int i = 0; i < mySensitivity.Nr_of_LEDs; i++)
                 {
-                    var voltage_Series = new Series("DUT " + (i + 1).ToString(), ViewType.Line)
+                    var voltage_Series = new Series(mySensitivity.MyMovement_Infos.MyMeasurment_Point[i].Name, ViewType.Line)
                     {
                         CheckableInLegend = true,
 
@@ -844,7 +845,7 @@ namespace ATIM_GUI
             });
         }
 
-        public void Update_Temperature_Plot_for_Sensitivity(Sensitvity_Measurement mySensitivity)
+        public void Update_Temperature_Plot_for_Sensitivity(Sensitivity_Measurement_new mySensitivity)
         {
             chartControl_DATA_Bottom.Invoke((MethodInvoker)delegate
             {
@@ -865,7 +866,7 @@ namespace ATIM_GUI
             });
         }
 
-        public void Update_Voltage_Plot_for_Sensitivity(Sensitvity_Measurement mySensitivity)
+        public void Update_Voltage_Plot_for_Sensitivity(Sensitivity_Measurement_new mySensitivity)
         {
             chartControl_DATA_Top.Invoke((MethodInvoker)delegate
             {

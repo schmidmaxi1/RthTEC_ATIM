@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Spectrum30MHz));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_IP = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Voltage_Trigger = new System.Windows.Forms.NumericUpDown();
@@ -45,7 +46,6 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.textBox_IP = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Voltage_Trigger)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -68,6 +68,14 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DAQ: Spectrum";
+            // 
+            // textBox_IP
+            // 
+            this.textBox_IP.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_IP.Location = new System.Drawing.Point(120, 34);
+            this.textBox_IP.Name = "textBox_IP";
+            this.textBox_IP.Size = new System.Drawing.Size(90, 20);
+            this.textBox_IP.TabIndex = 49;
             // 
             // label4
             // 
@@ -132,7 +140,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(453, 18);
+            this.label3.Location = new System.Drawing.Point(460, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 43;
@@ -218,13 +226,6 @@
             this.barDockControlRight.Location = new System.Drawing.Point(515, 0);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 75);
-            // 
-            // textBox_IP
-            // 
-            this.textBox_IP.Location = new System.Drawing.Point(120, 34);
-            this.textBox_IP.Name = "textBox_IP";
-            this.textBox_IP.Size = new System.Drawing.Size(90, 22);
-            this.textBox_IP.TabIndex = 49;
             // 
             // Spectrum30MHz
             // 

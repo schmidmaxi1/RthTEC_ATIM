@@ -49,7 +49,8 @@ namespace DAQ_Units
                 "1MHz"
             };
 
-        public long Trigger_Level_UI { get; internal set; }
+        public decimal Trigger_Level_in_V { get; internal set; }
+        private long trigger_Level_as_long;
 
         public long Samples { get; set; }
 
@@ -105,6 +106,11 @@ namespace DAQ_Units
             {
                 groupBox1.Enabled = input;
             });
+        }
+
+        public void Change_ADR(string adr)
+        {
+            textBox_IP.Text = adr;
         }
 
 
@@ -188,15 +194,18 @@ namespace DAQ_Units
             //Mögliche Errors mitzählen
             uint error_Sum = 0;
 
+            //Trigger-Level für allgemeines weiterrechnen
+            Trigger_Level_in_V = (Voltage_Trigger.Value - forntend_offset / 1000) * frontend_gain;
+
             //TriggerLevel berechnen (Ziel-Level - OffsetFrontEnd)*2*Bits/(2*Range)
-            Trigger_Level_UI = (long)((Voltage_Trigger.Value * 1000 - forntend_offset) * frontend_gain * 8191 / (2 * Range));
+            trigger_Level_as_long = (long)((Voltage_Trigger.Value * 1000 - forntend_offset) * frontend_gain * 8191 / (2 * Range));
 
             //Notwendige Settings
             error_Sum += Trigger_1();
             error_Sum += Trigger_2();
             error_Sum += Trigger_3();
             error_Sum += Trigger_Rising();
-            error_Sum += Trigger_Level(Trigger_Level_UI);
+            error_Sum += Trigger_Level(trigger_Level_as_long);
 
             //Auf Errors checken
             if (error_Sum != 0)
@@ -307,9 +316,9 @@ namespace DAQ_Units
 
         #region Sensitivity
 
-        public bool Sensitivity_Set_Device()
+        public bool Sensitivity_Set_Device(short[] array, long nr_of_samples)
         {
-            /*
+            
             //1. Error Counter zurücksetzen**************************************************************************************************************
             uint error_Sum = 0;
 
@@ -323,12 +332,12 @@ namespace DAQ_Units
             error_Sum += Setting_for_Single_Measurment();
 
             //3. Parameter für Messlänge senden**********************************************************************************************************          
-            error_Sum += Set_Sample_Count(mySensitivity.Nr_of_samples);
-            error_Sum += Set_Samples_PostTrigger(mySensitivity.Nr_of_samples);
+            error_Sum += Set_Sample_Count(nr_of_samples);
+            error_Sum += Set_Samples_PostTrigger(nr_of_samples);
 
             //4. Feld für die Messdaten generiern********************************************************************************************************
-            mySensitivity.RawData = new short[mySensitivity.Nr_of_samples];                                 //Feld in der Länger definieren          
-            H_BufferHandle = GCHandle.Alloc(mySensitivity.RawData, GCHandleType.Pinned);                    //Speicherplatz sperren            
+            //array = new short[nr_of_samples];                                 //Feld in der Länger definieren          
+            H_BufferHandle = GCHandle.Alloc(array, GCHandleType.Pinned);                    //Speicherplatz sperren            
             Daten_Pointer = H_BufferHandle.AddrOfPinnedObject();                                            //Pointer für gesperten Speicherplatz suchen
 
             //5. Fehlerauswertung********************************************************************************************************
@@ -338,7 +347,7 @@ namespace DAQ_Units
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else*/
+            else
                 return true;
         }
         public bool Sensitivity_Set_Trigger()
@@ -349,7 +358,7 @@ namespace DAQ_Units
         }
         public bool Sensitivity_Measure_and_Collect_Data(short[] output)
         {
-            /*
+            
             //Mögliche Errors mitzählen
             uint error_Sum = 0;
 
@@ -366,11 +375,11 @@ namespace DAQ_Units
             //Datentransfer einstellen (Datapointer enspricht der Stelle des ersten Samples im Array)
             IntPtr aktuellerPointer = new IntPtr(Daten_Pointer.ToInt64());
 
-            error_Sum += Send_Pointer_of_Array(aktuellerPointer, mySensitivity.Nr_of_samples);
+            error_Sum += Send_Pointer_of_Array(aktuellerPointer, output.Length);
             error_Sum += Get_Data();
 
-            //Plot in Graph RAW
-            GUI.Add_Series_to_RAW(mySensitivity);
+            //Plot in Graph RAW         <--------------------------------Muss in Sensitivity klasse geschehen
+            //GUI.Add_Series_to_RAW(mySensitivity);
 
             //Auf Errors checken
             if (error_Sum != 0)
@@ -379,7 +388,7 @@ namespace DAQ_Units
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            else*/
+            else
                 return true;
         }
 

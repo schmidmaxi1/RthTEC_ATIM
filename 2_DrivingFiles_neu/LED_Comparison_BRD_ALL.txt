@@ -6,7 +6,7 @@
 
 BRD-Dimension X: 90
 BRD-Dimension Y: 90.5
-TouchDown_Hight: -118.0
+TouchDown_Hight: -119.0
 Driving_Hight: -100
 
 FEDUCIAL 1: 20.0; 40.0; 0; Circuit d=1.0mm
@@ -55,7 +55,7 @@ QR-CODE: 50; 50; 0; QR-Code 16x16
 -2.5;	0;	0;	OS_Comp_LED08
 2.5;	14;	0;	OS_Comp_LED09
 -2.5;	0;	0;	OS_Comp_LED10
--11.5;	-56;	0;	OS_BF_LED01
+-8.0;	-42.875;180;	OS_BF_LED01
 -2.5;	0;	0;	OS_BF_LED02
 2.5;	14;	0;	OS_BF_LED03
 -2.5;	0;	0;	OS_BF_LED04
@@ -65,7 +65,7 @@ QR-CODE: 50; 50; 0; QR-Code 16x16
 -2.5;	0;	0;	OS_BF_LED08
 2.5;	14;	0;	OS_BF_LED09
 -2.5;	0;	0;	OS_BF_LED10
--11.5;	-56;	0;	Nichia_170_LED01
+-15;	-69.125;-180;	Nichia_170_LED01
 -2.5;	0;	0;	Nichia_170_LED02
 2.5;	14;	0;	Nichia_170_LED03
 -2.5;	0;	0;	Nichia_170_LED04
@@ -85,17 +85,19 @@ QR-CODE: 50; 50; 0; QR-Code 16x16
 -2.5;	0;	0;	Nichia_131_LED08
 2.5;	14;	0;	Nichia_131_LED09
 -2.5;	0;	0;	Nichia_131_LED10
--11.5;	-56;	0;	Dominant_LED01
--2.5;	0;	0;	Dominant_LED02
-2.5;	14;	0;	Dominant_LED03
--2.5;	0;	0;	Dominant_LED04
-2.5;	14;	0;	Dominant_LED05
--2.5;	0;	0;	Dominant_LED06
-2.5;	14;	0;	Dominant_LED07
--2.5;	0;	0;	Dominant_LED08
-2.5;	14;	0;	Dominant_LED09
--2.5;	0;	0;	Dominant_LED10
--11.5;	-56;	0;	LUMILEDS_LED01
+#Nicht bestückt
+#-11.5;	-56;	0;	Dominant_LED01
+#-2.5;	0;	0;	Dominant_LED02
+#2.5;	14;	0;	Dominant_LED03
+#-2.5;	0;	0;	Dominant_LED04
+#2.5;	14;	0;	Dominant_LED05
+#-2.5;	0;	0;	Dominant_LED06
+#2.5;	14;	0;	Dominant_LED07
+#-2.5;	0;	0;	Dominant_LED08
+#2.5;	14;	0;	Dominant_LED09
+#-2.5;	0;	0;	Dominant_LED10
+#Doppelt so weiter Sprung
+-25.5;	-56;	0;	LUMILEDS_LED01
 -2.5;	0;	0;	LUMILEDS_LED02
 2.5;	14;	0;	LUMILEDS_LED03
 -2.5;	0;	0;	LUMILEDS_LED04

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ATIM_MainWindow));
-            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonButton_ComSet = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonButton_AutoCon = new DevExpress.XtraBars.BarButtonItem();
@@ -37,6 +37,9 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonButton_Save = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem_SaveSetting = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem_Load_Setting = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem_FileSavingOpt = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -88,9 +91,12 @@
             this.ribbonButton_MeasSet,
             this.barButtonItem4,
             this.barButtonItem5,
-            this.ribbonButton_Save});
+            this.ribbonButton_Save,
+            this.barButtonItem_SaveSetting,
+            this.barButtonItem_Load_Setting,
+            this.barButtonItem_FileSavingOpt});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 1;
+            this.ribbonControl1.MaxItemId = 4;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -152,6 +158,33 @@
             this.ribbonButton_Save.Name = "ribbonButton_Save";
             this.ribbonButton_Save.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.RibbonButton_Save_ItemClick);
             // 
+            // barButtonItem_SaveSetting
+            // 
+            this.barButtonItem_SaveSetting.Caption = "Save actual settings as ...";
+            this.barButtonItem_SaveSetting.Id = 1;
+            this.barButtonItem_SaveSetting.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem_SaveSetting.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem_SaveSetting.Name = "barButtonItem_SaveSetting";
+            this.barButtonItem_SaveSetting.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem_SaveSetting_ItemClick);
+            // 
+            // barButtonItem_Load_Setting
+            // 
+            this.barButtonItem_Load_Setting.Caption = "Load settings from ...";
+            this.barButtonItem_Load_Setting.Id = 2;
+            this.barButtonItem_Load_Setting.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Load_Setting.ImageOptions.Image")));
+            this.barButtonItem_Load_Setting.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Load_Setting.ImageOptions.LargeImage")));
+            this.barButtonItem_Load_Setting.Name = "barButtonItem_Load_Setting";
+            this.barButtonItem_Load_Setting.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem_Load_Setting_ItemClick);
+            // 
+            // barButtonItem_FileSavingOpt
+            // 
+            this.barButtonItem_FileSavingOpt.Caption = "File saving options";
+            this.barButtonItem_FileSavingOpt.Id = 3;
+            this.barButtonItem_FileSavingOpt.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_FileSavingOpt.ImageOptions.Image")));
+            this.barButtonItem_FileSavingOpt.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_FileSavingOpt.ImageOptions.LargeImage")));
+            this.barButtonItem_FileSavingOpt.Name = "barButtonItem_FileSavingOpt";
+            this.barButtonItem_FileSavingOpt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem_FileSavingOpt_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -170,6 +203,9 @@
             // 
             // ribbonPageGroup2
             // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem_FileSavingOpt);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem_Load_Setting);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem_SaveSetting);
             this.ribbonPageGroup2.ItemLinks.Add(this.ribbonButton_MeasSet);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem5);
@@ -312,9 +348,9 @@
             this.chartControl_RAW.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
             this.chartControl_RAW.Size = new System.Drawing.Size(991, 191);
             this.chartControl_RAW.TabIndex = 0;
-            chartTitle1.Text = "Test";
+            chartTitle2.Text = "Test";
             this.chartControl_RAW.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle1});
+            chartTitle2});
             // 
             // splitContainer2
             // 
@@ -403,6 +439,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Rth TEC - Measurement software";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ATIM_MainWindow_FormClosed);
             this.Resize += new System.EventHandler(this.Form1_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.groupBox_Single_Meas.ResumeLayout(false);
@@ -458,6 +495,9 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
         private DevExpress.XtraBars.BarButtonItem ribbonButton_Save;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem_SaveSetting;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem_Load_Setting;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem_FileSavingOpt;
     }
 }
 

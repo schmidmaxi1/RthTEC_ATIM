@@ -437,6 +437,7 @@ namespace DAQ_Units
 
             //UI anpassen
             button_OpenClose.Text = "Close";
+            textBox_IP.Enabled = false;
             Voltage_Trigger.Enabled = true;
         }
 
@@ -451,6 +452,7 @@ namespace DAQ_Units
 
             //UI anpassen
             button_OpenClose.Text = "Open";
+            textBox_IP.Enabled = true;
             Voltage_Trigger.Enabled = false;
         }
 
@@ -705,6 +707,7 @@ namespace DAQ_Units
             //UI anpassen
             button_OpenClose.Text = "Close";
             Voltage_Trigger.Enabled = true;
+            textBox_IP.Enabled = false;
 
             return "";
         }

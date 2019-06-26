@@ -763,5 +763,28 @@ namespace _8_Rth_TEC_Rack
 
             UI_Cycles.Value = mySettings.Cycles;          
         }
+
+        //**************************************************************************************************
+        //                                    FCT für Setting-Files
+        //**************************************************************************************************
+
+        public override string ToString()
+        {
+            string text = "*Rth-Rack:" + Environment.NewLine;
+
+            text += "I_Heat[mA]: " + I_Heat.ToString() + Environment.NewLine;
+
+            return text;
+        }
+
+        public void FromString(string[] input)
+        {
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i].StartsWith("I_Heat[mA]:"))
+                    UI_Heat_Current.Value = Convert.ToDecimal(input[i].Substring(12));
+
+            }
+        }
     }
 }

@@ -262,29 +262,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="01_TTA\RAW_DataPoint.cs" />
     <Compile Include="01_TTA\TTA_DataPoint.cs" />
     <Compile Include="01_TTA\TTA_measurement_new.cs" />
     <Compile Include="02_Sensitivity\Sensitivity_DataPoint_Temperature.cs" />
     <Compile Include="02_Sensitivity\Sensitivity_DataPoint_Voltage.cs" />
     <Compile Include="02_Sensitivity\Sensitivity_Measurement_new.cs" />
     <Compile Include="02_Sensitivity\Sensitivity_Parallel_Thread.cs" />
-    <Compile Include="09_DAQ_Unit\DAQ_Unit.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="02_Sensitivity\Window_Sensitivity_TempSteps.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="09_DAQ_Unit\DAQ_Unit.Designer.cs">
-      <DependentUpon>DAQ_Unit.cs</DependentUpon>
+    <Compile Include="02_Sensitivity\Window_Sensitivity_TempSteps.designer.cs">
+      <DependentUpon>Window_Sensitivity_TempSteps.cs</DependentUpon>
     </Compile>
-    <Compile Include="09_DAQ_Unit\NI_USB6281.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="09_DAQ_Unit\NI_USB6281.Designer.cs">
-      <DependentUpon>NI_USB6281.cs</DependentUpon>
-    </Compile>
-    <Compile Include="0_Classes_Measurement\Sensitivity_DataPoint_Temperature.cs" />
-    <Compile Include="0_Classes_Measurement\Sensitivity_DataPoint_Voltage.cs" />
-    <Compile Include="0_Classes_Measurement\Sensitivity_Parallel_Thread.cs" />
-    <Compile Include="0_Classes_Measurement\Sensitvity_Measurement.cs" />
-    <Compile Include="0_Classes_Measurement\TTA_measurement.cs" />
     <Compile Include="03_Project\Daten_Sammlung.cs" />
     <Compile Include="03_Project\Form_Project_Status.cs">
       <SubType>Form</SubType>
@@ -305,15 +295,6 @@
     <Compile Include="08_Rth TEC_Rack\UserControl_RthTEC_Rack.designer.cs">
       <DependentUpon>UserControl_RthTEC_Rack.cs</DependentUpon>
     </Compile>
-    <Compile Include="09_DAQ_Unit\Spectrum.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="0_Classes_Measurement\Window_Sensitivity_TempSteps.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="0_Classes_Measurement\Window_Sensitivity_TempSteps.designer.cs">
-      <DependentUpon>Window_Sensitivity_TempSteps.cs</DependentUpon>
-    </Compile>
     <Compile Include="10_Camera\Camera detailed.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +310,7 @@
     <Compile Include="10_Camera\Circile.cs" />
     <Compile Include="10_Camera\Detected_Object.cs" />
     <Compile Include="10_Camera\Rectangular.cs" />
+    <Compile Include="10_Saving_Options\Saving_Options.cs" />
     <Compile Include="ATIM_MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,13 +326,20 @@
     <Compile Include="Form1_StatusBar.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="10_Saving_Options\Form_Saving_Options.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="10_Saving_Options\Form_Saving_Options.Designer.cs">
+      <DependentUpon>Form_Saving_Options.cs</DependentUpon>
+    </Compile>
     <Compile Include="From1_Ribbon.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RAW_DataPoint.cs" />
-    <Compile Include="TTA_DataPoint.cs" />
+    <EmbeddedResource Include="02_Sensitivity\Window_Sensitivity_TempSteps.resx">
+      <DependentUpon>Window_Sensitivity_TempSteps.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="03_Project\Form_Project_Status.resx">
       <DependentUpon>Form_Project_Status.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,15 +349,6 @@
     <EmbeddedResource Include="08_Rth TEC_Rack\UserControl_RthTEC_Rack.resx">
       <DependentUpon>UserControl_RthTEC_Rack.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="09_DAQ_Unit\DAQ_Unit.resx">
-      <DependentUpon>DAQ_Unit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="09_DAQ_Unit\Spectrum.resx">
-      <DependentUpon>Spectrum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="0_Classes_Measurement\Window_Sensitivity_TempSteps.resx">
-      <DependentUpon>Window_Sensitivity_TempSteps.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="10_Camera\Camera detailed.resx">
       <DependentUpon>Camera detailed.cs</DependentUpon>
     </EmbeddedResource>
@@ -377,6 +357,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ATIM_MainWindow.resx">
       <DependentUpon>ATIM_MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="10_Saving_Options\Form_Saving_Options.resx">
+      <DependentUpon>Form_Saving_Options.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -486,6 +469,10 @@
     <ProjectReference Include="..\DAQ_Unit\DAQ_Units.csproj">
       <Project>{311634b1-6945-4b07-a37c-1b84fb634064}</Project>
       <Name>DAQ_Units</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Hilfsfunktionen\Hilfsfunktionen.csproj">
+      <Project>{f16101d2-d868-43bd-aee9-1509bc861499}</Project>
+      <Name>Hilfsfunktionen</Name>
     </ProjectReference>
     <ProjectReference Include="..\Power_Supply_HamegHMP\Power_Supply_HamegHMP.csproj">
       <Project>{8f71037f-2ab4-47a7-8fe3-c30c929c6642}</Project>

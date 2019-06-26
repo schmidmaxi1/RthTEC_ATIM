@@ -5,8 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using System.IO;
+
 //Meine NameSpaces
-using ATIM_GUI._0_Classes_Measurement;
+
 
 using ATIM_GUI._3_Project;
 using ATIM_GUI._4_Settings;
@@ -59,6 +61,23 @@ namespace ATIM_GUI
             myTTA_new.Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName;
 
             myTTA_new.Save_AllFiles();
+        }
+
+        //NEW
+        private void BarButtonItem_FileSavingOpt_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form_Saving_Options myForm_Saving = new Form_Saving_Options(mySaving_Options);
+            myForm_Saving.ShowDialog();
+        }
+
+        private void BarButtonItem_Load_Setting_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Read_N_Adopte_Settings();
+        }
+
+        private void BarButtonItem_SaveSetting_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Generate_N_Save_Settings();
         }
 
         #endregion RibbonButtons
@@ -172,5 +191,84 @@ namespace ATIM_GUI
         }
 
         #endregion Adopt Funktionen
+
+        //**************************************************************************************************
+        //                                 Device & Measurment Settings
+        //**************************************************************************************************
+
+        #region Device & Measurment Settings
+
+        private void Generate_N_Save_Settings()
+        {
+            string text = "";
+
+            //Alle Geräte und einstellungen nacheinander abspeichen
+            text += myFileSetting.ToString();
+            text += mySaving_Options.ToString();
+            text += rthTEC_Rack1.ToString();
+
+            //Seicher Dialog öffnen
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog()
+            {
+                Filter = "txt files (*.SET)|*.SET|All files (*.*)|*.*",
+                FilterIndex = 0,
+                RestoreDirectory = true
+            };
+            //Fals korrekt --> abspeichern
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog1.FileName, text);
+            }
+          
+        }
+
+        private void Read_N_Adopte_Settings()
+        {
+            OpenFileDialog myOpenFileDialoge = new OpenFileDialog()
+            {
+                Filter = "txt files (*.SET)|*.SET|All files (*.*)|*.*",
+                FilterIndex = 0
+            };
+
+            if (myOpenFileDialoge.ShowDialog() == DialogResult.OK)
+            {
+                //File Lesen
+                string[] datei_Inhalt = File.ReadAllLines(myOpenFileDialoge.FileName);
+
+                //Nach * als begrenzung für neues Gerät suchen
+                List<int> stern_Zeilen = new List<int>();
+
+                for (int i = 0; i < datei_Inhalt.Length; i++)               
+                    if (datei_Inhalt[i].StartsWith("*"))
+                        stern_Zeilen.Add(i);
+
+                //Inhalt zwischen Sternzeilen verteilen
+                for (int i = 0; i < stern_Zeilen.Count; i++)
+                {
+                    int akt_stern = stern_Zeilen.ElementAt(i);
+                    int next_stern = 0;
+                    //Aufpassen wenn es keinen letzten Stern mehr gibt
+                    if(i == stern_Zeilen.Count - 1)
+                        next_stern = datei_Inhalt.Length;
+                    else
+                        next_stern = stern_Zeilen.ElementAt(i + 1);
+
+                    //Teil Array an Gerät oder Ähnliches schicken
+                    if (datei_Inhalt[akt_stern].Contains("Filesetting"))
+                        myFileSetting.FromString(datei_Inhalt.Skip(akt_stern + 1).Take(next_stern- akt_stern).ToArray());
+
+                    else if (datei_Inhalt[akt_stern].Contains("SaveOptions"))
+                        mySaving_Options.FromString(datei_Inhalt.Skip(akt_stern + 1).Take(next_stern - akt_stern).ToArray());
+
+                    else if (datei_Inhalt[akt_stern].Contains("Rth-Rack"))
+                        rthTEC_Rack1.FromString(datei_Inhalt.Skip(akt_stern + 1).Take(next_stern - akt_stern).ToArray());
+                }
+
+
+            }
+        }
+
+        #endregion Device & Measurment Settings
+
     }
 }

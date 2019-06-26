@@ -28,26 +28,6 @@ namespace Read_Coordinates
 
         private string MyPath { get;  set; }
 
-        //Ab hier kann weg
-
-        /*
-        public Boolean IsCorect { get; internal set; } = false;
-
-        public decimal[,] Movements_XYA { get; internal set; }
-        public string[] DUT_Name { get; internal set; }
-
-        public Measurement_Point_XYZA[] MyMeasurment_Point { get; internal set; }
-
-        public decimal BRD_Dimension_X { get; internal set; } = Decimal.MinValue;
-        public decimal BRD_Dimension_Y { get; internal set; } = Decimal.MinValue;
-
-        public PointF[] Feducials { get; internal set; } = new PointF[3];
-        public PointF QR_Code { get; internal set; }
-
-        public decimal TouchDown_Hight { get; internal set; } = Decimal.MinValue;
-        public decimal Driving_Hight { get; internal set; } = Decimal.MinValue;
-        */
-
 
         //**************************************************************************************************
         //                                    Hinterlegte Bilder

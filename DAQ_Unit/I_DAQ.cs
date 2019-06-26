@@ -17,19 +17,38 @@ namespace DAQ_Units
         Boolean IsConnected { get;}
 
         //Mess-Parameter
+
+        /// <summary>
+        /// Half Range in mV [1000 := +-1V]
+        /// </summary>
         long Range { get; set; }
+        /// <summary>
+        /// List of all possible Ranges as string
+        /// </summary>
         string[] RangeList { get; }
 
+
+        /// <summary>
+        /// Sample frequency in Hz
+        /// </summary>
         long Frequency { get; set; }
+        /// <summary>
+        /// List of all possible sample frequencys as string
+        /// </summary>
         string[] FrequencyList { get; }
 
+        /// <summary>
+        /// Real Trigger Level of DAQ (after Front-End)
+        /// </summary>
         decimal Trigger_Level_in_V { get; }
 
+        /// <summary>
+        /// Number of samples for measurement
+        /// </summary>
         long Samples { get; set; }
 
         //Log
         string Communication_LOG { get;  }
-
 
 
         //***********************Functions********************************************

@@ -6,11 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Windows.Forms;
+using System.IO;
 
-using ATIM_GUI._0_Classes_Measurement;
 
 using ATIM_GUI._01_TTA;
 using ATIM_GUI._02_Sensitivity;
+
+using Hilfsfunktionen;
 
 namespace ATIM_GUI
 {
@@ -20,6 +22,12 @@ namespace ATIM_GUI
         //**************************************************************************************************
         //                                  Measurement - Buttons
         //**************************************************************************************************
+
+        public BackgroundWorker myBackroundWorker = null;
+
+        public Sensitivity_Measurement_new mySensitivity_new;
+
+        public TTA_measurement_new myTTA_new;
 
         public bool break_is_wished = false;
 
@@ -41,13 +49,6 @@ namespace ATIM_GUI
                 GUI = this,
             };
 
-            //Plots initisieren
-            Graph_new_Measurment_for_TTA(myTTA_new);
-
-            //DAQ einstellen
-            myDAQ.TTA_set_Device(rthTEC_Rack1.Time_Heat, rthTEC_Rack1.Time_Meas);
-            myDAQ.TTA_set_Trigger(rthTEC_Rack1.Gain, rthTEC_Rack1.U_offset);
-
             //Backroundworker definieren
             myBackroundWorker = new BackgroundWorker()
             {
@@ -57,18 +58,8 @@ namespace ATIM_GUI
             //Aufgabe definieren
             myBackroundWorker.DoWork += new DoWorkEventHandler((state, args) =>
             {
-                bool noError = true;
-
                 //Messen 
-                if (noError)
-                    noError = myTTA_new.Start_Single_TTA();
-
-                //Graphen plotten                
-                if (noError)
-                {
-                    Add_Series_to_Data(myTTA_new);
-                    Update_Voltage_Plots_for_TTA();
-                }
+                myTTA_new.Start_Single_TTA();
 
                 //UI wieder aktiviern
                 Set_Old_Enable_Status();
@@ -82,77 +73,9 @@ namespace ATIM_GUI
             myBackroundWorker.RunWorkerAsync();
         }
 
-        /* ALTE VERSION
-        private void Button_Zth_signle_Click(object sender, EventArgs e)
-        {
-
-            //TTA-Mess-File erzeugen erzeugen
-            myTTA = new TTA_measurement()
-            {
-                MyRack = rthTEC_Rack1,
-                MyDAQ = DAQ_Unit,
-                GUI = this,
-            };
-
-            //Plots initisieren
-            Graph_new_Measurment_for_TTA(myTTA);
-
-            //Spectrum einstellen
-            DAQ_Unit.Setting_for_TTA();
-            DAQ_Unit.Setting_Trigger(rthTEC_Rack1);
-
-            //Backroundworker definieren
-            myBackroundWorker = new BackgroundWorker()
-            {
-                WorkerSupportsCancellation = true,
-            };
-
-            //Aufgabe definieren
-            myBackroundWorker.DoWork += new DoWorkEventHandler((state, args) =>
-            {
-                bool noError = true;
-
-                //Messen --> aktuell noch DEMO
-                if (noError)
-                    noError = myTTA.Start_Single_TTA();
-
-                //Daten konvertieren und abarbeiten
-                if (noError)
-                    noError = myTTA.Convert_Data();
-
-                //Graphen plotten
-                if (noError)
-                {
-                    Add_Series_to_Data(myTTA);
-                    Update_Voltage_Plots_for_TTA();
-                }
-
-                //UI wieder aktiviern
-                Set_Old_Enable_Status();
-            }
-            );
-
-            //Alle Knöpfe deaktiveren
-            Disable_All_Controlls();
-
-            //Backroundworker starten
-            myBackroundWorker.RunWorkerAsync();
-        }*/
-
+       
         private void Button_Auto_Zth_Click(object sender, EventArgs e)
         {
-            //Abfrage ob alle nötigen Geräte angeschlossen (BSP alt)
-            /*
-            if (!Is_Spectrum_Activ()    ) { return; }
-            if (!Is_Heller_Activ()      ) { return; }
-            if (!Is_Power_Supply_Activ()) { return; }
-            if (!Is_XYZ_Aktive()        ) { return; }
-            if (!Is_Directory_Correct() ) { return; }
-            if (!Is_FileName_Correct()  ) { return; }
-            if (!Is_Gerber_Correct()    ) { return; }
-            */
-
-
             //TTA-Mess-File erzeugen erzeugen
             myTTA_new = new TTA_measurement_new()
             {
@@ -162,16 +85,18 @@ namespace ATIM_GUI
                 Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath,
                 Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName,
                 GUI = this,
-                MyMovement = myFileSetting.readBox_Movement1.MyMovementInfo
-     
+                MyMovement = myFileSetting.readBox_Movement1.MyMovementInfo     
             };
 
-            //Plots initisieren
-            Graph_new_Measurment_for_TTA(myTTA_new);
+            //Check if all neccessary Devices and Settings are available
+            if (!Operationalitiy_TTA_Auto())
+                return;
 
-            //Spectrum einstellen
-            DAQ_Unit.Setting_for_TTA();
-            DAQ_Unit.Setting_Trigger(rthTEC_Rack1);
+            //Check if Files would be overwritten
+            if (!Check_File_Overwrite(myTTA_new))
+                return;
+
+
 
             //Backroundworker definieren
             myBackroundWorker = new BackgroundWorker()
@@ -182,18 +107,8 @@ namespace ATIM_GUI
             //Aufgabe definieren
             myBackroundWorker.DoWork += new DoWorkEventHandler((state, args) =>
             {
-                //Messung für alle starten
-
-
-                //spectrum1.Measure_TTA_Several_Cycles_DEMO(myTTA, this);
-                DAQ_Unit.Measure_TTA_Several_Cycles(myTTA, this);
-
-                //Daten konvertieren und abarbeiten
-                myTTA.Convert_Data();
-
-                //Graphen plotten
-                Add_Series_to_Data(myTTA_new);
-                Update_Voltage_Plots_for_TTA();
+                //Messen
+                myTTA_new.Start_Automatic_TTA();
 
                 //UI wieder aktiviern
                 Set_Old_Enable_Status();
@@ -288,12 +203,13 @@ namespace ATIM_GUI
 
         private void Button_Single_UI_Click(object sender, EventArgs e)
         {
-            rthTEC_Rack1.Deterministic_Pulse_Start();
+            MessageBox.Show("Not relized yet");
+            //rthTEC_Rack1.Deterministic_Pulse_Start();
         }
 
         private void Button_Auto_UI_Click(object sender, EventArgs e)
         {
-            
+            MessageBox.Show("Not relized yet");
         }
     
 
@@ -311,5 +227,102 @@ namespace ATIM_GUI
         }
 
         #endregion Meas-Buttons
+
+        //**************************************************************************************************
+        //                                       Operationality
+        //**************************************************************************************************
+
+        #region Operationalitiy
+
+        private Boolean Operationalitiy_TTA_Single()
+        {
+            return true;
+        }
+
+        private Boolean Operationalitiy_TTA_Auto()
+        {
+            return true;
+
+            //Abfrage ob alle nötigen Geräte angeschlossen (BSP alt)
+            /*
+            if (!Is_Spectrum_Activ()    ) { return; }
+            if (!Is_Heller_Activ()      ) { return; }
+            if (!Is_Power_Supply_Activ()) { return; }
+            if (!Is_XYZ_Aktive()        ) { return; }
+            if (!Is_Directory_Correct() ) { return; }
+            if (!Is_FileName_Correct()  ) { return; }
+            if (!Is_Gerber_Correct()    ) { return; }
+            */
+        }
+
+        private Boolean Check_File_Overwrite(TTA_measurement_new myTTA)
+        {
+            //Liste mit vorhandenen Überschneidungen
+            List<string> overlapping = new List<string>();
+
+            //Jedes Bauteil in Mess-Positionen prüfen
+            for (int i = 0; i < myTTA.MyMovement.MyMeasurment_Point.Length; i++)
+            {
+                //File-Name Anfang generieren
+                string file_start = HelpFCT.Replace_Output_STR(myTTA.Output_File_Name, myTTA.MyMovement.MyMeasurment_Point[i].Name);
+
+                //Je nachdem was gespeichert werden soll überprüfen
+                if (mySaving_Options.Save_Aver_Cool)
+                    if (File.Exists(myTTA.Output_File_Folder + Path.DirectorySeparatorChar + file_start + ".aver.TTAcool"))
+                        overlapping.Add(file_start + ".aver.TTAcool");
+
+                string test = myTTA.Output_File_Folder + file_start + ".aver.TTAcool";
+
+                if (mySaving_Options.Save_Aver_Heat)
+                    if (File.Exists(myTTA.Output_File_Folder + Path.DirectorySeparatorChar + file_start + ".aver.TTAheat"))
+                        overlapping.Add(file_start + ".aver.TTAheat");
+
+                if (mySaving_Options.Save_Signle_Cool)
+                    if (File.Exists(myTTA.Output_File_Folder + Path.DirectorySeparatorChar + file_start + "0001.TTAcool"))
+                        overlapping.Add(file_start + "0001.TTAcool");
+
+                if (mySaving_Options.Save_Single_Heat)
+                    if (File.Exists(myTTA.Output_File_Folder + Path.DirectorySeparatorChar + file_start + "0001.TTAheat"))
+                        overlapping.Add(file_start + "0001.TTAheat");
+
+                if (mySaving_Options.Save_Raw)
+                    if (File.Exists(myTTA.Output_File_Folder + Path.DirectorySeparatorChar + file_start + ".0001.TTAraw"))
+                        overlapping.Add(file_start + ".0001.TTAraw");
+            }
+
+            //Wenn keine Überschneidung gefunden
+            if (overlapping.Count == 0)
+                return true;
+
+            //Wenn mehr als 10, die Liste kürzen
+            else if (overlapping.Count > 10)
+            {
+                int temp_count = overlapping.Count;
+                overlapping.RemoveRange(9, overlapping.Count - 9);
+                overlapping.Add("And " + (temp_count - 9).ToString() + "further");
+            }
+
+            //Message-Box Text generieren
+            string text = "Following Files would be overwritten:" + Environment.NewLine + Environment.NewLine;
+
+            foreach(string temp in overlapping)
+                text += temp + Environment.NewLine;
+
+            text += Environment.NewLine + "Do you want to overwrite them?";
+
+
+
+            DialogResult dialogResult = MessageBox.Show(text, "Warning", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)           
+                return true;
+            
+            else          
+                return false;
+            
+
+
+        }
+
+        #endregion Operationalitiy
     }
 }

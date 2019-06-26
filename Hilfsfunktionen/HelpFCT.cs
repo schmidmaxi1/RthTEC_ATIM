@@ -52,5 +52,18 @@ namespace Hilfsfunktionen
             //Auswahl übernehmen
             output.Text = input.Text;
         }
+
+        /// <summary>
+        /// Replaces the Indicator (%R) in the initial string with the replace
+        /// </summary>
+        /// <param name="initial_STR">STR taken form the textBox </param>
+        /// <param name="replacer">replace STR</param>
+        /// <returns></returns>
+        public static string Replace_Output_STR(string initial_STR, string replacer)
+        {
+            int place = initial_STR.IndexOf("%R");                              //Stelle von %R
+
+            return initial_STR.Substring(0, place) + replacer + initial_STR.Substring(place + 2);
+        }
     }
 }

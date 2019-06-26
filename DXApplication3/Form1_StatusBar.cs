@@ -38,7 +38,10 @@ namespace ATIM_GUI
                 statusBar_Headline.Text = "TTA automated: ";
 
                 //Prozent berechnen
-                int prozent = ((cycle * 100 / cycle_max) + dut_nr * 100) / dut_max;
+                int prozent = ((cycle * 100 / cycle_max) + (dut_nr - 1) * 100) / dut_max;
+
+                if (prozent < 0)
+                    prozent = 0;
 
                 //Progressbar updaten
                 statusBar_ProgressBar.Value = prozent;

@@ -93,7 +93,6 @@ using DevExpress.XtraCharts;
 
 
 //Meine NameSpaces
-using ATIM_GUI._0_Classes_Measurement;
 using ATIM_GUI._3_Project;
 using ATIM_GUI._4_Settings;
 
@@ -121,7 +120,6 @@ namespace ATIM_GUI
 
         //Devices  
         public _8_Rth_TEC_Rack.RthTEC_Rack rthTEC_Rack1;
-        public _09_DAQ_Unit.DAQ_Unit DAQ_Unit;
         public DXApplication3._10_Camera.Camera_Gerber camera_Gerber1;
 
         //Devices new (müssen alles Interfaces sein für Varibilität)
@@ -133,18 +131,14 @@ namespace ATIM_GUI
         public FileSettings_Box myFileSetting;
 
         //Settings
+        public Saving_Options mySaving_Options = new Saving_Options();
+
+
         public Settings_ATIM mySettings = null;
 
 
         #endregion Variablen
 
-        public BackgroundWorker myBackroundWorker = null;
-
-        public Sensitvity_Measurement mySensitivity;
-        public Sensitivity_Measurement_new mySensitivity_new;
-
-        public TTA_measurement myTTA;
-        public TTA_measurement_new myTTA_new;
 
         //**************************************************************************************************
         //                                          Init
@@ -351,6 +345,11 @@ namespace ATIM_GUI
 
         #region Resize
 
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            MyResize_FCT();
+        }
+
         private void MyResize_FCT()
         {
             int new_Height = this.Size.Height;
@@ -365,12 +364,29 @@ namespace ATIM_GUI
             groupBox_Cancel.Location = new Point(new_Width - 130, groupBox_Cancel.Location.Y);
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
+        #endregion Resize
+
+        //**************************************************************************************************
+        //                                       Closing                                            
+        //**************************************************************************************************
+
+        #region closing
+
+        /// <summary>
+        /// Nach dem Schließen des Programms läuft einiges im Hintergrund weiter.
+        /// Diese Funktion schließt alle Threads.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ATIM_MainWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            MyResize_FCT();
+            Application.Exit();
         }
 
-        #endregion Resize
+
+
+        #endregion closing
+
 
     }
 }

@@ -737,6 +737,8 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Communication_Setting
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Communication_Settings.exe.config
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\DAQ_Unit.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\DAQ_Unit.exe.config
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Hilfsfunktionen.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Hilfsfunktionen.exe.config
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Power_Supply_HamegHMP.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Power_Supply_HamegHMP.exe.config
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Read_Coordinates.pdb
@@ -784,8 +786,6 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\DevExpress.XtraTreeLi
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\DevExpress.XtraVerticalGrid.v18.2.xml
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\NationalInstruments.Common.xml
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\NationalInstruments.DAQmx.xml
-C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Hilfsfunktionen.pdb
-C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Hilfsfunktionen.exe.config
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\de\DevExpress.Data.v18.2.resources.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\es\DevExpress.Data.v18.2.resources.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\ja\DevExpress.Data.v18.2.resources.dll
@@ -907,12 +907,14 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\es\DevExpress.XtraVer
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\ja\DevExpress.XtraVerticalGrid.v18.2.resources.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\ru\DevExpress.XtraVerticalGrid.v18.2.resources.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.csprojAssemblyReference.cache
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI._02_Sensitivity.Window_Sensitivity_TempStepSelect.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI._3_Project.Form_Project_Status.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI._4_Settings.Form_Settings.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\_8_Rth_TEC_Rack.RthTEC_Rack.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\DXApplication3._10_Camera.Camera_detailed.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\DXApplication3._10_Camera.Camera_Gerber.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.ATIM_MainWindow.resources
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.Form_Saving_Options.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.Properties.Resources.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.csproj.GenerateResource.cache
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.exe.licenses
@@ -922,5 +924,3 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\ATIM_GUI.exe.config
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\ATIM_GUI.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.csproj.CopyComplete
-C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI._02_Sensitivity.Window_Sensitivity_TempStepSelect.resources
-C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.Form_Saving_Options.resources

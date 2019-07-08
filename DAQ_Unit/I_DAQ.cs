@@ -77,5 +77,7 @@ namespace DAQ_Units
         void Update_settings(EthernetCommunicationDevice myInput);
 
         string AutoOpen(AutoConnect_Window myLoadScreen);
+
+        void Close();
     }
 }

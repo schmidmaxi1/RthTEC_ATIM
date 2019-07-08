@@ -259,7 +259,7 @@ namespace DAQ_Units
                 //Fehlermeldung
                 //SetAsyncText(Spectrum_answer, "Kein Trigger gefunden");
 
-                error_Sum += 263;
+                //error_Sum += 263;
                 error_Sum += Force_Trigger();
             }
 
@@ -441,7 +441,8 @@ namespace DAQ_Units
             Voltage_Trigger.Enabled = true;
         }
 
-        private void Close()
+        //muss global zugreifbar sein um die verbindung zu schließen (läuft sonst weiter)
+        public void Close()
         {
             //Schließen
             Drv.spcm_vClose(H_Device);

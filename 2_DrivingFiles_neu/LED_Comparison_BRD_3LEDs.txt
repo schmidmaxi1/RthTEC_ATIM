@@ -1,0 +1,21 @@
+#Probing Adapter: 2_Neo_MultiNutzen
+#All Positions are absoulute to the RIGHT TOP corner (in the future)
+#Coordinat seperation with ;
+#Decimal seperator with .
+#[x];[Y];[A];[Optionaler Name]
+
+BRD-Dimension X: 90
+BRD-Dimension Y: 90.5
+TouchDown_Hight: -119.0
+Driving_Hight: -100
+
+FEDUCIAL 1: 20.0; 40.0; 0; Circuit d=1.0mm
+FEDUCIAL 2: 10; 40; 0; Circuit d=1.0mm
+FEDUCIAL 3: 10; 20; 0; Circuit d=1.0mm
+QR-CODE: 50; 50; 0; QR-Code 16x16
+
+
+209.5;	96.5;	0;	SAMSUNG_LED01
+-14;	0;	0;	SEOUL_LED01
+-14;	0;	0;	CREE_LED01
+

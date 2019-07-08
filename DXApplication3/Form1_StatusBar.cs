@@ -120,6 +120,30 @@ namespace ATIM_GUI
             });
         }
 
+        public void StatusBar_Wait_Time(int t_akt, int t_gesamt)
+        {
+            // Muss so kompliziert sein, da es von einem anderen Thread aufgerufen wird
+            statusStrip_MainWindow.Invoke((MethodInvoker)delegate
+            {
+
+                //Titel ändern
+                statusBar_Headline.Text = "Waiting: ";
+
+                //Remaining Time 
+                TimeSpan remainingTime = new TimeSpan(0, 0, t_gesamt - t_akt);
+
+                //Prozent berechnen
+                int prozent = t_akt * 100 / t_gesamt;
+
+                //Progressbar updaten
+                statusBar_ProgressBar.Value = prozent;
+
+                //Text ändern
+                statusBar_Detailed.Text = "Remaining Time: " + remainingTime.ToString() + " | To skip waiting press CANCEL Button";
+
+            });
+        }
+
         #endregion StatusBar
     }
 }

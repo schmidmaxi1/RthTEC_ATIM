@@ -380,7 +380,10 @@ namespace ATIM_GUI
         /// <param name="e"></param>
         private void ATIM_MainWindow_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+
+            //Ethernet verbindung (Spectrum) muss getrennt werden
+            myDAQ.Close();
+            
         }
 
 

@@ -129,7 +129,8 @@ namespace ATIM_GUI._02_Sensitivity
                 while (!GUI.myTEC.Stable_for_30sec)
                 {
                     //Abfragen ob abbrechen
-                    if (GUI.break_is_wished) { goto END_kFactor_all; }
+                    if (GUI.myBackroundWorker.CancellationPending)
+                        goto END_kFactor_all;
 
                     // Eine Sekunde Warten
                     System.Threading.Thread.Sleep(1000);
@@ -162,7 +163,8 @@ namespace ATIM_GUI._02_Sensitivity
                 for (int akt_DUT_Nr = 1; akt_DUT_Nr <= Nr_of_LEDs; akt_DUT_Nr++)
                 {
                     //Abfragen ob abbrechen
-                    if (GUI.break_is_wished) { goto END_kFactor_all; }
+                    if (GUI.myBackroundWorker.CancellationPending)
+                        goto END_kFactor_all;
 
                     //Text StatusBar ändern
                     GUI.StatusBar_Sensitivity_all(akt_DUT_Nr, Nr_of_LEDs, Counter_TempStep + 1, TempSteps.Count);
@@ -182,7 +184,7 @@ namespace ATIM_GUI._02_Sensitivity
                     //Save Point
                     Voltage_Values[akt_DUT_Nr - 1].Add(new Sensitivity_DataPoint_Voltage()
                     {
-                        Voltage = (decimal)RawData.Average(x => x) / MyRack.Cycles * MyDAQ.Range / 1000 / (decimal)Math.Pow(2, 15) / MyRack.Gain + MyRack.U_offset / 1000,
+                        Voltage = (decimal)RawData.Average(x => x) * MyDAQ.Range / 1000 / (decimal)Math.Pow(2, 15) / MyRack.Gain + MyRack.U_offset / 1000,
                         Temperature = TempSteps[Counter_TempStep]
                     });
 
@@ -213,7 +215,7 @@ namespace ATIM_GUI._02_Sensitivity
             Sensitivity_Calculation();
 
             //Fertig (Trotzdem müssen Grundeinstellungen wieder hergestellt werden)
-            goto END_kFactor_all;
+            goto END_kFactor_correct;
 
             END_kFactor_all:
 
@@ -224,21 +226,28 @@ namespace ATIM_GUI._02_Sensitivity
             IsRunning = false;
             Stop_OnLine_Temp_Plotting();
 
-            //Zu Parkposition fahren
-            //GUI.xyZ_table1.Move2Position(xyz_park_pos[0], xyz_park_pos[1], xyz_park_pos[2]);
 
             //Wenn abgebrochen wurde dann false zurückgeben
-            if (GUI.break_is_wished)
-            {
-                GUI.break_is_wished = false;// zurücksetzen
                 //Text StatusBar ändern
                 GUI.StatusBar_Measurement_CANCELED();
                 return false;
-            }
+            
+
+
+            END_kFactor_correct:
+            //set start temperature to TEC controller
+            MyTEC.SetTemperature_w_TimerStop((float)TempSteps[0]);
+
+            //stop Plotting
+            IsRunning = false;
+            Stop_OnLine_Temp_Plotting();
+
+
             //Text StatusBar ändern
             GUI.StatusBar_Measurement_FINISHED();
             //sonst true
             return true;
+
         }
 
         #endregion GlobaleFunktionen

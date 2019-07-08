@@ -127,7 +127,7 @@ namespace ATIM_GUI._01_TTA
             }
 
             //DatenSatz auswerten
-            if (!Convert_Data())
+            if (!Convert_Data(true))
                 return false;
 
             //Plotten
@@ -214,13 +214,16 @@ namespace ATIM_GUI._01_TTA
                         return false;
 
                     //Puls starten (bei NI mit Warten sonst ohne)
-                    //MyRack.SinglePuls_withoutDelay();
-                    MyRack.SinglePuls_withDelay();
+                    MyRack.SinglePuls_withoutDelay();
+                    //MyRack.SinglePuls_withDelay();
                     Thread.Sleep(300);
 
                     //Daten abholen
                     if (!MyDAQ.TTA_Collect_Data(Binary_Raw_Files, repetation_nr))
-                        return false;
+                        //Weitere Messungen überspringen
+                        goto next_Device;
+
+                        //return false;
 
                     //Daten prüfen
                     //????????????????????????????????????????
@@ -232,6 +235,24 @@ namespace ATIM_GUI._01_TTA
                     GUI.StatusBar_TTA_all(repetation_nr + 1, (int)MyRack.Cycles, akt_DUT_Nr, Nr_of_LEDs);
                 }
 
+                //DatenSatz auswerten, wenn kein Fehler dann auswerten
+                if (Convert_Data(false))
+                {
+                    //Plotten
+                    GUI.Add_Series_to_Data(this, MyMovement.MyMeasurment_Point[akt_DUT_Nr - 1].Name);
+                    GUI.Update_Voltage_Plots_for_TTA();
+
+                    //OutputFile-Name anpassen
+                    Output_File_Name = HelpFCT.Replace_Output_STR(initial_file_name, MyMovement.MyMeasurment_Point[akt_DUT_Nr - 1].Name);
+                    //Wpeichern
+                    Save_AllFiles();
+                }
+
+                goto next_Device;
+
+
+
+                /*ALTE Version
                 //DatenSatz auswerten
                 if (!Convert_Data())
                     return false;
@@ -244,6 +265,9 @@ namespace ATIM_GUI._01_TTA
                 Output_File_Name = HelpFCT.Replace_Output_STR(initial_file_name, MyMovement.MyMeasurment_Point[akt_DUT_Nr - 1].Name);
                 //Wpeichern
                 Save_AllFiles();
+                */
+
+                next_Device:
 
                 //Drive XYZ up
                 MyXYZ.MoveADistance(0, 0, MyMovement.Driving_Hight - MyMovement.TouchDown_Hight, 0);
@@ -268,10 +292,10 @@ namespace ATIM_GUI._01_TTA
 
         #region lokaleFunktionen
 
-        private Boolean Convert_Data()
+        private Boolean Convert_Data(Boolean show_Error_MessageBoxes)
         {
             //Switching Points suchen
-            if (!Search_for_switching_points())
+            if (!Search_for_switching_points(show_Error_MessageBoxes))
                 return false;
 
             //Mitteln über Cyclen
@@ -290,7 +314,7 @@ namespace ATIM_GUI._01_TTA
         /// Sucht die Umschaltpunkte in den Raw-Files in binärer Form
         /// </summary>
         /// <param name="return">true if no error occured; otherwise, false.</param>
-        private Boolean Search_for_switching_points()
+        private Boolean Search_for_switching_points(Boolean show_Error_MessageBoxes)
         {
             //Felder definiern
             Start_to_Heat = new long[MyRack.Cycles];
@@ -331,7 +355,8 @@ namespace ATIM_GUI._01_TTA
                 }
                 catch (IndexOutOfRangeException)
                 {
-                    MessageBox.Show("Off to Heat not found", "Error");
+                    if(show_Error_MessageBoxes)
+                        MessageBox.Show("Off to Heat not found", "Error");
                     return false;
                 }
 
@@ -356,7 +381,8 @@ namespace ATIM_GUI._01_TTA
                 }
                 catch (IndexOutOfRangeException)
                 {
-                    MessageBox.Show("Heat to Meas not Found", "Error");
+                    if (show_Error_MessageBoxes)
+                        MessageBox.Show("Heat to Meas not Found", "Error");
                     return false;
                 }
 
@@ -378,7 +404,8 @@ namespace ATIM_GUI._01_TTA
                 catch (IndexOutOfRangeException)
                 {
                     Meas_to_End[akt_Zyklus_Nr] = Binary_Raw_Files.GetLength(1) - 1;
-                    MessageBox.Show("Meas to Off not Found", "Error");
+                    if (show_Error_MessageBoxes)
+                        MessageBox.Show("Meas to Off not Found", "Error");
                     return false;
                 }
 

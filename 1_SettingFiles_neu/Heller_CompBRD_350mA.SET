@@ -1,0 +1,16 @@
+*Filesettings:
+Path: C:\Users\schmidm\Desktop\TEST24062019
+File: SAC305_TestBRD_%R
+Board-Design: C:\Users\schmidm\Desktop\ATIM_GIT\2_DrivingFiles_neu\LED_Comparison_BRD_ALL.txt
+*SaveOptions:
+Save_Aver_Cool: True
+Save_Aver_Heat: False
+Save_Signle_Cool: False
+Save_Single_Heat: False
+Save_Raw: False
+*Rth-Rack:
+I_Heat[mA]: 350
+t_Heat[ms]: 5000
+I_Meas[ms]: 20
+t_Meas[ms]: 5000
+Repetitions: 10

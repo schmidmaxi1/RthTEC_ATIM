@@ -23,7 +23,7 @@ namespace Read_Coordinates
         /// <summary>
         /// Local Mofment Infos form File
         /// </summary>
-        public Movement_Infos MyMovementInfo { get; internal set; }
+        public Movement_Infos MyMovementInfo { get; internal set; } = new Movement_Infos();
 
 
         private string MyPath { get;  set; }

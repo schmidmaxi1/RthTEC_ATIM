@@ -773,6 +773,10 @@ namespace _8_Rth_TEC_Rack
             string text = "*Rth-Rack:" + Environment.NewLine;
 
             text += "I_Heat[mA]: " + I_Heat.ToString() + Environment.NewLine;
+            text += "t_Heat[ms]: " + Time_Heat.ToString() + Environment.NewLine;
+            text += "I_Meas[ms]: " + I_Meas.ToString() + Environment.NewLine;
+            text += "t_Meas[ms]: " + Time_Meas.ToString() + Environment.NewLine;
+            text += "Repetitions: " + Cycles.ToString() + Environment.NewLine;
 
             return text;
         }
@@ -783,6 +787,14 @@ namespace _8_Rth_TEC_Rack
             {
                 if (input[i].StartsWith("I_Heat[mA]:"))
                     UI_Heat_Current.Value = Convert.ToDecimal(input[i].Substring(12));
+                else if (input[i].StartsWith("t_Heat[ms]:"))
+                    UI_Heat_Time.Value = Convert.ToDecimal(input[i].Substring(12));
+                else if (input[i].StartsWith("I_Meas[ms]:"))
+                    UI_Meas_Current.Value = Convert.ToDecimal(input[i].Substring(12));
+                else if (input[i].StartsWith("t_Meas[ms]:"))
+                    UI_Meas_Time.Value = Convert.ToDecimal(input[i].Substring(12));
+                else if (input[i].StartsWith("Repetitions:"))
+                    UI_Cycles.Value = Convert.ToDecimal(input[i].Substring(13));
 
             }
         }

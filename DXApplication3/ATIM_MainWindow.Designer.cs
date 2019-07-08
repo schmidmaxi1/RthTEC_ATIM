@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ATIM_MainWindow));
-            DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.ribbonButton_ComSet = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonButton_AutoCon = new DevExpress.XtraBars.BarButtonItem();
@@ -162,8 +162,8 @@
             // 
             this.barButtonItem_SaveSetting.Caption = "Save actual settings as ...";
             this.barButtonItem_SaveSetting.Id = 1;
-            this.barButtonItem_SaveSetting.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem_SaveSetting.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem_SaveSetting.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_SaveSetting.ImageOptions.Image")));
+            this.barButtonItem_SaveSetting.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_SaveSetting.ImageOptions.LargeImage")));
             this.barButtonItem_SaveSetting.Name = "barButtonItem_SaveSetting";
             this.barButtonItem_SaveSetting.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem_SaveSetting_ItemClick);
             // 
@@ -302,11 +302,13 @@
             // 
             // button_Auto_UI
             // 
-            this.button_Auto_UI.ImageOptions.Image = global::ATIM_GUI.Properties.Resources.U_I_Symbol_transparent1;
+            this.button_Auto_UI.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.button_Auto_UI.Appearance.Options.UseFont = true;
             this.button_Auto_UI.Location = new System.Drawing.Point(15, 215);
             this.button_Auto_UI.Name = "button_Auto_UI";
             this.button_Auto_UI.Size = new System.Drawing.Size(80, 80);
             this.button_Auto_UI.TabIndex = 18;
+            this.button_Auto_UI.Text = "HELLA \r\nALL";
             this.button_Auto_UI.Click += new System.EventHandler(this.Button_Auto_UI_Click);
             // 
             // groupBox_Cancel
@@ -348,9 +350,9 @@
             this.chartControl_RAW.SeriesSerializable = new DevExpress.XtraCharts.Series[0];
             this.chartControl_RAW.Size = new System.Drawing.Size(991, 191);
             this.chartControl_RAW.TabIndex = 0;
-            chartTitle2.Text = "Test";
+            chartTitle1.Text = "Test";
             this.chartControl_RAW.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
-            chartTitle2});
+            chartTitle1});
             // 
             // splitContainer2
             // 

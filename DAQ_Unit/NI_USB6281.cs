@@ -460,7 +460,7 @@ namespace DAQ_Units
             button_OpenClose.Text = "Close";
         }
 
-        private void Close()
+        public void Close()
         {
             //Verbindung muss nicht getrennt werden
             IsConnected = false;

@@ -69,6 +69,9 @@ namespace Read_Coordinates
         //                                          Konstruktor
         //**************************************************************************************************
 
+        public Movement_Infos()
+        { }
+
         public Movement_Infos(string input_Path)
         {
             //Zähl-Variable

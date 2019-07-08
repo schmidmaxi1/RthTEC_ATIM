@@ -42,15 +42,20 @@ namespace TEC_Controller
         public static uint Nr_of_channels { get; internal set; } = 4;
         public static uint Nr_of_TECs { get; internal set; } = 2;
 
+        //TEC
         public bool[] TEC_on { get; internal set; } = new bool[] { false, false, false, false };
-
         public float[] Target_temp { get; internal set; } = new float[Nr_of_channels];
         public float[] Meas_temp { get; internal set; } = new float[Nr_of_channels];
 
-        public float[] Meas_current { get; internal set; } = new float[Nr_of_channels];
-        public float[] Meas_voltage { get; internal set; } = new float[Nr_of_channels];
+        //Sink
+        public bool[] Fan_available { get; internal set; } = new bool[] { true, true, false, false };            //Wenn kein Fan angeschlossen --> Error wenn er nicht geht
         public float[] Meas_sink_temp { get; internal set; } = new float[Nr_of_channels];
 
+        //Power
+        public float[] Meas_current { get; internal set; } = new float[Nr_of_channels];
+        public float[] Meas_voltage { get; internal set; } = new float[Nr_of_channels];
+
+        //PID
         public float[] Value_P { get; internal set; } = new float[Nr_of_channels];
         public float[] Value_I { get; internal set; } = new float[Nr_of_channels];
         public float[] Value_D { get; internal set; } = new float[Nr_of_channels];
@@ -61,7 +66,7 @@ namespace TEC_Controller
 
 
         //Liste mit allen Registern
-        private string path_Init_File = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\0_Initialisation_Files\\TEC.ini";
+        private readonly string path_Init_File = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName + "\\0_Initialisation_Files\\TEC.ini";
         private string[] initalisationFile;
         public List<Meerstetter_Registers>[] registers = { new List<Meerstetter_Registers>(), new List<Meerstetter_Registers>() };
 
@@ -294,10 +299,15 @@ namespace TEC_Controller
 
         public void Switch_Fan_OnOff(bool value)
         {
-            //An oder Ausschalten
+            //An oder Ausschalten (Wenn kein FAN vorhanden, dann immer aussschalten, sonst ERROR)
             for (int i = 1; i <= Nr_of_channels; i++)
-                //for (int j = 0; j < Nr_of_TECs; j++)
+            {
+                if (Fan_available[i-1])
                     Switch_Fan_OnOff(value, i);
+                else
+                    Switch_Fan_OnOff(false, i);
+            }
+
             //Button in DropDown anpassen
             if (value)
                 barButtonItem_Fan.Caption = "Switch fan off";
@@ -477,7 +487,7 @@ namespace TEC_Controller
             //Wenn alle an dann Flag IsRunning setzen
             Boolean temp_flag = true;
             foreach (Boolean single_flag in TEC_on)
-                temp_flag = temp_flag & single_flag;
+                temp_flag &= single_flag;
 
             IsRunning = temp_flag;
         }
@@ -2264,7 +2274,6 @@ namespace TEC_Controller
 
         }
 
-
         //********************************************************************************************************************
         //                                           AutoConnect
         //********************************************************************************************************************
@@ -2292,7 +2301,6 @@ namespace TEC_Controller
             MyMeComPhySerialPort[i].StopBits = help.StopBits;
             MyMeComPhySerialPort[i].BaudRate = help.BaudRate;
         }
-
         
         public string AutoOpen(AutoConnect_Window myLoadScreen)
         {

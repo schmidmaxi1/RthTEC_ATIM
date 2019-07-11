@@ -86,6 +86,8 @@ namespace ATIM_GUI
             chartControl_RAW.Series.Add(neueSerie);
 
             //Alten Titel löschen, neuen erzeugen und hinzufügen
+            var test = chartControl_RAW.Titles;
+
             chartControl_RAW.Titles.Clear();
             myChartTitle = new DevExpress.XtraCharts.ChartTitle()
             {

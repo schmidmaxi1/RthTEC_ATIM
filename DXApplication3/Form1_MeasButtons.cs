@@ -99,6 +99,9 @@ namespace ATIM_GUI
             if (!Operationalitiy_TTA_Single())
                 return;
 
+            //Plots initisieren (Anpassung muss im MainThread passiern)
+            Graph_new_Measurment_for_TTA(myTTA_new);
+
             //Backroundworker definieren
             myBackroundWorker = new BackgroundWorker()
             {
@@ -258,7 +261,21 @@ namespace ATIM_GUI
         #region UI
 
         private void Characteristics_Single() {
-            MessageBox.Show("Not relized yet");
+            // MessageBox.Show("Not relized yet");
+            //TTA-Mess-Klasse erzeugen und Geräte übergeben
+            myTTA_new = new TTA_measurement_new()
+            {
+                MyRack = rthTEC_Rack1,
+                MyDAQ = myDAQ,
+                GUI = this,
+            };
+
+            //Plots initisieren (Anpassung muss im MainThread passiern)
+            Graph_new_Measurment_for_TTA(myTTA_new);
+
+            myTTA_new.Test_Compress_Data();
+
+
         }
 
         private async void Characteristics_Automatic()

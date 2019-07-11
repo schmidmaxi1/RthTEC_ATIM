@@ -472,18 +472,32 @@ namespace ATIM_GUI._01_TTA
         /// <param name="return">returns Liste with TTA_DataPoints; otherwise, null.</param>
         private List<TTA_DataPoint> Compress_Data(long[] input, short cycles)
         {
-            //Temporäre Liste für Output generieren
+            /* Erklärung:
+             * 
+             * Hintergrund:
+             * Wenn Daten nicht komprimiert werden, ist der gespeicherte File zu groß.
+             * Deshalb werden im späteren Zeitbereich Messpunkte gestrichen.
+             * Damit die Information erhalten bleibt, werden die gestrichenen Punkte in weiter bestehende "gemittelt".
+             * 
+             * Funktion:
+             * Wenn eine definierte Datendichte erreicht ist, wird die Schrittweite ehrhöht (d.h. f_Abspeicherung wird kleiner)
+             * In diesem Algorithmus werden nach der ersten erhöhung 3 Punkte zusammengefasst, nach der zweiten 9, usw. 
+             * Die Punkte werden dazu gemittelt, und in den Mittleren Punkt geschreiben.
+             * Der Faktor 3 wurde ausgewählt um die mittelung symetrisch zu machen
+             * Die Datendichte ist definiert als der Abstand zwischen zwei Messpunkten / den aktuellen Zeitpunkt
+             * 
+             * 
+             * */
+
+            //Leere, temporäre Liste für Output generieren
             List<TTA_DataPoint> output = new List<TTA_DataPoint>();
 
-            //Parameter für abspeicherung
-            decimal periode = 1m / MyDAQ.Frequency;
+            //Einige Parameter für schnelleres rechnen bestimmen
+            decimal periode = 1m / MyDAQ.Frequency;                                                                     //Abstand zwischen Samples
+            decimal faktor_voltage = 1m / cycles / MyRack.Gain * MyDAQ.Range / 1000 / (decimal)Math.Pow(2, 15);         //Binary --> Voltage Faktor (mit Anzahl Zyklen)
+            decimal offset_voltage = MyRack.U_offset / 1000;                                                            //Offset
 
-
-            decimal faktor_voltage = 1m / cycles / MyRack.Gain * MyDAQ.Range / 1000 / (decimal)Math.Pow(2, 15);
-            decimal offset_voltage = MyRack.U_offset / 1000;
-
-
-            //Die ersten Werte (vor Flanke) mit Zeit 0 in Liste ablegen
+            //[Puffer_Messpunkte] Messpunkte mit Zeit "0" in Liste eintragen
             for (int i = 0; i < Puffer_Messpunkte; i++)
             {
                 output.Add(
@@ -508,36 +522,25 @@ namespace ATIM_GUI._01_TTA
                 }
             );
 
+            //Anzahl der Punkte über die im Moment gemittelt wird
+            int anzahl_Punkte_Mittelung_gesamt = 1;
+            //Anzahl der Punkte vor oder nach dem mittleren Punkt
+            long anzahl_Punkte_Mittelung_eine_Seite = (anzahl_Punkte_Mittelung_gesamt - 1) / 2;
 
-            //Zählvariablen
-            int akt_komp_Faktor = 1;        //Indikator der Mittelbreite
-            long j = 1 + Puffer_Messpunkte;                      //Zählvariable für die neue Liste
+            //Zählvariable in Liste (notwendig Schrittweiten erhöhung)
+            long Count_Var_outputList = 1 + Puffer_Messpunkte;                      //Zählvariable für die neue Liste
 
-            for (long i = 1 + Puffer_Messpunkte; i < (input.Length - (akt_komp_Faktor - 1) / 2);)
+            for (long i = 1 + Puffer_Messpunkte; i < (input.Length - anzahl_Punkte_Mittelung_eine_Seite); )
             {
-                //Punkte zusammenfassen
-
-                //anzahl_punkte entspricht der Anzahl vor bzw. nach dem eigentlichen messpunkt
-                long anzahl_punkte = (akt_komp_Faktor - 1) / 2;
+                //Punkte zusammenfassen********************************
                 long summe = 0;
                 //Summieren
-                for (long a = i - anzahl_punkte; a <= i + anzahl_punkte; a++)
-                {
-                    summe += input[i];
-                }
-                //Teilen
-                summe /= (anzahl_punkte * 2) + 1;
+                for (long a = i - anzahl_Punkte_Mittelung_eine_Seite; a <= i + anzahl_Punkte_Mittelung_eine_Seite; a++)                
+                    summe += input[a];                
+                //Mitteln
+                summe /= anzahl_Punkte_Mittelung_gesamt;
 
-                //Test
-                if (output.Count > 100)
-                    if (output[output.Count - 2].Voltage - output[output.Count - 1].Voltage > 0.01m)
-                    {
-                        decimal Time = (i + 1 - Puffer_Messpunkte) * periode;
-                        decimal Binary = (short)(summe / cycles);
-                        decimal Voltage = summe * faktor_voltage + offset_voltage;
-                    }
-
-                //Neue Werte eintragen wenn noch genügent übrig sind   
+                //In Liste übernehmen*********************************
                 output.Add(
                     new TTA_DataPoint()
                     {
@@ -548,21 +551,26 @@ namespace ATIM_GUI._01_TTA
                     }
                 );
 
-
-
-                //Datendichte überprüfen (notfalls schritte erhöhen) und Zählvariablen anpassen
-                if (output[(int)j].Time / (output[(int)j].Time - output[(int)j - 1].Time) > Max_daten_dichte)
+                //Datendichte überprüfen******************************
+                //(notfalls schritte erhöhen) und Zählvariablen anpassen
+                if (output[(int)Count_Var_outputList].Time / (output[(int)Count_Var_outputList].Time - output[(int)Count_Var_outputList - 1].Time) > Max_daten_dichte)
                 {
-                    i += 2 * akt_komp_Faktor;              //halb überspringen
-                    akt_komp_Faktor *= 3; //Erhöhen
+                    //Zum nächsten Mittelpunkt springen
+                    i += 2 * anzahl_Punkte_Mittelung_gesamt; 
+
+                    //Schrittweite erhöhen
+                    anzahl_Punkte_Mittelung_gesamt *= 3;
+                    //Punkte vor bzw. dannach neu berechnen
+                    anzahl_Punkte_Mittelung_eine_Seite = (anzahl_Punkte_Mittelung_gesamt - 1) / 2;
                 }
                 else
                 {
-                    i += akt_komp_Faktor;
+                    //Zum nächsen Mittelpunkt springen
+                    i += anzahl_Punkte_Mittelung_gesamt;
                 }
-                j++;
+                Count_Var_outputList++;
             }
-
+            //Liste ausgeben
             return output;
         }
 
@@ -808,5 +816,40 @@ namespace ATIM_GUI._01_TTA
         #endregion Generate parts of Header
 
         #endregion Save
+
+        //********************************************************************************************************************
+        //                                             FCT Tests
+        //********************************************************************************************************************
+
+        public void Test_Compress_Data()
+        {
+            //Einstellbare Parameter
+            long sample_Count = 10000000;
+
+            long average_heat = 10000;
+            long average_meas = 10000;
+            Int32 noise_Amplitue = 1000;
+
+            long[] heat_raw_test = new long[sample_Count];
+            long[] meas_raw_test = new long[sample_Count];
+
+            //Instanz für Zufallsgenerierung erstellen
+            Random rnd = new Random();
+
+            //Generierung eines exemplarischen Daten-Satzes --> Einstieg nach Aufsummieren einzelner Mess-Wiederholungen
+            for(int i  = 0; i < sample_Count; i++)
+            {
+                heat_raw_test[i] = average_heat + rnd.Next(-noise_Amplitue, noise_Amplitue);
+                meas_raw_test[i] = average_meas + rnd.Next(-noise_Amplitue, noise_Amplitue);
+            }
+
+            //Funktion zum Testen aufrufen
+            Average_Heat_Compressed = Compress_Data(heat_raw_test, 1);
+            Average_Meas_Compressed = Compress_Data(meas_raw_test, 1);
+
+            //Plotten
+            GUI.Add_Series_to_Data(this);
+            GUI.Update_Voltage_Plots_for_TTA();
+        }
     }
 }

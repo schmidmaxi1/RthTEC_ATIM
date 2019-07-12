@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.Collections;
 
 namespace Hilfsfunktionen
 {
@@ -22,7 +23,7 @@ namespace Hilfsfunktionen
             string[] ports = SerialPort.GetPortNames();
 
             //Liste sortieren (Alles größer 9 wird nach der 1 eingeordnet)
-            Array.Sort(ports);
+            Array.Sort(ports, (a,b) => Convert.ToInt32(a.Substring(3)).CompareTo(Convert.ToInt32(b.Substring(3))));
             
 
             if (ports.Length == 0)

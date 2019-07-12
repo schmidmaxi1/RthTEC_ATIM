@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Rth_Rack_Window
+namespace RthTEC_Rack
 {
     public partial class Card_00_Vorlage : UserControl
     {

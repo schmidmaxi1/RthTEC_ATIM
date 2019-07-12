@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoConnect", "AutoConnect\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAQ_Units", "DAQ_Unit\DAQ_Units.csproj", "{311634B1-6945-4B07-A37C-1B84FB634064}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rth_Rack_Window", "Rth_Rack_Window\Rth_Rack_Window.csproj", "{0BFFD620-D6BA-4A75-85EF-1D679A893627}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RthTEC", "Rth_Rack_Window\RthTEC.csproj", "{0BFFD620-D6BA-4A75-85EF-1D679A893627}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

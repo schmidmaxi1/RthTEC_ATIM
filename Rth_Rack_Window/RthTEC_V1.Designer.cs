@@ -1,4 +1,4 @@
-﻿namespace Rth_Rack_Window
+﻿namespace RthTEC_Rack
 {
     partial class RthTEC_V1
     {
@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RthTEC_V1));
             this.groupBox_XYZ = new System.Windows.Forms.GroupBox();
+            this.button_Enable = new System.Windows.Forms.Button();
             this.Button_OpenClose = new DevExpress.XtraEditors.DropDownButton();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
             this.barButtonItem_Reset = new DevExpress.XtraBars.BarButtonItem();
@@ -45,14 +46,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.akt_Position = new System.Windows.Forms.TextBox();
             this.ComPort_select = new System.Windows.Forms.ComboBox();
-            this.button_Enable = new System.Windows.Forms.Button();
+            this.numericUpDown_Repetations = new System.Windows.Forms.NumericUpDown();
             this.groupBox_XYZ.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Repetations)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox_XYZ
             // 
+            this.groupBox_XYZ.Controls.Add(this.numericUpDown_Repetations);
             this.groupBox_XYZ.Controls.Add(this.button_Enable);
             this.groupBox_XYZ.Controls.Add(this.Button_OpenClose);
             this.groupBox_XYZ.Controls.Add(this.label3);
@@ -65,7 +68,18 @@
             this.groupBox_XYZ.Size = new System.Drawing.Size(510, 100);
             this.groupBox_XYZ.TabIndex = 44;
             this.groupBox_XYZ.TabStop = false;
-            this.groupBox_XYZ.Text = "XYZ: Isel 4Axis";
+            this.groupBox_XYZ.Text = "RthTEC:";
+            // 
+            // button_Enable
+            // 
+            this.button_Enable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Enable.Location = new System.Drawing.Point(250, 34);
+            this.button_Enable.Name = "button_Enable";
+            this.button_Enable.Size = new System.Drawing.Size(90, 21);
+            this.button_Enable.TabIndex = 42;
+            this.button_Enable.Text = "Enable Output";
+            this.button_Enable.UseVisualStyleBackColor = true;
+            this.button_Enable.Click += new System.EventHandler(this.Button_Enable_Click);
             // 
             // Button_OpenClose
             // 
@@ -197,19 +211,27 @@
             this.ComPort_select.FormattingEnabled = true;
             this.ComPort_select.Location = new System.Drawing.Point(120, 34);
             this.ComPort_select.Name = "ComPort_select";
-            this.ComPort_select.Size = new System.Drawing.Size(95, 21);
+            this.ComPort_select.Size = new System.Drawing.Size(90, 21);
             this.ComPort_select.TabIndex = 26;
             // 
-            // button_Enable
+            // numericUpDown_Repetations
             // 
-            this.button_Enable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Enable.Location = new System.Drawing.Point(250, 34);
-            this.button_Enable.Name = "button_Enable";
-            this.button_Enable.Size = new System.Drawing.Size(75, 21);
-            this.button_Enable.TabIndex = 42;
-            this.button_Enable.Text = "Enable Output";
-            this.button_Enable.UseVisualStyleBackColor = true;
-            this.button_Enable.Click += new System.EventHandler(this.Button_Enable_Click);
+            this.numericUpDown_Repetations.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown_Repetations.Location = new System.Drawing.Point(350, 34);
+            this.numericUpDown_Repetations.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_Repetations.Name = "numericUpDown_Repetations";
+            this.numericUpDown_Repetations.Size = new System.Drawing.Size(90, 20);
+            this.numericUpDown_Repetations.TabIndex = 43;
+            this.numericUpDown_Repetations.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown_Repetations.ValueChanged += new System.EventHandler(this.NumericUpDown_Repetations_ValueChanged);
             // 
             // RthTEC_V1
             // 
@@ -226,6 +248,7 @@
             this.groupBox_XYZ.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Repetations)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +272,6 @@
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private System.Windows.Forms.Button button_Enable;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Repetations;
     }
 }

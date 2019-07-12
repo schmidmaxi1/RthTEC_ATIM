@@ -289,12 +289,6 @@
       <DependentUpon>Form_Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="04_Settings\Settings_ATIM.cs" />
-    <Compile Include="08_Rth TEC_Rack\UserControl_RthTEC_Rack.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="08_Rth TEC_Rack\UserControl_RthTEC_Rack.designer.cs">
-      <DependentUpon>UserControl_RthTEC_Rack.cs</DependentUpon>
-    </Compile>
     <Compile Include="10_Camera\Camera detailed.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,9 +339,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="04_Settings\Form_Settings.resx">
       <DependentUpon>Form_Settings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="08_Rth TEC_Rack\UserControl_RthTEC_Rack.resx">
-      <DependentUpon>UserControl_RthTEC_Rack.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="10_Camera\Camera detailed.resx">
       <DependentUpon>Camera detailed.cs</DependentUpon>
@@ -481,6 +472,10 @@
     <ProjectReference Include="..\Read_Coordinates\File Settings.csproj">
       <Project>{9f38bf61-f650-4827-b484-74acfc0f54fd}</Project>
       <Name>File Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rth_Rack_Window\RthTEC.csproj">
+      <Project>{0bffd620-d6ba-4a75-85ef-1d679a893627}</Project>
+      <Name>RthTEC</Name>
     </ProjectReference>
     <ProjectReference Include="..\TEC_Controller\TEC_Controller.csproj">
       <Project>{2f1c5fb4-2afa-4484-8c8f-30d1fe6f21fb}</Project>

@@ -1,6 +1,6 @@
 ﻿namespace _8_Rth_TEC_Rack
 {
-    partial class RthTEC_Rack
+    partial class RthTEC_Rack_alt
     {
         /// <summary> 
         /// Erforderliche Designervariable.

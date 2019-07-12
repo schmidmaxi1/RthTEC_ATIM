@@ -45,7 +45,7 @@ namespace ATIM_GUI
 
                 //Zeit neu eistellen
                 XYDiagram xyDigaram_RAW = (XYDiagram)chartControl_RAW.Diagram;
-                decimal zeit_max = (myTTA.MyRack.Time_Heat + myTTA.MyRack.Time_Meas) / 1000;
+                decimal zeit_max = (myTTA.MyRthTEC_Rack.Time_Heat + myTTA.MyRthTEC_Rack.Time_Meas) / 1000;
 
                 xyDigaram_RAW.AxisX.WholeRange.MaxValue = zeit_max * 2;                         //Zugelassener Bereich
                 xyDigaram_RAW.AxisX.WholeRange.MinValue = 0;
@@ -112,7 +112,7 @@ namespace ATIM_GUI
             xyDigaram_RAW.AxisY.Title.Font = myFont_Axis;
 
             // Min / Max /GridSpacing / ... - Achse
-            decimal zeit_max = (myTTA.MyRack.Time_Heat + myTTA.MyRack.Time_Meas) / 1000;
+            decimal zeit_max = (myTTA.MyRthTEC_Rack.Time_Heat + myTTA.MyRthTEC_Rack.Time_Meas) / 1000;
 
             xyDigaram_RAW.AxisX.VisibleInPanesSerializable = "-1";
             xyDigaram_RAW.AxisX.VisualRange.Auto = false;
@@ -181,9 +181,9 @@ namespace ATIM_GUI
             // Min / Max /GridSpacing / ... - Achse
             xyDiagram_DATA_Top.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram_DATA_Top.AxisX.VisualRange.Auto = false;
-            xyDiagram_DATA_Top.AxisX.WholeRange.MaxValue = myTTA.MyRack.Time_Heat / 1000;             //Zugelassener Bereich
+            xyDiagram_DATA_Top.AxisX.WholeRange.MaxValue = myTTA.MyRthTEC_Rack.Time_Heat / 1000;             //Zugelassener Bereich
             xyDiagram_DATA_Top.AxisX.WholeRange.MinValue = 1m / myTTA.MyDAQ.Frequency;
-            xyDiagram_DATA_Top.AxisX.VisualRange.MaxValue = myTTA.MyRack.Time_Heat / 1000;            //Sichtbarrer Bereich
+            xyDiagram_DATA_Top.AxisX.VisualRange.MaxValue = myTTA.MyRthTEC_Rack.Time_Heat / 1000;            //Sichtbarrer Bereich
             xyDiagram_DATA_Top.AxisX.VisualRange.MinValue = 1m / myTTA.MyDAQ.Frequency;
             xyDiagram_DATA_Top.AxisX.VisualRange.SideMarginsValue = 0;                               //Überstand Links und rechts
             xyDiagram_DATA_Top.AxisX.Logarithmic = true;
@@ -244,9 +244,9 @@ namespace ATIM_GUI
             // Min / Max /GridSpacing / ... - Achse
             xyDiagram_DATA_Bottom.AxisX.VisibleInPanesSerializable = "-1";
             xyDiagram_DATA_Bottom.AxisX.VisualRange.Auto = false;
-            xyDiagram_DATA_Bottom.AxisX.WholeRange.MaxValue = myTTA.MyRack.Time_Heat / 1000;             //Zugelassener Bereich
+            xyDiagram_DATA_Bottom.AxisX.WholeRange.MaxValue = myTTA.MyRthTEC_Rack.Time_Heat / 1000;             //Zugelassener Bereich
             xyDiagram_DATA_Bottom.AxisX.WholeRange.MinValue = 1m / myTTA.MyDAQ.Frequency;
-            xyDiagram_DATA_Bottom.AxisX.VisualRange.MaxValue = myTTA.MyRack.Time_Heat / 1000;            //Sichtbarrer Bereich
+            xyDiagram_DATA_Bottom.AxisX.VisualRange.MaxValue = myTTA.MyRthTEC_Rack.Time_Heat / 1000;            //Sichtbarrer Bereich
             xyDiagram_DATA_Bottom.AxisX.VisualRange.MinValue = 1m / myTTA.MyDAQ.Frequency;
             xyDiagram_DATA_Bottom.AxisX.VisualRange.SideMarginsValue = 0;                               //Überstand Links und rechts
             xyDiagram_DATA_Bottom.AxisX.Logarithmic = true;

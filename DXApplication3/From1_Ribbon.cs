@@ -129,8 +129,8 @@ namespace ATIM_GUI
             //Rth-Rack
             myAutoConnect_Window.ChangeAll_newValue("Rth-Rack ...", "Starting Connection ...", 80);
 
-            if (!rthTEC_Rack1.IsConnected)
-                errorText += rthTEC_Rack1.AutoOpen(myAutoConnect_Window);
+            if (!myRthTEC.IsConnected)
+                errorText += myRthTEC.AutoOpen(myAutoConnect_Window);
 
             //Fenster schließen
             myAutoConnect_Window.Close();
@@ -157,8 +157,9 @@ namespace ATIM_GUI
             {
                 if (element.Name.IndexOf("Rth") >= 0)
                 {
-                    rthTEC_Rack1.Serial_Interface = element.ToSerialPort();
-                    rthTEC_Rack1.ComPort_select.Text = element.comboBox_Port.Text;
+                    myRthTEC.Update_settings(element);
+                    //rthTEC_Rack1.Serial_Interface = element.ToSerialPort();
+                    //rthTEC_Rack1.ComPort_select.Text = element.comboBox_Port.Text;
                 }
                 else if (element.Name.IndexOf("TEC") >= 0)                
                     myTEC.Update_settings(element);
@@ -205,7 +206,7 @@ namespace ATIM_GUI
             //Alle Geräte und einstellungen nacheinander abspeichen
             text += myFileSetting.ToString();
             text += mySaving_Options.ToString();
-            text += rthTEC_Rack1.ToString();
+            text += myRthTEC.ToString();
 
             //Seicher Dialog öffnen
             SaveFileDialog saveFileDialog1 = new SaveFileDialog()
@@ -261,7 +262,7 @@ namespace ATIM_GUI
                         mySaving_Options.FromString(datei_Inhalt.Skip(akt_stern + 1).Take(next_stern - akt_stern).ToArray());
 
                     else if (datei_Inhalt[akt_stern].Contains("Rth-Rack"))
-                        rthTEC_Rack1.FromString(datei_Inhalt.Skip(akt_stern + 1).Take(next_stern - akt_stern).ToArray());
+                        myRthTEC.FromString(datei_Inhalt.Skip(akt_stern + 1).Take(next_stern - akt_stern).ToArray());
                 }
 
 

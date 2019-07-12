@@ -34,11 +34,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GUI)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // pictureBox_GUI
             // 
             this.pictureBox_GUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox_GUI.Location = new System.Drawing.Point(474, 5);
-            this.pictureBox_GUI.Name = "pictureBox2";
+            this.pictureBox_GUI.Name = "pictureBox_GUI";
             this.pictureBox_GUI.Size = new System.Drawing.Size(21, 21);
             this.pictureBox_GUI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_GUI.TabIndex = 11;

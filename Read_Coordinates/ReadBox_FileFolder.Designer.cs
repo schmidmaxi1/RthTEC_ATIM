@@ -63,11 +63,10 @@
             this.textBox_Path.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.textBox_Path.Location = new System.Drawing.Point(75, 5);
             this.textBox_Path.Name = "textBox_Path";
-            this.textBox_Path.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox_Path.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox_Path.Size = new System.Drawing.Size(394, 21);
             this.textBox_Path.TabIndex = 12;
             this.textBox_Path.Text = "Double click";
-            this.textBox_Path.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox_Path.TextChanged += new System.EventHandler(this.TextBox_Path_TextChanged);
             this.textBox_Path.DoubleClick += new System.EventHandler(this.TextBox_Path_DoubleClick);
             // 
@@ -96,11 +95,10 @@
             this.textBox_FileName.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.textBox_FileName.Location = new System.Drawing.Point(75, 30);
             this.textBox_FileName.Name = "textBox_FileName";
-            this.textBox_FileName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBox_FileName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.textBox_FileName.Size = new System.Drawing.Size(394, 21);
             this.textBox_FileName.TabIndex = 15;
             this.textBox_FileName.Text = " (must contain %R, is afterwards replace by ID of DUT)";
-            this.textBox_FileName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox_FileName.TextChanged += new System.EventHandler(this.TextBox_FileName_TextChanged);
             this.textBox_FileName.DoubleClick += new System.EventHandler(this.TextBox_FileName_DoubleClick);
             // 

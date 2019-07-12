@@ -912,7 +912,6 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.csprojAssemb
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI._02_Sensitivity.Window_Sensitivity_TempStepSelect.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI._3_Project.Form_Project_Status.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI._4_Settings.Form_Settings.resources
-C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\_8_Rth_TEC_Rack.RthTEC_Rack.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\DXApplication3._10_Camera.Camera_detailed.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\DXApplication3._10_Camera.Camera_Gerber.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.ATIM_MainWindow.resources
@@ -924,3 +923,6 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.csproj.CoreC
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.csproj.CopyComplete
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.exe
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Rth_Rack_Window.exe
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Rth_Rack_Window.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Rth_Rack_Window.exe.config

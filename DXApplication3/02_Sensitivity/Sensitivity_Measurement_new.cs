@@ -7,12 +7,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-
-using _8_Rth_TEC_Rack;
-
 using DAQ_Units;
 using TEC_Controller;
 using XYZ_Table;
+using RthTEC_Rack;
 
 using Read_Coordinates;
 
@@ -30,8 +28,9 @@ namespace ATIM_GUI._02_Sensitivity
         //**************************************************************************************************
 
         //Devices
-        public RthTEC_Rack MyRack { get; set; }
-
+        public I_RthTEC MyRack { get; set; }
+        public I_CardType_Amp MyFrontEnd { get; set; }      //im Rack
+        public I_CardType_Power MyHeatSource { get; set; }      //im Rack
         public I_DAQ MyDAQ { get; set; }
         public I_TEC_Controller MyTEC { get; set; }
         public I_XYZ MyXYZ { get; set; }
@@ -51,6 +50,10 @@ namespace ATIM_GUI._02_Sensitivity
         public List<decimal> TempSteps { get; set; } = new List<decimal>();
         public int Nr_of_LEDs { get; internal set; }
 
+        public short[] RawData { get; set; }
+        public List<Sensitivity_DataPoint_Temperature> Data_Temp_at_Time { get; internal set; }
+        public List<Sensitivity_DataPoint_Temperature>[] Data_MeasurementMarker { get; internal set; }
+
         public List<Sensitivity_DataPoint_Voltage>[] Voltage_Values { get; internal set; }
 
         //Indikator, that temperature progress should be plottet
@@ -66,14 +69,13 @@ namespace ATIM_GUI._02_Sensitivity
         //Timer Thread - Für Plotten
         private Sensitivity_Parallel_Thread thread_Temp_Plotting;
 
-        public List<Sensitivity_DataPoint_Temperature> Data_Temp_at_Time { get; internal set; }
-        public List<Sensitivity_DataPoint_Temperature>[] Data_MeasurementMarker { get; internal set; }
+
 
         private bool Flag_LED_Measurement { get; set; } = false;
 
 
         public long Nr_of_samples { get; } = 100000;
-        public short[] RawData { get; set; }
+
 
         //**************************************************************************************************
         //                                          Konstruktor
@@ -149,7 +151,7 @@ namespace ATIM_GUI._02_Sensitivity
                 //3. Measure all DUTs..........................................................................
 
                 //Switch On Current Source with selected current
-                MyRack.MeasCurrent_on();
+                MyRack.Start_SEN_Pulse(true);
 
                 //Rauffahrn (immer genau auf 0)
                 MyXYZ.Move2Position(MyXYZ.Akt_x_Koordinate, MyXYZ.Akt_y_Koordinate, 0, MyXYZ.Akt_Winkel);
@@ -184,7 +186,7 @@ namespace ATIM_GUI._02_Sensitivity
                     //Save Point
                     Voltage_Values[akt_DUT_Nr - 1].Add(new Sensitivity_DataPoint_Voltage()
                     {
-                        Voltage = (decimal)RawData.Average(x => x) * MyDAQ.Range / 1000 / (decimal)Math.Pow(2, 15) / MyRack.Gain + MyRack.U_offset / 1000,
+                        Voltage = (decimal)RawData.Average(x => x) * MyDAQ.Range / 1000 / (decimal)Math.Pow(2, 15) / MyFrontEnd.Gain + MyFrontEnd.V_Offset / 1000,
                         Temperature = TempSteps[Counter_TempStep]
                     });
 
@@ -205,7 +207,7 @@ namespace ATIM_GUI._02_Sensitivity
 
 
                 //Switch Current source of (until next temperature is reached
-                MyRack.MeasCurrent_off();
+                MyRack.Start_SEN_Pulse(false);
 
             }
             //Speicher wieder Frei geben (gegen überflutung Arbeitsspeicher)
@@ -371,7 +373,7 @@ namespace ATIM_GUI._02_Sensitivity
             header += "#Equipment:      Heller_V2_0 + Spectrum_V1_0\r\n";
 
             //Vierte bis Zeile Parameter-Info
-            header += "#I_meas_current: " + MyRack.I_Meas.ToString() + " mA\r\n";
+            header += "#I_meas_current: " + MyHeatSource.I_Meas.ToString() + " mA\r\n";
             header += "#Sensitivity:    " + sensitivity + " mV/K\r\n";
             header += "#K-factor:       " + Math.Round(k_factor, 4) + " K/mV\r\n";
             header += "#Quality (R2):   " + Math.Round(rsquared, 6) + "\r\n";

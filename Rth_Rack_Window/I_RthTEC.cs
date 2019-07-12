@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rth_Rack_Window
+using Communication_Settings;
+using AutoConnect;
+
+namespace RthTEC_Rack
 {
 
     /// <summary>
@@ -31,6 +34,8 @@ namespace Rth_Rack_Window
         decimal Time_Meas { get;  }
         decimal DPA_Time { get;   }
         Int32 DPA_Count { get;  }
+        Int32 Cycles { get; }
+
 
         //Funktionen
 
@@ -53,6 +58,16 @@ namespace Rth_Rack_Window
         string SetDPACount(Int32 input);
         string SetDPATime(Decimal input);
         string SetSlotActivation(bool input, int slot_nr);
+
+
+        //AutoSettings
+        void Change_Enabled(Boolean input);
+        void Update_settings(SerialCommunicationDivice myInput);
+        string AutoOpen(AutoConnect_Window myLoadScreen);
+
+        string ToString();
+
+        void FromString(string[] input);
 
 
     }

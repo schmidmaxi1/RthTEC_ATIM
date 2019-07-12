@@ -11,8 +11,12 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Threading;
 
+using Hilfsfunktionen;
+using Communication_Settings;
+using AutoConnect;
 
-namespace Rth_Rack_Window
+
+namespace RthTEC_Rack
 {
     public partial class RthTEC_V1 : UserControl, I_RthTEC
     {
@@ -73,6 +77,11 @@ namespace Rth_Rack_Window
         /// </summary>
         public Int32 DPA_Count { get; internal set; }
 
+        /// <summary>
+        /// Measurment repitation TTA
+        /// </summary>
+        public int Cycles { get; internal set; } = 1;
+
 
         /// <summary>
         /// Feld mit den verwendeten Karten in den Slots
@@ -108,11 +117,8 @@ namespace Rth_Rack_Window
             InitializeComponent();
 
             //Com Port lesen
-            //HelpFCT.SetComPortBox(ComPort_select);
+            HelpFCT.SetComPortBox(ComPort_select);
 
-            string[] ports = SerialPort.GetPortNames();
-            foreach (string port in ports)
-                ComPort_select.Items.Add(port);
         }
 
         public RthTEC_V1(Form callingForm, int x, int y)
@@ -120,16 +126,13 @@ namespace Rth_Rack_Window
             InitializeComponent();
 
             //Com Port lesen
-            //HelpFCT.SetComPortBox(ComPort_select);
+            HelpFCT.SetComPortBox(ComPort_select);
 
-            string[] ports = SerialPort.GetPortNames();
-            foreach (string port in ports)
-                ComPort_select.Items.Add(port);
 
             //In GUI einfügen
             this.Location = new System.Drawing.Point(x, y);
             this.Name = "RthTEC_V1";
-            this.Size = new System.Drawing.Size(515, 100);
+            this.Size = new System.Drawing.Size(515, 105);
             this.TabIndex = 34;
 
             //Hinzufügen
@@ -176,9 +179,13 @@ namespace Rth_Rack_Window
             }
         }
 
+        private void NumericUpDown_Repetations_ValueChanged(object sender, EventArgs e)
+        {
+            Cycles = (int)numericUpDown_Repetations.Value;
+        }
         private void BarButtonItem_Reset_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            Reset();
         }
 
         private void BarButtonItem_Detailed_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -199,6 +206,14 @@ namespace Rth_Rack_Window
         //********************************************************************************************************************
         //                                        globale Functions (Interface I_RthTEC)
         //********************************************************************************************************************
+
+        #region 0. Reset
+        public string Reset()
+        {
+            return Write_N_Read("RST");
+        }
+
+        #endregion 0. Reset
 
         #region 1. Enable
 
@@ -353,6 +368,12 @@ namespace Rth_Rack_Window
                 "\n     --> " + message +
                 "\n     <-- " + Antwort + "\n";
 
+            //in detail Window Status-Bar
+            if (detailedForm != null)
+            {
+                detailedForm.statusBar_TextBox_Message.Text = message;
+                detailedForm.statusBar_TextBox_Answer.Text = Antwort;
+            }
 
             return Antwort;
         }
@@ -497,7 +518,7 @@ namespace Rth_Rack_Window
         {
             string temp = Write_N_Read("GTD");
 
-            DPA_Time = Convert.ToDecimal(temp.Substring(4, temp.LastIndexOf(' ') - 4)) / 10;
+            DPA_Time = Convert.ToDecimal(temp.Substring(4, temp.LastIndexOf(' ') - 4));
 
             return DPA_Time;
         }
@@ -541,6 +562,10 @@ namespace Rth_Rack_Window
                         Cards[i] = new Card_Empty(this, i + 1);
                         break;
 
+                    case 'A':
+                        Cards[i] = new Card_Amplifier(this, i + 1);
+                        break;
+
                     case 'L':
                         Cards[i] = new Card_LED_Source(this, i + 1);
                         break;
@@ -551,6 +576,131 @@ namespace Rth_Rack_Window
         //********************************************************************************************************************
         //                                              Auto Open
         //********************************************************************************************************************
+
+        #region AutoOpen
+
+        public void Update_settings(SerialCommunicationDivice myInput)
+        {
+            //Combox übernehen
+            HelpFCT.SetComboBox2ComboBox(myInput.comboBox_Port, ComPort_select);
+
+            //COM-Port eigenschaften übernehmen
+            Serial_Interface = myInput.ToSerialPort();
+        }
+
+        public string AutoOpen(AutoConnect_Window myLoadScreen)
+        {
+            int iterration = 5;
+
+            if (ComPort_select.Text == "")   //Wenn kein Port gewählt ist
+            {
+                return "Rth-Rack: No COM-Port selected!" + Environment.NewLine; ;
+            }
+
+            //COMPort anpassen
+            Serial_Interface.PortName = ComPort_select.Text;
+
+            //Verbindung herstellen
+            try
+            {
+                Serial_Interface.Open();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return "Rth-Rack: COM Port is allready in use!" + Environment.NewLine; ;
+            }
+            catch (System.IO.IOException)
+            {
+                return "Rth-Rack: COM Port is not available!" + Environment.NewLine; ;
+            }
+
+            myLoadScreen.ChangeTask("Checking device ...", iterration);
+
+            //Abfragen ob richtiges Gerät
+            ID = Write_N_Read("GID");
+
+            //Checken ob vom richtigen Typ
+            if (!ID.Contains("RthTEC TTA-Equipment"))
+            {
+                Serial_Interface.Close();
+                return "Rth-Rack: COM Port represents no Rth-Rack!" + Environment.NewLine; ;
+            }
+
+            //Ab hier zählt es als Verbunden
+            IsConnected = true;
+
+
+            //Reset
+            myLoadScreen.ChangeTask("Reset ...", iterration);
+            Write_N_Read("RST");
+
+            //Delay (Warten bis RESET fertig)
+            Thread.Sleep(2000);
+
+            myLoadScreen.ChangeTask("Load Setup ...", iterration);
+
+            //Slot Belegung abfragen und übernehmen und ob Aktiviert
+            Get_Slot_Belegung();
+            GetSlotActivation();
+
+            //Zeiten abfragen
+            GetHeatTime();
+            GetMeasTime();
+            GetDPACount();
+            GetDPATime();
+
+            //Enable deaktivieren
+            SetEnable(false);
+
+            //Oberfläche anpassen
+            IsConnected = true;
+            ComPort_select.Enabled = false;
+            Button_OpenClose.Text = "Close";
+            barButtonItem_Reset.Enabled = true;
+            barButtonItem_Detailed.Enabled = true;
+
+            return "";
+        }
+
+        #endregion AutoOpen
+
+        //**************************************************************************************************
+        //                                    FCT für Setting-Files
+        //**************************************************************************************************
+
+        public override string ToString()
+        {
+            string text = "*Rth-Rack:" + Environment.NewLine;
+
+            //text += "I_Heat[mA]: " + I_Heat.ToString() + Environment.NewLine;
+            text += "t_Heat[ms]: " + Time_Heat.ToString() + Environment.NewLine;
+            //text += "I_Meas[ms]: " + I_Meas.ToString() + Environment.NewLine;
+            text += "t_Meas[ms]: " + Time_Meas.ToString() + Environment.NewLine;
+            //text += "Repetitions: " + Cycles.ToString() + Environment.NewLine;
+
+            return text;
+        }
+
+        public void FromString(string[] input)
+        {
+            for (int i = 0; i < input.Length; i++)
+            {
+                /*
+                if (input[i].StartsWith("I_Heat[mA]:"))
+                    UI_Heat_Current.Value = Convert.ToDecimal(input[i].Substring(12));
+                else if (input[i].StartsWith("t_Heat[ms]:"))
+                    UI_Heat_Time.Value = Convert.ToDecimal(input[i].Substring(12));
+                else if (input[i].StartsWith("I_Meas[ms]:"))
+                    UI_Meas_Current.Value = Convert.ToDecimal(input[i].Substring(12));
+                else if (input[i].StartsWith("t_Meas[ms]:"))
+                    UI_Meas_Time.Value = Convert.ToDecimal(input[i].Substring(12));
+                else if (input[i].StartsWith("Repetitions:"))
+                    UI_Cycles.Value = Convert.ToDecimal(input[i].Substring(13));
+                    */
+
+            }
+        }
+
 
     }
 }

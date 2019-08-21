@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Rth_Rack_Window
+namespace RthTEC_Rack
 {
-    public partial class Card_LED_Source : UserControl, I_RthTEC_Card
+    public partial class Card_LED_Source : UserControl, I_RthTEC_Card, I_CardType_Power
     {
         //********************************************************************************************************************
         //                                                  Variablen
         //********************************************************************************************************************
+
+        /// <summary>
+        /// Type of DUT (e.g. Diode, MOSFET)
+        /// </summary>
+        public string DUT_Type { get; } = "Diode";
 
         /// <summary>
         /// Flag, if Card is active in pulsing
@@ -35,6 +40,16 @@ namespace Rth_Rack_Window
         /// Measuring Current in mA
         /// </summary>
         public decimal I_Meas { get; set; }
+
+        /// <summary>
+        /// Heating Voltage in mV
+        /// </summary>
+        public decimal V_Heat { get; }
+
+        /// <summary>
+        /// Measuring Voltage in mV
+        /// </summary>
+        public decimal V_Meas { get; }
 
         /// <summary>
         /// Micro Controller for Communication
@@ -116,18 +131,20 @@ namespace Rth_Rack_Window
         }
 
         //********************************************************************************************************************
-        //                                               local Functions
+        //                               FCT (teilweise global um von extern zugreifen zu können)
         //********************************************************************************************************************
 
         #region Local
 
-        private void Set_I_Heat(decimal iHeat_in_mA)
+        public void Set_I_Heat(decimal iHeat_in_mA)
         {
+            I_Heat = iHeat_in_mA;
             MyMC.Write_N_Read("SHC" + Slot_Nr.ToString() + "L " + iHeat_in_mA.ToString("#"));
         }
 
-        private void Set_I_Meas(decimal iMeas_in_mA)
+        public void Set_I_Meas(decimal iMeas_in_mA)
         {
+            I_Meas = iMeas_in_mA;
             MyMC.Write_N_Read("SMC" + Slot_Nr.ToString() + "L " + (iMeas_in_mA * 10).ToString("#"));
         }
 
@@ -146,7 +163,7 @@ namespace Rth_Rack_Window
 
             answer = answer.Substring(6, answer.LastIndexOf(' ') - 6);
 
-            return Convert.ToDecimal(answer) / 10;
+            return Convert.ToDecimal(answer);
         }
 
         #endregion Local

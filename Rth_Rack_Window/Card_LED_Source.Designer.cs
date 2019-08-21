@@ -1,4 +1,4 @@
-﻿namespace Rth_Rack_Window
+﻿namespace RthTEC_Rack
 {
     partial class Card_LED_Source
     {
@@ -119,7 +119,7 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Image = global::Rth_Rack_Window.Properties.Resources.LED_Source;
+            this.pictureBox.Image = global::RthTEC_Rack.Properties.Resources.LED_Source;
             this.pictureBox.Location = new System.Drawing.Point(0, 0);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(116, 397);

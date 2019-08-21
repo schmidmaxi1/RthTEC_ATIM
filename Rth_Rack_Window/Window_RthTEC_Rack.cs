@@ -11,46 +11,10 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Threading;
 
-namespace Rth_Rack_Window
+namespace RthTEC_Rack
 {
     public partial class Window_RthTEC_Rack : Form
     {
-
-        /////////////////////////////////////////////////////////////////////
-        //                     Variablen  (allgemein)                      //
-        /////////////////////////////////////////////////////////////////////
-
-        public SerialPort Serial_Interface { get; set; } = new SerialPort()
-        {
-            BaudRate = 57600,
-            DataBits = 8,
-            StopBits = StopBits.One,
-            Parity = 0,
-            ReadTimeout = 500
-        };
-        public string Antwort { get; internal set; }
-        public string Communication_LOG { get; internal set; }
-
-        public Boolean IsConnected { get; internal set; } = false;
-        public Boolean IsEnabled { get; internal set; } = false;
-
-        //Version of Rth_Rack
-        public string DeviceType { get; internal set; }
-
-        /////////////////////////////////////////////////////////////////////
-        //                     Variablen  (für TTA)                        //
-        /////////////////////////////////////////////////////////////////////
-
-        //Liste mit den einzelnen Slots
-        //public Slot_00_Insert[] Slots { get; internal set; }
-
-        //Flags, ob Slot die Pulse_Sequence bekommen soll
-        public bool[] Slot_Included_in_Pulses { get; set; } = { false, false, false, false, false, false, false, false};
-
-        //Einstellungen für Pulse
-
-
-
 
         //Neu
         I_RthTEC callingRthTEC;
@@ -164,7 +128,7 @@ namespace Rth_Rack_Window
             {
                 case "std. TTA":
                     //Bild ändern
-                    pictureBox_Mode.Image = global::Rth_Rack_Window.Properties.Resources.std_TTA;
+                    pictureBox_Mode.Image = global::RthTEC_Rack.Properties.Resources.std_TTA;
                     //Visibility
                     numericUpDown_t_Heat.Visible = true;
                     numericUpDown_t_Sense.Visible = true;
@@ -176,7 +140,7 @@ namespace Rth_Rack_Window
                     label4.Visible = false;
                     break;
                 case "DPA TTA":
-                    pictureBox_Mode.Image = global::Rth_Rack_Window.Properties.Resources.DPA_TTA;
+                    pictureBox_Mode.Image = global::RthTEC_Rack.Properties.Resources.DPA_TTA;
                     //Visibility
                     numericUpDown_t_Heat.Visible = true;
                     numericUpDown_t_Sense.Visible = true;
@@ -189,7 +153,7 @@ namespace Rth_Rack_Window
                     break;
                 case "Sensitivity":
                     //Bild ändern
-                    pictureBox_Mode.Image = global::Rth_Rack_Window.Properties.Resources.Sensitivity;
+                    pictureBox_Mode.Image = global::RthTEC_Rack.Properties.Resources.Sensitivity;
                     //Visibility
                     numericUpDown_t_Heat.Visible = false;
                     numericUpDown_t_Sense.Visible = false;
@@ -202,7 +166,7 @@ namespace Rth_Rack_Window
                     break;
                 case "Pre Pulse":
                     //Bild ändern
-                    pictureBox_Mode.Image = global::Rth_Rack_Window.Properties.Resources.PrePulse;
+                    pictureBox_Mode.Image = global::RthTEC_Rack.Properties.Resources.PrePulse;
                     //Visibility
                     numericUpDown_t_Heat.Visible = false;
                     numericUpDown_t_Sense.Visible = false;

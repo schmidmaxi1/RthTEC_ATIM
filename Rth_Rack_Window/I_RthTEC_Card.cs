@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rth_Rack_Window
+namespace RthTEC_Rack
 {
     public interface I_RthTEC_Card
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Rth_Rack_Window
+namespace RthTEC_Rack
 {
     static class Program
     {

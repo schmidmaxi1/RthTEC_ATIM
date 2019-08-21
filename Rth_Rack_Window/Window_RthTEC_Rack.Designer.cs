@@ -1,4 +1,4 @@
-﻿namespace Rth_Rack_Window
+﻿namespace RthTEC_Rack
 {
     partial class Window_RthTEC_Rack
     {
@@ -64,7 +64,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Rth_Rack_Window.Properties.Resources.Gehause;
+            this.pictureBox1.Image = global::RthTEC_Rack.Properties.Resources.Gehause;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
             this.pictureBox1.Location = new System.Drawing.Point(35, 64);
             this.pictureBox1.Name = "pictureBox1";
@@ -257,7 +257,7 @@
             // pictureBox_Mode
             // 
             this.pictureBox_Mode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox_Mode.Image = global::Rth_Rack_Window.Properties.Resources.PrePulse;
+            this.pictureBox_Mode.Image = global::RthTEC_Rack.Properties.Resources.PrePulse;
             this.pictureBox_Mode.Location = new System.Drawing.Point(16, 57);
             this.pictureBox_Mode.Name = "pictureBox_Mode";
             this.pictureBox_Mode.Size = new System.Drawing.Size(220, 170);
@@ -388,10 +388,10 @@
         private System.Windows.Forms.ToolStripStatusLabel statusBar_Label_Status_Indikator;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel statusBar_Label_Message;
-        private System.Windows.Forms.ToolStripStatusLabel statusBar_TextBox_Message;
         private System.Windows.Forms.ToolStripStatusLabel statusBar_Label_Answer;
-        private System.Windows.Forms.ToolStripStatusLabel statusBar_TextBox_Answer;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        public System.Windows.Forms.ToolStripStatusLabel statusBar_TextBox_Message;
+        public System.Windows.Forms.ToolStripStatusLabel statusBar_TextBox_Answer;
     }
 }
 

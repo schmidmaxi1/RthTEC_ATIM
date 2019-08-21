@@ -9,8 +9,7 @@ using System.Threading;
 
 using DAQ_Units;
 using XYZ_Table;
-
-using _8_Rth_TEC_Rack;
+using RthTEC_Rack;
 
 using Read_Coordinates;
 using Hilfsfunktionen;
@@ -24,36 +23,47 @@ namespace ATIM_GUI._01_TTA
         //                                    Variablen
         //********************************************************************************************************************
 
-        public RthTEC_Rack MyRack { get; set; }
+        //Devices
+        public I_RthTEC MyRthTEC_Rack { get; set; }
+        public I_CardType_Amp MyFrontEnd { get; set; }          //im Rack
+        public I_CardType_Power MyHeatSource { get; set; }      //im Rack
         public I_DAQ MyDAQ { get; set; }
         public I_XYZ MyXYZ { get; set; }
+
+
+        //Main Window
         public ATIM_MainWindow GUI { get; set; }
 
-        public short[,] Binary_Raw_Files { get; set; }
 
-        public UInt16 ErrorCode { get; set; }
-
-        public decimal V_f_at_Imeas_Troom { get; set; } = 2;
-
-        private long[] Start_to_Heat { get; set; }
-        private long[] Heat_to_Meas { get; set; }
-        private long[] Meas_to_End { get; set; }
-
-        private long[] Average_Heat_Compleate { get; set; }
-        private long[] Average_Meas_Compleate { get; set; }
-
-        public List<TTA_DataPoint> Average_Heat_Compressed { get; set; }
-        public List<TTA_DataPoint> Average_Meas_Compressed { get; set; }
-
-        private static long Puffer_Messpunkte { get; } = 5; //Messpunkte vor eigentlichem Signal
-        private static long Max_daten_dichte { get; } = 2000;
+        //Movement
+        public Movement_Infos MyMovement { get; internal set; }
 
 
         //Datei-Namen usw.
         public string Output_File_Name { get; internal set; }
         public string Output_File_Folder { get; internal set; }
 
-        public Movement_Infos MyMovement {get; internal set;}
+
+        //Measurment Data
+        public short[,] Binary_Raw_Files { get; set; }
+        private long[] Start_to_Heat { get; set; }
+        private long[] Heat_to_Meas { get; set; }
+        private long[] Meas_to_End { get; set; }
+        private long[] Average_Heat_Compleate { get; set; }
+        private long[] Average_Meas_Compleate { get; set; }
+        public List<TTA_DataPoint> Average_Heat_Compressed { get; set; }
+        public List<TTA_DataPoint> Average_Meas_Compressed { get; set; }
+
+
+        //Settings
+        private static long Puffer_Messpunkte { get; } = 5;             //Messpunkte vor eigentlichem Signal
+        private static long Max_daten_dichte { get; } = 2000;
+
+
+
+        public decimal V_f_at_Imeas_Troom { get; set; } = 2;
+
+
 
         //********************************************************************************************************************
         //                                           Konstruktor
@@ -75,22 +85,22 @@ namespace ATIM_GUI._01_TTA
             GUI.Graph_new_Measurment_for_TTA(this);
 
             //Status-Bar initialisieren
-            GUI.StatusBar_TTA_Single(0, (int)MyRack.Cycles);
+            GUI.StatusBar_TTA_Single(0, (int)MyRthTEC_Rack.Cycles);
 
             //DAQ-System anpassen
-            if (!MyDAQ.TTA_set_Device(MyRack.Time_Heat, MyRack.Time_Meas))
+            if (!MyDAQ.TTA_set_Device(MyRthTEC_Rack.Time_Heat, MyRthTEC_Rack.Time_Meas))
                 return false;
-            if (!MyDAQ.TTA_set_Trigger(MyRack.Gain, MyRack.U_offset))
+            if (!MyDAQ.TTA_set_Trigger(MyFrontEnd.Gain, MyFrontEnd.V_Offset))
                 return false;
             
             //Definiere Feld für Raw-Daten
-            Binary_Raw_Files = new short[MyRack.Cycles, MyDAQ.Samples];
+            Binary_Raw_Files = new short[MyRthTEC_Rack.Cycles, MyDAQ.Samples];
 
             //Speicher reservieren
             MyDAQ.TTA_reserve_Storage(Binary_Raw_Files);
 
             //Loop für Wiederholungs-Zyklen
-            for (int repetation_nr = 0; repetation_nr < MyRack.Cycles; repetation_nr++)
+            for (int repetation_nr = 0; repetation_nr < MyRthTEC_Rack.Cycles; repetation_nr++)
             {
                 //Bei bedarf abbrechen
                 if (GUI.myBackroundWorker.CancellationPending)
@@ -107,7 +117,8 @@ namespace ATIM_GUI._01_TTA
                 //Puls starten (bei NI mit Warten sonst ohne)
                 //MyRack.SinglePuls_withoutDelay();
 
-                MyRack.SinglePuls_withDelay();
+                //MyRack.SinglePuls_withDelay();
+                MyRthTEC_Rack.Start_std_Pulse(true);
 
                 Thread.Sleep(300);
 
@@ -123,7 +134,7 @@ namespace ATIM_GUI._01_TTA
                 GUI.Add_Series_to_RAW(this, repetation_nr);
 
                 //Statusbar anpassen
-                GUI.StatusBar_TTA_Single(repetation_nr + 1, (int)MyRack.Cycles);
+                GUI.StatusBar_TTA_Single(repetation_nr + 1, (int)MyRthTEC_Rack.Cycles);
             }
 
             //DatenSatz auswerten
@@ -157,16 +168,16 @@ namespace ATIM_GUI._01_TTA
             GUI.Graph_new_Measurment_for_TTA(this);
 
             //Status-Bar initialisieren
-            GUI.StatusBar_TTA_all(0, (int)MyRack.Cycles, 0, Nr_of_LEDs);
+            GUI.StatusBar_TTA_all(0, (int)MyRthTEC_Rack.Cycles, 0, Nr_of_LEDs);
 
             //DAQ-System anpassen
-            if (!MyDAQ.TTA_set_Device(MyRack.Time_Heat, MyRack.Time_Meas))
+            if (!MyDAQ.TTA_set_Device(MyRthTEC_Rack.Time_Heat, MyRthTEC_Rack.Time_Meas))
                 return false;
-            if (!MyDAQ.TTA_set_Trigger(MyRack.Gain, MyRack.U_offset))
+            if (!MyDAQ.TTA_set_Trigger(MyFrontEnd.Gain, MyFrontEnd.V_Offset))
                 return false;
 
             //Definiere Feld für Raw-Daten
-            Binary_Raw_Files = new short[MyRack.Cycles, MyDAQ.Samples];
+            Binary_Raw_Files = new short[MyRthTEC_Rack.Cycles, MyDAQ.Samples];
 
             //Speicher reservieren
             MyDAQ.TTA_reserve_Storage(Binary_Raw_Files);
@@ -190,7 +201,7 @@ namespace ATIM_GUI._01_TTA
                 }
 
                 //Text StatusBar ändern
-                GUI.StatusBar_TTA_all(0, (int)MyRack.Cycles, akt_DUT_Nr, Nr_of_LEDs);
+                GUI.StatusBar_TTA_all(0, (int)MyRthTEC_Rack.Cycles, akt_DUT_Nr, Nr_of_LEDs);
 
                 //Raw-Data plot leeren
                 GUI.Graph_new_Measurment_for_TTA(this);
@@ -199,7 +210,7 @@ namespace ATIM_GUI._01_TTA
                 MyXYZ.MoveADistance(0, 0, MyMovement.TouchDown_Hight - MyMovement.Driving_Hight, 0);
 
                 //Loop für TTA Wiederholungs-Zyklen
-                for (int repetation_nr = 0; repetation_nr < MyRack.Cycles; repetation_nr++)
+                for (int repetation_nr = 0; repetation_nr < MyRthTEC_Rack.Cycles; repetation_nr++)
                 {
                     //Bei bedarf abbrechen
                     if (GUI.myBackroundWorker.CancellationPending)
@@ -214,8 +225,10 @@ namespace ATIM_GUI._01_TTA
                         return false;
 
                     //Puls starten (bei NI mit Warten sonst ohne)
-                    MyRack.SinglePuls_withoutDelay();
+                    MyRthTEC_Rack.Start_std_Pulse(true);
+
                     //MyRack.SinglePuls_withDelay();
+
                     Thread.Sleep(300);
 
                     //Daten abholen
@@ -232,7 +245,7 @@ namespace ATIM_GUI._01_TTA
                     GUI.Add_Series_to_RAW(this, repetation_nr);
 
                     //Text StatusBar ändern
-                    GUI.StatusBar_TTA_all(repetation_nr + 1, (int)MyRack.Cycles, akt_DUT_Nr, Nr_of_LEDs);
+                    GUI.StatusBar_TTA_all(repetation_nr + 1, (int)MyRthTEC_Rack.Cycles, akt_DUT_Nr, Nr_of_LEDs);
                 }
 
                 //DatenSatz auswerten, wenn kein Fehler dann auswerten
@@ -303,8 +316,8 @@ namespace ATIM_GUI._01_TTA
                 return false;
 
             //Daten komprimieren
-            Average_Heat_Compressed = Compress_Data(Average_Heat_Compleate, (short)GUI.rthTEC_Rack1.Cycles);
-            Average_Meas_Compressed = Compress_Data(Average_Meas_Compleate, (short)GUI.rthTEC_Rack1.Cycles);
+            Average_Heat_Compressed = Compress_Data(Average_Heat_Compleate, MyRthTEC_Rack.Cycles);
+            Average_Meas_Compressed = Compress_Data(Average_Meas_Compleate, MyRthTEC_Rack.Cycles);
 
             //Alles richtig
             return true;
@@ -317,9 +330,9 @@ namespace ATIM_GUI._01_TTA
         private Boolean Search_for_switching_points(Boolean show_Error_MessageBoxes)
         {
             //Felder definiern
-            Start_to_Heat = new long[MyRack.Cycles];
-            Heat_to_Meas = new long[MyRack.Cycles];
-            Meas_to_End = new long[MyRack.Cycles];
+            Start_to_Heat = new long[MyRthTEC_Rack.Cycles];
+            Heat_to_Meas = new long[MyRthTEC_Rack.Cycles];
+            Meas_to_End = new long[MyRthTEC_Rack.Cycles];
 
             //Suchkriterien definiern
             decimal schwelle_in_mV = MyDAQ.Trigger_Level_in_V * 1000;
@@ -329,7 +342,7 @@ namespace ATIM_GUI._01_TTA
 
             //Umschaltpunkte finden
             //Jede Messreihe (jeder Zyklus) wird nacheinander durchlaufen, um alle drei Umschaltpunkte zu finden
-            for (int akt_Zyklus_Nr = 0; akt_Zyklus_Nr < this.MyRack.Cycles; akt_Zyklus_Nr++)
+            for (int akt_Zyklus_Nr = 0; akt_Zyklus_Nr < this.MyRthTEC_Rack.Cycles; akt_Zyklus_Nr++)
             {
 
                 //Alle Messpunkte durchlaufen um die Umschaltpunkte zu finden
@@ -424,7 +437,7 @@ namespace ATIM_GUI._01_TTA
             long laenge_heat = long.MaxValue;
             long laenge_cool = long.MaxValue;
 
-            for (int i = 0; i < MyRack.Cycles; i++)
+            for (int i = 0; i < MyRthTEC_Rack.Cycles; i++)
             {
                 if (Heat_to_Meas[i] - Start_to_Heat[i] < laenge_heat)
                     laenge_heat = Heat_to_Meas[i] - Start_to_Heat[i];
@@ -449,7 +462,7 @@ namespace ATIM_GUI._01_TTA
             for (long akt_Messpunkt = -Puffer_Messpunkte; akt_Messpunkt < laenge_heat; akt_Messpunkt++)
             {
                 //Alle Messzyklen addiern
-                for (int akt_Zyklus = 0; akt_Zyklus < MyRack.Cycles; akt_Zyklus++)
+                for (int akt_Zyklus = 0; akt_Zyklus < MyRthTEC_Rack.Cycles; akt_Zyklus++)
                     Average_Heat_Compleate[akt_Messpunkt + Puffer_Messpunkte] += Binary_Raw_Files[akt_Zyklus, akt_Messpunkt + Start_to_Heat[akt_Zyklus]];
             }
 
@@ -458,7 +471,7 @@ namespace ATIM_GUI._01_TTA
             for (long akt_Messpunkt = -Puffer_Messpunkte; akt_Messpunkt < laenge_cool; akt_Messpunkt++)
             {
                 //Alle Messzyklen addiern
-                for (int akt_Zyklus = 0; akt_Zyklus < MyRack.Cycles; akt_Zyklus++)
+                for (int akt_Zyklus = 0; akt_Zyklus < MyRthTEC_Rack.Cycles; akt_Zyklus++)
                     Average_Meas_Compleate[akt_Messpunkt + Puffer_Messpunkte] += Binary_Raw_Files[akt_Zyklus, akt_Messpunkt + Heat_to_Meas[akt_Zyklus]];
 
             }
@@ -470,7 +483,7 @@ namespace ATIM_GUI._01_TTA
         /// Daten Komprimieren & Umrechnen (& Zeit-Achse hinzufügen)
         /// </summary>
         /// <param name="return">returns Liste with TTA_DataPoints; otherwise, null.</param>
-        private List<TTA_DataPoint> Compress_Data(long[] input, short cycles)
+        private List<TTA_DataPoint> Compress_Data(long[] input, int cycles)
         {
             /* Erklärung:
              * 
@@ -494,8 +507,8 @@ namespace ATIM_GUI._01_TTA
 
             //Einige Parameter für schnelleres rechnen bestimmen
             decimal periode = 1m / MyDAQ.Frequency;                                                                     //Abstand zwischen Samples
-            decimal faktor_voltage = 1m / cycles / MyRack.Gain * MyDAQ.Range / 1000 / (decimal)Math.Pow(2, 15);         //Binary --> Voltage Faktor (mit Anzahl Zyklen)
-            decimal offset_voltage = MyRack.U_offset / 1000;                                                            //Offset
+            decimal faktor_voltage = 1m / cycles / MyFrontEnd.Gain * MyDAQ.Range / 1000 / (decimal)Math.Pow(2, 15);         //Binary --> Voltage Faktor (mit Anzahl Zyklen)
+            decimal offset_voltage = MyFrontEnd.V_Offset / 1000;                                                            //Offset
 
             //[Puffer_Messpunkte] Messpunkte mit Zeit "0" in Liste eintragen
             for (int i = 0; i < Puffer_Messpunkte; i++)
@@ -587,20 +600,20 @@ namespace ATIM_GUI._01_TTA
         {
             //1. Average files
             if (GUI.mySettings.Save_Aver_Heat)
-                Save_SingleFile(Average_Heat_Compressed, "Average of " + GUI.rthTEC_Rack1.Cycles.ToString(), ".aver.TTAheat");
+                Save_SingleFile(Average_Heat_Compressed, "Average of " + MyRthTEC_Rack.Cycles.ToString(), ".aver.TTAheat");
 
             if (GUI.mySettings.Save_Aver_Cool)
-                Save_SingleFile(Average_Meas_Compressed, "Average of " + GUI.rthTEC_Rack1.Cycles.ToString(), ".aver.TTAcool");
+                Save_SingleFile(Average_Meas_Compressed, "Average of " + MyRthTEC_Rack.Cycles.ToString(), ".aver.TTAcool");
 
             //2. Single files
             if (GUI.mySettings.Save_Signle_Cool | GUI.mySettings.Save_Single_Heat)
             {
                 //Felder für einzelne Listen definieren
-                List<TTA_DataPoint>[] all_single_heating_compressed = new List<TTA_DataPoint>[GUI.rthTEC_Rack1.Cycles];
-                List<TTA_DataPoint>[] all_single_cooling_compressed = new List<TTA_DataPoint>[GUI.rthTEC_Rack1.Cycles];
+                List<TTA_DataPoint>[] all_single_heating_compressed = new List<TTA_DataPoint>[MyRthTEC_Rack.Cycles];
+                List<TTA_DataPoint>[] all_single_cooling_compressed = new List<TTA_DataPoint>[MyRthTEC_Rack.Cycles];
 
                 //Daten aus Binary_Raw_Files herauslösen und komprimieren
-                for (int i = 1; i <= GUI.rthTEC_Rack1.Cycles; i++)
+                for (int i = 1; i <= MyRthTEC_Rack.Cycles; i++)
                 {
                     //Raw Daten aus gesamten Feld herauslösen
                     long[] help_heat = new long[Heat_to_Meas[i - 1] - Start_to_Heat[i - 1] + Puffer_Messpunkte];
@@ -619,26 +632,26 @@ namespace ATIM_GUI._01_TTA
                 }
 
                 if (GUI.mySettings.Save_Single_Heat)
-                    for (int i = 1; i <= GUI.rthTEC_Rack1.Cycles; i++)
+                    for (int i = 1; i <= MyRthTEC_Rack.Cycles; i++)
                         Save_SingleFile(all_single_heating_compressed[i - 1],
-                            "Cycle " + i.ToString() + "/" + GUI.rthTEC_Rack1.Cycles.ToString(), "." + i.ToString("0000") + ".TTAheat");
+                            "Cycle " + i.ToString() + "/" + MyRthTEC_Rack.Cycles.ToString(), "." + i.ToString("0000") + ".TTAheat");
 
                 if (GUI.mySettings.Save_Signle_Cool)
-                    for (int i = 1; i <= GUI.rthTEC_Rack1.Cycles; i++)
+                    for (int i = 1; i <= MyRthTEC_Rack.Cycles; i++)
                         Save_SingleFile(all_single_cooling_compressed[i - 1],
-                            "Cycle " + i.ToString() + "/" + GUI.rthTEC_Rack1.Cycles.ToString(), "." + i.ToString("0000") + ".TTAcool");
+                            "Cycle " + i.ToString() + "/" + MyRthTEC_Rack.Cycles.ToString(), "." + i.ToString("0000") + ".TTAcool");
             }
 
             //3. Raw files
             if (GUI.mySettings.Save_Raw)
-                for (int i = 1; i <= GUI.rthTEC_Rack1.Cycles; i++)
+                for (int i = 1; i <= MyRthTEC_Rack.Cycles; i++)
                 {
                     //Daten einer Messung herauslösen
                     short[] help_raw = new short[Binary_Raw_Files.GetLength(1)];
                     for (int j = 0; j < help_raw.Length; j++)
                         help_raw[j] = Binary_Raw_Files[i - 1, j];
                     //Speichern
-                    Save_SingleFile(help_raw, "Raw_Data of cycle" + i.ToString() + "/" + GUI.rthTEC_Rack1.Cycles.ToString() + GUI.rthTEC_Rack1.Cycles.ToString(),
+                    Save_SingleFile(help_raw, "Raw_Data of cycle" + i.ToString() + "/" + MyRthTEC_Rack.Cycles.ToString() + MyRthTEC_Rack.Cycles.ToString(),
                         "." + i.ToString("0000") + ".TTAraw");
                 }
         }
@@ -702,13 +715,13 @@ namespace ATIM_GUI._01_TTA
             return
                 "#################################################################################" + newLine +
                 "#Time Stamp:       " + DateTime.Now.ToString("dd.MM.yyyy   HH:mm:ss") + newLine +
-                "#Equipment:        " + GUI.rthTEC_Rack1.DeviceType + " & " + /*GUI.DAQ_Unit.Name +*/ newLine +
+                "#Equipment:        " + MyRthTEC_Rack.ID + " & " + /*GUI.DAQ_Unit.Name +*/ newLine +
                 "#Datei-Typ:        " + typ + newLine +
-                "#I_heat_current:   " + GUI.rthTEC_Rack1.I_Heat.ToString() + " mA" + newLine +
-                "#t_heat_puls:      " + GUI.rthTEC_Rack1.Time_Heat.ToString() + " ms" + newLine +
+                "#I_heat_current:   " + MyHeatSource.I_Heat.ToString() + " mA" + newLine +
+                "#t_heat_puls:      " + MyRthTEC_Rack.Time_Heat.ToString() + " ms" + newLine +
                 "#V_heat_voltage:   " + Calculate_HeatVoltage(out decimal my_VHeat) + newLine +
-                "#I_meas_current:   " + GUI.rthTEC_Rack1.I_Meas.ToString() + " mA" + newLine +
-                "#t_meas_puls:      " + GUI.rthTEC_Rack1.Time_Meas.ToString() + " ms" + newLine +
+                "#I_meas_current:   " + MyHeatSource.I_Meas.ToString() + " mA" + newLine +
+                "#t_meas_puls:      " + MyRthTEC_Rack.Time_Meas.ToString() + " ms" + newLine +
                 "#V_meas_voltage:   " + Calculate_MeasVoltage(out decimal my_VMeas) + newLine +
                 "#f_sampling:       " + GUI.myDAQ.Frequency.ToString() + " Hz" + newLine +
                 "#Sensitivity:      " + Sensitiviy_from_File() + newLine +
@@ -763,12 +776,12 @@ namespace ATIM_GUI._01_TTA
 
         private string Calculate_HeatVoltage(out decimal v_Heat)
         {
-            if (GUI.rthTEC_Rack1.DUT_Type == "LED")
+            if (MyHeatSource.DUT_Type == "LED")
             {
                 v_Heat = Average_Heat_Compressed[Average_Heat_Compressed.Count - 1].Voltage;
                 return Average_Heat_Compressed[Average_Heat_Compressed.Count - 1].Voltage.ToString("#.###") + " V";
             }
-            else if (GUI.rthTEC_Rack1.DUT_Type == "MOSFET")
+            else if (MyHeatSource.DUT_Type == "MOSFET")
             {
                 v_Heat = 10.0m;
                 return "10.0";
@@ -782,12 +795,12 @@ namespace ATIM_GUI._01_TTA
 
         private string Calculate_MeasVoltage(out decimal v_Meas)
         {
-            if (GUI.rthTEC_Rack1.DUT_Type == "LED")
+            if (MyHeatSource.DUT_Type == "LED")
             {
                 v_Meas = Average_Meas_Compressed[Average_Meas_Compressed.Count - 1].Voltage;
                 return Average_Meas_Compressed[Average_Meas_Compressed.Count - 1].Voltage.ToString("#.###") + " V";
             }
-            else if (GUI.rthTEC_Rack1.DUT_Type == "MOSFET")
+            else if (MyHeatSource.DUT_Type == "MOSFET")
             {
                 v_Meas = 10.0m;
                 return "10.0";
@@ -810,7 +823,7 @@ namespace ATIM_GUI._01_TTA
 
         private string CalculatePowerStep(decimal v_Heat, decimal v_Meas)
         {
-            return ((v_Heat * GUI.rthTEC_Rack1.I_Heat - v_Meas * GUI.rthTEC_Rack1.I_Meas) / 1000).ToString("#.###") + " W";
+            return ((v_Heat * MyHeatSource.I_Heat - v_Meas * MyHeatSource.I_Meas) / 1000).ToString("#.###") + " W";
         }
 
         #endregion Generate parts of Header

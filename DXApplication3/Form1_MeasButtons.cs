@@ -13,6 +13,8 @@ using System.IO;
 using ATIM_GUI._01_TTA;
 using ATIM_GUI._02_Sensitivity;
 
+using RthTEC_Rack;
+
 using Hilfsfunktionen;
 
 namespace ATIM_GUI
@@ -90,7 +92,9 @@ namespace ATIM_GUI
             //TTA-Mess-Klasse erzeugen und Geräte übergeben
             myTTA_new = new TTA_measurement_new()
             {
-                MyRack = rthTEC_Rack1,
+                MyRthTEC_Rack = myRthTEC,
+                MyHeatSource = (I_CardType_Power)myRthTEC.Cards[0],     //Später Variabel
+                MyFrontEnd = (I_CardType_Amp)myRthTEC.Cards[1],
                 MyDAQ = myDAQ,
                 GUI = this,
             };
@@ -131,7 +135,9 @@ namespace ATIM_GUI
             //TTA-Mess-File erzeugen erzeugen
             myTTA_new = new TTA_measurement_new()
             {
-                MyRack = rthTEC_Rack1,
+                MyRthTEC_Rack = myRthTEC,
+                MyHeatSource = (I_CardType_Power)myRthTEC.Cards[0],     //Später Variabel
+                MyFrontEnd = (I_CardType_Amp)myRthTEC.Cards[1],
                 MyDAQ = myDAQ,
                 MyXYZ = myXYZ,
                 Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath,
@@ -196,7 +202,9 @@ namespace ATIM_GUI
             //Neues Mess-Klasse erzeugen
             mySensitivity_new = new Sensitivity_Measurement_new()
             {
-                MyRack = rthTEC_Rack1,
+                MyRack = myRthTEC,
+                MyHeatSource = (I_CardType_Power)myRthTEC.Cards[0],     //Später Variabel
+                MyFrontEnd = (I_CardType_Amp)myRthTEC.Cards[1],
                 MyDAQ = myDAQ,
                 MyTEC = myTEC,
                 MyXYZ = myXYZ,
@@ -261,21 +269,7 @@ namespace ATIM_GUI
         #region UI
 
         private void Characteristics_Single() {
-            // MessageBox.Show("Not relized yet");
-            //TTA-Mess-Klasse erzeugen und Geräte übergeben
-            myTTA_new = new TTA_measurement_new()
-            {
-                MyRack = rthTEC_Rack1,
-                MyDAQ = myDAQ,
-                GUI = this,
-            };
-
-            //Plots initisieren (Anpassung muss im MainThread passiern)
-            Graph_new_Measurment_for_TTA(myTTA_new);
-
-            myTTA_new.Test_Compress_Data();
-
-
+            MessageBox.Show("Not relized yet");
         }
 
         private async void Characteristics_Automatic()
@@ -300,13 +294,13 @@ namespace ATIM_GUI
 
 
             //TTA für Samsung @ 350mA
-            rthTEC_Rack1.SetHeatCurrent(350);
-            rthTEC_Rack1.SetEnable(true);
+            ((Card_LED_Source)myRthTEC.Cards[0]).Set_I_Heat(350);       //Typ convert um auf Funktion zugreifen zu können
+            myRthTEC.SetEnable(true);
             myFileSetting.readBox_Movement1.textBox_Gerber.Text = @"C:\Users\schmidm\Desktop\ATIM_GIT\2_DrivingFiles_neu\LED_Comparison_BRD_350mA.txt";
 
-            while (!rthTEC_Rack1.Enabled)
+            while (!myRthTEC.IsEnabled)
             {
-                rthTEC_Rack1.SetEnable(true);
+                myRthTEC.SetEnable(true);
                 await Task.Delay(100);
             }
 
@@ -317,13 +311,14 @@ namespace ATIM_GUI
                 await Task.Delay(5000);
 
             //TTA für Seaul @ 700mA
-            rthTEC_Rack1.SetHeatCurrent(700);
-            rthTEC_Rack1.SetEnable(true);
+            ((Card_LED_Source)myRthTEC.Cards[0]).Set_I_Heat(700);       //Typ convert um auf Funktion zugreifen zu können
+
+            myRthTEC.SetEnable(true);
             myFileSetting.readBox_Movement1.textBox_Gerber.Text = @"C:\Users\schmidm\Desktop\ATIM_GIT\2_DrivingFiles_neu\LED_Comparison_BRD_700mA.txt";
 
-            while (!rthTEC_Rack1.Enabled)
+            while (!myRthTEC.IsEnabled)
             {
-                rthTEC_Rack1.SetEnable(true);
+                myRthTEC.SetEnable(true);
                 await Task.Delay(100);
             }
 
@@ -334,13 +329,13 @@ namespace ATIM_GUI
                 await Task.Delay(5000);
 
             //TTA für Rest @ 1000mA
-            rthTEC_Rack1.SetHeatCurrent(1000);
-            rthTEC_Rack1.SetEnable(true);
+            ((Card_LED_Source)myRthTEC.Cards[0]).Set_I_Heat(1000);       //Typ convert um auf Funktion zugreifen zu können
+            myRthTEC.SetEnable(true);
             myFileSetting.readBox_Movement1.textBox_Gerber.Text = @"C:\Users\schmidm\Desktop\ATIM_GIT\2_DrivingFiles_neu\LED_Comparison_BRD_1000mA_ohneBF.txt";
 
-            while (!rthTEC_Rack1.Enabled)
+            while (!myRthTEC.IsEnabled)
             {
-                rthTEC_Rack1.SetEnable(true);
+                myRthTEC.SetEnable(true);
                 await Task.Delay(100);
             }
 
@@ -415,11 +410,11 @@ namespace ATIM_GUI
                 fehlerTXT += "DAQ is not connected" + Environment.NewLine;
 
             //RthRack
-            if (!rthTEC_Rack1.IsConnected)
+            if (!myRthTEC.IsConnected)
                 fehlerTXT += "RthTEC Equipment is not connected." + Environment.NewLine;
 
             //RthRack
-            if (!rthTEC_Rack1.IsEnabled)
+            if (!myRthTEC.IsEnabled)
                 fehlerTXT += "RthTEC Equipment is not enabled." + Environment.NewLine;
 
             //Power Supply
@@ -466,11 +461,11 @@ namespace ATIM_GUI
                 fehlerTXT += "Movement file is not correct." + Environment.NewLine;
 
             //RthRack
-            if(!rthTEC_Rack1.IsConnected)
+            if(!myRthTEC.IsConnected)
                 fehlerTXT += "RthTEC Equipment is not connected." + Environment.NewLine;
 
             //RthRack
-            if (!rthTEC_Rack1.IsEnabled)
+            if (!myRthTEC.IsEnabled)
                 fehlerTXT += "RthTEC Equipment is not enabled." + Environment.NewLine;
 
             //Power Supply
@@ -524,11 +519,11 @@ namespace ATIM_GUI
                 fehlerTXT += "TEC is not running." + Environment.NewLine;
 
             //RthRack
-            if (!rthTEC_Rack1.IsConnected)
+            if (!myRthTEC.IsConnected)
                 fehlerTXT += "RthTEC Equipment is not connected." + Environment.NewLine;
 
             //RthRack
-            if (!rthTEC_Rack1.IsEnabled)
+            if (!myRthTEC.IsEnabled)
                 fehlerTXT += "RthTEC Equipment is not enabled." + Environment.NewLine;
 
             //Power Supply

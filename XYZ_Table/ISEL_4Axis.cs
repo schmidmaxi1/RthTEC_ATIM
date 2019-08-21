@@ -284,7 +284,11 @@ namespace XYZ_Table
             }
             else
             {
-                akt_Position.Text = "Not able to get correct position!";
+                //Teilweise wird hier ein fehler erzeugt, da wenn Nachricht nicht genau 25 Zeichen hat, nicht über Inovoke geschrieben wird
+                //-> bei threadübergreifen, fehler
+                //Lösungsversuch, einfach noch einemal Position abfragen
+                //Position_aktualisiern();
+                //akt_Position.Text = "Not able to get correct position!";
             }
 
         }

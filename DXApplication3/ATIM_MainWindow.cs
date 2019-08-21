@@ -103,6 +103,8 @@ using DAQ_Units;
 using Power_Supply_HamegHMP;
 using TEC_Controller;
 using XYZ_Table;
+using RthTEC_Rack;
+
 using Communication_Settings;
 
 using Read_Coordinates;
@@ -119,7 +121,7 @@ namespace ATIM_GUI
         #region Variablen
 
         //Devices  
-        public _8_Rth_TEC_Rack.RthTEC_Rack rthTEC_Rack1;
+        //public _8_Rth_TEC_Rack.RthTEC_Rack_alt rthTEC_Rack1;
         public DXApplication3._10_Camera.Camera_Gerber camera_Gerber1;
 
         //Devices new (müssen alles Interfaces sein für Varibilität)
@@ -127,6 +129,7 @@ namespace ATIM_GUI
         public I_TEC_Controller myTEC;
         public I_XYZ myXYZ;
         public I_DAQ myDAQ;
+        public I_RthTEC myRthTEC;
 
         public FileSettings_Box myFileSetting;
 
@@ -178,12 +181,20 @@ namespace ATIM_GUI
             //Alle Geräte zur Oberfläche hinzufügen (muss hiergemacht werden, da sonst InitializeComponent überschrieben wird)
             foreach (var comDevice in myComSettings.ListeCOMs)
             {
+                if (comDevice.Name.Contains("RthTEC"))
+                {
+                    if (comDevice.Name.Contains("V1"))
+                        myRthTEC = new RthTEC_V1(this, 10, 245);
+                    else
+                        myRthTEC = null;
+                }
+
                 if (comDevice.Name.Contains("TEC"))
                 {
                     if (comDevice.Name.Contains("Meerstetter-single"))
-                        myTEC = new Meerstetter_2fach(this, 10, 245);
+                        myTEC = new Meerstetter_2fach(this, 10, 350);
                     else if (comDevice.Name.Contains("Meerstetter-double1"))
-                        myTEC = new Meerstetter_4fach(this, 10, 245);
+                        myTEC = new Meerstetter_4fach(this, 10, 350);
                     else if (comDevice.Name.Contains("Meerstetter-double2"))
                         {; }//nix machen
                     else
@@ -193,7 +204,7 @@ namespace ATIM_GUI
                 if (comDevice.Name.Contains("PowerSupply"))
                 {
                     if (comDevice.Name.Contains("HMP4040"))                   
-                        myPowerSupply = new PowerSupply_HMP(this, 10, 350);                        
+                        myPowerSupply = new PowerSupply_HMP(this, 10, 455);                        
                     else
                         myPowerSupply = null;
                 }
@@ -201,12 +212,13 @@ namespace ATIM_GUI
                 if (comDevice.Name.Contains("XYZ"))
                 {
                     if (comDevice.Name.Contains("4Axis"))
-                        myXYZ = new ISEL_4Axis(this, 10, 425);
+                        myXYZ = new ISEL_4Axis(this, 10, 530);
                     else if (comDevice.Name.Contains("3Axis"))
-                        myXYZ = new ISEL_3Axis(this, 10, 425);
+                        myXYZ = new ISEL_3Axis(this, 10, 530);
                     else
                         myXYZ = null;
                 }
+
             }
 
             foreach (var ethernetDevice in myComSettings.ListEthernet)
@@ -215,7 +227,7 @@ namespace ATIM_GUI
                 {
                     if (ethernetDevice.Name.Contains("Spectrum"))
                         //DAQ_Unit = new ATIM_GUI._09_DAQ_Unit.Spectrum();
-                        myDAQ = new Spectrum30MHz(this, 10, 500);
+                        myDAQ = new Spectrum30MHz(this, 10, 605);
                 }
             }
 
@@ -225,12 +237,12 @@ namespace ATIM_GUI
                 {
                     if (NIDevice.Name.Contains("NI-USB6281"))
                         //DAQ_Unit = new ATIM_GUI._09_DAQ_Unit.NI_USB6281();
-                        myDAQ = new NI_USB6281(this, 10, 500);
+                        myDAQ = new NI_USB6281(this, 10, 605);
                 }
             }
 
 
-            rthTEC_Rack1 = new _8_Rth_TEC_Rack.RthTEC_Rack();           
+            //rthTEC_Rack1 = new _8_Rth_TEC_Rack.RthTEC_Rack_alt();           
             camera_Gerber1 = new DXApplication3._10_Camera.Camera_Gerber();
 
             #region Variablen_Setting
@@ -238,31 +250,21 @@ namespace ATIM_GUI
             // 
             // rthTEC_Rack1
             // 
-            this.rthTEC_Rack1.Location = new System.Drawing.Point(10, 680);
-            this.rthTEC_Rack1.Name = "rthTEC_Rack1";
-            this.rthTEC_Rack1.Size = new System.Drawing.Size(250, 452);
-            this.rthTEC_Rack1.TabIndex = 7;
-            // 
-            // DAQ-Unit
-            // 
-            /*
-            this.DAQ_Unit.Location = new System.Drawing.Point(270, 620);
-            this.DAQ_Unit.Name = "spectrum1";
-            this.DAQ_Unit.Size = new System.Drawing.Size(250, 160);
-            this.DAQ_Unit.TabIndex = 9;
-            */
+            //this.rthTEC_Rack1.Location = new System.Drawing.Point(10, 680);
+            //this.rthTEC_Rack1.Name = "rthTEC_Rack1";
+            //this.rthTEC_Rack1.Size = new System.Drawing.Size(250, 452);
+            //this.rthTEC_Rack1.TabIndex = 7;
             // 
             // camera_Gerber1
             // 
-            this.camera_Gerber1.Location = new System.Drawing.Point(10, 575);
+            this.camera_Gerber1.Location = new System.Drawing.Point(10, 680);
             this.camera_Gerber1.Name = "camera_Gerber1";
             this.camera_Gerber1.Size = new System.Drawing.Size(521, 207);
             this.camera_Gerber1.TabIndex = 13;
 
             #endregion Variablen_Setting
 
-            this.Controls.Add(this.rthTEC_Rack1);
-            //this.Controls.Add(this.DAQ_Unit);
+            //this.Controls.Add(this.rthTEC_Rack1);
             this.Controls.Add(this.camera_Gerber1);
 
             //Auto-Setting schließen
@@ -271,11 +273,9 @@ namespace ATIM_GUI
 
         #endregion Init
 
- 
         public void Adopt_Measurement_settings()
         {
-            rthTEC_Rack1.AutoSettings(this.mySettings);
-            //DAQ_Unit.AutoSettings(this.mySettings);
+            //rthTEC_Rack1.AutoSettings(this.mySettings);
 
             myFileSetting.readBox_FileFolder1.textBox_FileName.Text = this.mySettings.Save_FileName;
             myFileSetting.readBox_FileFolder1.textBox_Path.Text = this.mySettings.Save_Folder;
@@ -296,7 +296,7 @@ namespace ATIM_GUI
             myTEC.Change_Enabled(false);
             myDAQ.Change_Enabled(false);
             camera_Gerber1.Change_Enabled(false);
-            rthTEC_Rack1.Change_Enabled(false);
+            myRthTEC.Change_Enabled(false);
 
             //Buttons deaktieren
             button_Auto_Sensitivity.Enabled = false;
@@ -316,7 +316,7 @@ namespace ATIM_GUI
             myTEC.Change_Enabled(true);
             myDAQ.Change_Enabled(true);
             camera_Gerber1.Change_Enabled(true);
-            rthTEC_Rack1.Change_Enabled(true);
+            myRthTEC.Change_Enabled(true);
 
             //Buttons aktiveren
             Enable_Button_from_Parallel_Thread(button_Auto_Sensitivity);

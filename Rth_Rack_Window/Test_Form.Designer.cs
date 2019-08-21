@@ -1,4 +1,4 @@
-﻿namespace Rth_Rack_Window
+﻿namespace RthTEC_Rack
 {
     partial class Test_Form
     {

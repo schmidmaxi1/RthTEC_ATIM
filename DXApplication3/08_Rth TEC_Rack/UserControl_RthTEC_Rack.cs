@@ -20,7 +20,7 @@ using Power_Supply_HamegHMP;
 
 namespace _8_Rth_TEC_Rack
 {
-    public partial class RthTEC_Rack : UserControl
+    public partial class RthTEC_Rack_alt : UserControl
     {
         //***********************Variablen********************************************
         public SerialPort Serial_Interface { get; set; } = new SerialPort()
@@ -111,7 +111,7 @@ namespace _8_Rth_TEC_Rack
         //                                          Initalisierung
         //********************************************************************************************************************
 
-        public RthTEC_Rack()
+        public RthTEC_Rack_alt()
         {
             InitializeComponent();
 

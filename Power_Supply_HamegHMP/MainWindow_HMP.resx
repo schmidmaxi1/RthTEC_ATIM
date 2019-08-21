@@ -1045,7 +1045,7 @@
     <value>button_ShowLog</value>
   </data>
   <data name="&gt;&gt;button_ShowLog.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;button_ShowLog.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1069,7 +1069,7 @@
     <value>button_OpenClose</value>
   </data>
   <data name="&gt;&gt;button_OpenClose.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v18.2, Version=18.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+    <value>DevExpress.XtraEditors.SimpleButton, DevExpress.XtraEditors.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;button_OpenClose.Parent" xml:space="preserve">
     <value>$this</value>

@@ -284,7 +284,6 @@
       <summary>
         <para>Occurs when the document has been cleared.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.GetBuildStatusAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,System.Object)">
       <summary>
@@ -297,7 +296,6 @@
       <summary>
         <para>Occurs when the created document&#39;s status has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.GetDocumentDataAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,System.Object)">
       <summary>
@@ -310,7 +308,6 @@
       <summary>
         <para>Occurs when the document data has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.GetExportedDocumentAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.ExportId,System.Object)">
       <summary>
@@ -323,7 +320,6 @@
       <summary>
         <para>Occurs when the exported document has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.GetExportStatusAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.ExportId,System.Object)">
       <summary>
@@ -336,7 +332,6 @@
       <summary>
         <para>Occurs when the exported document&#39;s status has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.GetLookUpValuesAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.InstanceIdentity,DevExpress.DocumentServices.ServiceModel.DataContracts.ReportParameter[],System.String[],System.Object)">
       <summary>
@@ -351,7 +346,6 @@
       <summary>
         <para>Occurs when a lookup editor has finished obtaining the appropriate parameter values.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.GetPagesAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,System.Int32[],DevExpress.DocumentServices.ServiceModel.DataContracts.PageCompatibility,System.Object)">
       <summary>
@@ -366,7 +360,6 @@
       <summary>
         <para>Occurs when the document pages have been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.GetPrintDocumentAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.PrintId,System.Object)">
       <summary>
@@ -379,7 +372,6 @@
       <summary>
         <para>Occurs when the printed document has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.GetPrintStatusAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.PrintId,System.Object)">
       <summary>
@@ -392,7 +384,6 @@
       <summary>
         <para>Occurs when the printed document&#39;s status has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.GetReportParametersAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.InstanceIdentity,System.Object)">
       <summary>
@@ -405,7 +396,6 @@
       <summary>
         <para>Occurs when the report parameters have been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.StartBuildAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.InstanceIdentity,DevExpress.DocumentServices.ServiceModel.DataContracts.ReportBuildArgs,System.Object)">
       <summary>
@@ -419,7 +409,6 @@
       <summary>
         <para>Occurs when the document build has started.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.StartExportAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentExportArgs,System.Object)">
       <summary>
@@ -433,7 +422,6 @@
       <summary>
         <para>Occurs when the document export has started.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.StartPrintAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,DevExpress.DocumentServices.ServiceModel.DataContracts.PageCompatibility,System.Object)">
       <summary>
@@ -447,7 +435,6 @@
       <summary>
         <para>Occurs when the document printing has started.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.StopBuildAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,System.Object)">
       <summary>
@@ -460,7 +447,6 @@
       <summary>
         <para>Occurs when the document build has stopped.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClient.StopPrintAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.PrintId,System.Object)">
       <summary>
@@ -473,7 +459,6 @@
       <summary>
         <para>Occurs when the document printing has stopped.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.DocumentServices.ServiceModel.Client.IReportServiceClientFactory">
       <summary>
@@ -502,7 +487,6 @@
       <summary>
         <para>Occurs when the document has been cleared.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.GetBuildStatusAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,System.Object)">
       <summary>
@@ -515,7 +499,6 @@
       <summary>
         <para>Occurs when the created document&#39;s status has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.GetDocumentDataAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,System.Object)">
       <summary>
@@ -528,7 +511,6 @@
       <summary>
         <para>Occurs when the document data has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.GetExportedDocumentAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.ExportId,System.Object)">
       <summary>
@@ -541,7 +523,6 @@
       <summary>
         <para>Occurs when the exported document has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.GetExportStatusAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.ExportId,System.Object)">
       <summary>
@@ -554,7 +535,6 @@
       <summary>
         <para>Occurs when the document export status has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.GetLookUpValues(DevExpress.DocumentServices.ServiceModel.DataContracts.InstanceIdentity,DevExpress.DocumentServices.ServiceModel.DataContracts.ReportParameter[],System.String[],System.Object)">
       <summary>
@@ -578,7 +558,6 @@
       <summary>
         <para>Occurs when a lookup editor has finished obtaining the appropriate parameter values.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.GetPagesAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,System.Int32[],DevExpress.DocumentServices.ServiceModel.DataContracts.PageCompatibility,System.Object)">
       <summary>
@@ -593,7 +572,6 @@
       <summary>
         <para>Occurs when the document pages have been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.GetPrintDocumentAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.PrintId,System.Object)">
       <summary>
@@ -606,7 +584,6 @@
       <summary>
         <para>Occurs when the printed document has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.GetPrintStatusAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.PrintId,System.Object)">
       <summary>
@@ -619,7 +596,6 @@
       <summary>
         <para>Occurs when the printed document&#39;s status has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.GetReportParametersAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.InstanceIdentity,System.Object)">
       <summary>
@@ -632,7 +608,6 @@
       <summary>
         <para>Occurs when the report parameters have been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.StartBuildAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.InstanceIdentity,DevExpress.DocumentServices.ServiceModel.DataContracts.ReportBuildArgs,System.Object)">
       <summary>
@@ -646,7 +621,6 @@
       <summary>
         <para>Occurs when the document build has started.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.StartExportAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentExportArgs,System.Object)">
       <summary>
@@ -660,7 +634,6 @@
       <summary>
         <para>Occurs when the document export has started.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.StartPrintAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,DevExpress.DocumentServices.ServiceModel.DataContracts.PageCompatibility,System.Object)">
       <summary>
@@ -674,7 +647,6 @@
       <summary>
         <para>Occurs when the document printing has started.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.StopBuildAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.DocumentId,System.Object)">
       <summary>
@@ -687,7 +659,6 @@
       <summary>
         <para>Occurs when the document build has stopped.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClient.StopPrintAsync(DevExpress.DocumentServices.ServiceModel.DataContracts.PrintId,System.Object)">
       <summary>
@@ -700,7 +671,6 @@
       <summary>
         <para>Occurs when the document printing has stopped.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.DocumentServices.ServiceModel.Client.ReportServiceClientFactory">
       <summary>
@@ -1480,7 +1450,6 @@
       <summary>
         <para>For internal use. Occurs after all document pages have been created.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentView.IDocument.AfterDrawPages(System.Object,System.Int32[])">
       <summary>
@@ -1493,7 +1462,6 @@
       <summary>
         <para>For internal use. Occurs before document pages are created.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DocumentView.IDocument.BeforeDrawPages(System.Object)">
       <summary>
@@ -1505,19 +1473,16 @@
       <summary>
         <para>For internal use. Occurs when any exception is raised during document creation.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DocumentView.IDocument.Disposed">
       <summary>
         <para>For internal use.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DocumentView.IDocument.DocumentChanged">
       <summary>
         <para>For internal use. Occurs when a Document Viewer receives a document change notification.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DocumentView.IDocument.IsCreating">
       <summary>
@@ -1541,7 +1506,6 @@
       <summary>
         <para>For internal use.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DocumentView.IDocument.Pages">
       <summary>
@@ -5514,6 +5478,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       <summary>
         <para>Returns an empty custom property value.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Export.Xl.XlCustomPropertyValue.NumericValue">
       <summary>
@@ -7038,8 +7003,7 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
       </summary>
       <param name="range">A <see cref="T:DevExpress.Export.Xl.XlCellRange"/> object which references the cells containing values for calculation.</param>
       <param name="summary">A <see cref="T:DevExpress.Export.Xl.XlSummary"/> enumeration member that specifies the calculation type, i.e. the function used for calculation.</param>
-      <param name="ignoreHidden">True to include hidden rows or columns
-in the calculation; otherwise, false.</param>
+      <param name="ignoreHidden">True to include hidden rows or columns in the calculation; otherwise, false.</param>
       <returns>An <see cref="T:DevExpress.Export.Xl.IXlFormulaParameter"/> object that is the function result.</returns>
     </member>
     <member name="M:DevExpress.Export.Xl.XlFunc.Subtotal(System.Collections.Generic.IList{DevExpress.Export.Xl.XlCellRange},DevExpress.Export.Xl.XlSummary,System.Boolean)">
@@ -7048,8 +7012,7 @@ in the calculation; otherwise, false.</param>
       </summary>
       <param name="ranges">A list of <see cref="T:DevExpress.Export.Xl.XlCellRange"/> objects which are the references to cells containing values for calculation.</param>
       <param name="summary">A <see cref="T:DevExpress.Export.Xl.XlSummary"/> enumeration member that specifies the calculation type, i.e., the function used for calculation.</param>
-      <param name="ignoreHidden">True, to include hidden rows or columns
-in the calculation; otherwise, false.</param>
+      <param name="ignoreHidden">True, to include hidden rows or columns in the calculation; otherwise, false.</param>
       <returns>An <see cref="T:DevExpress.Export.Xl.IXlFormulaParameter"/> object that is the function result.</returns>
     </member>
     <member name="M:DevExpress.Export.Xl.XlFunc.Sum(DevExpress.Export.Xl.IXlFormulaParameter[])">
@@ -7148,21 +7111,25 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Turns bold on or off for the characters that follows.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.BookName">
       <summary>
         <para>Prints the name of the workbook.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.BookPath">
       <summary>
         <para>Prints the workbook file path.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.Center">
       <summary>
         <para>Centers the characters that follow.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Export.Xl.XlHeaderFooter.Clear">
       <summary>
@@ -7173,6 +7140,7 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Prints the current date.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Export.Xl.XlHeaderFooter.DifferentFirst">
       <summary>
@@ -7190,6 +7158,7 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Turns double underline on or off for the characters that follow.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Export.Xl.XlHeaderFooter.EvenFooter">
       <summary>
@@ -7228,11 +7197,13 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Turns italic on or off for the characters that follow.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.Left">
       <summary>
         <para>Left aligns the characters that follow.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Export.Xl.XlHeaderFooter.OddFooter">
       <summary>
@@ -7250,16 +7221,19 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Prints the current page number.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.PageTotal">
       <summary>
         <para>Prints the total number of pages in the document.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.Right">
       <summary>
         <para>Right aligns the characters that follow.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Export.Xl.XlHeaderFooter.ScaleWithDoc">
       <summary>
@@ -7271,31 +7245,37 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Prints the name of the worksheet.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.Strikethrough">
       <summary>
         <para>Turns strikethrough on or off for the characters that follow.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.Subscript">
       <summary>
         <para>Turns subscript on or off for the characters that follow.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.Superscript">
       <summary>
         <para>Turns superscript on or off for the characters that follow.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.Time">
       <summary>
         <para>Prints the current time.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlHeaderFooter.Underline">
       <summary>
         <para>Turns underline on or off for the characters that follow.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Export.Xl.XlHorizontalAlignment">
       <summary>
@@ -9061,6 +9041,7 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Returns the <see cref="T:DevExpress.Export.Xl.XlVariantValue"/> object specifying an empty value.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Export.Xl.XlVariantValue.Equals(System.Object)">
       <summary>
@@ -9073,31 +9054,37 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Returns the <see cref="T:DevExpress.Export.Xl.XlVariantValue"/> object specifying the #DIV/0! cell error.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlVariantValue.ErrorInvalidValueInFunction">
       <summary>
         <para>Returns the <see cref="T:DevExpress.Export.Xl.XlVariantValue"/> object specifying the #VALUE! cell error.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlVariantValue.ErrorName">
       <summary>
         <para>Returns the <see cref="T:DevExpress.Export.Xl.XlVariantValue"/> object specifying the #NAME? cell error.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlVariantValue.ErrorNullIntersection">
       <summary>
         <para>Returns the <see cref="T:DevExpress.Export.Xl.XlVariantValue"/> object specifying the #NULL! cell error.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlVariantValue.ErrorNumber">
       <summary>
         <para>Returns the <see cref="T:DevExpress.Export.Xl.XlVariantValue"/> object specifying the #NUM! cell error.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Export.Xl.XlVariantValue.ErrorReference">
       <summary>
         <para>Returns the <see cref="T:DevExpress.Export.Xl.XlVariantValue"/> object specifying the #REF! cell error.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Export.Xl.XlVariantValue.ErrorValue">
       <summary>
@@ -9109,6 +9096,7 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Returns the <see cref="T:DevExpress.Export.Xl.XlVariantValue"/> object specifying the #N/A cell error.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Export.Xl.XlVariantValue.FalseConstant">
       <summary>
@@ -9431,6 +9419,7 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Stores the default <see cref="P:DevExpress.Office.Crypto.EncryptionOptions.Type"/> value that is <see cref="F:DevExpress.Office.Crypto.ModelEncryptionType.Strong"/>.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Office.Crypto.EncryptionOptions.Password">
       <summary>
@@ -9792,7 +9781,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs when connecting to an <see cref="T:DevExpress.ReportServer.ServiceModel.Client.AuthenticationServiceClient"/>.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.ReportServer.Printing.RemoteDocumentSource.AuthenticationType">
       <summary>
@@ -9841,13 +9829,11 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs before displaying the Parameters panel in a Print Prevew.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.ReportServer.Printing.RemoteDocumentSource.ParametersRequestValueChanged">
       <summary>
         <para>Occurs when the parameter values are changed in the Parameters UI.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.ReportServer.Printing.RemoteDocumentSource.ReportIdentity">
       <summary>
@@ -9865,13 +9851,11 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Intended to request user credentials to login to a Report and Dashboard Server.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.ReportServer.Printing.RemoteDocumentSource.ReportServiceClientDemanded">
       <summary>
         <para>Occurs when connecting to a report service client.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.ReportServer.Printing.RemoteDocumentSource.ServiceUri">
       <summary>
@@ -10300,7 +10284,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs on completion of obtaining the information about data columns from the server.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.ReportServer.ServiceModel.Client.IReportServerClient.GetDataMembersAsync(System.String)">
       <summary>
@@ -10320,7 +10303,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs on completion of obtaining the information about data members from the server.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.ReportServer.ServiceModel.Client.IReportServerClient.GetDataModelAsync(System.Int32,System.Object)">
       <summary>
@@ -10361,7 +10343,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs on completion of obtaining the information about data sources from the server.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.ReportServer.ServiceModel.Client.IReportServerClient.GetReportCatalogItemDto(System.Int32)">
       <summary>
@@ -11301,7 +11282,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs when data member columns have been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.ReportServer.ServiceModel.Client.ReportServerClient.GetDataMembersAsync(System.String)">
       <summary>
@@ -11321,7 +11301,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs when a collection of data members has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.ReportServer.ServiceModel.Client.ReportServerClient.GetDataModelAsync(System.Int32,System.Object)">
       <summary>
@@ -11362,7 +11341,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs when a collection of data sources has been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.ReportServer.ServiceModel.Client.ReportServerClient.GetReportCatalogItemDto(System.Int32)">
       <summary>
@@ -14581,31 +14559,37 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Specifies the default text <see cref="P:DevExpress.XtraPrinting.BarCodeBrick.Alignment"/>. Currently it is set to <see cref="F:DevExpress.XtraPrinting.TextAlignment.TopLeft"/> value.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.BarCodeBrick.DefaultAutoModule">
       <summary>
         <para>Specifies the default <see cref="P:DevExpress.XtraPrinting.BarCodeBrick.AutoModule"/> value. Currently it is set to false.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.BarCodeBrick.DefaultBinaryDataBase64">
       <summary>
         <para>Gets or sets the default value for the <see cref="P:DevExpress.XtraPrinting.BarCodeBrick.BinaryDataBase64"/> property.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.BarCodeBrick.DefaultModule">
       <summary>
         <para>Specifies the default <see cref="P:DevExpress.XtraPrinting.BarCodeBrick.Module"/> value. Currently it is set to 2.0</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.BarCodeBrick.DefaultOrientation">
       <summary>
         <para>Specifies the default <see cref="P:DevExpress.XtraPrinting.BarCodeBrick.Orientation"/> value. Currently it is set to <see cref="F:DevExpress.XtraPrinting.BarCode.BarCodeOrientation.Normal"/>.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.BarCodeBrick.DefaultShowText">
       <summary>
         <para>Specifies the default <see cref="P:DevExpress.XtraPrinting.BarCodeBrick.ShowText"/> value. Currently it is set to true.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.BarCodeBrick.DisplayText">
       <summary>
@@ -14695,6 +14679,7 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>A <see cref="F:System.String.Empty"/> value.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.BookmarkInfo.HasBookmark">
       <summary>
@@ -15691,7 +15676,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para></para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.Caching.CachedReportSourceBase.AllowSingleFileExport">
       <summary>
@@ -15703,7 +15687,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para></para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.Caching.CachedReportSourceBase.BeginUpdatePages">
       <summary>
@@ -16189,31 +16172,26 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>For internal use.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.CorePrintableComponentLinkBase.CreateDetailFooterArea">
       <summary>
         <para>For internal use.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.CorePrintableComponentLinkBase.CreateDetailHeaderArea">
       <summary>
         <para>For internal use.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.CorePrintableComponentLinkBase.CreateInnerPageFooterArea">
       <summary>
         <para>For internal use.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.CorePrintableComponentLinkBase.CreateInnerPageHeaderArea">
       <summary>
         <para>For internal use.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.CorePrintableComponentLinkBase.PrintableObjectType">
       <summary>
@@ -16288,9 +16266,9 @@ in the calculation; otherwise, false.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.CsvExportOptions.FollowReportLayout">
       <summary>
-        <para>For internal use.</para>
+        <para>Specifies if CSV export should follow the report layout.</para>
       </summary>
-      <value>A Boolean value.</value>
+      <value>true, to follow the report layout in CSV export; false otherwise.</value>
     </member>
     <member name="M:DevExpress.XtraPrinting.CsvExportOptions.GetActualSeparator">
       <summary>
@@ -16346,7 +16324,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Allows you to substitute a cell value in the output document. Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.CsvExportOptionsEx.DocumentCulture">
       <summary>
@@ -16358,7 +16335,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Fires repeatedly while the data is being exported.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.CsvExportOptionsEx.ExportType">
       <summary>
@@ -17039,61 +17015,73 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>An editor with a mask for entering date-time values.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.FixedPoint">
       <summary>
         <para>An editor with a mask for entering real values.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.FixedPointPositive">
       <summary>
         <para>An editor with a mask for entering positive real values.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.Image">
       <summary>
         <para>An editor that allows end-users to specify an image.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.ImageAndSignature">
       <summary>
         <para>An editor that allows end-users to specify an image and/or draw something (e.g., a signature).</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.Integer">
       <summary>
         <para>An editor with a mask for entering integer values.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.IntegerPositive">
       <summary>
         <para>An editor with a mask for entering positive integer values.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.OnlyLatinLetters">
       <summary>
         <para>An editor with a mask for entering Latin letters only.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.OnlyLetters">
       <summary>
         <para>An editor with a mask for entering letters only.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.OnlyLowercaseLetters">
       <summary>
         <para>An editor with a mask for entering lowercase letters only (entered characters are converted to lowercase).</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.OnlyUppercaseLetters">
       <summary>
         <para>An editor with a mask for entering uppercase letters only (entered characters are converted to uppercase).</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.EditingFieldEditorNames.Signature">
       <summary>
         <para>An editor that allows end-users to draw a signature.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.XtraPrinting.EditingFieldEventArgs">
       <summary>
@@ -18767,6 +18755,7 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Lists the available image formats (&quot;.bmp&quot;, &quot;.gif&quot;, &quot;.jpg&quot;, &quot;.png&quot;, &quot;.emf&quot;, &quot;.wmf&quot;, &quot;.tiff&quot;).</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.ImageExportOptions.PageBorderColor">
       <summary>
@@ -19049,13 +19038,11 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs after all sections of the document have been generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.LinkBase.BeforeCreateAreas">
       <summary>
         <para>Occurs before any section of the document is generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.LinkBase.CanHandleCommand(DevExpress.XtraPrinting.PrintingSystemCommand,DevExpress.XtraPrinting.IPrintControl)">
       <summary>
@@ -19074,19 +19061,16 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs when a detail section of the document is being generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.LinkBase.CreateDetailFooterArea">
       <summary>
         <para>Occurs when a detail footer section of the document is being generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.LinkBase.CreateDetailHeaderArea">
       <summary>
         <para>Occurs when a detail header section of the document is being generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.LinkBase.CreateDocument">
       <summary>
@@ -19109,37 +19093,31 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs when an inner page footer section of the document is being generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.LinkBase.CreateInnerPageHeaderArea">
       <summary>
         <para>Occurs when an inner page header section of the document is being generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.LinkBase.CreateMarginalFooterArea">
       <summary>
         <para>Occurs when a marginal page footer section of the document is being generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.LinkBase.CreateMarginalHeaderArea">
       <summary>
         <para>Occurs when a marginal page header section of the document is being generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.LinkBase.CreateReportFooterArea">
       <summary>
         <para>Occurs when a report footer section of the document is being generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.LinkBase.CreateReportHeaderArea">
       <summary>
         <para>Occurs when a report header section of the document is being generated.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.LinkBase.CustomPaperSize">
       <summary>
@@ -20010,9 +19988,9 @@ in the calculation; otherwise, false.</param>
     </member>
     <member name="P:DevExpress.XtraPrinting.PageByPageExportOptionsBase.PageRange">
       <summary>
-        <para>Gets or sets the range of pages to be exported.</para>
+        <para>Gets or sets the page range to be exported.</para>
       </summary>
-      <value>A <see cref="T:System.String"/> specifying the range of pages.</value>
+      <value>A page range.</value>
     </member>
     <member name="P:DevExpress.XtraPrinting.PageByPageExportOptionsBase.RasterizationResolution">
       <summary>
@@ -21525,61 +21503,51 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs after a band has been printed on a page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.PrintingSystemBase.AfterBuildPages">
       <summary>
         <para>For internal use. Occurs after all document pages have been created.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.PrintingSystemBase.AfterChange">
       <summary>
         <para>Occurs on raising any PrintingSystem event that does not have the &quot;Before&quot; prefix in its name.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.PrintingSystemBase.AfterMarginsChange">
       <summary>
         <para>Occurs when page margins change.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.PrintingSystemBase.AfterPagePaint">
       <summary>
         <para>Occurs after a specific page has been painted in a Print Preview.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.PrintingSystemBase.AfterPagePrint">
       <summary>
         <para>For internal use. Occurs after every time any page of the printing system&#39;s <see cref="T:DevExpress.XtraPrinting.Document"/> is printed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.PrintingSystemBase.BeforeBuildPages">
       <summary>
         <para>For internal use. Occurs before document pages are created.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.PrintingSystemBase.BeforeChange">
       <summary>
         <para>Occurs on raising any PrintingSystem event that has the &quot;Before&quot; prefix in its name.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.PrintingSystemBase.BeforeMarginsChange">
       <summary>
         <para>Occurs when page margins are about to change.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.PrintingSystemBase.BeforePagePaint">
       <summary>
         <para>Occurs before a specific page has been painted in a Print Preview.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.PrintingSystemBase.Begin">
       <summary>
@@ -21625,7 +21593,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs when an exception is raised during document creation.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.PrintingSystemBase.CreatePage">
       <summary>
@@ -21649,7 +21616,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs each time a value of an editing field changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.PrintingSystemBase.EditingFields">
       <summary>
@@ -21679,7 +21645,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs after the printing system&#39;s document is set to the selected printer&#39;s printing queue. Does not indicate the success of the actual printing process.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.PrintingSystemBase.EndSubreport">
       <summary>
@@ -22041,7 +22006,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Fires after page rendering if a gap remains between the rendered areas.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.PrintingSystemBase.GetBrickExporter(System.Type)">
       <summary>
@@ -22137,7 +22101,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>For internal use.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.PrintingSystemBase.PageMargins">
       <summary>
@@ -22161,7 +22124,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs when page settings change.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.PrintingSystemBase.PrintingDocument">
       <summary>
@@ -22173,7 +22135,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs before sending every document page to a printer to indicate the current printing progress.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.PrintingSystemBase.ProgressReflector">
       <summary>
@@ -22235,7 +22196,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs when a scale factor of the current document has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.PrintingSystemBase.SendDefault">
       <summary>
@@ -22280,7 +22240,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs before the printing system&#39;s document is printed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.PrintingSystemBase.Unlock">
       <summary>
@@ -22310,7 +22269,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs after creation of an XLS or XLSX document worksheet has finished.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.XtraPrinting.PrintPreviewOptions">
       <summary>
@@ -22350,6 +22308,7 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Identifies the default file name for a document being exported from the Print Preview.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.PrintPreviewOptions.DefaultSendFormat">
       <summary>
@@ -22579,7 +22538,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Occurs after the position of the current range has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.ProgressReflector.RangeCount">
       <summary>
@@ -23483,6 +23441,7 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Contains the default value for the <see cref="P:DevExpress.XtraPrinting.TextExportOptionsBase.Separator"/> property. By default, when a document is exported to a Text file, this value is equal to &quot;\t&quot;.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.XtraPrinting.TextExportOptionsBase">
       <summary>
@@ -24280,7 +24239,6 @@ in the calculation; otherwise, false.</param>
       <summary>
         <para>Fires immediately after a row is added to the output document.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.XlsExportOptionsEx.AllowBandHeaderCellMerge">
       <summary>
@@ -24371,7 +24329,6 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Allows you to customize a native Excel table&#39;s settings before export. This event is in effect when the <see cref="P:DevExpress.XtraPrinting.XlsExportOptionsEx.LayoutMode"/> property is set to Table.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.XlsExportOptionsEx.CalcTotalSummaryOnCompositeRange">
       <summary>
@@ -24383,37 +24340,31 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>When exporting to XLS format, this event allows you to customize a cell in the output document. Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.XlsExportOptionsEx.CustomizeDocumentColumn">
       <summary>
         <para>Allows you to customize an individual column in the exported document - change its width, formatting, collapse the group containing the column or hide the column.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.XlsExportOptionsEx.CustomizeSheetFooter">
       <summary>
         <para>Allows you to add a footer to the output document. Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.XlsExportOptionsEx.CustomizeSheetHeader">
       <summary>
         <para>Allows you to add a header to the output document.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.XlsExportOptionsEx.CustomizeSheetSettings">
       <summary>
         <para>Allows you to customize the output document&#39;s settings. Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.XlsExportOptionsEx.DocumentColumnFiltering">
       <summary>
         <para>Allows you to apply filters to the exported document&#39;s columns.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.XlsExportOptionsEx.DocumentCulture">
       <summary>
@@ -24431,7 +24382,6 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Fires repeatedly while the data is being exported.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.XlsExportOptionsEx.ExportType">
       <summary>
@@ -24515,7 +24465,6 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Allows you to hide certain summary footers (or certain multi-line summary footers&#39; lines) from the exported document.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.XlsExportOptionsEx.SummaryCountBlankCells">
       <summary>
@@ -24669,7 +24618,6 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Fires immediately after a row is added to the output document.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.XlsxExportOptionsEx.AllowBandHeaderCellMerge">
       <summary>
@@ -24760,7 +24708,6 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Allows you to customize a native Excel table&#39;s settings before export. This event is in effect when the <see cref="P:DevExpress.XtraPrinting.XlsxExportOptionsEx.LayoutMode"/> property is set to Table.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.XlsxExportOptionsEx.CalcTotalSummaryOnCompositeRange">
       <summary>
@@ -24772,37 +24719,31 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Allows you to customize a cell in the output document. Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.XlsxExportOptionsEx.CustomizeDocumentColumn">
       <summary>
         <para>Allows you to customize an individual column in the exported document - change its width, formatting, collapse the group containing the column or hide the column.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.XlsxExportOptionsEx.CustomizeSheetFooter">
       <summary>
         <para>Allows you to customize the footer in the output document. Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.XlsxExportOptionsEx.CustomizeSheetHeader">
       <summary>
         <para>Allows you to customize the header in the output document. Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.XlsxExportOptionsEx.CustomizeSheetSettings">
       <summary>
         <para>Allows you to customize the output document&#39;s settings. Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraPrinting.XlsxExportOptionsEx.DocumentColumnFiltering">
       <summary>
         <para>Allows you to apply filters to the exported document&#39;s columns.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.XlsxExportOptionsEx.DocumentCulture">
       <summary>
@@ -24820,7 +24761,6 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Fires repeatedly while the data is being exported.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.XlsxExportOptionsEx.ExportType">
       <summary>
@@ -24904,7 +24844,6 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Allows you to hide certain summary footers (or certain multi-line summary footers&#39; lines) from the exported document.Only available in data-aware export mode.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.XlsxExportOptionsEx.SummaryCountBlankCells">
       <summary>
@@ -25239,6 +25178,7 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>Represents the default paper type (<see cref="F:System.Drawing.Printing.PaperKind.Letter"/>) used in a report.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.XtraPageSettingsBase.Dispose">
       <summary>
@@ -26136,6 +26076,7 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>&quot;Description&quot;</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraReports.Parameters.LookUpValue.RealDescription">
       <summary>
@@ -26153,6 +26094,7 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       <summary>
         <para>&quot;Value&quot;</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.XtraReports.Parameters.LookUpValueCollection">
       <summary>

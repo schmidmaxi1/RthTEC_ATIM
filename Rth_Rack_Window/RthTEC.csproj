@@ -35,30 +35,26 @@
   <ItemGroup>
     <Reference Include="DevExpress.Data.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.Sparkline.v18.2.Core, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.Utils.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.XtraBars.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="DevExpress.XtraEditors.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -87,6 +83,12 @@
     </Compile>
     <Compile Include="Card_Empty.Designer.cs">
       <DependentUpon>Card_Empty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Card_FrontEnd.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Card_FrontEnd.Designer.cs">
+      <DependentUpon>Card_FrontEnd.cs</DependentUpon>
     </Compile>
     <Compile Include="Card_LED_Source.cs">
       <SubType>UserControl</SubType>
@@ -126,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Card_Empty.resx">
       <DependentUpon>Card_Empty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Card_FrontEnd.resx">
+      <DependentUpon>Card_FrontEnd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Card_LED_Source.resx">
       <DependentUpon>Card_LED_Source.cs</DependentUpon>

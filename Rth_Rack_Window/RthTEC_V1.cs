@@ -569,6 +569,15 @@ namespace RthTEC_Rack
                     case 'L':
                         Cards[i] = new Card_LED_Source(this, i + 1);
                         break;
+
+                    case 'F':
+                        Cards[i] = new Card_FrontEnd(this, i + 1);
+                        break;
+
+                    default:
+                        Cards[i] = new Card_Empty(this, i + 1);
+                        break;
+
                 }
             }
         }

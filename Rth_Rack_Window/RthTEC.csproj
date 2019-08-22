@@ -96,6 +96,12 @@
     <Compile Include="Card_LED_Source.Designer.cs">
       <DependentUpon>Card_LED_Source.cs</DependentUpon>
     </Compile>
+    <Compile Include="Card_MOSFET_BreakDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Card_MOSFET_BreakDown.Designer.cs">
+      <DependentUpon>Card_MOSFET_BreakDown.cs</DependentUpon>
+    </Compile>
     <Compile Include="I_CardType_Amp.cs" />
     <Compile Include="I_CardType_Power.cs" />
     <Compile Include="I_RthTEC.cs" />
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Card_LED_Source.resx">
       <DependentUpon>Card_LED_Source.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Card_MOSFET_BreakDown.resx">
+      <DependentUpon>Card_MOSFET_BreakDown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

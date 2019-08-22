@@ -54,11 +54,12 @@ namespace RthTEC_Rack
             MyMC = calling;
             Slot_Nr = slotNr;
 
-            //Limits & Iteration
+            //ComboBox
             comboBox_gain.Items.Add("25 (+/-100mV)");
             comboBox_gain.Items.Add("50 (+/- 50mV)");
             comboBox_gain.Items.Add("100(+/- 25mV)");
 
+            //Limits & Iteration
             numericUpDown_Offset.Minimum = 0;
             numericUpDown_Offset.Maximum = 10;
             numericUpDown_Offset.Increment = 0.1m;
@@ -109,14 +110,12 @@ namespace RthTEC_Rack
             {
                 string temp = comboBox_gain.SelectedItem.ToString().Substring(0, comboBox_gain.SelectedItem.ToString().IndexOf('('));
                 Set_Gain(Convert.ToDecimal(temp));
-
             }
             catch (Exception)
             {
                 MessageBox.Show("Pleas select available Gain", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
 
         private void NumericUpDown_Offset_ValueChanged(object sender, EventArgs e)
         {
@@ -182,7 +181,7 @@ namespace RthTEC_Rack
         #endregion FCT
 
         //********************************************************************************************************************
-        //                               FCT (teilweise global um von extern zugreifen zu können)
+        //                                               Hilfs-Funktionen
         //********************************************************************************************************************
 
         private void Gain2ComboBox(decimal input)

@@ -8,3 +8,12 @@ C:\Users\schmidm\Desktop\ATIM_GIT\AutoConnect\obj\Debug\AutoConnect.csproj.Gener
 C:\Users\schmidm\Desktop\ATIM_GIT\AutoConnect\obj\Debug\AutoConnect.csproj.CoreCompileInputs.cache
 C:\Users\schmidm\Desktop\ATIM_GIT\AutoConnect\obj\Debug\AutoConnect.exe
 C:\Users\schmidm\Desktop\ATIM_GIT\AutoConnect\obj\Debug\AutoConnect.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\AutoConnect\bin\Debug\AutoConnect.exe.config
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\AutoConnect\bin\Debug\AutoConnect.exe
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\AutoConnect\bin\Debug\AutoConnect.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\AutoConnect\obj\Debug\AutoConnect.csprojResolveAssemblyReference.cache
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\AutoConnect\obj\Debug\AutoConnect.AutoConnect_Window.resources
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\AutoConnect\obj\Debug\AutoConnect.Properties.Resources.resources
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\AutoConnect\obj\Debug\AutoConnect.csproj.GenerateResource.Cache
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\AutoConnect\obj\Debug\AutoConnect.exe
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\AutoConnect\obj\Debug\AutoConnect.pdb

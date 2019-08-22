@@ -29,20 +29,17 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox_InputVoltage = new System.Windows.Forms.TextBox();
             this.comboBox_gain = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBox = new System.Windows.Forms.CheckBox();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.numericUpDown_Offset = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Offset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -55,8 +52,6 @@
             this.groupBox1.Controls.Add(this.comboBox_gain);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.checkBox);
-            this.groupBox1.Controls.Add(this.numericUpDown4);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.numericUpDown_Offset);
             this.groupBox1.Controls.Add(this.label2);
@@ -66,11 +61,21 @@
             this.groupBox1.Size = new System.Drawing.Size(106, 237);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox";
+            this.groupBox1.Text = "FrontEnd";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(7, 156);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "R";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.SimpleButton_RefreshVoltage_Click);
             // 
             // textBox_InputVoltage
             // 
-            this.textBox_InputVoltage.Location = new System.Drawing.Point(35, 159);
+            this.textBox_InputVoltage.Location = new System.Drawing.Point(35, 157);
             this.textBox_InputVoltage.Name = "textBox_InputVoltage";
             this.textBox_InputVoltage.ReadOnly = true;
             this.textBox_InputVoltage.Size = new System.Drawing.Size(64, 20);
@@ -107,23 +112,6 @@
             this.checkBox.Text = "        ";
             this.checkBox.UseVisualStyleBackColor = false;
             this.checkBox.CheckedChanged += new System.EventHandler(this.CheckBox_CheckedChanged);
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(6, 207);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(93, 20);
-            this.numericUpDown4.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(4, 192);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
             // 
             // label3
             // 
@@ -172,16 +160,6 @@
             this.pictureBox.TabIndex = 5;
             this.pictureBox.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(7, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "R";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.SimpleButton_RefreshVoltage_Click);
-            // 
             // Card_FrontEnd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,7 +171,6 @@
             this.Size = new System.Drawing.Size(118, 679);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Offset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -205,8 +182,6 @@
         internal System.Windows.Forms.GroupBox groupBox1;
         internal System.Windows.Forms.Label label5;
         internal System.Windows.Forms.CheckBox checkBox;
-        internal System.Windows.Forms.NumericUpDown numericUpDown4;
-        internal System.Windows.Forms.Label label4;
         internal System.Windows.Forms.Label label3;
         internal System.Windows.Forms.NumericUpDown numericUpDown_Offset;
         internal System.Windows.Forms.Label label2;

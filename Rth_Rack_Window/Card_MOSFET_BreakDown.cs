@@ -158,12 +158,12 @@ namespace RthTEC_Rack
 
         private void Button_Update_UDS_Click(object sender, EventArgs e)
         {
-
+            textBox_U_DS.Text = Get_V_DS().ToString() + " V";
         }
 
         private void Button_Update_IDS_Click(object sender, EventArgs e)
         {
-
+            textBox_I_DS.Text = Get_I_DS().ToString() + " A";
         }
 
         //********************************************************************************************************************
@@ -214,16 +214,44 @@ namespace RthTEC_Rack
         /// <summary>
         /// Sets the GS Voltage in mV
         /// </summary>
-
         public void Set_V_GS(decimal voltage_in_V)
         {
             Voltage_Set_GS = voltage_in_V;
             MyMC.Write_N_Read("SVG" + Slot_Nr.ToString() + "B " + (voltage_in_V *1000).ToString("0"));
         }
 
+        /// <summary>
+        /// Returngs the setted voltage for V_GS in V
+        /// </summary>
         public decimal Get_V_GS()
         {
             string answer = MyMC.Write_N_Read("GVG" + Slot_Nr.ToString() + "B");
+
+            answer = answer.Substring(6, answer.LastIndexOf(' ') - 6);
+
+            return Convert.ToDecimal(answer) / 1000;
+        }
+
+        /// <summary>
+        /// Returns the measured voltage V_DS in V
+        /// </summary>
+        /// <returns></returns>
+        public decimal Get_V_DS()
+        {
+            string answer = MyMC.Write_N_Read("GVD" + Slot_Nr.ToString() + "B");
+
+            answer = answer.Substring(6, answer.LastIndexOf(' ') - 6);
+
+            return Convert.ToDecimal(answer) / 1000;
+        }
+
+        /// <summary>
+        /// Returns the measured current I_DS in A
+        /// </summary>
+        /// <returns></returns>
+        public decimal Get_I_DS()
+        {
+            string answer = MyMC.Write_N_Read("GCD" + Slot_Nr.ToString() + "B");
 
             answer = answer.Substring(6, answer.LastIndexOf(' ') - 6);
 

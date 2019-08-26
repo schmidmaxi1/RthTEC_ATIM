@@ -1,0 +1,13 @@
+*Filesettings:
+Path: C:\Users\schmidm\Desktop\SAC305_3s3s\SAC305_Panel2_50TSC
+File: SAC305_Panel2_%R_0050TSC
+Board-Design: C:\Users\schmidm\Desktop\ATIM_GIT\2_DrivingFiles_neu\LED_Comparison_BRD_ALL.txt
+*SaveOptions:
+Save_Aver_Cool: True
+Save_Aver_Heat: False
+Save_Signle_Cool: False
+Save_Single_Heat: False
+Save_Raw: False
+*Rth-Rack:
+t_Heat[ms]: 3000
+t_Meas[ms]: 3000

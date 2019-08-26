@@ -196,7 +196,7 @@ namespace XYZ_Table
 
         private void Dropdown_Z_init()
         {
-            String[] auswahl = { "0.100", "1", "2", "5", "10", "40" };
+            String[] auswahl = { "0.100", "1", "2", "5", "10", "40", "119" };
             comboBox_Z.Items.AddRange(auswahl);
             comboBox_Z.SelectedIndex = 5;
         }

@@ -17,3 +17,4 @@ C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.cspr
 C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.csproj.CoreCompileInputs.cache
 C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.exe
 C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\Hilfsfunktionen\obj\Debug\Hilfsfunktionen.Ring_Log_Window.resources

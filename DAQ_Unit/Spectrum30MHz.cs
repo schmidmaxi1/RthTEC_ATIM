@@ -179,7 +179,7 @@ namespace DAQ_Units
             //Auf Errors checken
             if (error_Sum != 0)
             {
-                MessageBox.Show("An error occured while sending the Settings!\n Look on LOG and try again.", "Warning",
+                MessageBox.Show("An error occured while sending the Settings to Spectrum!\n Look on LOG and try again.", "Warning",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }

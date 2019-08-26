@@ -81,6 +81,9 @@ namespace TEC_Controller
         public Meerstetter_4fach_Detailed TEC_Detailed { get; internal set; }
         public bool WindowOpen { get; internal set; } = false;
 
+        //Log
+        public Ring_Log MyLog { get; internal set; } = new Ring_Log(50);
+
         #endregion Variables
 
         //********************************************************************************************************************
@@ -216,7 +219,7 @@ namespace TEC_Controller
 
         private void BarButtonItem_LOG_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            MessageBox.Show("Not implementet yet!");
+            MyLog.ShowLog();
         }
 
         private void BarButtonItem_Detailed_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -716,7 +719,14 @@ namespace TEC_Controller
 
             byte parameterInst = registers[tEC_Nr][indexOfRegister].channel;
 
-            meComBasicCmd.SetINT32Value(null, registers[tEC_Nr][indexOfRegister].registerNumber, parameterInst, newValue);           
+            meComBasicCmd.SetINT32Value(null, registers[tEC_Nr][indexOfRegister].registerNumber, parameterInst, newValue);
+
+            //Zum Log hinzufügen
+            MyLog.Add_Line("Set Int at " + DateTime.Now.ToString("dd.MM.yy  hh:mm:ss:fF") + ":" + Environment.NewLine
+                + "    TEC-Nr: " + (tEC_Nr + 1).ToString() + Environment.NewLine
+                + "    Ch.-Nr: " + parameterInst.ToString() + Environment.NewLine
+                + "    Reg-Nr: " + registers[tEC_Nr][indexOfRegister].registerNumber.ToString() + Environment.NewLine
+                + "    New-Val.:" + newValue.ToString() + Environment.NewLine);
         }
 
         private void SendFloatValue(int indexOfRegister, float newValue, int tEC_Nr)
@@ -731,6 +741,13 @@ namespace TEC_Controller
             byte parameterInst = registers[tEC_Nr][indexOfRegister].channel;
 
             meComBasicCmd.SetFloatValue(null, registers[tEC_Nr][indexOfRegister].registerNumber, parameterInst, newValue);
+
+            //Zum Log hinzufügen
+            MyLog.Add_Line("Set Float at " + DateTime.Now.ToString("dd.MM.yy  hh:mm:ss:fF") + ":" + Environment.NewLine
+                + "    TEC-Nr: " + (tEC_Nr + 1).ToString() + Environment.NewLine
+                + "    Ch.-Nr: " + parameterInst.ToString() + Environment.NewLine
+                + "    Reg-Nr: " + registers[tEC_Nr][indexOfRegister].registerNumber.ToString() + Environment.NewLine
+                + "    New-Val.:" + newValue.ToString() + Environment.NewLine);
         }
 
         private int GetIntValue(int indexOfRegister, int tEC_Nr)
@@ -742,7 +759,17 @@ namespace TEC_Controller
             MeComBasicCmd meComBasicCmd = new MeComBasicCmd(meComQuerySet);
             byte parameterInst = registers[tEC_Nr][indexOfRegister].channel;
 
-            return meComBasicCmd.GetINT32Value(null, registers[tEC_Nr][indexOfRegister].registerNumber, parameterInst);
+            int read_value =  meComBasicCmd.GetINT32Value(null, registers[tEC_Nr][indexOfRegister].registerNumber, parameterInst);
+
+            //Zum Log hinzufügen
+            MyLog.Add_Line("Get Int at " + DateTime.Now.ToString("dd.MM.yy  hh:mm:ss:fF") + ":" + Environment.NewLine
+                + "    TEC-Nr: " + (tEC_Nr + 1).ToString() + Environment.NewLine
+                + "    Ch.-Nr: " + parameterInst.ToString() + Environment.NewLine
+                + "    Reg-Nr: " + registers[tEC_Nr][indexOfRegister].registerNumber.ToString() + Environment.NewLine
+                + "    New-Val.:" + read_value.ToString() + Environment.NewLine);
+
+            //Zurückgeben
+            return read_value;
         }
 
         private float GetFloatValue(int indexOfRegister, int tEC_Nr)
@@ -755,7 +782,29 @@ namespace TEC_Controller
             MeComBasicCmd meComBasicCmd = new MeComBasicCmd(meComQuerySet);
             byte parameterInst = registers[tEC_Nr][indexOfRegister].channel;
 
-            return meComBasicCmd.GetFloatValue(null, registers[tEC_Nr][indexOfRegister].registerNumber, parameterInst);
+            float read_value = 0;
+
+            try
+            {
+                read_value = meComBasicCmd.GetFloatValue(null, registers[tEC_Nr][indexOfRegister].registerNumber, parameterInst);
+            }
+            catch (Exception e)
+            {
+                TEC_Open();
+                MessageBox.Show(e.Message);
+                
+                
+            }
+
+            //Zum Log hinzufügen
+            MyLog.Add_Line("Get Float at " + DateTime.Now.ToString("dd.MM.yy  hh:mm:ss:fF") + ":" + Environment.NewLine
+                + "    TEC-Nr: " + (tEC_Nr + 1).ToString() + Environment.NewLine
+                + "    Ch.-Nr: " + parameterInst.ToString() + Environment.NewLine
+                + "    Reg-Nr: " + registers[tEC_Nr][indexOfRegister].registerNumber.ToString() + Environment.NewLine
+                + "    New-Val.:" + read_value.ToString() + Environment.NewLine);
+
+            //Zurückgeben
+            return read_value;
         }
 
         #endregion Messages

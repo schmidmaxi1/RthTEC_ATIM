@@ -2069,7 +2069,6 @@
       <summary>
         <para>Fires when a problem occurs in appointment loading to the storage from an external data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.AppointmentStorageBase.LoadFromXml(System.IO.Stream)">
       <summary>
@@ -2142,7 +2141,6 @@
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.XtraScheduler.AppointmentSynchronizedEventArgs">
       <summary>
@@ -2479,7 +2477,6 @@
       <summary>
         <para>Occurs when a property value of any custom field in the collection changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.CustomFieldCollection.RemoveAt(System.Int32)">
       <summary>
@@ -2817,7 +2814,6 @@
       <summary>
         <para>Occurs when a property value of any of the AppointmentViewInfo options changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.Drawing.AppointmentViewInfoOptions.ShowBell">
       <summary>
@@ -3108,7 +3104,6 @@
       <summary>
         <para>Occurs before an Appointment Exchanger retrieves information about a foreign ID of an appointment, i.e. its identifier in a third-party scheduler application (for instance, MS Outlook) with which the appointment data are exchanged.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.Exchange.AppointmentExchanger.IsTermination">
       <summary>
@@ -3120,7 +3115,6 @@
       <summary>
         <para>Occurs if an exception is raised during the export/import process.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.Exchange.AppointmentExchanger.SourceObjectCount">
       <summary>
@@ -3148,13 +3142,11 @@
       <summary>
         <para>Occurs after an Appointment Exporter exports an appointment to iCalendar file or to MS Outlook Calendar storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.Exchange.AppointmentExporter.AppointmentExporting">
       <summary>
         <para>Occurs before an <see cref="T:DevExpress.XtraScheduler.Exchange.AppointmentExporter"/> class or its descendant exports an appointment to iCalendar file or to MS Outlook Calendar storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.Exchange.AppointmentExporter.Export(System.IO.Stream)">
       <summary>
@@ -3182,13 +3174,11 @@
       <summary>
         <para>Occurs after an object of <see cref="T:DevExpress.XtraScheduler.Exchange.AppointmentImporter"/> or derived class imports an appointment from iCalendar file or MS Outlook Calendar storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.Exchange.AppointmentImporter.AppointmentImporting">
       <summary>
         <para>Occurs before an <see cref="T:DevExpress.XtraScheduler.Exchange.AppointmentImporter"/> class descendant imports an appointment from iCalendar file or from MS Outlook Calendar storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.Exchange.AppointmentImporter.Import(System.IO.Stream)">
       <summary>
@@ -3216,13 +3206,11 @@
       <summary>
         <para>Fires after the synchronization of appointments is complete.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.Exchange.AppointmentSynchronizer.AppointmentSynchronizing">
       <summary>
         <para>Allows you to cancel the synchronization process for an appointment.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.Exchange.AppointmentSynchronizer.ForeignIdFieldName">
       <summary>
@@ -3798,7 +3786,6 @@
       <summary>
         <para>Fires when a problem occurs in appointment loading to the storage from an external data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.IAppointmentStorageBase.LoadFromXml(System.IO.Stream)">
       <summary>
@@ -4075,6 +4062,7 @@
       <summary>
         <para>The name of this calendar component - VEVENT.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.iCalendar.Components.VEvent.UniqueIdentifier">
       <summary>
@@ -4225,7 +4213,6 @@
       <summary>
         <para>Fires when the calendar object conforming to the iCalendar specification is created.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.iCalendar.iCalendarExporter.CustomPropertyIdentifier">
       <summary>
@@ -4297,13 +4284,11 @@
       <summary>
         <para>Fires when the calendar object conforming to the iCalendar specification is created.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.iCalendar.iCalendarImporter.CustomizeConvertedTimeZone">
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.iCalendar.iCalendarImporter.CustomPropertyIdentifier">
       <summary>
@@ -4915,7 +4900,6 @@
       <summary>
         <para>Raise this event to save the modified value to the underlying data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.ISchedulerInplaceEditorEx.Deactivate">
       <summary>
@@ -4926,7 +4910,6 @@
       <summary>
         <para>Raise this event to cancel changes and replace the modified value with the former value (a value before modification).</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.XtraScheduler.ISchedulerMappingConverter">
       <summary>
@@ -4960,31 +4943,26 @@
       <summary>
         <para>Fires before an appointment&#39;s property changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentCollectionAutoReloading">
       <summary>
         <para>Occurs when the data source which contains appointment records is modified and appointments are set to be automatically reloaded.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentCollectionCleared">
       <summary>
         <para>Fires after the appointment collection has been cleared.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentCollectionLoaded">
       <summary>
         <para>Fires after appointments have been loaded into the storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentDeleting">
       <summary>
         <para>Allows you to cancel an appointment deletion.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentDependencies">
       <summary>
@@ -4996,61 +4974,51 @@
       <summary>
         <para>Fires when the properties of the appointment dependency have been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentDependenciesDeleted">
       <summary>
         <para>Fires after deletion of one or several appointment dependencies.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentDependenciesInserted">
       <summary>
         <para>Fires after one or several appointment dependencies have been added to the storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentDependencyChanging">
       <summary>
         <para>Fires when the appointment dependency type is changing.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentDependencyCollectionAutoReloading">
       <summary>
         <para>Occurs when the data source which contains appointment dependency records is modified and dependencies are set to be automatically reloaded.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentDependencyCollectionCleared">
       <summary>
         <para>Fires after the appointment dependency collection has been cleared.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentDependencyCollectionLoaded">
       <summary>
         <para>Fires after appointment dependencies have been loaded into the storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentDependencyDeleting">
       <summary>
         <para>Allows you to cancel the deletion of an appointment dependency.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentDependencyInserting">
       <summary>
         <para>Allows you to cancel the insertion of an appointment dependency to the storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentInserting">
       <summary>
         <para>Allows you to cancel the insertion of an appointment.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.ISchedulerStorageBase.Appointments">
       <summary>
@@ -5062,19 +5030,16 @@
       <summary>
         <para>Fires when the appointments&#39; properties have been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentsDeleted">
       <summary>
         <para>Fires after deletion of one or several appointments.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.AppointmentsInserted">
       <summary>
         <para>Fires after one or several appointments have been added to the collection.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.ISchedulerStorageBase.CreateAppointment(DevExpress.XtraScheduler.AppointmentType)">
       <summary>
@@ -5242,7 +5207,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs before the <see cref="T:DevExpress.XtraScheduler.ISchedulerStorageBase"/> starts retrieving the appointments for the specified time interval.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.ISchedulerStorageBase.FetchOnVisibleResourcesChanged">
       <summary>
@@ -5254,25 +5218,21 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Hides specific appointments in the Scheduler control.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.FilterDependency">
       <summary>
         <para>Hides specific appointment dependencies in the Gantt view.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.FilterReminderAlert">
       <summary>
         <para>Enables you to fire alerts only for specific reminders.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.FilterResource">
       <summary>
         <para>Hides specific resources in the Scheduler control.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.ISchedulerStorageBase.GetAppointments(DevExpress.XtraScheduler.TimeInterval)">
       <summary>
@@ -5370,7 +5330,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when a reminder alert is invoked.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.ISchedulerStorageBase.ReminderDstBehaviorType">
       <summary>
@@ -5394,37 +5353,31 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Fires when a resource&#39;s property is about to be changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.ResourceCollectionAutoReloading">
       <summary>
         <para>Occurs when the data source which contains resources is modified and the automatic reloading of resources is enabled.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.ResourceCollectionCleared">
       <summary>
         <para>Fires after the resource collection has been cleared.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.ResourceCollectionLoaded">
       <summary>
         <para>Fires after resources have been loaded into the storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.ResourceDeleting">
       <summary>
         <para>Allows canceling the deletion of a resource.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.ResourceInserting">
       <summary>
         <para>Allows you to cancel the addition of a resource.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.ISchedulerStorageBase.Resources">
       <summary>
@@ -5436,13 +5389,11 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs after modifying resource(s) in the storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.ISchedulerStorageBase.ResourcesDeleted">
       <summary>
         <para>Occurs after a resource(s) is deleted.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.ISchedulerStorageBase.ResourceSharing">
       <summary>
@@ -5454,7 +5405,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when new resources are inserted into the scheduler storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.ISchedulerStorageBase.SetAppointmentDependencyFactory(DevExpress.XtraScheduler.IAppointmentDependencyFactory)">
       <summary>
@@ -7925,7 +7875,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when a property value of any of the standard appointment properties handled by the AppointmentFormController, changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.Native.AppointmentModificationControllerBase.ReadOnly">
       <summary>
@@ -8094,7 +8043,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs before the specified <see cref="T:System.TimeSpan"/> value is converted to a string.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.Native.HumanReadableTimeSpanHelper.Parse(System.String)">
       <summary>
@@ -8107,7 +8055,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs before the specified string is converted to a <see cref="T:System.TimeSpan"/> value.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.Native.HumanReadableTimeSpanHelper.Reset">
       <summary>
@@ -8695,7 +8642,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>This member is obsolete. Use the <see cref="E:DevExpress.XtraScheduler.Exchange.AppointmentExporter.AppointmentExported"/> instead.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.Outlook.OutlookExport.SetCalendarProvider(DevExpress.XtraScheduler.Outlook.IOutlookCalendarProvider)">
       <summary>
@@ -9048,7 +8994,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when persistent object data is automatically fetched from the data source; allows cancelling data loading.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.PersistentObjectStorage`1.BeginInit">
       <summary>
@@ -9143,7 +9088,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when the <see cref="P:DevExpress.XtraScheduler.PersistentObjectStorage`1.Filter"/> property value is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.PersistentObjectStorage`1.FilterCriteria">
       <summary>
@@ -9219,55 +9163,46 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when the field name of any object mapping in the storage is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.PersistentObjectStorage`1.ObjectChanged">
       <summary>
         <para>Occurs when a persistent object in the storage is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.PersistentObjectStorage`1.ObjectChanging">
       <summary>
         <para>Occurs before a persistent object in the storage is changed and allows you to cancel changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.PersistentObjectStorage`1.ObjectCollectionCleared">
       <summary>
         <para>Occurs when a collection of persistent objects in the storage is cleared.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.PersistentObjectStorage`1.ObjectCollectionLoaded">
       <summary>
         <para>Occurs when persistent objects are loaded from the data source into the storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.PersistentObjectStorage`1.ObjectDeleted">
       <summary>
         <para>Occurs when a persistent object is deleted from the storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.PersistentObjectStorage`1.ObjectDeleting">
       <summary>
         <para>Occurs before a persistent object is deleted from the storage and allows you to cancel deletion.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.PersistentObjectStorage`1.ObjectInserted">
       <summary>
         <para>Occurs when a persistent object is inserted into the storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.PersistentObjectStorage`1.ObjectInserting">
       <summary>
         <para>Occurs before a persistent object is inserted into the storage and allows you to cancel insertion.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.PersistentObjectStorage`1.RaiseReload(System.Boolean)">
       <summary>
@@ -9892,7 +9827,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Fires when the alert time changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.ReminderBase.Snooze(System.DateTime,System.TimeSpan)">
       <summary>
@@ -10147,7 +10081,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when the <see cref="P:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.ClientTimeZoneId"/> property value is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.EnableSmartSync">
       <summary>
@@ -10165,7 +10098,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when the <see cref="P:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.FirstDayOfWeek"/> property value is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.GetAppointments(DevExpress.XtraScheduler.TimeInterval,DevExpress.XtraScheduler.ResourceBaseCollection)">
       <summary>
@@ -10244,7 +10176,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when the <see cref="P:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.ResourceColorSchemas"/> collection is modified.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.ResourceColorSchemas">
       <summary>
@@ -10262,7 +10193,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when the Scheduler source of the print adapter is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.SetSourceObject(System.Object)">
       <summary>
@@ -10286,31 +10216,26 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when the <see cref="P:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.TimeInterval"/> value is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.ValidateAppointments">
       <summary>
         <para>Occurs when appointments are retrieved to create a report document.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.ValidateResources">
       <summary>
         <para>Occurs when resources are obtained for use in the report.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.ValidateTimeIntervals">
       <summary>
         <para>Occurs when the print adapter retrieves information on time intervals required for creating a report.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.ValidateWorkTime">
       <summary>
         <para>Occurs when the print adapter retrieves the work time value for use in the report.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.WorkTime">
       <summary>
@@ -10322,7 +10247,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when the <see cref="P:DevExpress.XtraScheduler.Reporting.SchedulerPrintAdapter.WorkTime"/> property is modified.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.XtraScheduler.Reporting.SmartSyncOptions">
       <summary>
@@ -10930,7 +10854,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when the <see cref="P:DevExpress.XtraScheduler.Resource.Visible"/> property value is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.ResourceStorageBase.SaveToXml(System.IO.Stream)">
       <summary>
@@ -10954,7 +10877,6 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       <summary>
         <para>Occurs when the sort order of columns in Resources Tree is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.ResourceStorageBase.ValidateDataSource">
       <summary>
@@ -11000,11 +10922,23 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
       </summary>
       <value>True, to use Base64 encoding to serialize objects to the XML format; otherwise, false.</value>
     </member>
+    <member name="P:DevExpress.XtraScheduler.SchedulerCompatibility.LoadAdditionalImages">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraScheduler.SchedulerCompatibility.StatusOutOfOfficeColor">
       <summary>
         <para>Specifies the Out-of-Office status color for WinForms Scheduler.</para>
       </summary>
       <value>A <see cref="T:System.Drawing.Color"/> value that is the color used to indicate the appointment Out-of-Office status.</value>
+    </member>
+    <member name="P:DevExpress.XtraScheduler.SchedulerCompatibility.StoreDataSourceObjectsInOccurrences">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.XtraScheduler.SchedulerControlCompatibility">
       <summary>
@@ -11760,109 +11694,91 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Fires when an appointment&#39;s property is about to change.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentCollectionAutoReloading">
       <summary>
         <para>Occurs when the data source which contains appointment records is modified and appointments are set to be automatically reloaded.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentCollectionCleared">
       <summary>
         <para>Fires after the appointment collection has been cleared.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentCollectionLoaded">
       <summary>
         <para>Fires after appointments have been loaded into the <see cref="T:DevExpress.XtraScheduler.AppointmentBaseCollection"/> collection.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentDeleting">
       <summary>
         <para>Allows you to cancel the deletion of an appointment.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentDependenciesChanged">
       <summary>
         <para>Fires when the properties of the appointment dependency have been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentDependenciesDeleted">
       <summary>
         <para>Fires after deletion of one or several appointment dependencies.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentDependenciesInserted">
       <summary>
         <para>Fires after one or several appointment dependencies have been added to the collection.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentDependencyChanging">
       <summary>
         <para>Fires when the appointment dependency type is changing.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentDependencyCollectionAutoReloading">
       <summary>
         <para>Occurs when the data source which contains appointment dependency records is modified and dependencies are set to be automatically reloaded.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentDependencyCollectionCleared">
       <summary>
         <para>Fires after the appointment dependency collection has been cleared.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentDependencyCollectionLoaded">
       <summary>
         <para>Fires after appointment dependencies have been loaded into the storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentDependencyDeleting">
       <summary>
         <para>Allows you to cancel the deletion of an appointment dependency.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentDependencyInserting">
       <summary>
         <para>Allows you to cancel the insertion of an appointment dependency.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentInserting">
       <summary>
         <para>Allows you to cancel the insertion of an appointment.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentsChanged">
       <summary>
         <para>Fires when the appointments&#39; properties have been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentsDeleted">
       <summary>
         <para>Fires after deletion of one or several appointments.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.AppointmentsInserted">
       <summary>
         <para>Fires after one or several appointments have been added to the collection.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.SchedulerStorageBase.BeginInit">
       <summary>
@@ -12060,7 +11976,6 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Occurs before the <see cref="T:DevExpress.XtraScheduler.SchedulerStorageBase"/> starts retrieving the appointments for the specified time interval.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.SchedulerStorageBase.FetchOnVisibleResourcesChanged">
       <summary>
@@ -12072,7 +11987,6 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Hides specific appointments in the Scheduler control.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.SchedulerStorageBase.FilterDependencies(DevExpress.XtraScheduler.AppointmentDependencyBaseCollection)">
       <summary>
@@ -12085,19 +11999,16 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Hides certain appointment dependencies in the Gantt view.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.FilterReminderAlert">
       <summary>
         <para>Enables you to fire alerts only for specific reminders.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.FilterResource">
       <summary>
         <para>Hides specific resources in the Scheduler control.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.SchedulerStorageBase.GetAppointments(DevExpress.XtraScheduler.TimeInterval,System.Boolean)">
       <summary>
@@ -12339,7 +12250,6 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Occurs when a reminder alert is invoked.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.SchedulerStorageBase.ReminderDstBehaviorType">
       <summary>
@@ -12363,49 +12273,41 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Fires when a resource&#39;s property is about to be changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.ResourceCollectionAutoReloading">
       <summary>
         <para>Occurs when the data source which contains resources is modified and the automatic reloading of resources is enabled.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.ResourceCollectionCleared">
       <summary>
         <para>Fires after the resource collection has been cleared.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.ResourceCollectionLoaded">
       <summary>
         <para>Fires after resources have been loaded into the Scheduler storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.ResourceDeleting">
       <summary>
         <para>Allows the deletion of a resource to be cancelled.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.ResourceInserting">
       <summary>
         <para>Allows you to cancel the addition of a resource.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.ResourcesChanged">
       <summary>
         <para>Occurs when a scheduler&#39;s resource in a collection is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerStorageBase.ResourcesDeleted">
       <summary>
         <para>Occurs after a scheduler&#39;s resource(s) is deleted.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.SchedulerStorageBase.ResourceSharing">
       <summary>
@@ -12417,7 +12319,6 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Occurs when new resources are inserted into the scheduler storage.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.SchedulerStorageBase.SetAppointmentDependencyFactory(DevExpress.XtraScheduler.IAppointmentDependencyFactory)">
       <summary>
@@ -13363,13 +13264,11 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Fires when the TimeOfDayInterval is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraScheduler.TimeOfDayInterval.Changing">
       <summary>
         <para>Fires before the <see cref="T:DevExpress.XtraScheduler.TimeOfDayInterval"/> is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.TimeOfDayInterval.Clone">
       <summary>
@@ -13535,7 +13434,6 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Fires when any of the TimeRuler properties are changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.TimeRuler.HorizontalAlignment">
       <summary>
@@ -14064,7 +13962,6 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Fires when the <see cref="P:DevExpress.XtraScheduler.TimeZoneHelper.ClientTimeZone"/> property value is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.TimeZoneHelper.FromAppointmentTime(System.DateTime,System.String)">
       <summary>
@@ -14276,7 +14173,6 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>This event is raised for each interval before it is added to the collection. It enables you to change a free interval after it is found.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraScheduler.Tools.FreeTimeCalculator.Storage">
       <summary>
@@ -14641,7 +14537,6 @@ See the How to: Split Appointments and Series article for more information.</par
       <summary>
         <para>Occurs when a property value changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.UserInterfaceObject.ToString">
       <summary>

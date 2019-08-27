@@ -1742,6 +1742,11 @@
       </summary>
       <value>A <see cref="T:DevExpress.Utils.AppearanceObject"/> object that provides the appearance settings used to paint an appointment.</value>
     </member>
+    <member name="M:DevExpress.XtraScheduler.BaseViewAppearance.Dispose">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
     <member name="P:DevExpress.XtraScheduler.BaseViewAppearance.NavigationButton">
       <summary>
         <para>Provides access to an object that specifies the appearance settings for the Navigation button.</para>
@@ -2467,9 +2472,9 @@
     </member>
     <member name="P:DevExpress.XtraScheduler.DayViewAppearance.TimeRulerHourLine">
       <summary>
-        <para>Gets the appearance settings used to paint the hour lines displayed within the Day View&#39;s time ruler.</para>
+        <para>Gets the appearance settings for the hour lines inside the Day View&#39;s time ruler. Custom appearance settings are in effect only when the Scheduler is not skinned.</para>
       </summary>
-      <value>A <see cref="T:DevExpress.Utils.AppearanceObject"/> object that provides the appearance settings used to paint the time ruler&#39;s hour lines.</value>
+      <value>A <see cref="T:DevExpress.Utils.AppearanceObject"/> object that provides the appearance settings for the time ruler&#39;s hour lines.</value>
     </member>
     <member name="P:DevExpress.XtraScheduler.DayViewAppearance.TimeRulerLine">
       <summary>
@@ -7862,6 +7867,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True.</value>
       <param name="header">A <see cref="T:DevExpress.XtraScheduler.Drawing.DayOfWeekHeader"/> object representing a header.</param>
       <returns>A format string.</returns>
     </member>
+    <member name="M:DevExpress.XtraScheduler.Services.IHeaderCaptionService.GetHorizontalWeekCellAdditionalHeaderCaption(DevExpress.XtraScheduler.Drawing.SchedulerHeader)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="header"></param>
+      <returns></returns>
+    </member>
     <member name="M:DevExpress.XtraScheduler.Services.IHeaderCaptionService.GetHorizontalWeekCellHeaderCaption(DevExpress.XtraScheduler.Drawing.SchedulerHeader)">
       <summary>
         <para>Implements a method which returns a format string for displaying the HorizontalWeekCell header caption in a Month View.</para>
@@ -7944,6 +7956,13 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True.</value>
       </summary>
       <param name="header">A <see cref="T:DevExpress.XtraScheduler.Drawing.DayOfWeekHeader"/> object representing a header.</param>
       <returns>A format string.</returns>
+    </member>
+    <member name="M:DevExpress.XtraScheduler.Services.Implementation.HeaderCaptionService.GetHorizontalWeekCellAdditionalHeaderCaption(DevExpress.XtraScheduler.Drawing.SchedulerHeader)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="header"></param>
+      <returns></returns>
     </member>
     <member name="M:DevExpress.XtraScheduler.Services.Implementation.HeaderCaptionService.GetHorizontalWeekCellHeaderCaption(DevExpress.XtraScheduler.Drawing.SchedulerHeader)">
       <summary>

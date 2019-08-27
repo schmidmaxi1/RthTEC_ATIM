@@ -16962,12 +16962,12 @@ Dock Panels support &quot;Press and Tap&quot; and &quot;Two-Finger Tap&quot; ges
     </member>
     <member name="E:DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView.NavigatedFrom">
       <summary>
-        <para>Occurs when an end-user navigates to a parent Content Container.</para>
+        <para>Occurs when a current Content Container is deactivated.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView.NavigatedTo">
       <summary>
-        <para>Occurs when the end-user navigates to a child Content Container or to another <see cref="T:DevExpress.XtraBars.Docking2010.Views.WindowsUI.Document"/> within the current Container.</para>
+        <para>Occurs when a new Content Container is activated.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraBars.Docking2010.Views.WindowsUI.WindowsUIView.NavigationBarsButtonClick">
@@ -17805,6 +17805,12 @@ Dock Panels support &quot;Press and Tap&quot; and &quot;Two-Finger Tap&quot; ges
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl"/> class with the default settings.</para>
       </summary>
+    </member>
+    <member name="P:DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl.AddedHeight">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraBars.FluentDesignSystem.FluentDesignFormControl.BackColor">
       <summary>
@@ -24891,6 +24897,11 @@ The width of items is specified by the Width attribute of the <see cref="P:DevEx
         <para>Gets the currently processed item.</para>
       </summary>
       <value>The currently processed item.</value>
+    </member>
+    <member name="M:DevExpress.XtraBars.Ribbon.Gallery.GalleryThumbnailImageEventArgs.ResetImageCache">
+      <summary>
+        <para></para>
+      </summary>
     </member>
     <member name="T:DevExpress.XtraBars.Ribbon.Gallery.GalleryThumbnailImageEventHandler">
       <summary>
@@ -32858,6 +32869,12 @@ This image is shown when the notification has the Generic template applied.</par
         <para>Gets or sets whether or not links contained within <see cref="T:DevExpress.XtraBars.BarSubItem"/> objects are serialized.</para>
       </summary>
       <value>true, if links contained within <see cref="T:DevExpress.XtraBars.BarSubItem"/> objects are serialized; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraBars.Utils.BarManagerOptionsLayout.ResetRecentItems">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="N:DevExpress.XtraBars.WinRTLiveTiles">
       <summary>

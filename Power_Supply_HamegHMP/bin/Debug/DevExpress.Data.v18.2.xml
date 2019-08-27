@@ -527,11 +527,13 @@
       <summary>
         <para>The string representation of the moniker for the video capture device.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Data.Camera.CameraDeviceInfo.Name">
       <summary>
         <para>The UI display name of the video capture device.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Data.Camera.CameraDeviceInfo.ToString">
       <summary>
@@ -572,7 +574,6 @@
       <summary>
         <para>Occurs when a property value changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.Camera.DeviceVideoProperty.ResetToDefault">
       <summary>
@@ -648,7 +649,6 @@
       <summary>
         <para>Occurs when a property value changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.Camera.DeviceVideoSettings.ResetToDefaults">
       <summary>
@@ -744,7 +744,6 @@
       <summary>
         <para>Occurs every time any of the class&#39; properties has changed its value.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.Controls.ControlRowSource.ReloadRows(System.Boolean)">
       <summary>
@@ -1356,7 +1355,6 @@
       <summary>
         <para>Occurs every time the data source is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.Controls.IControlRowSource.GetRows(DevExpress.Data.Controls.ControlRows)">
       <summary>
@@ -1586,6 +1584,17 @@
       <summary>
         <para>The Report Wizard lists the data connections available in the application&#39;s configuration file.</para>
       </summary>
+    </member>
+    <member name="T:DevExpress.Data.Entity.IConnectionConfigProvider">
+      <summary>
+        <para>Provides the path to the file that stores connection strings.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.Data.Entity.IConnectionConfigProvider.GetConnectionConfigPath">
+      <summary>
+        <para>Returns the full path to the file that stores connection strings.</para>
+      </summary>
+      <returns>The full path to the file that stores connection strings</returns>
     </member>
     <member name="T:DevExpress.Data.Entity.IConnectionStringInfo">
       <summary>
@@ -2262,16 +2271,19 @@
       <summary>
         <para>The left operand.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Data.Filtering.BinaryOperator.OperatorType">
       <summary>
         <para>Gets the type of the binary operator.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Data.Filtering.BinaryOperator.RightOperand">
       <summary>
         <para>The right operand.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Data.Filtering.BinaryOperatorType">
       <summary>
@@ -2904,13 +2916,11 @@
       <summary>
         <para>Occurs when restoring a serialized criteria operator that references a user object.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.Filtering.CriteriaOperator.UserValueToString">
       <summary>
         <para>Occurs when serializing a criteria operator that references a user object.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.Data.Filtering.CriteriaOperatorCollection">
       <summary>
@@ -3195,6 +3205,7 @@
       <summary>
         <para>Represents the function type. The operands are specified by the <see cref="P:DevExpress.Data.Filtering.FunctionOperator.Operands"/> property and these can be initialized in the constructor. Each operand represents an instance of the <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> class descendant, the number of operands depends on the function type.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Data.Filtering.FunctionOperatorType">
       <summary>
@@ -3986,6 +3997,7 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Specifies the type of the group operator. The available types are enumerated in the <see cref="T:DevExpress.Data.Filtering.GroupOperatorType"/> enumeration.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Data.Filtering.GroupOperatorType">
       <summary>
@@ -5088,11 +5100,13 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>A <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> object which represents the operand.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Data.Filtering.UnaryOperator.OperatorType">
       <summary>
         <para>An <see cref="T:DevExpress.Data.Filtering.UnaryOperatorType"/> enumeration value which specifies the type of the unary operator.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Data.Filtering.UnaryOperatorType">
       <summary>
@@ -5324,13 +5338,11 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.Linq.EntityInstantFeedbackSource"/> no longer needs the queryable source it used to retrieve objects from the data store.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.Linq.EntityInstantFeedbackSource.GetQueryable">
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.Linq.EntityInstantFeedbackSource"/> needs a queryable source, to retrieve objects from the data store.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.Linq.EntityInstantFeedbackSource.KeyExpression">
       <summary>
@@ -5369,13 +5381,11 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Enables you to manually handle the database exception.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.Linq.EntityServerModeSource.InconsistencyDetected">
       <summary>
         <para>Enables you to manually handle the inconsistency detected during an operation on a data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.Linq.EntityServerModeSource.KeyExpression">
       <summary>
@@ -5486,7 +5496,6 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.Linq.LinqInstantFeedbackSource"/> no longer needs the queryable source it used to retrieve objects from the data store.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.Linq.LinqInstantFeedbackSource.ExtractOriginalRow(System.Object)">
       <summary>
@@ -5499,7 +5508,6 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.Linq.LinqInstantFeedbackSource"/> needs a queryable source, to retrieve objects from the data store.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.Linq.LinqInstantFeedbackSource.KeyExpression">
       <summary>
@@ -5585,13 +5593,11 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Enables you to manually handle the database exception.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.Linq.LinqServerModeSource.InconsistencyDetected">
       <summary>
         <para>Enables you to manually handle the inconsistency detected during an operation on a data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.Linq.LinqServerModeSource.KeyExpression">
       <summary>
@@ -5720,7 +5726,6 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.ODataLinq.ODataInstantFeedbackSource"/> no longer needs the queryable source it used to retrieve objects from the OData service.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.ODataLinq.ODataInstantFeedbackSource.FixedFilterCriteria">
       <summary>
@@ -5738,7 +5743,6 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.ODataLinq.ODataInstantFeedbackSource"/> needs a queryable source to retrieve objects from the OData service.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.ODataLinq.ODataInstantFeedbackSource.KeyExpression">
       <summary>
@@ -5795,7 +5799,6 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Occurs when the data source exception is thrown.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.ODataLinq.ODataServerModeSource.Extender">
       <summary>
@@ -5819,7 +5822,6 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Occurs when an inconsistency has been detected during an operation on a data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.ODataLinq.ODataServerModeSource.KeyExpression">
       <summary>
@@ -5854,6 +5856,7 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Enables the use of the $inlinecount query option instead of the $count endpoint.</para>
       </summary>
+      <value></value>
     </member>
     <member name="N:DevExpress.Data.PLinq">
       <summary>
@@ -5940,13 +5943,11 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.PLinq.PLinqInstantFeedbackSource"/> no longer needs the enumerable source it used for object retrieval.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.PLinq.PLinqInstantFeedbackSource.GetEnumerable">
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.PLinq.PLinqInstantFeedbackSource"/> needs an enumerable source, to retrieve data from it.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.PLinq.PLinqInstantFeedbackSource.Refresh">
       <summary>
@@ -5985,13 +5986,11 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Enables you to manually handle the data source exception.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.PLinq.PLinqServerModeSource.InconsistencyDetected">
       <summary>
         <para>Enables you to manually handle the inconsistency detected during an operation on a data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.PLinq.PLinqServerModeSource.Reload">
       <summary>
@@ -6035,6 +6034,7 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Data.RealTimeSource.GetDisplayableProperties(System.Object)">
       <summary>
@@ -6070,6 +6070,7 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Specifies the timeout between the data source event occurrence and passing changes to the bound control (in milliseconds). The default timeout is 2000 ms. If the actual delay exceeds the specified timeout, the <see cref="M:DevExpress.Data.RealTimeSource.CatchUp"/> method triggers automatically.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Data.RealTimeSource.Suspend">
       <summary>
@@ -6347,7 +6348,6 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Occurs every time any of the <see cref="P:DevExpress.Data.TreeList.TreeListNodeBase.Content"/> and <see cref="P:DevExpress.Data.TreeList.TreeListNodeBase.IsExpanded"/> properties have changed their value.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.TreeList.TreeListNodeBase.RowHandle">
       <summary>
@@ -6496,25 +6496,21 @@ Day After Tomorrow &lt;= date &lt; First Day of Next Week</para>
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.UnboundSource"/>&#39;s list is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.UnboundSource.UnboundSourceListChanging">
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.UnboundSource"/>&#39;s list is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.UnboundSource.ValueNeeded">
       <summary>
         <para>Occurs when a value is requested from the <see cref="T:DevExpress.Data.UnboundSource"/>.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.UnboundSource.ValuePushed">
       <summary>
         <para>Occurs when a value is set in the <see cref="T:DevExpress.Data.UnboundSource"/>.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.Data.UnboundSourceListChangedEventArgs">
       <summary>
@@ -6942,32 +6938,27 @@ When handling the <see cref="E:DevExpress.Data.VirtualServerModeSource.Configura
         <para>This event can be handled to provide an inner list that will be storage for rows fetched using the VirtualServerModeSource&#39;s events. 
 To enable CRUD operations in a bound Data Grid, you need to provide an inner list that supports these operations. If no inner list is supplied (or you do not handle the AcquireInnerList event), CRUD operations are disabled in the grid control.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.VirtualServerModeSource.CanPerformColumnServerAction">
       <summary>
         <para>Allows you to specify whether the requested filtering, sorting or summary calculation operation needs to be accepted or canceled.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.VirtualServerModeSource.ConfigurationChanged">
       <summary>
         <para>Fires on initial data load and reload in the bound grid control, and when the data grid&#39;s sort and filter configuration changes.
 Allows you to initialize the data source and (optionally) return an initial batch of records.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.VirtualServerModeSource.GetUniqueValues">
       <summary>
         <para>Allows you to provide values for columns&#39; filter dropdowns.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.VirtualServerModeSource.MoreRows">
       <summary>
         <para>Fires when a bound grid control asks the data source for a new batch of rows.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.VirtualServerModeSource.Refresh">
       <summary>
@@ -6984,7 +6975,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Fires when a grid control asks the data source to calculate total summaries.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.Data.VirtualServerModeTotalSummaryEventArgs">
       <summary>
@@ -7139,7 +7129,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.WcfLinq.WcfInstantFeedbackSource"/> no longer needs the queryable source it used to retrieve objects from the WCF data service.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.WcfLinq.WcfInstantFeedbackSource.FixedFilterCriteria">
       <summary>
@@ -7157,7 +7146,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the <see cref="T:DevExpress.Data.WcfLinq.WcfInstantFeedbackSource"/> needs a queryable source, to retrieve objects from the WCF data service.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.WcfLinq.WcfInstantFeedbackSource.KeyExpression">
       <summary>
@@ -7202,7 +7190,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when a data source exception is thrown.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.WcfLinq.WcfServerModeSource.Extender">
       <summary>
@@ -7226,7 +7213,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when an inconsistency has been detected during an operation on a data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.WcfLinq.WcfServerModeSource.KeyExpression">
       <summary>
@@ -7249,6 +7235,7 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="N:DevExpress.Data.WizardFramework">
       <summary>
@@ -7274,7 +7261,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when settings on the current wizard page were changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.WizardFramework.IWizardPage`1.Commit">
       <summary>
@@ -7285,7 +7271,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Fires when an error occurs for the current report page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.WizardFramework.IWizardPage`1.FinishEnabled">
       <summary>
@@ -7345,7 +7330,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs after clicking the Cancel button in a wizard.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.WizardFramework.IWizardView.EnableFinish(System.Boolean)">
       <summary>
@@ -7369,19 +7353,16 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs after clicking the Finish button in a wizard.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.WizardFramework.IWizardView.Next">
       <summary>
         <para>Occurs after clicking the Next button in a wizard.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.WizardFramework.IWizardView.Previous">
       <summary>
         <para>Occurs after clicking the Previous button in a wizard.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.WizardFramework.IWizardView.SetPageContent(System.Object)">
       <summary>
@@ -7412,13 +7393,11 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when a wizard execution has been cancelled.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.WizardFramework.Wizard`1.Completed">
       <summary>
         <para>Occurs when a wizard execution has been completed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.WizardFramework.Wizard`1.CurrentPage">
       <summary>
@@ -7436,7 +7415,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when a wizard has been navigated to the next page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.WizardFramework.Wizard`1.SetStartPage(System.Type)">
       <summary>
@@ -7464,7 +7442,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when settings on the current wizard page were changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.WizardFramework.WizardPageBase`2.Commit">
       <summary>
@@ -7475,7 +7452,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Fires when an error occurs for the current report page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.WizardFramework.WizardPageBase`2.FinishEnabled">
       <summary>
@@ -8079,7 +8055,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when all data columns have been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.XtraReports.ServiceModel.IReportWizardServiceClient.GetDataMembersAsync(System.String,System.Object)">
       <summary>
@@ -8092,7 +8067,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when all data members have been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.XtraReports.ServiceModel.IReportWizardServiceClient.GetDataSourcesAsync(System.Object)">
       <summary>
@@ -8104,7 +8078,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the data sources have been obtained.</para>
       </summary>
-      <value></value>
     </member>
     <member name="N:DevExpress.Data.XtraReports.Wizard">
       <summary>
@@ -9169,25 +9142,21 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the active record in the list of the available columns is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.IAddGroupingLevelPageView.ActiveGroupingLevelChanged">
       <summary>
         <para>Occurs when the active record in the list of grouping levels is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.IAddGroupingLevelPageView.AddGroupingLevelClicked">
       <summary>
         <para>Occurs when the Add Grouping Level button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.IAddGroupingLevelPageView.CombineGroupingLevelClicked">
       <summary>
         <para>Occurs when the Combine Grouping Level button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.XtraReports.Wizard.Views.IAddGroupingLevelPageView.EnableAddGroupingLevelButton(System.Boolean)">
       <summary>
@@ -9247,19 +9216,16 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the Move Grouping Level Down button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.IAddGroupingLevelPageView.GroupingLevelUpClicked">
       <summary>
         <para>Occurs when the Move Grouping Level Up button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.IAddGroupingLevelPageView.RemoveGroupingLevelClicked">
       <summary>
         <para>Occurs when the Remove Grouping Level button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.XtraReports.Wizard.Views.IAddGroupingLevelPageView.SetActiveGroupingLevel(DevExpress.Data.XtraReports.Wizard.GroupingLevelInfo)">
       <summary>
@@ -9380,7 +9346,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when label information displayed in the dedicated editors is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.XtraReports.Wizard.Views.ICustomizeLabelPageView.LabelsCountHorz">
       <summary>
@@ -9416,7 +9381,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the entry selected in the Page Size drop-down list is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.XtraReports.Wizard.Views.ICustomizeLabelPageView.SelectedPaperKindId">
       <summary>
@@ -9440,7 +9404,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the state of the Inch and Millimeter radio buttons is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.XtraReports.Wizard.Views.ICustomizeLabelPageView.VerticalPitch">
       <summary>
@@ -9463,19 +9426,16 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the collection of the currently selected columns is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.ISelectColumnsPageView.AddAllColumnsClicked">
       <summary>
         <para>Occurs when the Add All Columns button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.ISelectColumnsPageView.AddColumnsClicked">
       <summary>
         <para>Occurs when the Add Columns button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.XtraReports.Wizard.Views.ISelectColumnsPageView.EnableAddAllColumnsButton(System.Boolean)">
       <summary>
@@ -9529,13 +9489,11 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the Remove All Columns button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.ISelectColumnsPageView.RemoveColumnsClicked">
       <summary>
         <para>Occurs when the Remove Columns button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.XtraReports.Wizard.Views.ISelectColumnsPageView.ShowWaitIndicator(System.Boolean)">
       <summary>
@@ -9564,7 +9522,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the active record in the Available items list is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.XtraReports.Wizard.Views.ISelectDataMemberPageView.SelectedDataMemberName">
       <summary>
@@ -9593,7 +9550,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the selected item in the Available items list is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.XtraReports.Wizard.Views.ISelectDataSourcePageView.SelectedDataSourceName">
       <summary>
@@ -9616,7 +9572,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the collection of the columns currently selected in the list of available columns is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.XtraReports.Wizard.Views.ISelectHierarchicalDataSourceColumnsPageView.ActiveAvailableDataMemberNode">
       <summary>
@@ -9634,13 +9589,11 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the collection of the columns currently selected in the list of selected columns is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.ISelectHierarchicalDataSourceColumnsPageView.AddColumnClicked">
       <summary>
         <para>Occurs when the Add Column button is clicked on the Select Columns page of the Report Wizard for a hierarchical data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Data.XtraReports.Wizard.Views.ISelectHierarchicalDataSourceColumnsPageView.EnableAddColumnButton(System.Boolean)">
       <summary>
@@ -9670,13 +9623,11 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the Remove All Columns button is clicked on the Select Columns page of the Report Wizard for a hierarchical data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.ISelectHierarchicalDataSourceColumnsPageView.RemoveColumnsClicked">
       <summary>
         <para>Occurs when the Remove Columns button is clicked on the Select Columns page of the Report Wizard for a hierarchical data source.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.XtraReports.Wizard.Views.ISelectHierarchicalDataSourceColumnsPageView.RootNodes">
       <summary>
@@ -9723,13 +9674,11 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs when the active record in the Label Products drop-down list is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Data.XtraReports.Wizard.Views.ISelectLabelTypePageView.SelectedLabelProductDetailsChanged">
       <summary>
         <para>Occurs when the active record in the Product Number drop-down list is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Data.XtraReports.Wizard.Views.ISelectLabelTypePageView.SelectedProduct">
       <summary>
@@ -12248,6 +12197,21 @@ Allows you to initialize the data source and (optionally) return an initial batc
         <para>Return value: &quot;Close&quot;.</para>
       </summary>
     </member>
+    <member name="F:DevExpress.Utils.Filtering.Internal.FilterUIElementLocalizerStringId.FilteringUISearchByDayCaption">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Utils.Filtering.Internal.FilterUIElementLocalizerStringId.FilteringUISearchByMonthCaption">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.Utils.Filtering.Internal.FilterUIElementLocalizerStringId.FilteringUISearchByYearCaption">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
     <member name="F:DevExpress.Utils.Filtering.Internal.FilterUIElementLocalizerStringId.FilteringUITabGroups">
       <summary>
         <para></para>
@@ -12315,7 +12279,6 @@ Allows you to initialize the data source and (optionally) return an initial batc
       <summary>
         <para>Occurs on changing properties of the current <see cref="T:DevExpress.Utils.FormatInfo"/> class object.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Utils.FormatInfo.Empty">
       <summary>
@@ -12809,7 +12772,6 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Fires immediately after the <see cref="P:DevExpress.Utils.Localization.XtraLocalizer`1.Active"/> property value has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Utils.Localization.XtraLocalizer`1.CreateResXLocalizer">
       <summary>
@@ -12889,13 +12851,11 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Occurs when the collection is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.Utils.NotificationCollection`1.CollectionChanging">
       <summary>
         <para>This event occurs when the collection is about to change.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Utils.NotificationCollection`1.EndUpdate">
       <summary>
@@ -13086,6 +13046,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>For internal use only. Represents an empty point.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Utils.PointFloat.Equals(System.Object)">
       <summary>
@@ -13376,6 +13337,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies whether the application should use the legacy default theme (&quot;DeepBlue&quot;).</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpf.Core.CompatibilityMode">
       <summary>
@@ -13533,6 +13495,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>&quot;GetKnownTypes&quot;</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpf.Printing.ServiceKnownTypeProvider.IsRegistered(System.Type)">
       <summary>
@@ -13641,6 +13604,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>The collection of operands.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.ConnectionProviderSql">
       <summary>
@@ -13761,11 +13725,13 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the timeout value passed to the IDbCommand.CommandTimeout property of each created command, in seconds.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.ConnectionProviderSql.EnableConnectionStringArgumentEscaping">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.ConnectionProviderSql.EscapeConnectionStringArgument(System.String)">
       <summary>
@@ -14066,21 +14032,25 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the timeout value passed to the IDbCommand.CommandTimeout property, in seconds. Can be overridden by the <see cref="F:DevExpress.Xpo.DB.ConnectionProviderSql.DefaultCommandTimeout"/> field. The default is 300.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.ConnectionProviderSql.IdentityColumnMagicName">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.ConnectionProviderSql.MaxDeadLockRetryDelayMilliseconds">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.ConnectionProviderSql.MaxDeadLockTryCount">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.ConnectionProviderSql.ModifyData(DevExpress.Xpo.DB.ModificationStatement[])">
       <summary>
@@ -14105,7 +14075,6 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para></para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.ConnectionProviderSql.RegisterCustomFunctionOperator(DevExpress.Data.Filtering.ICustomFunctionOperatorFormattable)">
       <summary>
@@ -14170,6 +14139,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.DataCacheNode">
       <summary>
@@ -14217,6 +14187,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Xpo.DB.DataCacheNode.GlobalTotalMemoryPurgeTreshhold">
       <summary>
@@ -14228,16 +14199,19 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the time period (also known as latency) between regular contacts that the current Node makes to its parent element for up-to-date table update information. The default value is 30 seconds.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DataCacheNode.MinCachedRequestsAfterPurge">
       <summary>
         <para>Specifies the minimum number of query results to retain within the current Node&#39;s cache during its automatic purge. The default value is 16.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DataCacheNode.TotalMemoryNotPurgeThreshold">
       <summary>
         <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Xpo.DB.DataCacheNode.TotalMemoryNotPurgeTreshhold">
       <summary>
@@ -14249,6 +14223,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Xpo.DB.DataCacheNode.TotalMemoryPurgeTreshhold">
       <summary>
@@ -14376,6 +14351,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Returns a parameter name used to denote a provider type in a connection string. The default value is &quot;XpoProvider&quot;.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.DataStoreLogger">
       <summary>
@@ -14431,21 +14407,25 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the column&#39;s type.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DBColumn.DbDefaultValue">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DBColumn.DBTypeName">
       <summary>
         <para>Specifies the name of the column data type.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DBColumn.DefaultValue">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.DBColumn.GetColumnType(System.Type)">
       <summary>
@@ -14473,16 +14453,19 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>true if the value of the column increments automatically; otherwise, false. The default value is false.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DBColumn.IsKey">
       <summary>
         <para>true if the column is the key column; otherwise, false.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DBColumn.IsNullable">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.DBColumn.IsStorableType(DevExpress.Xpo.DB.DBColumnType)">
       <summary>
@@ -14502,11 +14485,13 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the column&#39;s name.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DBColumn.Size">
       <summary>
         <para>The maximum length of a text column. This is ignored for non-text columns.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.DBColumnType">
       <summary>
@@ -14630,11 +14615,13 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the name of a primary key table.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DBForeignKey.PrimaryKeyTableKeyColumns">
       <summary>
         <para>A collection of strings that specify the names of columns that function as primary keys for a table.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.DBIndex">
       <summary>
@@ -14665,6 +14652,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>true if the index must be unique; otherwise, false. If the IsUnique field is set to true, an exception will be thrown when assigning an index that isn&#39;t unique.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.DBNameTypePair">
       <summary>
@@ -14687,6 +14675,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>A <see cref="T:System.String"/> value, specifying the database column name.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.DBNameTypePair.ToString">
       <summary>
@@ -14698,6 +14687,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>A <see cref="T:DevExpress.Xpo.DB.DBColumnType"/> value, specifying the database column type.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.DBPrimaryKey">
       <summary>
@@ -14742,6 +14732,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>A <see cref="T:System.String"/> value, specifying the stored procedure name.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Xpo.DB.DBStoredProcedure.ResultSets">
       <summary>
@@ -14784,6 +14775,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>A <see cref="T:DevExpress.Xpo.DB.DBStoredProcedureArgumentDirection"/> value corresponding to an appropriate <see cref="T:DevExpress.Xpo.DB.DBNameTypePair"/> object.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.DBStoredProcedureArgument.ToString">
       <summary>
@@ -14929,16 +14921,19 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DBTable.Name">
       <summary>
         <para>Specifies the table&#39;s name.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DBTable.PrimaryKey">
       <summary>
         <para>Specifies a <see cref="T:DevExpress.Xpo.DB.DBPrimaryKey"/> object that represents a primary keys for the table. The primary key must be unique to identify the record in the table. It&#39;s also possible to have a table with a primary key made up of two or more columns.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.DBTable.ToString">
       <summary>
@@ -14955,11 +14950,13 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies a collection of strings that are the names of the columns comprising the <see cref="T:DevExpress.Xpo.DB.DBTableMultiColumnGadget"/> object. In the <see cref="T:DevExpress.Xpo.DB.DBPrimaryKey"/> descendant class, these columns are primary keys.  In <see cref="T:DevExpress.Xpo.DB.DBForeignKey"/>, these are foreign keys. In <see cref="T:DevExpress.Xpo.DB.DBIndex"/>, these are columns comprising the index.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.DBTableMultiColumnGadget.Name">
       <summary>
         <para>This member supports the XPO Framework infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.DeleteStatement">
       <summary>
@@ -15197,6 +15194,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>The name of a category used to tag data cache operations in XPO logs. The default category name is &quot;DataCache&quot;.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.Helpers.DataCacheBase.ModifyData(DevExpress.Xpo.DB.Helpers.DataCacheCookie,DevExpress.Xpo.DB.ModificationStatement[])">
       <summary>
@@ -15312,6 +15310,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Xpo.DB.Helpers.DataCacheConfiguration.TableDictionary">
       <summary>
@@ -15366,16 +15365,19 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.Helpers.DataCacheCookie.Empty">
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.Helpers.DataCacheCookie.Guid">
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.Helpers.DataCacheModificationResult">
       <summary>
@@ -15391,6 +15393,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.Helpers.DataCacheResult">
       <summary>
@@ -15406,16 +15409,19 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.Helpers.DataCacheResult.Cookie">
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.Helpers.DataCacheResult.UpdatedTableAges">
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.Helpers.DataCacheSelectDataResult">
       <summary>
@@ -15431,11 +15437,13 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.Helpers.DataCacheSelectDataResult.SelectingCookie">
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.Helpers.DataCacheUpdateSchemaResult">
       <summary>
@@ -15451,6 +15459,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.Helpers.TableAge">
       <summary>
@@ -15473,11 +15482,13 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.Helpers.TableAge.Name">
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.ICachedDataStore">
       <summary>
@@ -15596,16 +15607,19 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the name of an identity column in a table.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.InsertStatement.IdentityColumnType">
       <summary>
         <para>Specifies the type of an identity column in a table.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.InsertStatement.IdentityParameter">
       <summary>
         <para>This member supports the .NET Framework infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.InsertStatement.ToString">
       <summary>
@@ -15652,6 +15666,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>A <see cref="T:System.String"/> value that identifies the table.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.JoinNode.CollectJoinNodesAndCriteria(System.Collections.Generic.List{DevExpress.Xpo.DB.JoinNode}@,System.Collections.Generic.List{DevExpress.Data.Filtering.CriteriaOperator}@)">
       <summary>
@@ -15664,6 +15679,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the criteria expression.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.JoinNode.Equals(System.Object)">
       <summary>
@@ -15689,11 +15705,13 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Provides access to the collection of sub nodes that is represented by a <see cref="T:DevExpress.Xpo.DB.JoinNodeCollection"/> object.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.JoinNode.Table">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.JoinNode.ToString">
       <summary>
@@ -15705,6 +15723,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>A <see cref="T:DevExpress.Xpo.DB.JoinType"/> enumeration value that specifies the join&#39;s type.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.JoinNodeCollection">
       <summary>
@@ -15776,6 +15795,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>An array of identifiers.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.ModificationStatement">
       <summary>
@@ -15786,11 +15806,13 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Gets the collection of <see cref="T:DevExpress.Data.Filtering.OperandValue"/> objects.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.ModificationStatement.RecordsAffected">
       <summary>
         <para>Specifies the number of records to be modified.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.ModificationStatement.ToString">
       <summary>
@@ -15831,6 +15853,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>For internal use only.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.QueryOperand">
       <summary>
@@ -15887,11 +15910,13 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the column&#39;s name</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Xpo.DB.QueryOperand.ColumnType">
       <summary>
         <para>The column type.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.QueryOperand.Equals(System.Object)">
       <summary>
@@ -15910,6 +15935,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the alias name of the table in a query.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.QueryOperandCollection">
       <summary>
@@ -16012,6 +16038,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>The results of select query statements. To learn more, refer to How to: Access Data in SQL Query Results.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.SelectStatement">
       <summary>
@@ -16047,6 +16074,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the grouping expression that is represented by a <see cref="T:DevExpress.Data.Filtering.CriteriaOperator"/> descendant.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Xpo.DB.SelectStatement.GroupProperties">
       <summary>
@@ -16058,6 +16086,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the number of records to exclude from the query result.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Xpo.DB.SelectStatement.SortProperties">
       <summary>
@@ -16069,6 +16098,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>Specifies the maximum number of selected records.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Xpo.DB.SelectStatement.ToString">
       <summary>
@@ -16114,6 +16144,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>An array of rows that represent the result of a single select query to a data store. Each row contains the values of the queried fields. To learn more, refer to How to: Access Data in SQL Query Results.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Xpo.DB.SortingColumn">
       <summary>
@@ -16697,7 +16728,6 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>This event must fire when the Client&#39;s range setting is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraEditors.IRangeControlClient.RulerDelta">
       <summary>
@@ -17739,16 +17769,19 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>96f</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.GraphicsDpi.Display">
       <summary>
         <para>75f</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.GraphicsDpi.Document">
       <summary>
         <para>300f</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.GraphicsDpi.DpiToUnit(System.Single)">
       <summary>
@@ -17761,6 +17794,7 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>914400f</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.GraphicsDpi.GetGraphicsDpi(System.Drawing.Graphics)">
       <summary>
@@ -17780,36 +17814,43 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       <summary>
         <para>100f</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.GraphicsDpi.Inch">
       <summary>
         <para>1f</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.GraphicsDpi.Millimeter">
       <summary>
         <para>25.4f</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.GraphicsDpi.Pixel">
       <summary>
         <para>96f</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.GraphicsDpi.Point">
       <summary>
         <para>72f</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.GraphicsDpi.TenthsOfAMillimeter">
       <summary>
         <para>254f</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPrinting.GraphicsDpi.Twips">
       <summary>
         <para>1440f</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.GraphicsDpi.UnitToDpi(System.Drawing.GraphicsUnit)">
       <summary>
@@ -18403,7 +18444,6 @@ Otherwise, the closest matching image side (height or width) will be sized to th
       <summary>
         <para>Occurs after certain properties of the <see cref="T:DevExpress.XtraPrinting.IPrintingSystem"/> object have been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPrinting.IPrintingSystem.AutoFitToPagesWidth">
       <summary>
@@ -18415,7 +18455,6 @@ Otherwise, the closest matching image side (height or width) will be sized to th
       <summary>
         <para>Occurs before certain properties of the <see cref="T:DevExpress.XtraPrinting.IPrintingSystem"/> object are changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.IPrintingSystem.CreateBrick(System.String)">
       <summary>
@@ -22068,6 +22107,7 @@ Otherwise, the closest matching image side (height or width) will be sized to th
       <summary>
         <para>Provides a <see cref="T:DevExpress.XtraPrinting.PaddingInfo"/> object with no padding.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraPrinting.PaddingInfo.Equals(DevExpress.XtraPrinting.PaddingInfo)">
       <summary>
@@ -23058,7 +23098,6 @@ Otherwise, the closest matching image side (height or width) will be sized to th
       <summary>
         <para>Occurs when any of the spelling check options are changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.XtraSpellChecker.ISpellChecker">
       <summary>
@@ -23082,7 +23121,6 @@ Otherwise, the closest matching image side (height or width) will be sized to th
       <summary>
         <para>Occurs after a word is checked.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraSpellChecker.ISpellChecker.CanAddToDictionary">
       <summary>
@@ -23133,13 +23171,11 @@ Otherwise, the closest matching image side (height or width) will be sized to th
       <summary>
         <para>Occurs when the current culture setting of a spell checker is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraSpellChecker.ISpellChecker.CustomDictionaryChanged">
       <summary>
         <para>Occurs when a custom dictionary is modified by an end-user.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraSpellChecker.ISpellChecker.GetOptions(System.Object)">
       <summary>
@@ -23195,7 +23231,6 @@ Otherwise, the closest matching image side (height or width) will be sized to th
       <summary>
         <para>Occurs when the SpellCheckMode is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraSpellChecker.ISpellChecker.UnregisterIgnoreList(System.Object)">
       <summary>
@@ -23207,7 +23242,6 @@ Otherwise, the closest matching image side (height or width) will be sized to th
       <summary>
         <para>Occurs after a word is added to a custom dictionary.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.XtraSpellChecker.ISpellingErrorInfo">
       <summary>

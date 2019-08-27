@@ -1378,6 +1378,12 @@
       <param name="chartElementType">The type of a chart element.</param>
       <param name="customModelType">The type of a model.</param>
     </member>
+    <member name="P:DevExpress.XtraCharts.Designer.ChartDesigner.ShowActualData">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="M:DevExpress.XtraCharts.Designer.ChartDesigner.ShowDialog">
       <summary>
         <para>Invokes the Chart Designer for the chart control.</para>

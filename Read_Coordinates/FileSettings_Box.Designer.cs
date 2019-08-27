@@ -41,7 +41,7 @@
             this.groupBox.Controls.Add(this.readBox_Movement1);
             this.groupBox.Location = new System.Drawing.Point(0, 0);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(510, 100);
+            this.groupBox.Size = new System.Drawing.Size(510, 130);
             this.groupBox.TabIndex = 0;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "File Settings:";
@@ -57,7 +57,7 @@
             // 
             this.readBox_Movement1.Location = new System.Drawing.Point(5, 65);
             this.readBox_Movement1.Name = "readBox_Movement1";
-            this.readBox_Movement1.Size = new System.Drawing.Size(500, 30);
+            this.readBox_Movement1.Size = new System.Drawing.Size(500, 60);
             this.readBox_Movement1.TabIndex = 0;
             // 
             // FileSettings_Box
@@ -66,7 +66,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.groupBox);
             this.Name = "FileSettings_Box";
-            this.Size = new System.Drawing.Size(520, 105);
+            this.Size = new System.Drawing.Size(520, 185);
             this.groupBox.ResumeLayout(false);
             this.ResumeLayout(false);
 

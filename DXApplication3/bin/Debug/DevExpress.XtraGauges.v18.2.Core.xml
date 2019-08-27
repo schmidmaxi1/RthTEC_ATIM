@@ -53,7 +53,6 @@
       <summary>
         <para>Occurs after any property of the <see cref="T:DevExpress.XtraGauges.Core.Base.BaseObject"/> object has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Base.BaseObject.Dispose">
       <summary>
@@ -64,7 +63,6 @@
       <summary>
         <para>Occurs after the <see cref="T:DevExpress.XtraGauges.Core.Base.BaseObject"/> has been disposed of.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Base.BaseObject.EndUpdate">
       <summary>
@@ -99,11 +97,18 @@
       </summary>
       <value>A <see cref="T:System.Drawing.Color"/> object that all target gauge elements should be painted.</value>
     </member>
+    <member name="M:DevExpress.XtraGauges.Core.Base.ColorScheme.GetColor(DevExpress.XtraGauges.Base.IGauge,DevExpress.XtraGauges.Core.Base.TargetElement)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="owner"></param>
+      <param name="element"></param>
+      <returns></returns>
+    </member>
     <member name="E:DevExpress.XtraGauges.Core.Base.ColorScheme.PropertyChanged">
       <summary>
         <para>Occurs whenever any of these <see cref="T:DevExpress.XtraGauges.Core.Base.ColorScheme"/>&#39;s properties changes its value.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Base.ColorScheme.Reset">
       <summary>
@@ -205,6 +210,7 @@
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Drawing.BaseGradientBrushObject.GradientStopsComparer.GetDifference(DevExpress.XtraGauges.Core.Drawing.GradientStop,DevExpress.XtraGauges.Core.Drawing.GradientStop)">
       <summary>
@@ -350,6 +356,7 @@
       <summary>
         <para>The default font for text labels within gauges.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraGauges.Core.Drawing.BaseTextAppearance.Font">
       <summary>
@@ -409,11 +416,13 @@
       <summary>
         <para>Returns the default value for the <see cref="P:DevExpress.XtraGauges.Core.Drawing.BrushObject.BrushRect"/> property.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraGauges.Core.Drawing.BrushObject.Empty">
       <summary>
         <para>Represents an empty brush.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Drawing.BrushObject.GetBrush(DevExpress.XtraGauges.Core.Base.RectangleF2D)">
       <summary>
@@ -610,13 +619,11 @@
       <summary>
         <para>Occurs before the <see cref="T:DevExpress.XtraGauges.Core.Model.ArcScale"/> object starts animation.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraGauges.Core.Model.ArcScale.AnimationCompleted">
       <summary>
         <para>Occurs after the <see cref="T:DevExpress.XtraGauges.Core.Model.ArcScale"/> object finishes animation.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraGauges.Core.Model.ArcScale.Appearance">
       <summary>
@@ -664,13 +671,11 @@
       <summary>
         <para>Allows you to implement a custom algorithm for adjusting the <see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.MinValue"/> and <see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.MaxValue"/> properties when the <see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.AutoRescaling"/> property is set to true.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraGauges.Core.Model.ArcScale.CustomTickmarkText">
       <summary>
         <para>Allows you to dynamically customize the text of tickmarks.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraGauges.Core.Model.ArcScale.EndAngle">
       <summary>
@@ -682,7 +687,6 @@
       <summary>
         <para>Fires after any of the following properties has changed: <see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.Center"/>, <see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.RadiusX"/>, <see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.RadiusY"/>, <see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.StartAngle"/> or <see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.EndAngle"/>.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Model.ArcScale.GetInternalValue">
       <summary>
@@ -761,7 +765,6 @@
       <summary>
         <para>Fires when the value of the <see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.MinValue"/> or <see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.MaxValue"/> property is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraGauges.Core.Model.ArcScale.MinorTickCount">
       <summary>
@@ -891,7 +894,6 @@
       <summary>
         <para>Fires after the scale&#39;s current value (<see cref="P:DevExpress.XtraGauges.Core.Model.ArcScale.Value"/>) has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Model.ArcScale.ValueToPercent(System.Single)">
       <summary>
@@ -1338,13 +1340,11 @@
       <summary>
         <para>Fires when the object&#39;s properties are changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraGauges.Core.Model.BaseGauge.CustomDrawElement">
       <summary>
         <para>Occurs before every gauge element is drawn, allowing you to draw it in a custom manner.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Model.BaseGauge.EndUpdate">
       <summary>
@@ -1460,7 +1460,6 @@
       <summary>
         <para>Fires when a scale&#39;s value falls into the current range.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Model.BaseRange.IsDifferFrom(DevExpress.XtraGauges.Core.Model.IRange)">
       <summary>
@@ -1473,7 +1472,6 @@
       <summary>
         <para>Fires when a scale&#39;s value leaves the current range.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraGauges.Core.Model.BaseRange.Name">
       <summary>
@@ -2054,13 +2052,11 @@
       <summary>
         <para>Occurs before the <see cref="T:DevExpress.XtraGauges.Core.Model.LinearScale"/> object starts animation.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraGauges.Core.Model.LinearScale.AnimationCompleted">
       <summary>
         <para>Occurs after the <see cref="T:DevExpress.XtraGauges.Core.Model.LinearScale"/> object finishes animation.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraGauges.Core.Model.LinearScale.Appearance">
       <summary>
@@ -2102,13 +2098,11 @@
       <summary>
         <para>Allows you to implement a custom algorithm for adjusting the <see cref="P:DevExpress.XtraGauges.Core.Model.LinearScale.MinValue"/> and <see cref="P:DevExpress.XtraGauges.Core.Model.LinearScale.MaxValue"/> properties when the <see cref="P:DevExpress.XtraGauges.Core.Model.LinearScale.AutoRescaling"/> property is set to true.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.XtraGauges.Core.Model.LinearScale.CustomTickmarkText">
       <summary>
         <para>Allows you to dynamically customize the text of tickmarks.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraGauges.Core.Model.LinearScale.EndPoint">
       <summary>
@@ -2120,7 +2114,6 @@
       <summary>
         <para>Fires after any of the following properties has changed: <see cref="P:DevExpress.XtraGauges.Core.Model.LinearScale.StartPoint"/> or <see cref="P:DevExpress.XtraGauges.Core.Model.LinearScale.EndPoint"/>.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Model.LinearScale.GetInternalValue">
       <summary>
@@ -2199,7 +2192,6 @@
       <summary>
         <para>Fires when the value of the <see cref="P:DevExpress.XtraGauges.Core.Model.LinearScale.MinValue"/> or <see cref="P:DevExpress.XtraGauges.Core.Model.LinearScale.MaxValue"/> property is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraGauges.Core.Model.LinearScale.MinorTickCount">
       <summary>
@@ -2311,7 +2303,6 @@
       <summary>
         <para>Fires after the scale&#39;s current value has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraGauges.Core.Model.LinearScale.ValueToPercent(System.Single)">
       <summary>
@@ -2860,7 +2851,6 @@
       <summary>
         <para>Occurs before every gauge element is drawn, allowing you to draw it in a custom manner.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraGauges.Core.Primitive.BaseLeafPrimitive.Enabled">
       <summary>

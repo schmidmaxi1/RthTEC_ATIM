@@ -107,14 +107,17 @@
     </Reference>
     <Reference Include="DevExpress.XtraVerticalGrid.v18.2">
     </Reference>
-    <Reference Include="MeSoft.Core">
-      <HintPath>..\DXApplication3\bin\Debug\MeSoft.Core.dll</HintPath>
+    <Reference Include="MeSoft.Core, Version=1.0.2.12, Culture=neutral, PublicKeyToken=9cd7e28f25af7ad4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MeSoft.Core.dll</HintPath>
     </Reference>
-    <Reference Include="MeSoft.MeCom.Core">
-      <HintPath>..\DXApplication3\bin\Debug\MeSoft.MeCom.Core.dll</HintPath>
+    <Reference Include="MeSoft.MeCom.Core, Version=1.30.2.74, Culture=neutral, PublicKeyToken=9cd7e28f25af7ad4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MeSoft.MeCom.Core.dll</HintPath>
     </Reference>
-    <Reference Include="MeSoft.MeCom.PhyWrapper">
-      <HintPath>..\DXApplication3\bin\Debug\MeSoft.MeCom.PhyWrapper.dll</HintPath>
+    <Reference Include="MeSoft.MeCom.PhyWrapper, Version=1.30.2.74, Culture=neutral, PublicKeyToken=9cd7e28f25af7ad4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MeSoft.MeCom.PhyWrapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

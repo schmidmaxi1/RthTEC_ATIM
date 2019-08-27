@@ -1565,16 +1565,19 @@
       <summary>
         <para>Bring the selected diagram items forward.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.BringToFrontCommand">
       <summary>
         <para>Bring the selected diagram items to the front.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.CancelCommand">
       <summary>
         <para>Exit the input state (i.e., editing a text within a diagram item) or, if the control is not in the input state, deselect all diagram items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Diagram.Core.DiagramCommandsBase.CanExecute(DevExpress.Diagram.Core.DiagramCommand)">
       <summary>
@@ -1595,11 +1598,13 @@
       <summary>
         <para>Change the type of the selected connector.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.CircularLayoutCommand">
       <summary>
         <para>Realign diagram items according to the circular layout algorithm.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Diagram.Core.DiagramCommandsBase.CommandHotkeys">
       <summary>
@@ -1635,16 +1640,19 @@
       <summary>
         <para>Copy the selected diagram items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.CutCommand">
       <summary>
         <para>Remove the selected diagram items and copy them to the Clipboard.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.DecreaseFontSizeCommand">
       <summary>
         <para>Decrease the font size for the text within the selected diagram items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Diagram.Core.DiagramCommandsBase.DefaultCommands">
       <summary>
@@ -1656,16 +1664,19 @@
       <summary>
         <para>Remove the selected diagram items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.EditCommand">
       <summary>
         <para>Edit the text within the selected shape.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.EmptyCommand">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Diagram.Core.DiagramCommandsBase.Execute(DevExpress.Diagram.Core.DiagramCommand,DevExpress.Diagram.Core.Native.IMouseArgs)">
       <summary>
@@ -1686,36 +1697,43 @@
       <summary>
         <para>Export the diagram in the specified format to a file.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.FitToDrawingCommand">
       <summary>
         <para>Change the page size to fit the diagram contents.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.FitToPageCommand">
       <summary>
         <para>Set the diagram zoom factor value to fit all pages with content within the canvas.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.FitToWidthCommand">
       <summary>
         <para>Set the diagram zoom factor value to fit the entire diagram width.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.FlipImageCommand">
       <summary>
         <para>Flip the selected image item.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.FocusNextControlCommand">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.FocusPrevControlCommand">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Diagram.Core.DiagramCommandsBase.GetCommandHotkeys(DevExpress.Diagram.Core.DiagramCommandBase,System.Object)">
       <summary>
@@ -1745,66 +1763,79 @@
       <summary>
         <para>Increase the font size for the text within the selected diagram items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.InsertImageCommand">
       <summary>
         <para>Invoke the &quot;Insert Picture&quot; dialog window.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.LoadImageCommand">
       <summary>
         <para>Invoke the Insert Picture dialog to change the selected image item.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.MindMapTreeLayoutCommand">
       <summary>
         <para>Realign diagram items to form a mind map tree diagram.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.MindMapTreeLayoutForSubordinatesCommand">
       <summary>
         <para>Realign the subordinate items of the selected diagram item to form a mind map tree.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.MoveSelectionCommand">
       <summary>
         <para>Move the selected diagram items the specified distance from its current position in the specified direction.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.MoveSelectionNoSnapCommand">
       <summary>
         <para>Move the selected diagram items the specified distance from its current position in the specified direction without snapping them to the grid.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.NewFileCommand">
       <summary>
         <para>Close the current file and create a new one. If the current file contains unsaved changes, the end-user is prompted to save them.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.OpenFileCommand">
       <summary>
         <para>Create a new diagram file and open it.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.PasteCommand">
       <summary>
         <para>Inserts the diagram items from the Clipboard onto the canvas.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.PrintCommand">
       <summary>
         <para>Invoke the Print dialog window.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.QuickPrintCommand">
       <summary>
         <para>Print the diagram with default print settings.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.RedoCommand">
       <summary>
         <para>Reapply the last action that was undone in the diagram control.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Diagram.Core.DiagramCommandsBase.RegisterHandlers(System.Action{DevExpress.Diagram.Core.IHandlersRegistrator},System.Boolean)">
       <summary>
@@ -1825,41 +1856,49 @@
       <summary>
         <para>Reset the selected images to their original state.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.RotateCommand">
       <summary>
         <para>Rotate the selected item counterclockwise around its anchor point by the specified angle.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SaveFileAsCommand">
       <summary>
         <para>Invoke the Save File As dialog window.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SaveFileCommand">
       <summary>
         <para>Save changes made to the diagram. If the diagram has not been saved to a file before, the Save File As dialog window is invoked.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SelectAllCommand">
       <summary>
         <para>Select all items within the diagram.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SelectConnectorToolCommand">
       <summary>
         <para>Select the tool used to create connectors.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SelectEllipseToolCommand">
       <summary>
         <para>Select the tool used to create ellipse shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SelectHexagonToolCommand">
       <summary>
         <para>Select the tool used to create hexagonal shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Diagram.Core.DiagramCommandsBase.SelectionCommands">
       <summary>
@@ -1871,181 +1910,217 @@
       <summary>
         <para>Select the next diagram item in the order they were added to the diagram.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SelectPanToolCommand">
       <summary>
         <para>Select the tool used to navigate the diagram.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SelectPointerToolCommand">
       <summary>
         <para>Select the tool used to select diagram items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SelectPrevItemCommand">
       <summary>
         <para>Select the previous diagram item in the order they were added to the diagram.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SelectRectangleToolCommand">
       <summary>
         <para>Select the tool used to create rectangular shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SelectRightTriangleToolCommand">
       <summary>
         <para>Select the tool used to create triangular shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SelectToolCommand">
       <summary>
         <para>Select the specified diagram tool.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SendBackwardCommand">
       <summary>
         <para>Send the selected diagram items backward.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SendToBackCommand">
       <summary>
         <para>Send the selected diagram items to the back.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SetHorizontalAlignmentCommand">
       <summary>
         <para>Set the horizontal alignment of the text within the selected shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SetPageParametersCommand">
       <summary>
         <para>Invoke the Page Setup dialog window.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SetSelectedContainersHeaderPaddingCommand">
       <summary>
         <para>Set the specified header padding value for the selected container items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SetSelectedContainersPaddingCommand">
       <summary>
         <para>Set the specified padding value for the selected container items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SetSelectedContainersShapeCommand">
       <summary>
         <para>Set the specified shape style for the selected container items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SetSelectedImagesScaleCommand">
       <summary>
         <para>Set the specified scale factor for the selected image items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SetSelectedImagesStretchModeCommand">
       <summary>
         <para>Set the specified stretch mode for the selected image items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SetSelectedItemsStyleCommand">
       <summary>
         <para>Set the specified style (id) for the selected diagram items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SetVerticalAlignmentCommand">
       <summary>
         <para>Set the vertical alignment of the text within the selected shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SetZoomCommand">
       <summary>
         <para>Apply a zoom factor value to a document.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.ShowContainerHeaderCommand">
       <summary>
         <para>Toggle the visibility of headers of the selected containers.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.ShowPopupMenuCommand">
       <summary>
         <para>Invoke the popup menu for the selected item.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.ShowPrintPreviewCommand">
       <summary>
         <para>Invoke the Print Preview.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.ShowPropertiesPanelCommand">
       <summary>
         <para>Invoke the &#39;Properties&#39; panel.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.StartDragToolAlternateCommand">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.StartDragToolCommand">
       <summary>
         <para>Select the tool used to drag diagram items.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.SugiyamaLayoutCommand">
       <summary>
         <para>Realign diagram items according to the layered graph drawing (Sugiyama-style graph drawing) algorithm.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.TipOverTreeLayoutCommand">
       <summary>
         <para>Realign diagram items according to the tip-over tree layout algorithm.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.TipOverTreeLayoutForSubordinatesCommand">
       <summary>
         <para>Realign the subordinate items of the selected diagram item according to the tip-over tree layout algorithm.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.ToggleFontBoldCommand">
       <summary>
         <para>Toggle bold font for the text within the selected shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.ToggleFontItalicCommand">
       <summary>
         <para>Toggle italic font for the text within the selected shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.ToggleFontStrikethroughCommand">
       <summary>
         <para>Toggle strikethrough for the text within the selected shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.ToggleFontUnderlineCommand">
       <summary>
         <para>Toggle underline for the text within the selected shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.ToggleSubordinatesVisibilityCommand">
       <summary>
         <para>Toggle the visibility of the child items of the selected diagram item.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.TreeLayoutCommand">
       <summary>
         <para>Realign diagram items to form a tree diagram.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.TreeLayoutForSubordinatesCommand">
       <summary>
         <para>Realign the subordinate items of the selected diagram item according to the tree layout algorithm.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.UndoCommand">
       <summary>
         <para>Cancel changes resulting from the last operation.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Diagram.Core.DiagramCommandsBase.UndoRedoCommands">
       <summary>
@@ -2063,6 +2138,7 @@
       <summary>
         <para>Use a diagram tool.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Diagram.Core.DiagramCommandsBase.ZoomCommands">
       <summary>
@@ -2074,11 +2150,13 @@
       <summary>
         <para>Increase the current zoom factor of a diagram.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.DiagramCommandsBase.ZoomOutCommand">
       <summary>
         <para>Decrease the current zoom factor of a diagram.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Diagram.Core.DiagramConnectorsSeparationMode">
       <summary>
@@ -2546,7 +2624,6 @@
       <summary>
         <para>Fires each time the list of available stencils is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Diagram.Core.DiagramToolboxRegistrator.Stencils">
       <summary>
@@ -2951,16 +3028,19 @@
       <summary>
         <para>Specifies the distance between adjacent shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.Layout.CircularLayoutSettings.Order">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.Layout.CircularLayoutSettings.StartAngle">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Diagram.Core.Layout.LayoutDirection">
       <summary>
@@ -3070,6 +3150,7 @@
       <summary>
         <para>The distance between shapes on the same level of hierarchy.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Diagram.Core.Layout.SugiyamaLayoutSettings.DepthOrientation">
       <summary>
@@ -3087,11 +3168,13 @@
       <summary>
         <para>The distance between layers of hierarchy.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.Layout.SugiyamaLayoutSettings.LayoutDirection">
       <summary>
         <para>The flow direction for the automatic layout.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Diagram.Core.Layout.SugiyamaLayoutSettings.LogicalDirection">
       <summary>
@@ -3159,21 +3242,25 @@
       <summary>
         <para>Specifies the tip-over layout direction.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.Layout.TipOverTreeLayoutSettings.Offset">
       <summary>
         <para>Specifies the offset applied to the next level of hierarchy.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.Layout.TipOverTreeLayoutSettings.OffsetMode">
       <summary>
         <para>Specifies how the resulting offset is calculated.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.Layout.TipOverTreeLayoutSettings.VerticalSpacing">
       <summary>
         <para>Specifies the distance between layers of hierarchy.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Diagram.Core.Layout.TreeLayoutSettings">
       <summary>
@@ -3236,11 +3323,13 @@
       <summary>
         <para>Specifies whether the automatic tree layout arranges shapes minimizing the space between them.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.Layout.TreeLayoutSettings.LayoutDirection">
       <summary>
         <para>Specifies the tree layout direction.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.Diagram.Core.Layout.TreeLayoutSettings.LogicalDirection">
       <summary>
@@ -3264,6 +3353,7 @@
       <summary>
         <para>Specifies the distance between adjacent shapes.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.Diagram.Core.LineJumpPlacement">
       <summary>
@@ -3337,21 +3427,25 @@
       <summary>
         <para>Specifies the base resolution.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.MeasureUnit.Multiplier">
       <summary>
         <para>Specifies the multiplier for the base resolution.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.MeasureUnit.Name">
       <summary>
         <para>Specifies the name of the measure unit.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.MeasureUnit.StepsData">
       <summary>
         <para>Specifies the array of the DevExpress.Diagram.Core.TickStepsData objects used to render the grid and ruler.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Diagram.Core.MeasureUnit.ToString">
       <summary>
@@ -3384,16 +3478,19 @@
       <summary>
         <para>Specifies that inches are used as the measure unit.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.MeasureUnits.Millimeters">
       <summary>
         <para>Specifies that millimeters are used as the measure unit.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.Diagram.Core.MeasureUnits.Pixels">
       <summary>
         <para>Specifies that pixels are used as the measure unit.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.Diagram.Core.MeasureUnits.ToDeviceIndependentPixels(DevExpress.Diagram.Core.MeasureUnit,System.Double)">
       <summary>

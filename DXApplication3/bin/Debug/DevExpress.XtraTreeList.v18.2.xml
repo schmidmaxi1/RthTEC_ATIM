@@ -359,13 +359,20 @@ This constant is used to initialize the <see cref="P:DevExpress.XtraEditors.Repo
         <para>Provides data for the <see cref="E:DevExpress.XtraTreeList.TreeList.CellValueChanged"/> and <see cref="E:DevExpress.XtraTreeList.TreeList.CellValueChanging"/> events.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraTreeList.CellValueChangedEventArgs.#ctor(DevExpress.XtraTreeList.Columns.TreeListColumn,DevExpress.XtraTreeList.Nodes.TreeListNode,System.Object)">
+    <member name="M:DevExpress.XtraTreeList.CellValueChangedEventArgs.#ctor(DevExpress.XtraTreeList.Columns.TreeListColumn,DevExpress.XtraTreeList.Nodes.TreeListNode,System.Object,System.Boolean)">
       <summary>
-        <para>Creates an instance of the <see cref="T:DevExpress.XtraTreeList.CellValueChangedEventArgs"/> class.</para>
+        <para></para>
       </summary>
-      <param name="column">A <see cref="T:DevExpress.XtraTreeList.Columns.TreeListColumn"/> object representing the column whose cell&#39;s value has been modified. This value is assigned to the <see cref="P:DevExpress.XtraTreeList.CellEventArgs.Column"/> property.</param>
-      <param name="node">A <see cref="T:DevExpress.XtraTreeList.Nodes.TreeListNode"/> object representing the node whose cell&#39;s value has been modified. This value is assigned to the <see cref="P:DevExpress.XtraTreeList.NodeEventArgs.Node"/> property.</param>
-      <param name="val">An object representing the new value assigned to the cell. This value is assigned to the <see cref="P:DevExpress.XtraTreeList.CellValueChangedEventArgs.Value"/> property.</param>
+      <param name="column"></param>
+      <param name="node"></param>
+      <param name="val"></param>
+      <param name="changedByUser"></param>
+    </member>
+    <member name="P:DevExpress.XtraTreeList.CellValueChangedEventArgs.ChangedByUser">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraTreeList.CellValueChangedEventArgs.Value">
       <summary>
@@ -4985,6 +4992,12 @@ By using <see cref="T:DevExpress.XtraTreeList.Nodes.TreeListNode"/> class method
       </summary>
       <value></value>
     </member>
+    <member name="P:DevExpress.XtraTreeList.TreeList.BackColor">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraTreeList.TreeList.BandPanelRowHeight">
       <summary>
         <para>Gets or sets the logical row height of band headers.</para>
@@ -7016,10 +7029,22 @@ In versions 17.1 and newer, we suggest that you use the advanced in-code filteri
       </summary>
       <param name="node">A <see cref="T:DevExpress.XtraTreeList.Nodes.TreeListNode"/> to be refreshed.</param>
     </member>
+    <member name="M:DevExpress.XtraTreeList.TreeList.ResetAutoFilterCondition(DevExpress.XtraTreeList.Columns.TreeListColumn)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="column"></param>
+    </member>
     <member name="M:DevExpress.XtraTreeList.TreeList.ResetAutoFilterConditions">
       <summary>
         <para>Resets all automatic filtering row conditions to their defaults.</para>
       </summary>
+    </member>
+    <member name="M:DevExpress.XtraTreeList.TreeList.ResetAutoFilterConditions(System.Collections.Generic.IEnumerable{DevExpress.XtraTreeList.Columns.TreeListColumn})">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="columns"></param>
     </member>
     <member name="M:DevExpress.XtraTreeList.TreeList.RestoreLayoutFromRegistry(System.String)">
       <summary>

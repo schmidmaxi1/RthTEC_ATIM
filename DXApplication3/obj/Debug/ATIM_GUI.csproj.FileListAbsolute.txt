@@ -535,7 +535,6 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\DAQ_Unit.exe.config
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Hilfsfunktionen.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Hilfsfunktionen.exe.config
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Power_Supply_HamegHMP.pdb
-C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Power_Supply_HamegHMP.exe.config
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Read_Coordinates.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Read_Coordinates.exe.config
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\TEC_Controller.pdb
@@ -719,3 +718,11 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\obj\Debug\ATIM_GUI.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Rth_Rack_Window.exe
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Rth_Rack_Window.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Rth_Rack_Window.exe.config
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\Power_Supply_HamegHMP.exe.config
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\MeSoft.MeCom.PhyWrapper.dll
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\MeSoft.MeCom.Core.dll
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\MeSoft.Core.dll
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\MeSoft.MeCom.PhyWrapper.xml
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\MeSoft.MeCom.Core.xml
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\MeSoft.Core.xml
+C:\Users\schmidm\Desktop\ATIM_GIT\DXApplication3\bin\Debug\SpcmDrv64.NET.dll

@@ -152,11 +152,13 @@
       <summary>
         <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.ConnectionParameters.AmazonRedshiftConnectionParameters.DefaultPortNumber">
       <summary>
         <para>The default port for connecting to Amazon RedShift databases (5439).</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.DataAccess.ConnectionParameters.AsaConnectionParameters">
       <summary>
@@ -479,11 +481,13 @@
       <summary>
         <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.ConnectionParameters.FireBirdConnectionParameters.DefaultPortNumber">
       <summary>
         <para>The default port for connecting to FireBird databases (3050).</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.ConnectionParameters.FireBirdConnectionParameters.FileName">
       <summary>
@@ -637,11 +641,13 @@
       <summary>
         <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.ConnectionParameters.MySqlConnectionParameters.DefaultPortNumber">
       <summary>
         <para>The default port for connecting to MySQL databases (3306).</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.ConnectionParameters.MySqlConnectionParameters.Port">
       <summary>
@@ -775,11 +781,13 @@
       <summary>
         <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.ConnectionParameters.PostgreSqlConnectionParameters.DefaultPortNumber">
       <summary>
         <para>The default port for connecting to Postgre SQL databases (5432).</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.ConnectionParameters.PostgreSqlConnectionParameters.Port">
       <summary>
@@ -873,11 +881,13 @@
       <summary>
         <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.ConnectionParameters.TeradataConnectionParameters.DefaultPortNumber">
       <summary>
         <para>The default port for connecting to Teradata databases (1025).</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.ConnectionParameters.TeradataConnectionParameters.Port">
       <summary>
@@ -1570,13 +1580,11 @@
       <summary>
         <para>Occurs on an attempt to load a custom assembly by <see cref="T:DevExpress.DataAccess.EntityFramework.EFDataSource"/>.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.EntityFramework.EFDataSource.BeforeLoadCustomAssemblyGlobal">
       <summary>
         <para>Occurs on an attempt to load a custom assembly by <see cref="T:DevExpress.DataAccess.EntityFramework.EFDataSource"/> (e.g., when an application loads a report template containing an Entity Framework data source originated from a compiled assembly).</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.EntityFramework.EFDataSource.Connection">
       <summary>
@@ -2222,7 +2230,6 @@
       <summary>
         <para>Provides the capability to change options used to extract data from Microsoft Excel workbooks (XLS, XLSX or XLSM files) or CSV files.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Excel.ExcelDataSource.FileName">
       <summary>
@@ -2731,63 +2738,64 @@
     </member>
     <member name="N:DevExpress.DataAccess.Json">
       <summary>
-        <para></para>
+        <para>Contains classes that allow you to bind controls to JSON-formatted data.</para>
       </summary>
     </member>
     <member name="T:DevExpress.DataAccess.Json.CustomJsonSource">
       <summary>
-        <para></para>
+        <para>Associates a <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/> object with data retrieved from a JSON object.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.CustomJsonSource.#ctor">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Json.CustomJsonSource"/> class with default parameters.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.CustomJsonSource.#ctor(System.String)">
       <summary>
-        <para></para>
+        <para>Initializes the <see cref="T:DevExpress.DataAccess.Json.CustomJsonSource"/> class&#39;s instance and sets its <see cref="P:DevExpress.DataAccess.Json.CustomJsonSource.Json"/> property to the passed value.</para>
       </summary>
-      <param name="json"></param>
+      <param name="json">JSON object with data.</param>
     </member>
     <member name="M:DevExpress.DataAccess.Json.CustomJsonSource.Equals(System.Object)">
       <summary>
-        <para></para>
+        <para>Checks if the current <see cref="T:DevExpress.DataAccess.Json.CustomJsonSource"/> instance is equal to the specified object.</para>
       </summary>
-      <param name="obj"></param>
-      <returns></returns>
+      <param name="obj">An object to be compared.</param>
+      <returns>true, if the objects are equal; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.Json.CustomJsonSource.GetHashCode">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
       <returns></returns>
     </member>
     <member name="M:DevExpress.DataAccess.Json.CustomJsonSource.GetJsonString">
       <summary>
-        <para></para>
+        <para>Returns the JSON object that the <see cref="P:DevExpress.DataAccess.Json.CustomJsonSource.Json"/> property provides.</para>
       </summary>
-      <returns></returns>
+      <returns>The JSON object as a string.</returns>
     </member>
     <member name="P:DevExpress.DataAccess.Json.CustomJsonSource.Json">
       <summary>
-        <para></para>
+        <para>Gets or sets a string with JSON data.</para>
       </summary>
-      <value></value>
+      <value>JSON object with data.</value>
     </member>
     <member name="F:DevExpress.DataAccess.Json.CustomJsonSource.XML_Json">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.DataAccess.Json.JsonDataSource">
       <summary>
-        <para></para>
+        <para>The data source that extracts data stored in JSON format.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonDataSource.#ctor">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/> class.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonDataSource.#ctor(System.ComponentModel.IContainer)">
@@ -2804,210 +2812,215 @@
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonDataSource.Fill">
       <summary>
-        <para></para>
+        <para>Populates the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/> object with data.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonDataSource.Fill(System.Collections.Generic.IEnumerable{DevExpress.Data.IParameter})">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
       <param name="sourceParameters"></param>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonDataSource.GetEnumerator">
       <summary>
-        <para></para>
+        <para>Returns an enumerator that iterates through the collection of the data source&#39;s objects.</para>
       </summary>
-      <returns></returns>
+      <returns>An object that implements the <see cref="T:System.Collections.IEnumerator"/> interface.</returns>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonDataSource.JsonSource">
       <summary>
-        <para></para>
+        <para>Gets or sets an object that stores JSON data import settings.</para>
       </summary>
-      <value></value>
+      <value>A <see cref="T:DevExpress.DataAccess.Json.JsonSourceBase"/> descendant that specifies the JSON data location.</value>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonDataSource.LoadFromXml(System.Xml.Linq.XElement)">
       <summary>
-        <para></para>
+        <para>Loads the data schema definition from XML.</para>
       </summary>
-      <param name="element"></param>
+      <param name="element">An XML definition of the data source schema.</param>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonDataSource.SaveToXml">
       <summary>
-        <para></para>
+        <para>Saves the data schema definition to XML.</para>
       </summary>
-      <returns></returns>
+      <returns>An XML definition of the data source schema.</returns>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonDataSource.Schema">
       <summary>
-        <para></para>
+        <para>Gets or sets the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/>&#39;s data schema.</para>
       </summary>
-      <value></value>
+      <value>An object associated with the root node of the data source.</value>
     </member>
     <member name="T:DevExpress.DataAccess.Json.JsonNode">
       <summary>
-        <para></para>
+        <para>Defines a node in the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/>&#39;s schema.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonNode.#ctor">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> class with default parameters.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonNode.#ctor(System.String,System.Nullable{System.Boolean})">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> class and sets its properties to the values passed as the parameters.</para>
       </summary>
-      <param name="name"></param>
-      <param name="selected"></param>
+      <param name="name">The name of the data source field that the current <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</param>
+      <param name="selected">Specifies whether to include the JSON object&#39;s field, which the current <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines, to the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/>&#39;s data schema.</param>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonNode.#ctor(System.String,System.Nullable{System.Boolean},DevExpress.DataAccess.Json.JsonNodeType)">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> class and sets its properties to the values passed as the parameters.</para>
       </summary>
-      <param name="name"></param>
-      <param name="selected"></param>
-      <param name="nodeType"></param>
+      <param name="name">The name of the data source field that the current <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</param>
+      <param name="selected">Specifies whether to include the JSON object&#39;s field, which the current <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines, to the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/>&#39;s data schema.</param>
+      <param name="nodeType">The type of the JSON object&#39;s node that the current <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</param>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonNode.#ctor(System.String,System.Nullable{System.Boolean},DevExpress.DataAccess.Json.JsonNodeType,System.Type)">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> class and sets its properties to the values passed as the parameters.</para>
       </summary>
-      <param name="name"></param>
-      <param name="selected"></param>
-      <param name="nodeType"></param>
-      <param name="type"></param>
+      <param name="name">The name of the data source field that the current <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</param>
+      <param name="selected">Specifies whether to include the JSON object&#39;s field, which the current <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines, to the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/>&#39;s data schema.</param>
+      <param name="nodeType">The type of the JSON object&#39;s node that the current <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</param>
+      <param name="type">The type of data stored in the data source field that the current <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</param>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonNode.DisplayName">
       <summary>
-        <para></para>
+        <para>Gets or sets the display name of the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</para>
       </summary>
-      <value></value>
+      <value>Display name of the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</value>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonNode.Equals(System.Object)">
       <summary>
-        <para></para>
+        <para>Checks whether the current <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> instance is equal to the specified object.</para>
       </summary>
-      <param name="obj"></param>
-      <returns></returns>
+      <param name="obj">An object to be compared.</param>
+      <returns>true, if the objects are equal; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonNode.GetHashCode">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
       <returns></returns>
     </member>
     <member name="T:DevExpress.DataAccess.Json.JsonNode.JsonNodeTypeConverter">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonNode.JsonNodeTypeConverter.#ctor">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Json.JsonNode.JsonNodeTypeConverter"/> class with default parameters.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonNode.JsonNodeTypeConverter.CanConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Type)">
       <summary>
-        <para></para>
+        <para>Checks whether or not the component can be converted to the specified type.</para>
       </summary>
-      <param name="context"></param>
-      <param name="destinationType"></param>
-      <returns></returns>
+      <param name="context">An object implementing the <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> interface.</param>
+      <param name="destinationType">A <see cref="T:System.Type"/> enumeration value.</param>
+      <returns>true if the valid conversion is possible; otherwise false.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonNode.JsonNodeTypeConverter.ConvertTo(System.ComponentModel.ITypeDescriptorContext,System.Globalization.CultureInfo,System.Object,System.Type)">
       <summary>
-        <para></para>
+        <para>Converts the component to the specified type.</para>
       </summary>
-      <param name="context"></param>
-      <param name="culture"></param>
-      <param name="value"></param>
-      <param name="destinationType"></param>
-      <returns></returns>
+      <param name="context">An object implementing the <see cref="T:System.ComponentModel.ITypeDescriptorContext"/> interface.</param>
+      <param name="culture">A <see cref="T:System.Globalization.CultureInfo"/> object.</param>
+      <param name="value">An <see cref="T:System.Object"/> value.</param>
+      <param name="destinationType">A <see cref="T:System.Type"/> enumeration value.</param>
+      <returns>An <see cref="T:System.Object"/> value.</returns>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonNode.Name">
       <summary>
-        <para></para>
+        <para>Gets or sets the name of the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</para>
       </summary>
-      <value></value>
+      <value>The data source field name that the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines.</value>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonNode.NodeType">
       <summary>
-        <para></para>
+        <para>Gets or sets the type of the JSON object&#39;s node that the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</para>
       </summary>
-      <value></value>
+      <value>A <see cref="T:DevExpress.DataAccess.Json.JsonNodeType"/> enumeration value.</value>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonNode.Selected">
       <summary>
-        <para></para>
+        <para>Gets or sets whether to include the JSON object&#39;s field, which the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines, to the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/>&#39;s data schema.</para>
       </summary>
-      <value></value>
+      <value>Specifies whether to include a JSON object&#39;s field to the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/>&#39;s data schema.</value>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonNode.Type">
       <summary>
-        <para></para>
+        <para>Gets or sets the type of data stored in the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</para>
       </summary>
-      <value></value>
+      <value>The type of data to be stored in the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object defines.</value>
     </member>
     <member name="F:DevExpress.DataAccess.Json.JsonNode.XML_DisplayName">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.Json.JsonNode.XML_Name">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.Json.JsonNode.XML_NodeType">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.Json.JsonNode.XML_Selected">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.Json.JsonNode.XML_Type">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.DataAccess.Json.JsonNodeType">
       <summary>
-        <para></para>
+        <para>Lists values that identify the type of the JSON data node.</para>
       </summary>
     </member>
     <member name="F:DevExpress.DataAccess.Json.JsonNodeType.Array">
       <summary>
-        <para></para>
+        <para>Identifies a JSON node as an array.</para>
       </summary>
     </member>
     <member name="F:DevExpress.DataAccess.Json.JsonNodeType.Object">
       <summary>
-        <para></para>
+        <para>Identifies a JSON node as an object.</para>
       </summary>
     </member>
     <member name="F:DevExpress.DataAccess.Json.JsonNodeType.Property">
       <summary>
-        <para></para>
+        <para>Identifies a JSON node as a property.</para>
       </summary>
     </member>
     <member name="T:DevExpress.DataAccess.Json.JsonSchemaNode">
       <summary>
-        <para>Defines a root node and its child nodes of a JSON data source.</para>
+        <para>Defines a node and its child nodes in the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/>&#39;s schema.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonSchemaNode.#ctor">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> class.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonSchemaNode.#ctor(DevExpress.DataAccess.Json.JsonNode)">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> class.</para>
       </summary>
-      <param name="value"></param>
+      <param name="value">Defines the created JSON schema node.</param>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonSchemaNode.ActualName">
       <summary>
@@ -3017,9 +3030,9 @@
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonSchemaNode.DisplayName">
       <summary>
-        <para></para>
+        <para>Gets or sets the display name of the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines.</para>
       </summary>
-      <value></value>
+      <value>The display name of the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines.</value>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonSchemaNode.GetFlatModel">
       <summary>
@@ -3035,21 +3048,21 @@
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonSchemaNode.Name">
       <summary>
-        <para></para>
+        <para>Gets or sets the name of the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines.</para>
       </summary>
-      <value></value>
+      <value>The data source field name that the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines.</value>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonSchemaNode.Nodes">
       <summary>
-        <para></para>
+        <para>Provides access to the JsonSchemaNode&#39;s child node collection.</para>
       </summary>
-      <value></value>
+      <value>The list of child nodes.</value>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonSchemaNode.NodeType">
       <summary>
-        <para></para>
+        <para>Gets or sets the type of the JSON object&#39;s node that the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines.</para>
       </summary>
-      <value></value>
+      <value>A <see cref="T:DevExpress.DataAccess.Json.JsonNodeType"/> enumeration value.</value>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonSchemaNode.ParentId">
       <summary>
@@ -3059,108 +3072,109 @@
     </member>
     <member name="E:DevExpress.DataAccess.Json.JsonSchemaNode.PropertyChanged">
       <summary>
-        <para></para>
+        <para>Occurs when the JsonSchemaNode object&#39;s property value changes.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonSchemaNode.Selected">
       <summary>
-        <para></para>
+        <para>Gets or sets whether to include the JSON object&#39;s field, which the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines, to the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/>&#39;s data schema.</para>
       </summary>
-      <value></value>
+      <value>Specifies whether to include a JSON object&#39;s field to the <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/>&#39;s data schema.</value>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonSchemaNode.Type">
       <summary>
-        <para></para>
+        <para>Gets or sets the type of data stored in the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines.</para>
       </summary>
-      <value></value>
+      <value>The type of data to be stored in the data source field that the <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> object defines.</value>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonSchemaNode.Value">
       <summary>
-        <para></para>
+        <para>Gets or sets a reference to the <see cref="T:DevExpress.DataAccess.Json.JsonNode"/> object that defines the JsonSchemaNode.</para>
       </summary>
-      <value></value>
+      <value>An object that defines the JSON schema node.</value>
     </member>
     <member name="T:DevExpress.DataAccess.Json.JsonSourceBase">
       <summary>
-        <para></para>
+        <para>A base class for the classes that contain JSON data import settings.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonSourceBase.Equals(System.Object)">
       <summary>
-        <para></para>
+        <para>Checks whether the current <see cref="T:DevExpress.DataAccess.Json.JsonSourceBase"/> descendant is equal to the specified object.</para>
       </summary>
-      <param name="obj"></param>
-      <returns></returns>
+      <param name="obj">An object to be compared.</param>
+      <returns>true, if the objects are equal; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonSourceBase.GetHashCode">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
       <returns></returns>
     </member>
     <member name="M:DevExpress.DataAccess.Json.JsonSourceBase.GetJsonString">
       <summary>
-        <para></para>
+        <para>When implemented, returns JSON data from the specified location.</para>
       </summary>
-      <returns></returns>
+      <returns>The JSON object as a string.</returns>
     </member>
     <member name="P:DevExpress.DataAccess.Json.JsonSourceBase.RootElement">
       <summary>
-        <para></para>
+        <para>Gets or sets the name of the root element in the associated data source.</para>
       </summary>
-      <value></value>
+      <value>The root element&#39;s name.</value>
     </member>
     <member name="F:DevExpress.DataAccess.Json.JsonSourceBase.XML_RootElement">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.DataAccess.Json.UriJsonSource">
       <summary>
-        <para></para>
+        <para>Associates a <see cref="T:DevExpress.DataAccess.Json.JsonDataSource"/> object with JSON data retrieved from a web service endpoint or a text file.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.UriJsonSource.#ctor">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Json.UriJsonSource"/> class with default parameters.</para>
       </summary>
     </member>
     <member name="M:DevExpress.DataAccess.Json.UriJsonSource.#ctor(System.Uri)">
       <summary>
-        <para></para>
+        <para>Initializes the <see cref="T:DevExpress.DataAccess.Json.UriJsonSource"/> class&#39;s instance and sets its <see cref="P:DevExpress.DataAccess.Json.UriJsonSource.Uri"/> property to the passed value.</para>
       </summary>
-      <param name="uri"></param>
+      <param name="uri">A System.Uri object that points to JSON data.</param>
     </member>
     <member name="M:DevExpress.DataAccess.Json.UriJsonSource.Equals(System.Object)">
       <summary>
-        <para></para>
+        <para>Checks whether the current <see cref="T:DevExpress.DataAccess.Json.UriJsonSource"/> instance is equal to the specified object.</para>
       </summary>
-      <param name="obj"></param>
-      <returns></returns>
+      <param name="obj">An object to be compared.</param>
+      <returns>true, if the objects are equal; otherwise, false.</returns>
     </member>
     <member name="M:DevExpress.DataAccess.Json.UriJsonSource.GetHashCode">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
       <returns></returns>
     </member>
     <member name="M:DevExpress.DataAccess.Json.UriJsonSource.GetJsonString">
       <summary>
-        <para></para>
+        <para>Returns JSON data retrieved from the location that the <see cref="P:DevExpress.DataAccess.Json.UriJsonSource.Uri"/> property specifies.</para>
       </summary>
-      <returns></returns>
+      <returns>The JSON object as a string.</returns>
     </member>
     <member name="P:DevExpress.DataAccess.Json.UriJsonSource.Uri">
       <summary>
-        <para></para>
+        <para>Gets or sets the System.Uri object that points to a URI or text file with JSON data.</para>
       </summary>
-      <value></value>
+      <value>Points to a Web-service endpoint or text file with JSON data.</value>
     </member>
     <member name="F:DevExpress.DataAccess.Json.UriJsonSource.XML_Uri">
       <summary>
-        <para></para>
+        <para>For internal use.</para>
       </summary>
+      <value></value>
     </member>
     <member name="N:DevExpress.DataAccess.Localization">
       <summary>
@@ -3216,6 +3230,7 @@
       <summary>
         <para>&quot;LocalizationRes&quot;</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.DataAccess.Localization.DataAccessStringId">
       <summary>
@@ -4209,7 +4224,7 @@
     </member>
     <member name="M:DevExpress.DataAccess.Node`1.#ctor(`0)">
       <summary>
-        <para></para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.DataAccess.Node`1"/> class.</para>
       </summary>
       <param name="value"></param>
     </member>
@@ -4220,15 +4235,15 @@
     </member>
     <member name="M:DevExpress.DataAccess.Node`1.AddChildren(DevExpress.DataAccess.Node{`0}[])">
       <summary>
-        <para></para>
+        <para>Adds the specified array to the collection of the current node&#39;s children.</para>
       </summary>
-      <param name="nodes"></param>
+      <param name="nodes">An array of the current node&#39;s children.</param>
     </member>
     <member name="P:DevExpress.DataAccess.Node`1.Children">
       <summary>
-        <para></para>
+        <para>Gets the collection of the current node&#39;s child nodes.</para>
       </summary>
-      <value></value>
+      <value>A collection of the current node&#39;s child nodes.</value>
     </member>
     <member name="M:DevExpress.DataAccess.Node`1.Equals(System.Object)">
       <summary>
@@ -4437,13 +4452,11 @@
       <summary>
         <para>Occurs before filling an object data source, enabling you to provide custom data source validation.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.ObjectBinding.ObjectDataSource.BeforeFillGlobal">
       <summary>
         <para>Occurs before filling an object data source, enabling you to provide custom validation for all object data sources in your application.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.ObjectBinding.ObjectDataSource.BeginInit">
       <summary>
@@ -4598,6 +4611,7 @@
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.ObjectBinding.ObjectMember.GetParameters(System.Collections.Generic.IEnumerable{DevExpress.DataAccess.ObjectBinding.Parameter})">
       <summary>
@@ -8183,7 +8197,6 @@
       <summary>
         <para>Allows you to customize connection settings before connecting to a database.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Sql.SqlDataSource.Connection">
       <summary>
@@ -8195,7 +8208,6 @@
       <summary>
         <para>Fires after an attempt to establish a data connection has failed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Sql.SqlDataSource.ConnectionName">
       <summary>
@@ -8219,7 +8231,6 @@
       <summary>
         <para>Allows you to include WHERE clauses in SQL queries.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Sql.SqlDataSource.DBSchema">
       <summary>
@@ -8266,6 +8277,7 @@
       <summary>
         <para>Use the <see cref="P:DevExpress.DataAccess.Sql.ConnectionOptions.CloseConnection"/> property instead.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Sql.SqlDataSource.LoadFromXml(System.Xml.Linq.XElement)">
       <summary>
@@ -8339,13 +8351,11 @@
       <summary>
         <para>Provides the capability to check the validity of the custom SQL query used to supply the data source with data.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.Sql.SqlDataSource.ValidateCustomSqlQueryGlobal">
       <summary>
         <para>Provides the capability to check the validity of the custom SQL query used to supply SQL data sources with data.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.DataAccess.Sql.SqlQuery">
       <summary>
@@ -8693,6 +8703,12 @@
       <param name="queryName">A <see cref="T:System.String"/> value. This value is assigned to the <see cref="P:DevExpress.DataAccess.Sql.SqlQuery.Name"/> property.</param>
       <param name="storedProcName">A <see cref="T:System.String"/> value. This value is assigned to the <see cref="P:DevExpress.DataAccess.Sql.StoredProcQuery.StoredProcName"/> property.</param>
       <param name="parameters">A collection of <see cref="T:DevExpress.DataAccess.Sql.QueryParameter"/> objects. This value is assigned to the <see cref="P:DevExpress.DataAccess.Sql.SqlQuery.Parameters"/> property.</param>
+    </member>
+    <member name="P:DevExpress.DataAccess.Sql.StoredProcQuery.IgnoreParameterValidation">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Sql.StoredProcQuery.StoredProcName">
       <summary>
@@ -9180,7 +9196,6 @@
       <summary>
         <para>Occurs every time any of the <see cref="T:DevExpress.DataAccess.UI.EntityFramework.DBSetFilterViewModel"/> class properties has changed its value.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.UI.EntityFramework.DBSetFilterViewModel.RefreshParameters">
       <summary>
@@ -9243,7 +9258,6 @@
       <summary>
         <para>Occurs every time any of the <see cref="T:DevExpress.DataAccess.UI.EntityFramework.EFFiltersViewModel"/> class properties has changed its value.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.UI.EntityFramework.EFFiltersViewModel.Types">
       <summary>
@@ -10291,31 +10305,37 @@
       <summary>
         <para>Indicates an Entity Framework data source.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.Wizard.Model.DataSourceType.Excel">
       <summary>
         <para>Indicates an Excel data source.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.Wizard.Model.DataSourceType.Json">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.Wizard.Model.DataSourceType.Object">
       <summary>
         <para>Indicates an object data source.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.Wizard.Model.DataSourceType.Xpo">
       <summary>
         <para>Indicates an XPO data source.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.DataAccess.Wizard.Model.DataSourceType.XPObject">
       <summary>
         <para></para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.DataAccess.Wizard.Model.EFDataSourceModel">
       <summary>
@@ -12556,7 +12576,6 @@
       <summary>
         <para>Occurs every time any of the <see cref="T:DevExpress.DataAccess.Wizard.Presenters.MultiQueryItem"/> class properties has changed its value.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Presenters.MultiQueryItem.Selected">
       <summary>
@@ -13214,7 +13233,6 @@
       <summary>
         <para>Occurs when the selected item in the list of available connections is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IChooseConnectionPageView.ExistingConnectionName">
       <summary>
@@ -13276,7 +13294,6 @@
       <summary>
         <para>Occurs when the selected item in the list of available connections is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IChooseEFConnectionStringPageView.ExistingConnectionName">
       <summary>
@@ -13316,7 +13333,6 @@
       <summary>
         <para>Occurs after the Browse button is clicked on a wizard page and an assembly is selected.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IChooseEFContextPageView.ContextName">
       <summary>
@@ -13328,7 +13344,6 @@
       <summary>
         <para>Occurs when the selected item in the list of available data contexts is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IChooseEFContextPageView.Initialize">
       <summary>
@@ -13356,7 +13371,6 @@
       <summary>
         <para>Occurs when the selected item in the list of available members is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IChooseEFDataMemberPageView.Initialize(System.Collections.Generic.IEnumerable{DevExpress.Xpo.DB.DBTable},System.Collections.Generic.IEnumerable{DevExpress.Xpo.DB.DBStoredProcedure},System.String)">
       <summary>
@@ -13381,7 +13395,6 @@
       <summary>
         <para>Occurs when the selected item in the list of available worksheets, tables and named regions is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IChooseExcelFileDataRangePageView.Initialize(DevExpress.DataAccess.Wizard.Presenters.ListBoxItem[])">
       <summary>
@@ -13404,19 +13417,16 @@
       <summary>
         <para>Occurs when the state of the Detect automatically check box for the Encoding option is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.Wizard.Views.IChooseFileOptionsPageView.DetectNewlineType">
       <summary>
         <para>Occurs when the state of the Detect automatically check box for the Newline type option is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.Wizard.Views.IChooseFileOptionsPageView.DetectValueSeparator">
       <summary>
         <para>Occurs when the state of the Detect automatically check box for the Value separator option is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IChooseFileOptionsPageView.DocumentFormat">
       <summary>
@@ -13463,7 +13473,6 @@
       <summary>
         <para>Occurs when the selected file is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IChooseFilePageView.FileName">
       <summary>
@@ -13514,7 +13523,6 @@
       <summary>
         <para>If implemented, occurs after settings on the Specify JSON Data Location wizard page have changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IChooseJsonSourcePageView.ConnectionType">
       <summary>
@@ -13549,7 +13557,6 @@
       <summary>
         <para>Occurs when the selected item in the list of available assemblies is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IChooseObjectAssemblyPageView.Initialize">
       <summary>
@@ -13584,7 +13591,6 @@
       <summary>
         <para>Occurs when the object binding mode selected on a wizard page is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IChooseObjectBindingModePageView.SchemaOnly">
       <summary>
@@ -13601,7 +13607,6 @@
       <summary>
         <para>Occurs when the selected item in the list of available constructors is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IChooseObjectConstructorPageView.Initialize(System.Collections.Generic.IEnumerable{DevExpress.DataAccess.Wizard.Views.ConstructorViewInfo},System.Boolean)">
       <summary>
@@ -13631,7 +13636,6 @@
       <summary>
         <para>Occurs when the selected item in the list of available members is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IChooseObjectMemberPageView.Initialize(System.Collections.Generic.IEnumerable{DevExpress.DataAccess.ObjectBinding.ObjectMember},System.Boolean,System.Boolean)">
       <summary>
@@ -13662,7 +13666,6 @@
       <summary>
         <para>Occurs when the selected item in the list of available types is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IChooseObjectTypePageView.Initialize(System.Collections.Generic.IEnumerable{DevExpress.DataAccess.Wizard.Views.TypeViewInfo},System.Boolean)">
       <summary>
@@ -13715,7 +13718,6 @@
       <summary>
         <para>Occurs when connection information on a wizard page is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IConfigureEFConnectionStringPageView.ConnectionString">
       <summary>
@@ -13768,7 +13770,6 @@
       <summary>
         <para>Occurs when the Add button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IConfigureEFStoredProceduresPageView.AddToList(System.Collections.Generic.IEnumerable{DevExpress.DataAccess.Wizard.Views.StoredProcedureViewInfo})">
       <summary>
@@ -13800,7 +13801,6 @@
       <summary>
         <para>Occurs when the Remove button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IConfigureEFStoredProceduresPageView.RemoveFromList(DevExpress.DataAccess.Wizard.Views.StoredProcedureViewInfo)">
       <summary>
@@ -13829,7 +13829,6 @@
       <summary>
         <para>Occurs when a collection of selected columns from an Excel file is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IConfigureExcelFileColumnsPageView.Initialize(DevExpress.DataAccess.Excel.FieldInfo[],System.Func{DevExpress.DataAccess.Excel.FieldInfo[],DevExpress.DataAccess.Native.ColumnarData})">
       <summary>
@@ -13874,7 +13873,6 @@
       <summary>
         <para></para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IConfigureParametersPageView.ShowDuplicatingColumnNameError(System.String)">
       <summary>
@@ -13921,13 +13919,11 @@
       <summary>
         <para>Occurs when the query type selected on a wizard page is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.Wizard.Views.IConfigureQueryPageView.RunQueryBuilder">
       <summary>
         <para>Occurs when the Run Query Builder button is clicked on a wizard page.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IConfigureQueryPageView.SelectedStoredProcedureIndex">
       <summary>
@@ -13945,13 +13941,11 @@
       <summary>
         <para>Occurs when the SQL string created on a wizard page is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.Wizard.Views.IConfigureQueryPageView.StoredProcedureChanged">
       <summary>
         <para>Occurs when the selected item in the list of available stored procedures is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="T:DevExpress.DataAccess.Wizard.Views.IConnectionPropertiesPageView">
       <summary>
@@ -13962,7 +13956,6 @@
       <summary>
         <para>Occurs when the item selected in the Provider drop-down list is changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IConnectionPropertiesPageView.ConnectionName">
       <summary>
@@ -14002,13 +13995,11 @@
       <summary>
         <para>Occurs on running the Query Builder for adding a new custom query.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.Wizard.Views.IMultiQueryConfigurePageView.ConfigureQuery">
       <summary>
         <para>Occurs on running the Query Builder for configuring an existing query.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IMultiQueryConfigurePageView.CreateMasterDetailRunner">
       <summary>
@@ -14030,19 +14021,16 @@
       <summary>
         <para>Occurs on deleting a custom query.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.Wizard.Views.IMultiQueryConfigurePageView.EditRelations">
       <summary>
         <para>Occurs on running the Master-Detail Relation Editor for creating or editing data relationships.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.Wizard.Views.IMultiQueryConfigurePageView.ExpandNode">
       <summary>
         <para>Occurs on expanding a tree list node.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IMultiQueryConfigurePageView.GetFocusedItem">
       <summary>
@@ -14060,13 +14048,11 @@
       <summary>
         <para>Occurs on changing the selection of any of the tree list items.</para>
       </summary>
-      <value></value>
     </member>
     <member name="E:DevExpress.DataAccess.Wizard.Views.IMultiQueryConfigurePageView.ListStateUpdated">
       <summary>
         <para>Occurs on changing the tree list layout requiring the tree list to re-render.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.DataAccess.Wizard.Views.IMultiQueryConfigurePageView.SetEditRelationEnabled(System.Boolean)">
       <summary>
@@ -14099,7 +14085,6 @@
       <summary>
         <para></para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.DataAccess.Wizard.Views.IMultiQueryConfigureParametersPageView.SelectedQueryName">
       <summary>

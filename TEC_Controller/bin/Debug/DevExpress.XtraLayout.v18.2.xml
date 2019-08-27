@@ -560,9 +560,9 @@ This property indicates when changes to the bound editor property are propagated
     </member>
     <member name="P:DevExpress.XtraLayout.BaseLayoutItem.TextLocation">
       <summary>
-        <para>Gets or sets the position of the text region.</para>
+        <para>Gets or sets the item caption position.</para>
       </summary>
-      <value>A <see cref="T:DevExpress.Utils.Locations"/> value that specifies the position of the item&#39;s text region.</value>
+      <value>A <see cref="T:DevExpress.Utils.Locations"/> value that specifies the item caption position.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.BaseLayoutItem.TextSize">
       <summary>

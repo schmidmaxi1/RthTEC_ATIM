@@ -1071,7 +1071,6 @@
       <summary>
         <para>Occurs when a current filter criteria (<see cref="P:DevExpress.XtraPivotGrid.BaseFilter.Criteria"/> or <see cref="P:DevExpress.XtraPivotGrid.BaseFilter.CriteriaString"/>) is changed by an end-user or in code.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPivotGrid.BaseFilter.Clear">
       <summary>
@@ -2586,11 +2585,13 @@
       <summary>
         <para>The default maximum allowed number of points in a series. Return value: 0 (no limit).</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPivotGrid.Data.PivotGridOptionsChartDataSourceBase.DefaultMaxAllowedSeriesCount">
       <summary>
         <para>The default maximum allowed number of series in the chart data source. Return value: 0 (no limit).</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.Data.PivotGridOptionsChartDataSourceBase.FieldValuesProvideMode">
       <summary>
@@ -4902,7 +4903,6 @@
       <summary>
         <para>Occurs after the data source has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotDataSource.RowCount">
       <summary>
@@ -4990,6 +4990,7 @@
       <summary>
         <para>This member supports the internal infrastructure and is not intended to be used directly from your code.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraPivotGrid.PivotDrillDownDataSource.GetItemProperties(System.ComponentModel.PropertyDescriptor[])">
       <summary>
@@ -5153,6 +5154,11 @@
     <member name="F:DevExpress.XtraPivotGrid.PivotFieldPropertyName.FieldName">
       <summary>
         <para>Identifies the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldBase.FieldName"/> property.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraPivotGrid.PivotFieldPropertyName.GroupInterval">
+      <summary>
+        <para></para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraPivotGrid.PivotFieldPropertyName.SortBySummaryInfo">
@@ -5960,6 +5966,7 @@
       <summary>
         <para>A default value of the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldBase.MinWidth"/> property, which specifies the minimum allowed width of columns that correspond to the current field.Return value: 20</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldBase.DefaultPercentFormat">
       <summary>
@@ -5977,6 +5984,7 @@
       <summary>
         <para>A default value of the <see cref="P:DevExpress.XtraPivotGrid.PivotGridFieldBase.Width"/> property, which specifies the width of columns that correspond to the current field.Return value: 100</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldBase.DisplayFolder">
       <summary>
@@ -6401,16 +6409,19 @@
       <summary>
         <para>Specifies the maximum height of column field values, in lines.Return value: 5</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPivotGrid.PivotGridFieldBase.MaximumRowValueLineCount">
       <summary>
         <para>Specifies the maximum height of row field values, in lines.Return value: 5</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraPivotGrid.PivotGridFieldBase.MinimumValueLineCount">
       <summary>
         <para>Specifies the minimum height of column/row field values, in lines.Return value: 1</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldBase.MinWidth">
       <summary>
@@ -7166,7 +7177,6 @@
       <summary>
         <para>Occurs when any of the PivotGrid control&#39;s option has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldOptions.ShowCustomTotals">
       <summary>
@@ -7351,7 +7361,6 @@
       <summary>
         <para>Occurs after one of the current object&#39;s properties has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridFieldSortCondition.Field">
       <summary>
@@ -7407,7 +7416,6 @@
       <summary>
         <para>Occurs after the collection has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPivotGrid.PivotGridFieldSortConditionCollection.Contains(DevExpress.XtraPivotGrid.PivotGridFieldBase)">
       <summary>
@@ -7801,7 +7809,6 @@
       <summary>
         <para>For internal use.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.XtraPivotGrid.PivotGridOptionsBase.ShouldSerialize">
       <summary>
@@ -7848,6 +7855,7 @@
       <summary>
         <para>The default delay between starting an asynchronous operation and displaying the loading panel.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridOptionsBehaviorBase.LoadingPanelDelay">
       <summary>
@@ -7882,6 +7890,7 @@
       <summary>
         <para>The default delay between changing the cell focus or selection, and updating the bound Chart control, in milliseconds.Return value: 500</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridOptionsChartDataSource.SelectionOnly">
       <summary>
@@ -8236,7 +8245,6 @@
       <summary>
         <para>Occurs after any option has been changed.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridOptionsFilterBase.ShowOnlyAvailableItems">
       <summary>
@@ -8330,6 +8338,18 @@
         <para>Gets or sets whether or not a server determines which columns are returned when obtaining drill down data.</para>
       </summary>
       <value>true, to allow a server to determine which columns are returned when obtaining drill down data; otherwise, false.</value>
+    </member>
+    <member name="P:DevExpress.XtraPivotGrid.PivotGridOptionsOLAP.ShowColumnsWithNoData">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraPivotGrid.PivotGridOptionsOLAP.ShowRowsWithNoData">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridOptionsOLAP.SortByCustomFieldValueDisplayText">
       <summary>
@@ -8587,6 +8607,7 @@
       <summary>
         <para>Specifies the default value for the <see cref="P:DevExpress.XtraPivotGrid.PivotGridOptionsViewBase.RowTreeOffset"/> property.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotGridOptionsViewBase.DrawFocusedCellRect">
       <summary>
@@ -10233,6 +10254,7 @@ The field will not be sorted against the custom text generated on the client sid
       <summary>
         <para>An empty range of summary values.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraPivotGrid.PivotSummaryInterval.EndValue">
       <summary>
@@ -10468,6 +10490,7 @@ The field will not be sorted against the custom text generated on the client sid
       <summary>
         <para>An empty collection of cells.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraPivotGrid.Selection.ReadOnlyCells.GetEnumerator">
       <summary>

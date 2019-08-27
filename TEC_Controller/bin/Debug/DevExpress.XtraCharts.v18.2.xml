@@ -632,12 +632,6 @@
       </summary>
       <value>A <see cref="T:System.Double"/>value (measured in fractions of Z-axis units). This value should be greater than 0.</value>
     </member>
-    <member name="M:DevExpress.XtraCharts.Area3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.Area3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">An <see cref="T:DevExpress.XtraCharts.Area3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="M:DevExpress.XtraCharts.Area3DSeriesView.Equals(System.Object)">
       <summary>
         <para>Determines whether the specified object is equal to the current <see cref="T:DevExpress.XtraCharts.Area3DSeriesView"/> instance.</para>
@@ -699,12 +693,6 @@
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.AreaSeriesViewBase"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.AreaSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.AreaSeriesViewBase"/> object passed as a parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.AreaSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.AreaSeriesViewBase.Border">
       <summary>
@@ -1110,6 +1098,7 @@
       <summary>
         <para>Identifies the default value to which the <see cref="P:DevExpress.XtraCharts.AxisBase.DateTimeMeasureUnit"/> property is reset, if the <see cref="P:DevExpress.XtraCharts.AxisXBase.DateTimeScaleMode"/> becomes Manual.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraCharts.AxisBase.GetScaleInternalValue(System.DateTime)">
       <summary>
@@ -1373,9 +1362,9 @@
     </member>
     <member name="P:DevExpress.XtraCharts.AxisLabel.TextPattern">
       <summary>
-        <para>Gets or sets a string which represents the pattern specifying the text to be displayed within the axis label that appears for a diagram X - axis or Y- axis.</para>
+        <para>Gets or sets a string that formats text for the auto-generated x- or y-axis labels.</para>
       </summary>
-      <value>The text pattern that axis labels use to provide text representation of axis values&#39; on which labels are located.The default value is <see cref="F:System.String.Empty"/>.</value>
+      <value>The string that formats text for axis labels.The default value is <see cref="F:System.String.Empty"/>.</value>
     </member>
     <member name="M:DevExpress.XtraCharts.AxisLabel.ToString">
       <summary>
@@ -2086,12 +2075,6 @@
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.Bar3DSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.Bar3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.Bar3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.Bar3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.Bar3DSeriesView.BarDepth">
       <summary>
         <para>Gets or sets the depth of bars (the extent of the bar along the Z-axis) in 3D Bar series.</para>
@@ -2301,12 +2284,6 @@
         <para>Gets or sets the bar series animation.</para>
       </summary>
       <value>A <see cref="T:DevExpress.XtraCharts.BarAnimationBase"/> class descendant object.</value>
-    </member>
-    <member name="M:DevExpress.XtraCharts.BarSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.BarSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.BarSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.BarSeriesView.BarWidth">
       <summary>
@@ -2767,12 +2744,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.BubbleSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.BubbleSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.BubbleSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.BubbleSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.BubbleSeriesView.AutoSize">
       <summary>
@@ -7127,11 +7098,13 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Identifies the default value for the <see cref="P:DevExpress.XtraCharts.DateTimeScaleOptions.GridAlignment"/> property. Always <see cref="F:DevExpress.XtraCharts.DateTimeGridAlignment.Day"/>.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraCharts.DateTimeScaleOptions.DefaultMeasureUnit">
       <summary>
         <para>Identifies the default value for the <see cref="P:DevExpress.XtraCharts.DateTimeScaleOptions.MeasureUnit"/> property. Always <see cref="F:DevExpress.XtraCharts.DateTimeMeasureUnit.Day"/>.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraCharts.DateTimeScaleOptions.GridAlignment">
       <summary>
@@ -7190,6 +7163,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Identifies the default value for the <see cref="P:DevExpress.XtraCharts.DateTimeSummaryOptions.MeasureUnit"/> property. Always <see cref="F:DevExpress.XtraCharts.DateTimeMeasureUnit.Day"/>.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraCharts.DateTimeSummaryOptions.MeasureUnit">
       <summary>
@@ -7223,6 +7197,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Specifies the default actual palette name.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraCharts.DefaultPalette.DefaultPaletteName">
       <summary>
@@ -7338,11 +7313,13 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Represents a static constant that stores the default value for the <see cref="P:DevExpress.XtraCharts.Diagram3D.HorizontalScrollPercent"/> and <see cref="P:DevExpress.XtraCharts.Diagram3D.VerticalScrollPercent"/> properties.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraCharts.Diagram3D.DefaultZoomPercent">
       <summary>
         <para>Represents a static constant that stores the default value for the <see cref="P:DevExpress.XtraCharts.Diagram3D.ZoomPercent"/> property.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraCharts.Diagram3D.HorizontalScrollPercent">
       <summary>
@@ -7905,12 +7882,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       </summary>
       <param name="explodedPointIds">An array of integer values, representing the <see cref="P:DevExpress.XtraCharts.SeriesPoint.SeriesPointID"/> identifiers of exploded points.</param>
     </member>
-    <member name="M:DevExpress.XtraCharts.Doughnut3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.Doughnut3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">An <see cref="T:DevExpress.XtraCharts.Doughnut3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="M:DevExpress.XtraCharts.Doughnut3DSeriesView.Equals(System.Object)">
       <summary>
         <para>Determines whether the specified object is equal to the current <see cref="T:DevExpress.XtraCharts.Doughnut3DSeriesView"/> instance.</para>
@@ -7955,12 +7926,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.DoughnutSeriesView"/> class with the specified exploded points.</para>
       </summary>
       <param name="explodedPointIds">An array of integer values, representing the <see cref="P:DevExpress.XtraCharts.SeriesPoint.SeriesPointID"/> identifiers of exploded points.</param>
-    </member>
-    <member name="M:DevExpress.XtraCharts.DoughnutSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.DoughnutSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">An <see cref="T:DevExpress.XtraCharts.DoughnutSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="M:DevExpress.XtraCharts.DoughnutSeriesView.Equals(System.Object)">
       <summary>
@@ -8008,6 +7973,12 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Defines the drill down level.</para>
       </summary>
+    </member>
+    <member name="P:DevExpress.XtraCharts.DrillDownItem.BreadcrumbItemText">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraCharts.DrillDownItem.Parameters">
       <summary>
@@ -9083,12 +9054,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       </summary>
       <value>A <see cref="T:DevExpress.XtraCharts.FinancialAnimationBase"/> class descendant.</value>
     </member>
-    <member name="M:DevExpress.XtraCharts.FinancialSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.FinancialSeriesViewBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.FinancialSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.FinancialSeriesViewBase.DiagramType">
       <summary>
         <para>Gets a value of the diagram type.</para>
@@ -9466,12 +9431,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.FullStackedSplineArea3DSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.FullStackedSplineArea3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.FullStackedSplineArea3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.FullStackedSplineArea3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="M:DevExpress.XtraCharts.FullStackedSplineArea3DSeriesView.Equals(System.Object)">
       <summary>
         <para>Determines whether the specified object is equal to the current <see cref="T:DevExpress.XtraCharts.FullStackedSplineArea3DSeriesView"/> instance.</para>
@@ -9500,12 +9459,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.FullStackedSplineAreaSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.FullStackedSplineAreaSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.FullStackedSplineAreaSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.FullStackedSplineAreaSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.FullStackedSplineAreaSeriesView.LineTensionPercent">
       <summary>
@@ -9559,12 +9512,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.Funnel3DSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.Funnel3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.Funnel3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">An <see cref="T:DevExpress.XtraCharts.Funnel3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.Funnel3DSeriesView.Color">
       <summary>
@@ -9790,12 +9737,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       </summary>
       <value>A <see cref="T:DevExpress.XtraCharts.FunnelAnimationBase"/> class descendant.</value>
     </member>
-    <member name="M:DevExpress.XtraCharts.FunnelSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.FunnelSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">An <see cref="T:DevExpress.XtraCharts.FunnelSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.FunnelSeriesView.Border">
       <summary>
         <para>Gets the Funnel series view&#39;s border settings.</para>
@@ -9843,12 +9784,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Represents the base class for series views of the Funnel type.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.FunnelSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.FunnelSeriesViewBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">An <see cref="T:DevExpress.XtraCharts.FunnelSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="M:DevExpress.XtraCharts.FunnelSeriesViewBase.Equals(System.Object)">
       <summary>
@@ -9972,12 +9907,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.GanttSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.GanttSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.GanttSeriesView"/> object passed as a parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.GanttSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.GanttSeriesView.DiagramType">
       <summary>
@@ -10786,6 +10715,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Represents the Default palette, which is used to paint the chart&#39;s indicators.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraCharts.IndicatorsPalettes.GetLocalizedNames">
       <summary>
@@ -11862,12 +11792,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.Line3DSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.Line3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.Line3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.Line3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.Line3DSeriesView.DiagramType">
       <summary>
         <para>Gets a value of the diagram type.</para>
@@ -11966,12 +11890,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.LineSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.LineSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.LineSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.LineSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.LineSeriesView.EnableAntialiasing">
       <summary>
@@ -12563,12 +12481,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       </summary>
       <param name="explodedPointIds">An array of integer values, representing the <see cref="P:DevExpress.XtraCharts.SeriesPoint.SeriesPointID"/> identifiers of exploded points.</param>
     </member>
-    <member name="M:DevExpress.XtraCharts.NestedDoughnutSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.NestedDoughnutSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.NestedDoughnutSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="M:DevExpress.XtraCharts.NestedDoughnutSeriesView.Equals(System.Object)">
       <summary>
         <para>Determines whether the specified object is equal to the current <see cref="T:DevExpress.XtraCharts.NestedDoughnutSeriesView"/> instance.</para>
@@ -13001,6 +12913,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Identifies the color of the empty palette.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraCharts.Palette.IsEmpty">
       <summary>
@@ -13286,6 +13199,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Identifies the Default palette of colors.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraCharts.Palettes.Equity">
       <summary>
@@ -13801,12 +13715,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       </summary>
       <param name="explodedPointIds">An array of integer values, representing the <see cref="P:DevExpress.XtraCharts.SeriesPoint.SeriesPointID"/> identifiers of exploded points.</param>
     </member>
-    <member name="M:DevExpress.XtraCharts.Pie3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.Pie3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.Pie3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.Pie3DSeriesView.Color">
       <summary>
         <para>Overrides the <see cref="P:DevExpress.XtraCharts.SeriesViewBase.Color"/> property to hide it.</para>
@@ -14304,12 +14212,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       </summary>
       <value>A <see cref="T:DevExpress.XtraCharts.PieAnimationBase"/> class descendant.</value>
     </member>
-    <member name="M:DevExpress.XtraCharts.PieSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.PieSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.PieSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.PieSeriesView.Border">
       <summary>
         <para>Gets the pie series view&#39;s border settings.</para>
@@ -14392,12 +14294,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.PieSeriesViewBase"/> class with the specified exploded points.</para>
       </summary>
       <param name="explodedPointIds">An array of integer values, representing the <see cref="P:DevExpress.XtraCharts.SeriesPoint.SeriesPointID"/> identifiers of exploded points.</param>
-    </member>
-    <member name="M:DevExpress.XtraCharts.PieSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.PieSeriesViewBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.PieSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="M:DevExpress.XtraCharts.PieSeriesViewBase.Equals(System.Object)">
       <summary>
@@ -14929,12 +14825,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.PointSeriesViewBase"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.PointSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.PointSeriesViewBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.PointSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.PointSeriesViewBase.DiagramType">
       <summary>
@@ -15647,12 +15537,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.RadarAreaSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.RadarAreaSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.RadarAreaSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.RadarAreaSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.RadarAreaSeriesView.Border">
       <summary>
         <para>Provides access to the border settings for the radar chart.</para>
@@ -16190,12 +16074,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.RadarLineSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.RadarLineSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.RadarLineSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.RadarLineSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.RadarLineSeriesView.Closed">
       <summary>
         <para>Specifies whether the last point in a series is joined with the first point to form a closed polygon.</para>
@@ -16271,12 +16149,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.RadarPointSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.RadarPointSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.RadarPointSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.RadarPointSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="M:DevExpress.XtraCharts.RadarPointSeriesView.Equals(System.Object)">
       <summary>
         <para>Determines whether the specified object is equal to the current <see cref="T:DevExpress.XtraCharts.RadarPointSeriesView"/> instance.</para>
@@ -16322,12 +16194,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.RadarRangeAreaSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.RadarRangeAreaSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.RadarRangeAreaSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.RadarRangeAreaSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.RadarRangeAreaSeriesView.Border">
       <summary>
@@ -16418,12 +16284,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Gets or sets the function that is used to aggregate series points.</para>
       </summary>
       <value>The aggregate function type.</value>
-    </member>
-    <member name="M:DevExpress.XtraCharts.RadarSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.RadarSeriesViewBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.RadarSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.RadarSeriesViewBase.ColorEach">
       <summary>
@@ -16738,12 +16598,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.RangeAreaSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.RangeAreaSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.RangeAreaSeriesView"/> object passed as a parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.RangeAreaSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.RangeAreaSeriesView.Border">
       <summary>
         <para>Overrides the <see cref="P:DevExpress.XtraCharts.AreaSeriesViewBase.Border"/> property to hide it.</para>
@@ -16969,12 +16823,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.RangeBarSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.RangeBarSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.RangeBarSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.RangeBarSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="M:DevExpress.XtraCharts.RangeBarSeriesView.Equals(System.Object)">
       <summary>
@@ -17406,6 +17254,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Always returns &#0045;1. This value is returned by the <see cref="P:DevExpress.XtraCharts.RectangleIndents.All"/> property if <see cref="P:DevExpress.XtraCharts.RectangleIndents.Left"/>, <see cref="P:DevExpress.XtraCharts.RectangleIndents.Right"/>, <see cref="P:DevExpress.XtraCharts.RectangleIndents.Top"/> and <see cref="P:DevExpress.XtraCharts.RectangleIndents.Bottom"/> property values are not equal.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.XtraCharts.RectangularBorder">
       <summary>
@@ -17467,6 +17316,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>The default color of the price reduction.</para>
       </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraCharts.ReductionStockOptions.Equals(System.Object)">
       <summary>
@@ -19146,9 +18996,9 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
     </member>
     <member name="P:DevExpress.XtraCharts.SeriesBase.LegendTextPattern">
       <summary>
-        <para>Gets or sets a string which represents the pattern specifying the text to be displayed within legend items</para>
+        <para>Gets or sets the string that formats text for the series or series point legend items.</para>
       </summary>
-      <value>A <see cref="T:System.String"/>, which represents the pattern. The default value is <see cref="F:System.String.Empty"/>.</value>
+      <value>A <see cref="T:System.String"/> object that is a format string. The default value is <see cref="F:System.String.Empty"/>.</value>
     </member>
     <member name="P:DevExpress.XtraCharts.SeriesBase.NumericSummaryOptions">
       <summary>
@@ -20017,6 +19867,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Identifies the <see cref="P:DevExpress.XtraCharts.SeriesPoint.Argument"/>  property.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraCharts.SeriesPoint.ArgumentSerializable">
       <summary>
@@ -20183,6 +20034,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Identifies the <see cref="P:DevExpress.XtraCharts.SeriesPoint.Values"/> property.</para>
       </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraCharts.SeriesPoint.ValuesSerializable">
       <summary>
@@ -20941,12 +20793,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Represents the base class for all 3D series view objects which use the color each filling for their series points (Bar 3D Series).</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.SeriesView3DColorEachSupportBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SeriesView3DColorEachSupportBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SeriesView3DColorEachSupportBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.SeriesView3DColorEachSupportBase.ColorEach">
       <summary>
         <para>Gets or sets a value that specifies whether each data point of a series is shown in a different color.</para>
@@ -21043,12 +20889,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Represents the base class for all series view objects which use the color each filling for their series points (Bar Series, Point and Line Series and Gantt Series).</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.SeriesViewColorEachSupportBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SeriesViewColorEachSupportBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SeriesViewColorEachSupportBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.SeriesViewColorEachSupportBase.ColorEach">
       <summary>
@@ -21168,16 +21008,19 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Represents the default value for the <see cref="P:DevExpress.XtraCharts.SideBySideBar3DSeriesView.BarDistance"/>, <see cref="P:DevExpress.XtraCharts.SideBySideBarSeriesView.BarDistance"/>, <see cref="P:DevExpress.XtraCharts.SideBySideGanttSeriesView.BarDistance"/> and <see cref="P:DevExpress.XtraCharts.SideBySideRangeBarSeriesView.BarDistance"/> properties.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraCharts.SideBySideBarDefaults.DefaultBarDistanceFixed">
       <summary>
         <para>Represents the default value for the <see cref="P:DevExpress.XtraCharts.SideBySideBar3DSeriesView.BarDistanceFixed"/>, <see cref="P:DevExpress.XtraCharts.SideBySideBarSeriesView.BarDistanceFixed"/>, <see cref="P:DevExpress.XtraCharts.SideBySideGanttSeriesView.BarDistanceFixed"/> and <see cref="P:DevExpress.XtraCharts.SideBySideRangeBarSeriesView.BarDistanceFixed"/> properties.</para>
       </summary>
+      <value></value>
     </member>
     <member name="F:DevExpress.XtraCharts.SideBySideBarDefaults.DefaultEqualBarWidth">
       <summary>
         <para>Represents the default value for the <see cref="P:DevExpress.XtraCharts.SideBySideBarSeriesView.EqualBarWidth"/>, <see cref="P:DevExpress.XtraCharts.SideBySideBar3DSeriesView.EqualBarWidth"/>, <see cref="P:DevExpress.XtraCharts.SideBySideRangeBarSeriesView.EqualBarWidth"/> and <see cref="P:DevExpress.XtraCharts.SideBySideGanttSeriesView.EqualBarWidth"/> properties.</para>
       </summary>
+      <value></value>
     </member>
     <member name="T:DevExpress.XtraCharts.SideBySideBarSeriesLabel">
       <summary>
@@ -21234,12 +21077,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.SideBySideFullStackedBar3DSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.SideBySideFullStackedBar3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SideBySideFullStackedBar3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SideBySideFullStackedBar3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.SideBySideFullStackedBar3DSeriesView.BarDistance">
       <summary>
         <para>Specifies the distance between two bars of different series shown at the same axis value, as a fraction of axis units.</para>
@@ -21292,12 +21129,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.SideBySideFullStackedBarSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.SideBySideFullStackedBarSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SideBySideFullStackedBarSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SideBySideFullStackedBarSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.SideBySideFullStackedBarSeriesView.BarDistance">
       <summary>
@@ -21408,12 +21239,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.SideBySideStackedBar3DSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.SideBySideStackedBar3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SideBySideStackedBar3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SideBySideStackedBar3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.SideBySideStackedBar3DSeriesView.BarDistance">
       <summary>
         <para>Specifies the distance between two bars of different series shown at the same axis value, as a fraction of axis units.</para>
@@ -21466,12 +21291,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.SideBySideStackedBarSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.SideBySideStackedBarSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SideBySideStackedBarSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SideBySideStackedBarSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.SideBySideStackedBarSeriesView.BarDistance">
       <summary>
@@ -21611,12 +21430,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Represents the base class for series view types which use the <see cref="T:DevExpress.XtraCharts.SimpleDiagram"/>.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.SimpleDiagramSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SimpleDiagramSeriesViewBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="element">A <see cref="T:DevExpress.XtraCharts.SimpleDiagramSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="M:DevExpress.XtraCharts.SimpleDiagramSeriesViewBase.GetValueCaption(System.Int32)">
       <summary>
@@ -21854,12 +21667,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.Spline3DSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.Spline3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.Spline3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.Spline3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="M:DevExpress.XtraCharts.Spline3DSeriesView.Equals(System.Object)">
       <summary>
         <para>Determines whether the specified object is equal to the current <see cref="T:DevExpress.XtraCharts.Spline3DSeriesView"/> instance.</para>
@@ -21888,12 +21695,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.SplineArea3DSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.SplineArea3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SplineArea3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SplineArea3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="M:DevExpress.XtraCharts.SplineArea3DSeriesView.Equals(System.Object)">
       <summary>
@@ -21924,12 +21725,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.SplineAreaSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.SplineAreaSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SplineAreaSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SplineAreaSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.SplineAreaSeriesView.LineTensionPercent">
       <summary>
         <para>Gets or sets the line tension to be used when drawing splines of the <see cref="T:DevExpress.XtraCharts.SplineAreaSeriesView"/>, in percents.</para>
@@ -21945,12 +21740,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.SplineSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.SplineSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SplineSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SplineSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.SplineSeriesView.LineTensionPercent">
       <summary>
@@ -22246,12 +22035,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.StackedSplineArea3DSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.StackedSplineArea3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.StackedSplineArea3DSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.StackedSplineArea3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="M:DevExpress.XtraCharts.StackedSplineArea3DSeriesView.Equals(System.Object)">
       <summary>
         <para>Determines whether the specified object is equal to the current <see cref="T:DevExpress.XtraCharts.StackedSplineArea3DSeriesView"/> instance.</para>
@@ -22280,12 +22063,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.StackedSplineAreaSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.StackedSplineAreaSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.StackedSplineAreaSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.StackedSplineAreaSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.StackedSplineAreaSeriesView.LineTensionPercent">
       <summary>
@@ -22422,12 +22199,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.StepArea3DSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.StepArea3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.StepArea3DSeriesView"/> object passed as a parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.StepArea3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="M:DevExpress.XtraCharts.StepArea3DSeriesView.Equals(System.Object)">
       <summary>
         <para>Determines whether the specified object is equal to the current <see cref="T:DevExpress.XtraCharts.StepArea3DSeriesView"/> instance.</para>
@@ -22456,12 +22227,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.StepAreaSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.StepAreaSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.StepAreaSeriesView"/> object passed as a parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.StepAreaSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="M:DevExpress.XtraCharts.StepAreaSeriesView.Equals(System.Object)">
       <summary>
@@ -22492,12 +22257,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.StepLine3DSeriesView"/> class with the default settings.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraCharts.StepLine3DSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.StepLine3DSeriesView"/> object passed as a parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.StepLine3DSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="M:DevExpress.XtraCharts.StepLine3DSeriesView.Equals(System.Object)">
       <summary>
         <para>Determines whether the specified object is equal to the current <see cref="T:DevExpress.XtraCharts.StepLine3DSeriesView"/> instance.</para>
@@ -22526,12 +22285,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.StepLineSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.StepLineSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.StepLineSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.StepLineSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="M:DevExpress.XtraCharts.StepLineSeriesView.Equals(System.Object)">
       <summary>
@@ -22666,12 +22419,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Initializes a new instance of the <see cref="T:DevExpress.XtraCharts.StockSeriesView"/> class with the default settings.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.StockSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.StockSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.StockSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="M:DevExpress.XtraCharts.StockSeriesView.Equals(System.Object)">
       <summary>
@@ -23318,12 +23065,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       </summary>
       <value>true to enable antialiasing; otherwise, false. The default is false.</value>
     </member>
-    <member name="M:DevExpress.XtraCharts.SwiftPlotSeriesView.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SwiftPlotSeriesView"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SwiftPlotSeriesView"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="M:DevExpress.XtraCharts.SwiftPlotSeriesView.Equals(System.Object)">
       <summary>
         <para>Determines whether or not the specified object is equal to the current <see cref="T:DevExpress.XtraCharts.SwiftPlotSeriesView"/> instance.</para>
@@ -23353,12 +23094,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Represents the base class for series of the Swift Plot view type.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.SwiftPlotSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.SwiftPlotSeriesViewBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.SwiftPlotSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.SwiftPlotSeriesViewBase.AxisX">
       <summary>
@@ -25715,12 +25450,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       </summary>
       <value>The aggregate function type.</value>
     </member>
-    <member name="M:DevExpress.XtraCharts.XYDiagram2DSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.XYDiagram2DSeriesViewBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">A <see cref="T:DevExpress.XtraCharts.XYDiagram2DSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
-    </member>
     <member name="P:DevExpress.XtraCharts.XYDiagram2DSeriesViewBase.AxisXName">
       <summary>
         <para>For internal use only. Specifies the X-axis name.</para>
@@ -25849,12 +25578,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
         <para>Gets or sets the function that is used to aggregate series points.</para>
       </summary>
       <value>The aggregate function type.</value>
-    </member>
-    <member name="M:DevExpress.XtraCharts.XYDiagram3DSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.XYDiagram3DSeriesViewBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">An <see cref="T:DevExpress.XtraCharts.XYDiagram3DSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.XYDiagram3DSeriesViewBase.CustomAggregateFunction">
       <summary>
@@ -26173,12 +25896,6 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
       <summary>
         <para>Represents the base class for series view types which use the <see cref="T:DevExpress.XtraCharts.XYDiagram"/>.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraCharts.XYDiagramSeriesViewBase.Assign(DevExpress.XtraCharts.ChartElement)">
-      <summary>
-        <para>Copies all the settings from the <see cref="T:DevExpress.XtraCharts.XYDiagramSeriesViewBase"/> object passed as the parameter.</para>
-      </summary>
-      <param name="obj">An <see cref="T:DevExpress.XtraCharts.XYDiagramSeriesViewBase"/> object (which is the <see cref="T:DevExpress.XtraCharts.ChartElement"/> descendant) whose settings are assigned to the current object. If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullException"/> will be thrown.</param>
     </member>
     <member name="P:DevExpress.XtraCharts.XYDiagramSeriesViewBase.AxisX">
       <summary>
@@ -26545,7 +26262,7 @@ If null (Nothing in Visual Basic), then a <see cref="T:System.ArgumentNullExcept
     </member>
     <member name="P:DevExpress.XtraCharts.ZoomingOptions.ZoomInShortcuts">
       <summary>
-        <para>Returns the collection of keyboard shortcuts allow end users to zoom in to the chart.</para>
+        <para>Returns the collection of keyboard shortcuts that allow end users to zoom in to the chart.</para>
       </summary>
       <value>The shortcut key collection.</value>
     </member>

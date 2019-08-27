@@ -298,7 +298,6 @@
       <summary>
         <para>This event is hidden, because it is not appropriate for the <see cref="T:DevExpress.Sparkline.SparklineRange"/> class.</para>
       </summary>
-      <value></value>
     </member>
     <member name="M:DevExpress.Sparkline.SparklineRange.ToString">
       <summary>
@@ -424,7 +423,6 @@
       <summary>
         <para>Occurs when any property of the <see cref="T:DevExpress.Sparkline.SparklineViewBase"/> object has changed its value.</para>
       </summary>
-      <value></value>
     </member>
     <member name="P:DevExpress.Sparkline.SparklineViewBase.StartPointColor">
       <summary>

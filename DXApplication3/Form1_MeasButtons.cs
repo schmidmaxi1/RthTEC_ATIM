@@ -47,8 +47,8 @@ namespace ATIM_GUI
         }
 
         private void Button_Auto_Zth_Click(object sender, EventArgs e)
-        {
-            TTA_Automatic();
+        {          
+            TTA_Automatic();    
         }
 
         private void Button_Single_Sensitivity_Click(object sender, EventArgs e)
@@ -143,7 +143,7 @@ namespace ATIM_GUI
                 Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath,
                 Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName,
                 GUI = this,
-                MyMovement = myFileSetting.readBox_Movement1.MyMovementInfo
+                MyMovement = myFileSetting.readBox_Movement1.MyMovementInfo.Minimize()
             };
 
             //Check if all neccessary Devices and Settings are available
@@ -211,7 +211,7 @@ namespace ATIM_GUI
                 Output_File_Folder = myFileSetting.readBox_FileFolder1.MyPath,
                 Output_File_Name = myFileSetting.readBox_FileFolder1.MyFileName,
                 GUI = this,
-                MyMovement_Infos = myFileSetting.readBox_Movement1.MyMovementInfo,
+                MyMovement_Infos = myFileSetting.readBox_Movement1.MyMovementInfo.Minimize(),
             };
 
             //Check if all neccessary Devices and Settings are available
@@ -284,13 +284,13 @@ namespace ATIM_GUI
 
             //Warten bis fertig
             while (button_Auto_UI.Enabled == false)
-                await Task.Delay(5000);
+                await Task.Delay(1000);
 
             //10 minuten warten damit TEC wieder auf Raum-Temperature komm
             Wait_withoutBreak(600);
 
             while (button_Auto_UI.Enabled == false)
-                await Task.Delay(500);
+                await Task.Delay(100);
 
 
             //TTA für Samsung @ 350mA

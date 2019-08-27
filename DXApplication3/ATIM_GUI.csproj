@@ -220,30 +220,6 @@
     <Reference Include="DevExpress.XtraVerticalGrid.v18.2, Version=18.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="MeSoft.Core, Version=1.0.2.12, Culture=neutral, PublicKeyToken=9cd7e28f25af7ad4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libaries\Meerstetter_TEC\MeSoft.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MeSoft.MeCom.Core, Version=1.30.2.74, Culture=neutral, PublicKeyToken=9cd7e28f25af7ad4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libaries\Meerstetter_TEC\MeSoft.MeCom.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="MeSoft.MeCom.PhyWrapper, Version=1.30.2.74, Culture=neutral, PublicKeyToken=9cd7e28f25af7ad4, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libaries\Meerstetter_TEC\MeSoft.MeCom.PhyWrapper.dll</HintPath>
-    </Reference>
-    <Reference Include="NationalInstruments.Common, Version=17.5.40.49153, Culture=neutral, PublicKeyToken=dc6ad606294fc298, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current\NationalInstruments.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="NationalInstruments.DAQmx, Version=19.0.45.2, Culture=neutral, PublicKeyToken=4febd62461bf11a4, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Program Files (x86)\National Instruments\MeasurementStudioVS2010\DotNET\Assemblies\Current\NationalInstruments.DAQmx.dll</HintPath>
-    </Reference>
-    <Reference Include="SpcmDrv64.NET, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libaries\Spectrum\SpcmDrv64.NET.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />

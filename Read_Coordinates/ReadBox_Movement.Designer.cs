@@ -31,6 +31,9 @@
             this.pictureBox_GUI = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_Gerber = new System.Windows.Forms.TextBox();
+            this.button_Select = new System.Windows.Forms.Button();
+            this.textBox_Seleted = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GUI)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,15 +70,45 @@
             this.textBox_Gerber.TextChanged += new System.EventHandler(this.TextBox_Gerber_TextChanged);
             this.textBox_Gerber.DoubleClick += new System.EventHandler(this.TextBox_Gerber_DoubleClick);
             // 
+            // button_Select
+            // 
+            this.button_Select.Location = new System.Drawing.Point(394, 32);
+            this.button_Select.Name = "button_Select";
+            this.button_Select.Size = new System.Drawing.Size(75, 21);
+            this.button_Select.TabIndex = 12;
+            this.button_Select.Text = "Select";
+            this.button_Select.UseVisualStyleBackColor = true;
+            this.button_Select.Click += new System.EventHandler(this.Button_Select_Click);
+            // 
+            // textBox_Seleted
+            // 
+            this.textBox_Seleted.Location = new System.Drawing.Point(331, 32);
+            this.textBox_Seleted.Name = "textBox_Seleted";
+            this.textBox_Seleted.ReadOnly = true;
+            this.textBox_Seleted.Size = new System.Drawing.Size(57, 20);
+            this.textBox_Seleted.TabIndex = 13;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(244, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Devices to test:";
+            // 
             // ReadBox_Movement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox_Seleted);
+            this.Controls.Add(this.button_Select);
             this.Controls.Add(this.pictureBox_GUI);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_Gerber);
             this.Name = "ReadBox_Movement";
-            this.Size = new System.Drawing.Size(500, 30);
+            this.Size = new System.Drawing.Size(500, 60);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GUI)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,5 +120,8 @@
         private System.Windows.Forms.PictureBox pictureBox_GUI;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.TextBox textBox_Gerber;
+        private System.Windows.Forms.Button button_Select;
+        private System.Windows.Forms.TextBox textBox_Seleted;
+        private System.Windows.Forms.Label label1;
     }
 }

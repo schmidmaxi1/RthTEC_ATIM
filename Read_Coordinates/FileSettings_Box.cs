@@ -24,7 +24,7 @@ namespace Read_Coordinates
             //In GUI einfügen
             this.Location = new System.Drawing.Point(x, y);
             this.Name = "FillSetting_Box";
-            this.Size = new System.Drawing.Size(520, 105);
+            this.Size = new System.Drawing.Size(520, 135);
             this.TabIndex = 32;
 
             //Hinzufügen

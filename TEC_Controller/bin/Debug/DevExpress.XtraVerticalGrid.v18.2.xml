@@ -1618,11 +1618,6 @@ The DefaultLevelIndent field is set to -1.</para>
       <param name="recordIndex">An integer value that specifies the zero-based index of the required object in the <see cref="P:DevExpress.XtraVerticalGrid.PropertyGridControl.SelectedObjects"/> collection.</param>
       <returns>An object being edited by the control.</returns>
     </member>
-    <member name="M:DevExpress.XtraVerticalGrid.PropertyGridControl.HideEditor">
-      <summary>
-        <para></para>
-      </summary>
-    </member>
     <member name="P:DevExpress.XtraVerticalGrid.PropertyGridControl.IsClassic">
       <summary>
         <para>Gets whether the control is displayed in the classic style.</para>

@@ -184,7 +184,7 @@ namespace ATIM_GUI
                 if (comDevice.Name.Contains("RthTEC"))
                 {
                     if (comDevice.Name.Contains("V1"))
-                        myRthTEC = new RthTEC_V1(this, 10, 245);
+                        myRthTEC = new RthTEC_V1(this, 10, 275);
                     else
                         myRthTEC = null;
                 }
@@ -192,9 +192,9 @@ namespace ATIM_GUI
                 if (comDevice.Name.Contains("TEC"))
                 {
                     if (comDevice.Name.Contains("Meerstetter-single"))
-                        myTEC = new Meerstetter_2fach(this, 10, 350);
+                        myTEC = new Meerstetter_2fach(this, 10, 380);
                     else if (comDevice.Name.Contains("Meerstetter-double1"))
-                        myTEC = new Meerstetter_4fach(this, 10, 350);
+                        myTEC = new Meerstetter_4fach(this, 10, 380);
                     else if (comDevice.Name.Contains("Meerstetter-double2"))
                         {; }//nix machen
                     else
@@ -204,7 +204,7 @@ namespace ATIM_GUI
                 if (comDevice.Name.Contains("PowerSupply"))
                 {
                     if (comDevice.Name.Contains("HMP4040"))                   
-                        myPowerSupply = new PowerSupply_HMP(this, 10, 455);                        
+                        myPowerSupply = new PowerSupply_HMP(this, 10, 485);                        
                     else
                         myPowerSupply = null;
                 }
@@ -212,9 +212,9 @@ namespace ATIM_GUI
                 if (comDevice.Name.Contains("XYZ"))
                 {
                     if (comDevice.Name.Contains("4Axis"))
-                        myXYZ = new ISEL_4Axis(this, 10, 530);
+                        myXYZ = new ISEL_4Axis(this, 10, 560);
                     else if (comDevice.Name.Contains("3Axis"))
-                        myXYZ = new ISEL_3Axis(this, 10, 530);
+                        myXYZ = new ISEL_3Axis(this, 10, 560);
                     else
                         myXYZ = null;
                 }
@@ -227,7 +227,7 @@ namespace ATIM_GUI
                 {
                     if (ethernetDevice.Name.Contains("Spectrum"))
                         //DAQ_Unit = new ATIM_GUI._09_DAQ_Unit.Spectrum();
-                        myDAQ = new Spectrum30MHz(this, 10, 605);
+                        myDAQ = new Spectrum30MHz(this, 10, 635);
                 }
             }
 
@@ -237,7 +237,7 @@ namespace ATIM_GUI
                 {
                     if (NIDevice.Name.Contains("NI-USB6281"))
                         //DAQ_Unit = new ATIM_GUI._09_DAQ_Unit.NI_USB6281();
-                        myDAQ = new NI_USB6281(this, 10, 605);
+                        myDAQ = new NI_USB6281(this, 10, 635);
                 }
             }
 
@@ -257,7 +257,7 @@ namespace ATIM_GUI
             // 
             // camera_Gerber1
             // 
-            this.camera_Gerber1.Location = new System.Drawing.Point(10, 680);
+            this.camera_Gerber1.Location = new System.Drawing.Point(10, 710);
             this.camera_Gerber1.Name = "camera_Gerber1";
             this.camera_Gerber1.Size = new System.Drawing.Size(521, 207);
             this.camera_Gerber1.TabIndex = 13;

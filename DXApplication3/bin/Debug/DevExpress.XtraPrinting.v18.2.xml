@@ -554,7 +554,7 @@
     </member>
     <member name="M:DevExpress.XtraPrinting.Preview.DocumentViewer.InitiateDocumentCreation">
       <summary>
-        <para>Specifies whether to create a document automatically, or on a user request.</para>
+        <para>Re-creates the document.</para>
       </summary>
     </member>
     <member name="P:DevExpress.XtraPrinting.Preview.DocumentViewer.PrintingSystem">

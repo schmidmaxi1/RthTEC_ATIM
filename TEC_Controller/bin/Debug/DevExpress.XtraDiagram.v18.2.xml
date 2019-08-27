@@ -1048,6 +1048,12 @@
       </summary>
       <value>true to allow adding items to the container; otherwise, false.</value>
     </member>
+    <member name="P:DevExpress.XtraDiagram.DiagramContainer.ClipItemsToBounds">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraDiagram.DiagramContainer.DragMode">
       <summary>
         <para>Specifies whether the container can be dragged by any point or only by header and bounds.</para>
@@ -2779,6 +2785,12 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
       </summary>
       <value>An image source.</value>
     </member>
+    <member name="P:DevExpress.XtraDiagram.DiagramImage.Padding">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraDiagram.DiagramImage.PlaceholderGeometry">
       <summary>
         <para>Gets the object that identifies the geometry of the image placeholder.</para>
@@ -4061,12 +4073,6 @@ The DocumentSource can be a file full path, Uri object, stream and array of byte
         <para>For internal use. Gets the text editor&#39;s bounds.</para>
       </summary>
       <value>A <see cref="T:System.Drawing.RectangleF"/> structure.</value>
-    </member>
-    <member name="P:DevExpress.XtraDiagram.DiagramShape.Padding">
-      <summary>
-        <para>Gets or sets the amount of space between the shape&#39;s borders and its contents.</para>
-      </summary>
-      <value>A <see cref="T:System.Windows.Forms.Padding"/> value that represents the margin between the item&#39;s borders and its contents.</value>
     </member>
     <member name="P:DevExpress.XtraDiagram.DiagramShape.Parameters">
       <summary>

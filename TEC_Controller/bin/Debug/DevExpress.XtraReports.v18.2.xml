@@ -17170,7 +17170,7 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XRRichText.Text">
       <summary>
-        <para>Specifies the control&#39;s text.</para>
+        <para>For internal use.</para>
       </summary>
       <value>A <see cref="T:System.String"/> value containing the text associated with the control.</value>
     </member>
@@ -18932,7 +18932,7 @@
     </member>
     <member name="T:DevExpress.XtraReports.UI.XtraReport">
       <summary>
-        <para>The base class for any report created using the XtraReports Suite.</para>
+        <para>A base class for a report.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraReports.UI.XtraReport.#ctor">
@@ -19058,9 +19058,9 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.DisplayName">
       <summary>
-        <para>Specifies text displayed in the report title of a corresponding End-User Designer&#39;s tab, as well as the default file name of the exported document.</para>
+        <para>Gets or sets the report&#39;s display name. The display name appears in the End-User Designer&#39;s report tab, and serves as the exported document&#39;s default file name.</para>
       </summary>
-      <value>A <see cref="T:System.String"/> value, specifying the report&#39;s display name.</value>
+      <value>The report&#39;s display name.</value>
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.DocumentExportMode">
       <summary>
@@ -19530,9 +19530,9 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.Margins">
       <summary>
-        <para>Gets or sets the margins of the report&#39;s pages (measured in report units).</para>
+        <para>Gets or sets the report&#39;s page margins.</para>
       </summary>
-      <value>A <see cref="T:System.Drawing.Printing.Margins"/> object specifying the margins of a report page.</value>
+      <value>The report&#39;s page margins.</value>
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.MasterReport">
       <summary>
@@ -19590,9 +19590,9 @@
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.PaperKind">
       <summary>
-        <para>Gets or sets the type of paper for the report.</para>
+        <para>Gets or sets the report&#39;s paper kind.</para>
       </summary>
-      <value>A <see cref="T:System.Drawing.Printing.PaperKind"/> enumeration value. By default, this property is set to PaperKind.Letter.</value>
+      <value>The report&#39;s paper kind.</value>
     </member>
     <member name="P:DevExpress.XtraReports.UI.XtraReport.PaperName">
       <summary>
@@ -25640,7 +25640,7 @@
       <summary>
         <para>Specifies the JSON data source schema.</para>
       </summary>
-      <value>A <see cref="T:DevExpress.DataAccess.Json.JsonSchemaNode"/> value, specifying the JSON source schema.</value>
+      <value>The JSON source schema.</value>
     </member>
     <member name="P:DevExpress.XtraReports.Wizards.XtraReportModel.JsonSource">
       <summary>

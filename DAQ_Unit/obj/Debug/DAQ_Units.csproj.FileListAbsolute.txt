@@ -13,7 +13,6 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\Hilfsfunktionen.exe
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\NationalInstruments.Common.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\NationalInstruments.DAQmx.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\NationalInstruments.NiLmClientDLL.dll
-C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\SpcmDrv64.NET.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\DevExpress.Pdf.v18.2.Core.dll
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\AutoConnect.pdb
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\AutoConnect.exe.config
@@ -27,7 +26,6 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\DevExpress.Sparkline.v18.2.
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\DevExpress.Utils.v18.2.xml
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\DevExpress.XtraBars.v18.2.xml
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\DevExpress.XtraEditors.v18.2.xml
-C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\NationalInstruments.Common.xml
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\NationalInstruments.DAQmx.xml
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\DevExpress.Pdf.v18.2.Core.xml
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\de\DevExpress.Data.v18.2.resources.dll
@@ -70,3 +68,5 @@ C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\obj\Debug\DAQ_Units.csproj.CoreCompil
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\obj\Debug\DAQ_Units.csproj.CopyComplete
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\obj\Debug\DAQ_Unit.exe
 C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\obj\Debug\DAQ_Unit.pdb
+C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\NationalInstruments.Common.xml
+C:\Users\schmidm\Desktop\ATIM_GIT\DAQ_Unit\bin\Debug\SpcmDrv64.NET.dll

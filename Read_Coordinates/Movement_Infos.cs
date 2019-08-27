@@ -22,7 +22,6 @@ namespace Read_Coordinates
         #region Variables
 
         
-
         /// <summary>
         /// Indication Flag if file is correct and compleate [default: FALSE]
         /// </summary>
@@ -227,7 +226,6 @@ namespace Read_Coordinates
                 throw new Exception("No Measurment Points defined");
         }
 
-
         private void String2Coordinates(string inputSTR, out decimal x, out decimal y, out decimal a, out string name)
         {
             int index_first_komma = inputSTR.IndexOf(';', 0);
@@ -241,5 +239,93 @@ namespace Read_Coordinates
             name = inputSTR.Substring(index_third_komma + 1).Trim();
 
         }
+
+        //**************************************************************************************************
+        //                                       Sonstige FCTs
+        //**************************************************************************************************
+
+        /// <summary>
+        /// Kopiert nicht den "Pointer der Instanz sondern nur den Inhalt (Notwendig um alte Werte zu speichern)"
+        /// </summary>
+        /// <returns></returns>
+        public Movement_Infos CopyByValue()
+        {
+            Movement_Infos returnVar = new Movement_Infos()
+            {
+                //Einfache Variablen
+                IsCorect = this.IsCorect,
+                BRD_Dimension_X = this.BRD_Dimension_X,
+                BRD_Dimension_Y = this.BRD_Dimension_Y,
+                TouchDown_Hight = this.TouchDown_Hight,
+                Driving_Hight = this.Driving_Hight,
+                //XYZA - Variablen
+                MyMeasurment_Point = this.MyMeasurment_Point,
+                Feducials = this.Feducials,
+                
+            };
+
+            QR_Code = new Measurement_Point_XYZA(this.QR_Code.X, this.QR_Code.Y, this.QR_Code.Angle, this.QR_Code.Name);
+            
+            returnVar.MyMeasurment_Point = new Measurement_Point_XYZA[this.MyMeasurment_Point.Length];
+
+            for (int i = 0; i < this.MyMeasurment_Point.Length; i++)
+                returnVar.MyMeasurment_Point[i] = new Measurement_Point_XYZA
+                    (this.MyMeasurment_Point[i].X,
+                    this.MyMeasurment_Point[i].Y,
+                    this.MyMeasurment_Point[i].Angle,
+                    this.MyMeasurment_Point[i].Name,
+                    this.MyMeasurment_Point[i].IsSelected);
+
+            returnVar.Feducials = new Measurement_Point_XYZA[this.Feducials.Length];
+
+            for (int i = 0; i < this.Feducials.Length; i++)
+                returnVar.Feducials[i] = new Measurement_Point_XYZA
+                    (this.Feducials[i].X,
+                    this.Feducials[i].Y,
+                    this.Feducials[i].Angle,
+                    this.Feducials[i].Name,
+                    this.Feducials[i].IsSelected);
+
+
+            return returnVar;
+        }
+
+        public Movement_Infos Minimize()
+        {
+            //Copy by Value Kopie erstellen
+            Movement_Infos returnVar = this.CopyByValue();
+
+            //Alle Mess-Positionen nacheinander durchgehen
+            for (int i = 0; i < returnVar.MyMeasurment_Point.Length; i++)
+            {
+                //Wenn Punkt nicht vermessen werden soll --> Aufaddieren zu nächstem MessPunkt
+                if (!returnVar.MyMeasurment_Point[i].IsSelected)
+                {
+                    //Nur weiterrechnen wenn nächster Punkt vorhanden
+                    if(i+1 < returnVar.MyMeasurment_Point.Length)
+                    {
+                        returnVar.MyMeasurment_Point[i + 1].X += returnVar.MyMeasurment_Point[i].X;
+                        returnVar.MyMeasurment_Point[i + 1].Y += returnVar.MyMeasurment_Point[i].Y;
+                        returnVar.MyMeasurment_Point[i + 1].Angle += returnVar.MyMeasurment_Point[i].Angle;
+                    }
+
+                    //Punkt entfernen
+                    //Umwandeln in Liste
+                    var tempList = new List<Measurement_Point_XYZA>(returnVar.MyMeasurment_Point);
+                    //Punkt entfernen
+                    tempList.RemoveAt(i);
+                    //Zurückwandeln in Array und ersetzen
+                    returnVar.MyMeasurment_Point = tempList.ToArray();
+
+                    //i eins zurückzählen (Weniger elemente)
+                    i--;
+                }
+
+            }
+
+
+            return returnVar;
+        }
+
     }
 }

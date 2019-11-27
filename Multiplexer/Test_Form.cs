@@ -18,6 +18,8 @@ namespace Multiplexer
 
             var myMUX = new Keithley_3706A(this, 10, 10);
 
+            //Temporär 
+            myMUX.textBox_ADR.Text = "USB0::0x05E6::0x3706::04076987::INSTR";
         }
     }
 }

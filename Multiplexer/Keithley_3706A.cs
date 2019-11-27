@@ -90,10 +90,6 @@ namespace Multiplexer
 
             //Hinzufügen
             callingForm.Controls.Add(this);
-
-            //Temporär 
-            textBox_ADR.Text = "USB0::0x05E6::0x3706::04076987::INSTR";
-
         }
 
         #endregion Konstruktor

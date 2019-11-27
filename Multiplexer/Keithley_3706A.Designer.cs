@@ -244,7 +244,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox_ADR;
         private System.Windows.Forms.TextBox textBox_Setup;
         private DevExpress.XtraEditors.DropDownButton Button_OpenClose;
         private DevExpress.XtraBars.BarManager barManager1;
@@ -260,5 +259,6 @@
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_RST;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Message;
+        internal System.Windows.Forms.TextBox textBox_ADR;
     }
 }

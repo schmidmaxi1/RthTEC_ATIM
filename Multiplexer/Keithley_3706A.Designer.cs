@@ -45,6 +45,8 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.textBox_ADR = new System.Windows.Forms.TextBox();
+            this.barButtonItem_RST = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem_Message = new DevExpress.XtraBars.BarButtonItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -98,7 +100,7 @@
             // 
             // textBox_Setup
             // 
-            this.textBox_Setup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Setup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Setup.Location = new System.Drawing.Point(230, 34);
             this.textBox_Setup.Name = "textBox_Setup";
             this.textBox_Setup.ReadOnly = true;
@@ -120,13 +122,16 @@
             // 
             this.popupMenu1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem_Detailed),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem_Log)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem_Message),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem_Log),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem_RST)});
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
             // barButtonItem_Detailed
             // 
-            this.barButtonItem_Detailed.Caption = "Detailed";
+            this.barButtonItem_Detailed.Caption = "Detailed ...";
+            this.barButtonItem_Detailed.Enabled = false;
             this.barButtonItem_Detailed.Id = 0;
             this.barButtonItem_Detailed.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Detailed.ImageOptions.Image")));
             this.barButtonItem_Detailed.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Detailed.ImageOptions.LargeImage")));
@@ -151,8 +156,10 @@
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem_Detailed,
-            this.barButtonItem_Log});
-            this.barManager1.MaxItemId = 2;
+            this.barButtonItem_Log,
+            this.barButtonItem_RST,
+            this.barButtonItem_Message});
+            this.barManager1.MaxItemId = 4;
             // 
             // barDockControlTop
             // 
@@ -194,6 +201,26 @@
             this.textBox_ADR.Size = new System.Drawing.Size(90, 20);
             this.textBox_ADR.TabIndex = 0;
             // 
+            // barButtonItem_RST
+            // 
+            this.barButtonItem_RST.Caption = "Reset ...";
+            this.barButtonItem_RST.Enabled = false;
+            this.barButtonItem_RST.Id = 2;
+            this.barButtonItem_RST.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_RST.ImageOptions.Image")));
+            this.barButtonItem_RST.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_RST.ImageOptions.LargeImage")));
+            this.barButtonItem_RST.Name = "barButtonItem_RST";
+            this.barButtonItem_RST.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem_RST_ItemClick);
+            // 
+            // barButtonItem_Message
+            // 
+            this.barButtonItem_Message.Caption = "Send user message ...";
+            this.barButtonItem_Message.Enabled = false;
+            this.barButtonItem_Message.Id = 3;
+            this.barButtonItem_Message.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Message.ImageOptions.Image")));
+            this.barButtonItem_Message.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_Message.ImageOptions.LargeImage")));
+            this.barButtonItem_Message.Name = "barButtonItem_Message";
+            this.barButtonItem_Message.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem_Message_ItemClick);
+            // 
             // Keithley_3706A
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,5 +258,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem_RST;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem_Message;
     }
 }

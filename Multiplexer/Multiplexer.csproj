@@ -69,6 +69,12 @@
     <Compile Include="PopUp_3706A.Designer.cs">
       <DependentUpon>PopUp_3706A.cs</DependentUpon>
     </Compile>
+    <Compile Include="PopUp_3706A_UserCommunication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUp_3706A_UserCommunication.Designer.cs">
+      <DependentUpon>PopUp_3706A_UserCommunication.cs</DependentUpon>
+    </Compile>
     <Compile Include="Test_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="PopUp_3706A.resx">
       <DependentUpon>PopUp_3706A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUp_3706A_UserCommunication.resx">
+      <DependentUpon>PopUp_3706A_UserCommunication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Test_Form.resx">
       <DependentUpon>Test_Form.cs</DependentUpon>
@@ -116,6 +125,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AutoConnect\AutoConnect.csproj">
+      <Project>{449d380b-94cb-4959-a3bb-001e331c7d9e}</Project>
+      <Name>AutoConnect</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Communication_Settings\Communication_Settings.csproj">
+      <Project>{514f7601-ddc7-4f02-aae4-850b7445411f}</Project>
+      <Name>Communication_Settings</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Hilfsfunktionen\Hilfsfunktionen.csproj">
       <Project>{f16101d2-d868-43bd-aee9-1509bc861499}</Project>
       <Name>Hilfsfunktionen</Name>

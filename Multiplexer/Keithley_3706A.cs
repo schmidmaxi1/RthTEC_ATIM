@@ -9,8 +9,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Hilfsfunktionen;
+using Communication_Settings;
+using AutoConnect;
 
-using Ivi.Visa;
+
 using Ivi.Visa.Interop;
 
 namespace Multiplexer
@@ -18,7 +20,7 @@ namespace Multiplexer
     public partial class Keithley_3706A : UserControl
     {
         //********************************************************************************************************************
-        //                                    Eigenschaften der Klasse
+        //                                      Eigenschaften der Klasse
         //********************************************************************************************************************
 
         #region Variables
@@ -58,23 +60,27 @@ namespace Multiplexer
 
         #endregion Variables
 
-        string timeFormat = "dd.MM.yy  hh:mm:ss:fF";
-
+        //Gewähltes Zeitformat
+        string timeFormat = "dd.MM.yy  hh:mm:ss,ff";
 
         //********************************************************************************************************************
-        //                                                Konstruktoren
+        //                                            Konstruktoren
         //********************************************************************************************************************
+
+        #region Konstruktor
 
         public Keithley_3706A()
         {
             InitializeComponent();
+
+            //Instanzen für MUX Initialisieren (ResourceManager & Instrument)
+            My_RM = new Ivi.Visa.Interop.ResourceManager();
+            My_Instrument = new Ivi.Visa.Interop.FormattedIO488();
         }
 
         public Keithley_3706A(Form callingForm, int x, int y)
         {
             InitializeComponent();
-
-            //HelpFCT.SetComPortBox(ComPort_select);
 
             //In GUI einfügen
             this.Location = new System.Drawing.Point(x, y);
@@ -88,15 +94,12 @@ namespace Multiplexer
             //Temporär 
             textBox_ADR.Text = "USB0::0x05E6::0x3706::04076987::INSTR";
 
-
-
-            
-            My_RM = new Ivi.Visa.Interop.ResourceManager();
-            My_Instrument = new Ivi.Visa.Interop.FormattedIO488();
         }
 
+        #endregion Konstruktor
+
         //********************************************************************************************************************
-        //                                                GUI
+        //                                                 GUI
         //********************************************************************************************************************
 
         #region GUI
@@ -120,14 +123,41 @@ namespace Multiplexer
             myPopUp.Show();
         }
 
+        private void BarButtonItem_RST_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Reset();
+        }
+
+        private void BarButtonItem_Message_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            PopUp_3706A_UserCommunication myPopUp_Communication = new PopUp_3706A_UserCommunication(this);
+            myPopUp_Communication.Show();
+        }
+
         #endregion GUI
 
         //********************************************************************************************************************
-        //                                            Global FCT
+        //                                                Global FCT
         //********************************************************************************************************************
 
-
         #region Global
+
+        /// <summary>
+        /// Write to device
+        /// </summary>
+        public void Write(string message)
+        {
+            Instrument_Write(My_Instrument, message);
+        }
+
+        /// <summary>
+        /// Write and Read answer form device
+        /// </summary>
+        public string Write_n_Read(string message)
+        {
+            return Instrument_Query(My_Instrument, message);
+        }
+
 
         /// <summary>
         /// Returns the Information of the Card in the Slot
@@ -203,10 +233,18 @@ namespace Multiplexer
             return output;
         }
 
+        /// <summary>
+        /// Resets the whole MUX
+        /// </summary>
+        public void Reset()
+        {
+            Instrument_Write(My_Instrument, "reset(system)");
+        }
+
         #endregion Global
 
         //********************************************************************************************************************
-        //                                            Local FCT
+        //                                                Local FCT
         //********************************************************************************************************************
 
         #region lokal
@@ -215,6 +253,10 @@ namespace Multiplexer
         {
             //Öffnen
             MyLog.Add_Line(DateTime.Now.ToString(timeFormat) + ": " + "Try to connect Keithley 3706A:\n");
+
+            //Instanzen für MUX Initialisieren (ResourceManager & Instrument)
+            My_RM = new Ivi.Visa.Interop.ResourceManager();
+            My_Instrument = new Ivi.Visa.Interop.FormattedIO488();
 
             //Öffnen   
             IVI_Adresse = textBox_ADR.Text;
@@ -245,7 +287,7 @@ namespace Multiplexer
             MyLog.Add_Line("Connection Seccessful\n");
 
             //Reseten
-            //ErrorCode_Spectrum += Reset();
+            Reset();
 
             //Ab hier verbunden
             IsConnected = true;
@@ -257,6 +299,10 @@ namespace Multiplexer
             //Alle Relais öffnen
             Open_ALL_Relais();
 
+            //Drop Down Button anpassen
+            barButtonItem_Detailed.Enabled = true;
+            barButtonItem_Message.Enabled = true;
+            barButtonItem_RST.Enabled = true;
         }
 
         //muss global zugreifbar sein um die verbindung zu schließen (läuft sonst weiter)
@@ -272,12 +318,97 @@ namespace Multiplexer
             //UI anpassen
             Button_OpenClose.Text = "Open";
             textBox_ADR.Enabled = true;
+
+            //Drop Down Button anpassen
+            barButtonItem_Detailed.Enabled = false;
+            barButtonItem_Message.Enabled = false;
+            barButtonItem_RST.Enabled = false;
         }
 
         #endregion lokal
 
         //********************************************************************************************************************
-        //                                            FCT form Example
+        //                                                AutoConnect
+        //********************************************************************************************************************
+
+        #region Autoconnect
+
+        //Interface differs only in Cable to Ethernet. ADR-Typs are nearly identical
+        //Therefor no COM-Port is used, but Ethernet
+        public void Update_settings(EthernetCommunicationDevice myInput)
+        {
+            textBox_ADR.Text = myInput.textBox_IP.Text;
+        }
+
+        public string AutoOpen(AutoConnect_Window myLoadScreen)
+        {
+            int iterration = 7;
+
+            MyLog.Add_Line(DateTime.Now.ToString(timeFormat) + ": " + "Try to connect Keithley 3706A:\n");
+
+            //Instanzen für MUX Initialisieren (ResourceManager & Instrument)
+            My_RM = new Ivi.Visa.Interop.ResourceManager();
+            My_Instrument = new Ivi.Visa.Interop.FormattedIO488();
+
+            //Öffnen   
+            IVI_Adresse = textBox_ADR.Text;
+            try
+            {
+                Connect_To_Instrument(ref My_RM, ref My_Instrument, IVI_Adresse, 500);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Conection to Keithley 3706A MUX was NOT found!\nTry again.", "Warning",
+                          MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyLog.Add_Line("Connection FAILED!\n");
+                return "Connection failed";
+            }
+
+            //Get Instrumetn ID
+            ID = Instrument_Query(My_Instrument, "*IDN?");
+
+            //Is device a 3706A
+            if (!ID.Contains("3706A"))
+            {
+                MessageBox.Show("Instrument is not a Keithley 3706A!\nTry again.", "Warning",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MyLog.Add_Line("Connection FAILED!\n");
+                return "Device is no Keithley 3706A";
+            }
+
+            MyLog.Add_Line("Connection Seccessful\n");
+
+            //Update LoadScreen
+            myLoadScreen.ChangeTask("Reset ...", iterration);
+
+            //Reseten
+            Reset();
+
+            //Alle Relais öffnen
+            Open_ALL_Relais();
+
+            myLoadScreen.ChangeTask("Change UI ...", iterration);
+
+            //Ab hier verbunden
+            IsConnected = true;
+
+            //UI anpassen
+            Button_OpenClose.Text = "Close";
+            textBox_ADR.Enabled = false;
+
+            //Drop Down Button anpassen
+            barButtonItem_Detailed.Enabled = true;
+            barButtonItem_Message.Enabled = true;
+            barButtonItem_RST.Enabled = true;
+
+            return "";
+
+        }
+
+        #endregion Autoconnect
+
+        //********************************************************************************************************************
+        //                                              FCT form Example
         //********************************************************************************************************************
         //C:\Users\schmidm\Desktop\THI-MAXI\1_PTTA\40_AP4_InLine\
         //4_MultiPlexer\keithley-master\keithley-master\Instrument_Examples\Instructables\Get_Started_with_Intsr_Control_CSharp
@@ -429,7 +560,9 @@ namespace Multiplexer
             return Instrument_Read(instrument_control_object);
         }
 
+
         #endregion Manufacturer_FCT
+
 
     }
 }

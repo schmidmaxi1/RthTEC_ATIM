@@ -172,7 +172,6 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_S
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\bin\Debug\es\DevExpress.Pdf.v18.2.Core.resources.dll
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\bin\Debug\ja\DevExpress.Pdf.v18.2.Core.resources.dll
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\bin\Debug\ru\DevExpress.Pdf.v18.2.Core.resources.dll
-C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\obj\Debug\Communication_Settings.csprojResolveAssemblyReference.cache
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\obj\Debug\Communication_Settings.EthernetCommunicationDevice.resources
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\obj\Debug\Communication_Settings.NI_CommunicationDevice.resources
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\obj\Debug\Communication_Settings.Properties.Resources.resources
@@ -181,3 +180,6 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_S
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\obj\Debug\Communication_Settings.csproj.GenerateResource.Cache
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\obj\Debug\Communication_Settings.exe
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\obj\Debug\Communication_Settings.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\obj\Debug\Communication_Settings.csprojAssemblyReference.cache
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\obj\Debug\Communication_Settings.csproj.CoreCompileInputs.cache
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Communication_Settings\obj\Debug\Communication_Settings.csproj.CopyComplete

@@ -59,3 +59,16 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\obj\Debug\Multiplexer.exe.licenses
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\obj\Debug\Multiplexer.PopUp_3706A.resources
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\obj\Debug\Multiplexer.Test_Form.resources
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\obj\Debug\Multiplexer.PopUp_3706A_UserCommunication.resources
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\AutoConnect.exe
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\Communication_Settings.exe
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\NationalInstruments.DAQmx.dll
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\NationalInstruments.Common.dll
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\NationalInstruments.NiLmClientDLL.dll
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\NationalInstruments.MStudioCLM.dll
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\AutoConnect.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\AutoConnect.exe.config
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\Communication_Settings.pdb
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\Communication_Settings.exe.config
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\NationalInstruments.DAQmx.xml
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Multiplexer\bin\Debug\NationalInstruments.Common.xml

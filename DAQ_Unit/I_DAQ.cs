@@ -27,6 +27,11 @@ namespace DAQ_Units
         /// </summary>
         string[] RangeList { get; }
 
+        /// <summary>
+        /// Resolution in Bit
+        /// </summary>
+        Int16 Resolution { get; }
+
 
         /// <summary>
         /// Sample frequency in Hz

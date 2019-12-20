@@ -40,10 +40,12 @@
             this.barButtonItem_SaveSetting = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_Load_Setting = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem_FileSavingOpt = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem_DPATest = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.button_Single_Zth = new DevExpress.XtraEditors.SimpleButton();
             this.button_Single_Sensitivity = new DevExpress.XtraEditors.SimpleButton();
             this.button_Single_UI = new DevExpress.XtraEditors.SimpleButton();
@@ -94,9 +96,10 @@
             this.ribbonButton_Save,
             this.barButtonItem_SaveSetting,
             this.barButtonItem_Load_Setting,
-            this.barButtonItem_FileSavingOpt});
+            this.barButtonItem_FileSavingOpt,
+            this.barButtonItem_DPATest});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.MaxItemId = 5;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
@@ -185,12 +188,22 @@
             this.barButtonItem_FileSavingOpt.Name = "barButtonItem_FileSavingOpt";
             this.barButtonItem_FileSavingOpt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem_FileSavingOpt_ItemClick);
             // 
+            // barButtonItem_DPATest
+            // 
+            this.barButtonItem_DPATest.Caption = "DPA_Test";
+            this.barButtonItem_DPATest.Id = 4;
+            this.barButtonItem_DPATest.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem_DPATest.ImageOptions.Image")));
+            this.barButtonItem_DPATest.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem_DPATest.ImageOptions.LargeImage")));
+            this.barButtonItem_DPATest.Name = "barButtonItem_DPATest";
+            this.barButtonItem_DPATest.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarButtonItem_DPATest_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1,
             this.ribbonPageGroup2,
-            this.ribbonPageGroup3});
+            this.ribbonPageGroup3,
+            this.ribbonPageGroup4});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "ribbonPage1";
             // 
@@ -217,6 +230,12 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.ribbonButton_Save);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Save";
+            // 
+            // ribbonPageGroup4
+            // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem_DPATest);
+            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
+            this.ribbonPageGroup4.Text = "Test";
             // 
             // button_Single_Zth
             // 
@@ -500,6 +519,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem_SaveSetting;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_Load_Setting;
         private DevExpress.XtraBars.BarButtonItem barButtonItem_FileSavingOpt;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem_DPATest;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
     }
 }
 

@@ -29,6 +29,10 @@ namespace DAQ_Units
         public Boolean IsConnected { get; internal set; } = false;
 
         //Mess-Parameter
+
+        /// <summary>
+        /// Half Range in mV [1000 := +-1V]
+        /// </summary>
         public long Range { get; set; } = 1000;
         public string[] RangeList { get; } =
             {
@@ -39,6 +43,11 @@ namespace DAQ_Units
                 "+/- 5V",
                 "+/- 10V"
             };
+
+        /// <summary>
+        /// Resolution in Bit
+        /// </summary>
+        public Int16 Resolution { get; } = 16;
 
         public long Frequency { get; set; } = 10000000;
         public string[] FrequencyList { get; } =

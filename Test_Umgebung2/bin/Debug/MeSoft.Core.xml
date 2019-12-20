@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MeSoft.Core</name>
+    </assembly>
+    <members>
+        <member name="T:MeSoft.Core.Diagnostics.TraceLog">
+            <summary>
+            This class is used to feed the trace messages to the System Trace.
+            It has 4 Trace levels (Verbose, Info, Warn, Error)
+            </summary>
+            <remarks>
+            The 4 Trace levels can be enabled or disabled over the TraceSwitch. 
+            When no TraceSwitch is configured, the Trace is fully disabled.
+            To set the default TraceSwitch, use the TraceSwitch name "default".
+            It is possible to set the TraceSwitch individually for each Namespace or class.
+            When a TraceSwitch is found with exact the fully Namespace.Class, it takes this switch.
+            If no such switch is found, it removes one Namespace level and searches again and again.
+            When no such entry is found, it takes the Default definition. 
+            By default it prints only the className.FunctionName. 
+            When the TraceSwitch PrintFullNamespace is defined other than off, the full Namespace is printed.
+            </remarks>
+        </member>
+        <member name="M:MeSoft.Core.Diagnostics.TraceLog.Verbose(System.String,System.Object[])">
+            <summary>This TraceLevel is intended for debug purpose. It may print out massive amount of information.</summary>
+        </member>
+        <member name="M:MeSoft.Core.Diagnostics.TraceLog.Info(System.String,System.Object[])">
+            <summary>This TraceLevel should only be used for rare outputs. No cyclical outputs.</summary>
+        </member>
+        <member name="M:MeSoft.Core.Diagnostics.TraceLog.Warn(System.String,System.Object[])">
+            <summary>This TraceLevel is to be used if something happens that is not good, but the process can go on.</summary>
+        </member>
+        <member name="M:MeSoft.Core.Diagnostics.TraceLog.Error(System.String,System.Object[])">
+            <summary>This TraceLevel is to be used if something happens that is critical. The process can not go on or just in a limited way.</summary>
+        </member>
+        <member name="T:MeSoft.Core.VersionControl.VersionHelper">
+            <summary>
+            Provides some help functions around the version control implemented by meerstetter engineering.
+            Notation: The assembly version is used as follows:
+            Major: is used as big version filed
+            Minor: is used as small version field.
+            Build: is used to represent the enumeration "SourceStatus".
+            Revision: is used to represent the real SVN revision.
+            </summary>
+        </member>
+        <member name="M:MeSoft.Core.VersionControl.VersionHelper.GetSourceStatus(System.Version)">
+            <summary>Converts the Build field to an SourceStatus enumeration</summary>
+        </member>
+        <member name="M:MeSoft.Core.VersionControl.VersionHelper.GetTitleExtension">
+            <summary>
+            Returns an string that can be used to extend the title text in an graphical application. 
+            It always adds the version information of the entry Assembly. 
+            Additionally the following 5 cases do also add something (or noting) to the title text.
+            -It adds the revision number and locally modified if the entry assembly is locally modified.
+            -It adds the revision number and committed if the source of the entry assembly is fully committed.
+            -It adds a not released message if the entry assembly is marked to be released but one of the referenced 
+             me assemblies is not marked as released.
+            -It adds nothing if all me assemblies are marked as released. 
+            </summary>
+        </member>
+        <member name="T:MeSoft.Core.VersionControl.SourceStatus">
+            <summary>Status of the source files in the version control system.</summary>
+        </member>
+        <member name="F:MeSoft.Core.VersionControl.SourceStatus.LocallyModifed">
+            <summary>At least one source file is locally modified.</summary>
+        </member>
+        <member name="F:MeSoft.Core.VersionControl.SourceStatus.Committed">
+            <summary>All files are committed, but it is not released.</summary>
+        </member>
+        <member name="F:MeSoft.Core.VersionControl.SourceStatus.Released">
+            <summary>All files are committed and it is marked as released.</summary>
+        </member>
+        <member name="F:MeSoft.Core.VersionControl.SourceStatus.Unknown">
+            <summary>Unknown file status.</summary>
+        </member>
+        <member name="T:MeSoft.Core.Threading.ThreadCreator">
+            <summary>Manages an sub thread in an application. (Creation, catch/Trace exceptions and cancellation)</summary>
+            <remarks>
+            Before it is possible to use this class. The ThreadMaster must be set. 
+            It helps you to create new sub threads in your application. 
+            Each new thread is registered at the ThreadMaster object. 
+            The ThreadMaster can then simultaneously ask each thread to cancel and wait till each thread has cancelled.
+            The ThreadStatic reference to the ThreadMaster is passed to the new thread.
+            If the external threadMethod returns with an exception, the exception message will be traced. 
+            The new thread should watch the cancellation Token on this class and 
+            return as fast as possible if the cancellation token requests to cancel.
+            </remarks>
+        </member>
+        <member name="P:MeSoft.Core.Threading.ThreadCreator.CancellationToken">
+            <summary>
+            The cancellation token for the new thread. The new thread should watch the cancellation Token on this class and 
+            return as fast as possible if the cancellation token requests to cancel.
+            </summary>
+        </member>
+        <member name="F:MeSoft.Core.Threading.ThreadCreator.ThreadObject">
+            <summary>Reference to the Thread object of the created thread.</summary>
+        </member>
+        <member name="M:MeSoft.Core.Threading.ThreadCreator.#ctor(System.Threading.ThreadStart,System.String,System.Boolean)">
+            <summary>Creates an new Thread with the standard ThreadMaster that is registered on the current thread.</summary>
+            <param name="threadMethod">Method that should be called from the new thread.</param>
+            <param name="threadName">Name of the new Thread. Is used for the effective Thread name and for trace.</param>
+            <param name="autoStart">Set to false if the thread should not automatically start. Use the Start method to start the thread.</param>
+        </member>
+        <member name="M:MeSoft.Core.Threading.ThreadCreator.#ctor(System.Threading.ThreadStart,System.String,MeSoft.Core.Threading.ThreadMaster,System.Boolean)">
+            <summary>Creates an new Thread with the standard ThreadMaster that is registered on the current thread.</summary>
+            <param name="threadMethod">Method that should be called from the new thread.</param>
+            <param name="threadName">Name of the new Thread. Is used for the effective Thread name and for trace.</param>
+            <param name="differentMaster">Reference to an specific ThreadMaster. Not to use the master that is maybe registered on the current thread.</param>
+            <param name="autoStart">Set to false if the thread should not automatically start. Use the Start method to start the thread.</param>
+        </member>
+        <member name="M:MeSoft.Core.Threading.ThreadCreator.Start">
+            <summary>Starts the new Thread.</summary>
+        </member>
+        <member name="T:MeSoft.Core.Threading.ThreadMaster">
+            <summary>
+            Defines the ThreadMaster on the current thread.
+            The ThreadMaster is manly used to manage the cancellation of all the threads 
+            that are created with the ThreadCreator.
+            A reference to the ThreadMaster will be stored to a thread static reference.
+            The ThreadCreator will access to this reference by default.
+            </summary>
+            <remarks>
+            May tell all threads (created from ThreadCreator with a reference to this Master)
+            to cancel over the cancellation token.
+            May wait till all threads have canceled.
+            </remarks>
+        </member>
+        <member name="M:MeSoft.Core.Threading.ThreadMaster.#ctor(System.String)">
+            <summary>
+            Creates a new ThreadMaster object that is saved on the current thread.
+            Creates its own internal cancellationTokenSource object. 
+            If this constructor is used, you may use CancelAllThreads method to start the cancellation.
+            </summary>
+            <param name="name">Name of the ThreadMaster. This is only used for trace.</param>
+        </member>
+        <member name="M:MeSoft.Core.Threading.ThreadMaster.#ctor(System.Threading.CancellationToken,System.String)">
+            <summary>
+            Creates a new ThreadMaster object that is saved on the current thread.
+            Uses the external cancellation token. 
+            The method CancelAllThreads can not be used. 
+            </summary>
+            <param name="cancellationToken">External cancellation token. Will be passed to all the new threads.</param>
+            <param name="name">Name of the ThreadMaster. This is only used for trace.</param>
+        </member>
+        <member name="M:MeSoft.Core.Threading.ThreadMaster.CancelAllThreads">
+            <summary>
+            Tells all Threads to cancel over the internal cancellation token.
+            </summary>
+            <remarks>
+            Returns immediately.
+            Can not be used if an external cancellation token is passed with the constructor. 
+            </remarks>
+        </member>
+        <member name="M:MeSoft.Core.Threading.ThreadMaster.WaitTillAllThreadsAreTerminated(System.Int32)">
+            <summary>
+            Waits till all registered threads are cancelled or the timeout is reached.
+            </summary>
+            <remarks>
+            Blocks the current thread!
+            Make sure the method CancelAllThreads was called before or the external cancellation token is set to cancel.
+            Traces the time that was necessary to cancel all threads.
+            If the timeout is reached, it traces which threads have not terminated.
+            </remarks>
+            <param name="timeout">Timeout in milliseconds. 0 means no timeout.</param>
+        </member>
+        <member name="P:MeSoft.Core.Threading.ThreadMaster.CancellationToken">
+            <summary>Provides static access to the CancellationToken which is registered on the current thread.</summary>
+        </member>
+        <member name="M:MeSoft.Core.Threading.ThreadMaster.Dispose">
+            <summary>Releases all resources used by the current instance.</summary>
+        </member>
+        <member name="T:VersionDefinition">
+            <summary>Defines the version of the assembly.</summary>
+        </member>
+        <member name="F:VersionDefinition.Major">
+            <summary>Big version before the dot.</summary>
+        </member>
+        <member name="F:VersionDefinition.Minor">
+            <summary>Small version behind the dot.</summary>
+        </member>
+    </members>
+</doc>

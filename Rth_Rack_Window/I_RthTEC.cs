@@ -29,9 +29,17 @@ namespace RthTEC_Rack
         I_RthTEC_Card[] Cards { get; set; }
 
 
-
+        /// <summary>
+        /// in ms
+        /// </summary>
         decimal Time_Heat { get;  }
+        /// <summary>
+        /// in ms
+        /// </summary>
         decimal Time_Meas { get;  }
+        /// <summary>
+        /// in ms
+        /// </summary>
         decimal DPA_Time { get;   }
         Int32 DPA_Count { get;  }
         Int32 Cycles { get; }

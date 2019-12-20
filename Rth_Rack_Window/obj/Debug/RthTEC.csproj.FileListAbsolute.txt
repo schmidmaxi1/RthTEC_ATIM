@@ -133,7 +133,6 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\bin\Debug\es\DevExpress.Pdf.v18.2.Core.resources.dll
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\bin\Debug\ja\DevExpress.Pdf.v18.2.Core.resources.dll
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\bin\Debug\ru\DevExpress.Pdf.v18.2.Core.resources.dll
-C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\obj\Debug\RthTEC.csprojResolveAssemblyReference.cache
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\obj\Debug\RthTEC_Rack.Card_00_Vorlage.resources
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\obj\Debug\RthTEC_Rack.Card_Amplifier.resources
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\obj\Debug\RthTEC_Rack.Card_Empty.resources
@@ -150,3 +149,6 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\obj\Debug\RthTEC_Rack.Card_MOSFET_BreakDown.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\Rth_Rack_Window\obj\Debug\RthTEC_Rack.Card_FrontEnd.resources
 C:\Users\schmidm\Desktop\ATIM_GIT\Rth_Rack_Window\obj\Debug\RthTEC_Rack.Card_MOSFET_BreakDown.resources
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\obj\Debug\RthTEC.csprojAssemblyReference.cache
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\obj\Debug\RthTEC.csproj.CoreCompileInputs.cache
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Rth_Rack_Window\obj\Debug\RthTEC.csproj.CopyComplete

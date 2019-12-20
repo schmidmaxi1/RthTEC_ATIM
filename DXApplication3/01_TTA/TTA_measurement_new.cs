@@ -34,7 +34,6 @@ namespace ATIM_GUI._01_TTA
         //Main Window
         public ATIM_MainWindow GUI { get; set; }
 
-
         //Movement
         public Movement_Infos MyMovement { get; internal set; }
 
@@ -58,7 +57,6 @@ namespace ATIM_GUI._01_TTA
         //Settings
         private static long Puffer_Messpunkte { get; } = 5;             //Messpunkte vor eigentlichem Signal
         private static long Max_daten_dichte { get; } = 2000;
-
 
 
         public decimal V_f_at_Imeas_Troom { get; set; } = 2;

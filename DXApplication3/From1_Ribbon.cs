@@ -82,6 +82,15 @@ namespace ATIM_GUI
 
         #endregion RibbonButtons
 
+
+        private void BarButtonItem_DPATest_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TTA_DPA myDPA = new TTA_DPA();
+            myDPA.GUI = this;
+            myDPA.DPA_Test_matFILE();
+
+        }
+
         //**************************************************************************************************
         //                                        AUTO CONNECT
         //**************************************************************************************************

@@ -157,7 +157,7 @@ namespace ATIM_GUI
             InitializeComponent();
             
             //Alle Componenten aus anderen Projekten variabel generieren
-            MyInitializeComponent();
+            //MyInitializeComponent();
 
             //Setting Window öffnen um Grundsettings zu laden
             mySettings = new Settings_ATIM();
@@ -385,6 +385,8 @@ namespace ATIM_GUI
             myDAQ.Close();
             
         }
+
+
 
 
 

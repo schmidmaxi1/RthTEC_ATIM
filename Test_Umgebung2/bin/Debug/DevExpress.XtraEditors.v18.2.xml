@@ -4830,6 +4830,18 @@ This member is supported by individual descendant of the <see cref="T:DevExpress
       </summary>
       <value>A <see cref="T:DevExpress.XtraEditors.Repository.RepositoryItemCollection"/> object containing repository items whose settings are used to create in-place editors.</value>
     </member>
+    <member name="M:DevExpress.XtraEditors.Container.EditorContainer.ResetEditorsCache(DevExpress.XtraEditors.Repository.RepositoryItem)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="item"></param>
+    </member>
+    <member name="M:DevExpress.XtraEditors.Container.EditorContainer.ResetEditorsCache(System.Type)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="type"></param>
+    </member>
     <member name="P:DevExpress.XtraEditors.Container.EditorContainer.ScaleFactor">
       <summary>
         <para>This member supports the internal infrastructure, and is not intended to be used directly from your code.</para>
@@ -17866,6 +17878,12 @@ In <see cref="F:DevExpress.XtraEditors.HotTrackSelectMode.SelectItemOnHotTrack"/
       </summary>
       <value>A <see cref="T:DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit"/> object instance containing settings for the <see cref="T:DevExpress.XtraEditors.PictureEdit"/> control.</value>
     </member>
+    <member name="M:DevExpress.XtraEditors.PictureEdit.ShowTakePictureDialog">
+      <summary>
+        <para></para>
+      </summary>
+      <returns></returns>
+    </member>
     <member name="M:DevExpress.XtraEditors.PictureEdit.StartAnimation">
       <summary>
         <para>Starts animation of an animated GIF file being displayed in the editor.</para>
@@ -17893,6 +17911,16 @@ In <see cref="F:DevExpress.XtraEditors.HotTrackSelectMode.SelectItemOnHotTrack"/
         <para>Gets or sets a value indicating whether the user can tab to the picture editor.</para>
       </summary>
       <value>true if the user can focus the picture editor using the TAB key; otherwise, false.</value>
+    </member>
+    <member name="E:DevExpress.XtraEditors.PictureEdit.TakePictureDialogClosed">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.XtraEditors.PictureEdit.TakePictureDialogShowing">
+      <summary>
+        <para></para>
+      </summary>
     </member>
     <member name="P:DevExpress.XtraEditors.PictureEdit.Text">
       <summary>
@@ -22122,7 +22150,7 @@ In bound mode, this method populates the item collection before returning it.</p
     </member>
     <member name="T:DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel">
       <summary>
-        <para>When embedded in a container&#39;s column/cell, allows cell text to be formatted using HTML tags. No editing is supported for these cells .</para>
+        <para>When embedded in a container&#39;s column/cell, allows cell text to be formatted using HTML tags. No editing is supported for these cells.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraEditors.Repository.RepositoryItemHypertextLabel.#ctor">
@@ -23567,6 +23595,16 @@ In bound mode, this method populates the item collection before returning it.</p
         <para>Gets or sets the required size of the vector image.</para>
       </summary>
       <value>A <see cref="T:System.Drawing.Size"/> structure that specifies the required size for rendering the vector image.</value>
+    </member>
+    <member name="E:DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit.TakePictureDialogClosed">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit.TakePictureDialogShowing">
+      <summary>
+        <para></para>
+      </summary>
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit.UseDisabledStatePainter">
       <summary>
@@ -29686,6 +29724,12 @@ Always equal to true.</para>
       </summary>
       <value>true, if the HTML text formatting feature is enabled for dialog captions; otherwise, false.</value>
     </member>
+    <member name="P:DevExpress.XtraEditors.XtraDialog.ButtonsAlignment">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="M:DevExpress.XtraEditors.XtraDialog.Show(DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.Control)">
       <summary>
         <para>Invokes a dialog with the specified settings.</para>
@@ -30066,6 +30110,18 @@ Always equal to true.</para>
         <para>A skinable dialog with one editor (a <see cref="T:DevExpress.XtraEditors.TextEdit"/> by default) and OK/Cancel buttons to accept or reject the current value of this editor.</para>
       </summary>
     </member>
+    <member name="P:DevExpress.XtraEditors.XtraInputBox.AllowCustomLookAndFeel">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraEditors.XtraInputBox.ButtonsAlignment">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="M:DevExpress.XtraEditors.XtraInputBox.Show(DevExpress.XtraEditors.XtraInputBoxArgs)">
       <summary>
         <para>Displays a dialog box using the specified arguments.</para>
@@ -30082,6 +30138,16 @@ Always equal to true.</para>
       <param name="defaultResponse">The text to display as the editor&#39;s default edit value.</param>
       <returns>A String that represents the dialog box editor&#39;s edit value if the OK button is clicked; otherwise, String.Empty.</returns>
     </member>
+    <member name="M:DevExpress.XtraEditors.XtraInputBox.Show(System.String,System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="prompt"></param>
+      <param name="title"></param>
+      <param name="defaultResponse"></param>
+      <param name="buttons"></param>
+      <returns></returns>
+    </member>
     <member name="M:DevExpress.XtraEditors.XtraInputBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.String)">
       <summary>
         <para>Displays a dialog box using the specified owning window, title, prompt, and default response.</para>
@@ -30092,33 +30158,91 @@ Always equal to true.</para>
       <param name="defaultResponse">The text to display as the editor&#39;s default edit value.</param>
       <returns>A String that represents the dialog box editor&#39;s edit value if the OK button is clicked; otherwise, String.Empty.</returns>
     </member>
+    <member name="M:DevExpress.XtraEditors.XtraInputBox.Show(System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.Windows.Forms.MessageBoxButtons)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="owner"></param>
+      <param name="prompt"></param>
+      <param name="title"></param>
+      <param name="defaultResponse"></param>
+      <param name="buttons"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraInputBox.Show``1(DevExpress.XtraEditors.XtraInputBoxArgs)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="args"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraInputBox.Show``1(System.String,System.String,``0)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="prompt"></param>
+      <param name="title"></param>
+      <param name="defaultResponse"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraInputBox.Show``1(System.String,System.String,``0,System.Windows.Forms.MessageBoxButtons)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="prompt"></param>
+      <param name="title"></param>
+      <param name="defaultResponse"></param>
+      <param name="buttons"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraInputBox.Show``1(System.Windows.Forms.IWin32Window,System.String,System.String,``0)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="owner"></param>
+      <param name="prompt"></param>
+      <param name="title"></param>
+      <param name="defaultResponse"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.XtraEditors.XtraInputBox.Show``1(System.Windows.Forms.IWin32Window,System.String,System.String,``0,System.Windows.Forms.MessageBoxButtons)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="owner"></param>
+      <param name="prompt"></param>
+      <param name="title"></param>
+      <param name="defaultResponse"></param>
+      <param name="buttons"></param>
+      <returns></returns>
+    </member>
     <member name="T:DevExpress.XtraEditors.XtraInputBoxArgs">
       <summary>
         <para>Exposes properties that customize a related <see cref="T:DevExpress.XtraEditors.XtraInputBox"/> dialog.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraEditors.XtraInputBoxArgs.#ctor(DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window,System.String,System.String,System.String,System.Windows.Forms.DialogResult[],System.Int32,DevExpress.Utils.DefaultBoolean,DevExpress.XtraEditors.MessageBeepSound)">
+    <member name="M:DevExpress.XtraEditors.XtraInputBoxArgs.#ctor(DevExpress.LookAndFeel.UserLookAndFeel,System.Windows.Forms.IWin32Window,System.String,System.String,System.Object,System.Windows.Forms.DialogResult[],System.Int32,DevExpress.Utils.DefaultBoolean,DevExpress.XtraEditors.MessageBeepSound)">
       <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.XtraInputBoxArgs"/> class with the specified settings.</para>
+        <para></para>
       </summary>
-      <param name="lookAndFeel">A <see cref="T:DevExpress.LookAndFeel.UserLookAndFeel"/> object that comprises look and feel settings.</param>
-      <param name="owner">An implementation of IWin32Window that will own the modal dialog box.</param>
-      <param name="prompt">The text to display in the dialog box.</param>
-      <param name="title">The text to display in the title bar of the dialog box.</param>
-      <param name="defaultResponse">The text to display as the editor&#39;s default edit value.</param>
-      <param name="buttons">A collection of DialogResult enumeration values that specifies which buttons to display in the dialog box.</param>
-      <param name="defaultButtonIndex">An integer value that specifies the index of the default button for the dialog box.</param>
-      <param name="allowHtmlText">True to parse HTML tags in the prompt and title; otherwise, Default or False.</param>
-      <param name="beep">A MessageBeepSound enumeration value that specifies the simple tone on the speaker.</param>
+      <param name="lookAndFeel"></param>
+      <param name="owner"></param>
+      <param name="prompt"></param>
+      <param name="title"></param>
+      <param name="defaultResponse"></param>
+      <param name="buttons"></param>
+      <param name="defaultButtonIndex"></param>
+      <param name="allowHtmlText"></param>
+      <param name="beep"></param>
     </member>
-    <member name="M:DevExpress.XtraEditors.XtraInputBoxArgs.#ctor(System.Windows.Forms.IWin32Window,System.String,System.String,System.String)">
+    <member name="M:DevExpress.XtraEditors.XtraInputBoxArgs.#ctor(System.Windows.Forms.IWin32Window,System.String,System.String,System.Object)">
       <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraEditors.XtraInputBoxArgs"/> class with the specified settings.</para>
+        <para></para>
       </summary>
-      <param name="owner">An implementation of IWin32Window that will own the modal dialog box.</param>
-      <param name="prompt">The text to display in the dialog box.</param>
-      <param name="title">The text to display in the title bar of the dialog box.</param>
-      <param name="defaultResponse">The text to display as the editor&#39;s default edit value.</param>
+      <param name="owner"></param>
+      <param name="prompt"></param>
+      <param name="title"></param>
+      <param name="defaultResponse"></param>
     </member>
     <member name="P:DevExpress.XtraEditors.XtraInputBoxArgs.Buttons">
       <summary>

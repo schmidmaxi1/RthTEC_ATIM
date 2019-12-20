@@ -62,6 +62,7 @@ namespace ATIM_GUI
 
         }
 
+        
         private void Graph_Init_for_TTA(TTA_measurement_new myTTA)
         {
             //Zwischenspeicher umschreiben
@@ -719,6 +720,8 @@ namespace ATIM_GUI
 
         public void Update_Voltage_Plots_for_TTA()
         {
+            //Entfernt für DPA
+            /*
             chartControl_DATA_Top.Invoke((MethodInvoker)delegate
             {
                 //Punkte aktualisieren
@@ -754,6 +757,7 @@ namespace ATIM_GUI
                 test.AxisX.VisualRange.MaxValue = help_max_time;            //Sichtbarrer Bereich
 
             });
+            */
 
             chartControl_DATA_Bottom.Invoke((MethodInvoker)delegate
             {
@@ -764,7 +768,7 @@ namespace ATIM_GUI
                 //Min und Max finden
                 //Es wird nur Punkt bei 50µs (Einschwingen vorbei) und der letze Punkt angeschaut
                 int point_50µs = 1;
-                while (chartControl_DATA_Top.Series[1].Points[point_50µs].NumericalArgument < 0.00005)
+                while (chartControl_DATA_Bottom.Series[1].Points[point_50µs].NumericalArgument < 0.00005)
                     point_50µs++;
 
                 double help_max = Double.MinValue;
@@ -844,5 +848,358 @@ namespace ATIM_GUI
         }
 
         #endregion plot_in_Graphs
+
+
+        //Temporary for DPA*****************************************************
+
+        public void Graph_new_Measurment_for_TTA(TTA_DPA myTTA)
+        {
+            if (akt_Graph_Setup.Contains("TTA"))
+            {
+                //Sonst nur RAW leeren
+                chartControl_RAW.Series.Clear();
+
+                //Hinzufügen leere unsichbare Serie (damit Achsen angezeigt werden)
+                var neueSerie2 = new Series("Empty", ViewType.Line)
+                {
+                    LabelsVisibility = DevExpress.Utils.DefaultBoolean.False,
+                    ShowInLegend = false,
+                    Visible = true,
+                };
+                chartControl_RAW.Series.Add(neueSerie2);
+
+                //Zeit neu eistellen
+                XYDiagram xyDigaram_RAW = (XYDiagram)chartControl_RAW.Diagram;
+                //decimal zeit_max = (myTTA.MyRthTEC_Rack.Time_Heat + myTTA.MyRthTEC_Rack.Time_Meas) / 1000;
+                decimal zeit_max = 6.1m;
+
+                xyDigaram_RAW.AxisX.WholeRange.MaxValue = zeit_max * 2;                         //Zugelassener Bereich
+                xyDigaram_RAW.AxisX.WholeRange.MinValue = 0;
+                xyDigaram_RAW.AxisX.VisualRange.MaxValue = zeit_max;                            //Sichtbarrer Bereich
+                xyDigaram_RAW.AxisX.VisualRange.MinValue = 0;
+                xyDigaram_RAW.AxisX.VisualRange.SideMarginsValue = 0;                           //Überstand Links und rechts
+                xyDigaram_RAW.AxisX.NumericScaleOptions.GridSpacing = (double)zeit_max / 4;
+
+            }
+            else
+            {
+                Graph_Init_for_TTA(myTTA);
+            }
+
+        }
+
+        private void Graph_Init_for_TTA(TTA_DPA myTTA)
+        {
+            //Zwischenspeicher umschreiben
+            akt_Graph_Setup = "TTA";
+
+            //Allgeimein für alle Charts...............................................................................................
+            Font myFont_Headline = new Font("Tahoma", 12, FontStyle.Bold);
+            Font myFont_Axis = new Font("Tahoma", 10);
+            DevExpress.XtraCharts.ChartTitle myChartTitle;
+
+            //Ober Graph für RAW.......................................................................................................
+
+            //Alle alten Graphen (Series) löschen & eine leere hinzufügen
+            //Muss am Anfang geschehen, da sonst das änderen der Diagram-Eigenschaften nicht übernommen wird
+            chartControl_RAW.Series.Clear();
+            Series neueSerie = new Series("Empty", ViewType.Line)
+            {
+                LabelsVisibility = DevExpress.Utils.DefaultBoolean.False,
+                ShowInLegend = false,
+                Visible = true,
+            };
+            chartControl_RAW.Series.Add(neueSerie);
+
+            //Alten Titel löschen, neuen erzeugen und hinzufügen
+            var test = chartControl_RAW.Titles;
+
+            chartControl_RAW.Titles.Clear();
+            myChartTitle = new DevExpress.XtraCharts.ChartTitle()
+            {
+                Text = "Raw Values DAC",
+                Font = myFont_Headline,
+                Dock = DevExpress.XtraCharts.ChartTitleDockStyle.Top,
+            };
+            chartControl_RAW.Titles.Add(myChartTitle);
+
+            //Neues XY-Diagramm erzeugen und dan ChartControl anhängen (Darf nicht zur laufzeit geschenen --> BeginInit())
+            XYDiagram xyDigaram_RAW = new XYDiagram();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl_RAW)).BeginInit();
+            chartControl_RAW.Diagram = xyDigaram_RAW;
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl_RAW)).EndInit();
+
+            //Achsen-Titel setzen
+            xyDigaram_RAW.AxisX.Title.Text = "Time in [s]";
+            xyDigaram_RAW.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDigaram_RAW.AxisX.Title.Font = myFont_Axis;
+            xyDigaram_RAW.AxisY.Title.Text = "Bit-Value";
+            xyDigaram_RAW.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDigaram_RAW.AxisY.Title.Font = myFont_Axis;
+
+            // Min / Max /GridSpacing / ... - Achse
+            //decimal zeit_max = (myTTA.MyRthTEC_Rack.Time_Heat + myTTA.MyRthTEC_Rack.Time_Meas) / 1000;
+            decimal zeit_max = 6.1m;
+
+            xyDigaram_RAW.AxisX.VisibleInPanesSerializable = "-1";
+            xyDigaram_RAW.AxisX.VisualRange.Auto = false;
+            xyDigaram_RAW.AxisX.WholeRange.MaxValue = zeit_max * 2;                         //Zugelassener Bereich
+            xyDigaram_RAW.AxisX.WholeRange.MinValue = 0;
+            xyDigaram_RAW.AxisX.VisualRange.MaxValue = zeit_max;                            //Sichtbarrer Bereich
+            xyDigaram_RAW.AxisX.VisualRange.MinValue = 0;
+            xyDigaram_RAW.AxisX.VisualRange.SideMarginsValue = 0;                           //Überstand Links und rechts
+            xyDigaram_RAW.AxisX.NumericScaleOptions.GridSpacing = (double)zeit_max / 4;
+            xyDigaram_RAW.AxisX.Tickmarks.MinorVisible = false;
+
+            xyDigaram_RAW.AxisY.VisibleInPanesSerializable = "-1";
+            xyDigaram_RAW.AxisY.VisualRange.Auto = false;
+            xyDigaram_RAW.AxisY.WholeRange.MaxValue = 32768;
+            xyDigaram_RAW.AxisY.WholeRange.MinValue = -32768;
+            xyDigaram_RAW.AxisY.VisualRange.MaxValue = 32768;                               //Sichtbarrer Bereich
+            xyDigaram_RAW.AxisY.VisualRange.MinValue = -32768;
+            xyDigaram_RAW.AxisY.NumericScaleOptions.AutoGrid = false;
+            xyDigaram_RAW.AxisY.NumericScaleOptions.GridSpacing = 16384;
+            xyDigaram_RAW.AxisY.Interlaced = true;
+            xyDigaram_RAW.AxisY.VisualRange.SideMarginsValue = 1;                           //Überstand Links und rechts
+
+            //Label & Legend
+            chartControl_RAW.CrosshairOptions.GroupHeaderPattern = "{A} sec";
+            chartControl_RAW.CrosshairOptions.HighlightPoints = false;
+
+            chartControl_RAW.Legend.MarkerMode = LegendMarkerMode.CheckBox;
+
+            //Mittlerer Graph für Z_th Heat.....................................................................................
+
+            //Alle alten Graphen (Series) löschen & eine leere hinzufügen
+            //Muss am Anfang geschehen, da sonst das änderen der Diagram-Eigenschaften nicht übernommen wird
+            chartControl_DATA_Top.Series.Clear();
+            neueSerie = new Series("Empty", ViewType.Line)
+            {
+                LabelsVisibility = DevExpress.Utils.DefaultBoolean.False,
+                ShowInLegend = false,
+                Visible = true,
+            };
+            chartControl_DATA_Top.Series.Add(neueSerie);
+
+            //Alten Titel löschen, neuen erzeugen und hinzufügen
+            chartControl_DATA_Top.Titles.Clear();
+            myChartTitle = new DevExpress.XtraCharts.ChartTitle()
+            {
+                Text = "Z_th curve for heating",
+                Font = myFont_Headline,
+                Dock = DevExpress.XtraCharts.ChartTitleDockStyle.Top
+            };
+            chartControl_DATA_Top.Titles.Add(myChartTitle);
+
+            //Diagramm erzeugen (Muss wegen laufzeit in Begin Init und EndInit)
+            XYDiagram xyDiagram_DATA_Top = new XYDiagram(); ;
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl_DATA_Top)).BeginInit();
+            chartControl_DATA_Top.Diagram = xyDiagram_DATA_Top;
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl_DATA_Top)).EndInit();
+
+            //Achsen-Titel setzen
+            xyDiagram_DATA_Top.AxisX.Title.Text = "Time in [s]";
+            xyDiagram_DATA_Top.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram_DATA_Top.AxisX.Title.Font = myFont_Axis;
+            xyDiagram_DATA_Top.AxisY.Title.Text = "Voltage [V]";
+            xyDiagram_DATA_Top.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram_DATA_Top.AxisY.Title.Font = myFont_Axis;
+
+            // Min / Max /GridSpacing / ... - Achse
+            /*
+            xyDiagram_DATA_Top.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram_DATA_Top.AxisX.VisualRange.Auto = false;
+            xyDiagram_DATA_Top.AxisX.WholeRange.MaxValue = myTTA.MyRthTEC_Rack.Time_Heat / 1000;             //Zugelassener Bereich
+            xyDiagram_DATA_Top.AxisX.WholeRange.MinValue = 1m / myTTA.MyDAQ.Frequency;
+            xyDiagram_DATA_Top.AxisX.VisualRange.MaxValue = myTTA.MyRthTEC_Rack.Time_Heat / 1000;            //Sichtbarrer Bereich
+            xyDiagram_DATA_Top.AxisX.VisualRange.MinValue = 1m / myTTA.MyDAQ.Frequency;
+            xyDiagram_DATA_Top.AxisX.VisualRange.SideMarginsValue = 0;                               //Überstand Links und rechts
+            xyDiagram_DATA_Top.AxisX.Logarithmic = true;
+            */
+
+            xyDiagram_DATA_Top.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram_DATA_Top.AxisY.VisualRange.Auto = false;
+            xyDiagram_DATA_Top.AxisY.WholeRange.MaxValue = 10;
+            xyDiagram_DATA_Top.AxisY.WholeRange.MinValue = 0;
+            xyDiagram_DATA_Top.AxisY.VisualRange.MaxValue = 10;            //Sichtbarrer Bereich
+            xyDiagram_DATA_Top.AxisY.VisualRange.MinValue = 0;
+            xyDiagram_DATA_Top.AxisY.NumericScaleOptions.GridSpacing = 1;
+            xyDiagram_DATA_Top.AxisY.VisualRange.SideMarginsValue = 0;     //Überstand Links und rechts
+
+            //Label & Legend
+            chartControl_DATA_Top.CrosshairOptions.GroupHeaderPattern = "{A} sec";
+            chartControl_DATA_Top.CrosshairOptions.HighlightPoints = false;
+
+            chartControl_DATA_Top.Legend.MarkerMode = LegendMarkerMode.CheckBox;
+
+
+            //Unterer Graph für Zth Cool.....................................................................................
+
+            //Alle alten Graphen (Series) löschen & eine leere hinzufügen
+            //Muss am Anfang geschehen, da sonst das änderen der Diagram-Eigenschaften nicht übernommen wird
+            chartControl_DATA_Bottom.Series.Clear();
+            neueSerie = new Series("Empty", ViewType.Line)
+            {
+                LabelsVisibility = DevExpress.Utils.DefaultBoolean.False,
+                ShowInLegend = false,
+                Visible = true,
+            };
+            chartControl_DATA_Bottom.Series.Add(neueSerie);
+
+            //Alten Titel löschen, neuen erzeugen und hinzufügen
+            chartControl_DATA_Bottom.Titles.Clear();
+            myChartTitle = new DevExpress.XtraCharts.ChartTitle()
+            {
+                Text = "Z_th curve for cooling",
+                Font = myFont_Headline,
+                Dock = DevExpress.XtraCharts.ChartTitleDockStyle.Top
+            };
+            chartControl_DATA_Bottom.Titles.Add(myChartTitle);
+
+            //Diagramm erzeugen (Muss wegen laufzeit in Begin Init und EndInit)
+            XYDiagram xyDiagram_DATA_Bottom = new XYDiagram(); ;
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl_DATA_Bottom)).BeginInit();
+            chartControl_DATA_Bottom.Diagram = xyDiagram_DATA_Bottom;
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl_DATA_Bottom)).EndInit();
+
+            //Achsen-Titel setzen
+            xyDiagram_DATA_Bottom.AxisX.Title.Text = "Time in [s]";
+            xyDiagram_DATA_Bottom.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram_DATA_Bottom.AxisX.Title.Font = myFont_Axis;
+            xyDiagram_DATA_Bottom.AxisY.Title.Text = "Voltage [V]";
+            xyDiagram_DATA_Bottom.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram_DATA_Bottom.AxisY.Title.Font = myFont_Axis;
+
+            // Min / Max /GridSpacing / ... - Achse
+            /*
+            xyDiagram_DATA_Bottom.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram_DATA_Bottom.AxisX.VisualRange.Auto = false;
+            xyDiagram_DATA_Bottom.AxisX.WholeRange.MaxValue = myTTA.MyRthTEC_Rack.Time_Heat / 1000;             //Zugelassener Bereich
+            xyDiagram_DATA_Bottom.AxisX.WholeRange.MinValue = 1m / myTTA.MyDAQ.Frequency;
+            xyDiagram_DATA_Bottom.AxisX.VisualRange.MaxValue = myTTA.MyRthTEC_Rack.Time_Heat / 1000;            //Sichtbarrer Bereich
+            xyDiagram_DATA_Bottom.AxisX.VisualRange.MinValue = 1m / myTTA.MyDAQ.Frequency;
+            xyDiagram_DATA_Bottom.AxisX.VisualRange.SideMarginsValue = 0;                               //Überstand Links und rechts
+            xyDiagram_DATA_Bottom.AxisX.Logarithmic = true;
+            */
+            xyDiagram_DATA_Bottom.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram_DATA_Bottom.AxisX.VisualRange.Auto = false;
+            xyDiagram_DATA_Bottom.AxisX.WholeRange.MaxValue = 3;            //Zugelassener Bereich
+            xyDiagram_DATA_Bottom.AxisX.WholeRange.MinValue = 1m / 10000000;
+            xyDiagram_DATA_Bottom.AxisX.VisualRange.MaxValue = 3;            //Sichtbarrer Bereich
+            xyDiagram_DATA_Bottom.AxisX.VisualRange.MinValue = 1m / 10000000;
+            xyDiagram_DATA_Bottom.AxisX.VisualRange.SideMarginsValue = 0;                               //Überstand Links und rechts
+            xyDiagram_DATA_Bottom.AxisX.Logarithmic = true;
+
+            xyDiagram_DATA_Bottom.AxisY.VisibleInPanesSerializable = "-1";
+            xyDiagram_DATA_Bottom.AxisY.VisualRange.Auto = true;
+            xyDiagram_DATA_Bottom.AxisY.WholeRange.MaxValue = 10;
+            xyDiagram_DATA_Bottom.AxisY.WholeRange.MinValue = 0;
+            xyDiagram_DATA_Bottom.AxisY.VisualRange.MaxValue = 10;            //Sichtbarrer Bereich
+            xyDiagram_DATA_Bottom.AxisY.VisualRange.MinValue = 0;
+            xyDiagram_DATA_Bottom.AxisY.NumericScaleOptions.GridSpacing = 1;
+            xyDiagram_DATA_Bottom.AxisY.VisualRange.SideMarginsValue = 0;     //Überstand Links und rechts
+
+
+            //Label & Legend
+            chartControl_DATA_Bottom.CrosshairOptions.GroupHeaderPattern = "{A} sec";
+            chartControl_DATA_Bottom.CrosshairOptions.HighlightPoints = false;
+
+            chartControl_DATA_Bottom.Legend.MarkerMode = LegendMarkerMode.CheckBox;
+        }
+
+        public void Add_Series_to_RAW(TTA_DPA myTTA)
+        {
+            //Es dürfen nich alle Pukte übertragen werden (Datenmenge)
+            //ungefähr 20Tausend DatenPunkte
+            int steps = myTTA.Binary_Raw_Values.Length / 20000;
+            //Auf 10^x Wert runden
+            steps = (int)Math.Pow(10, Math.Round(Math.Log10(steps)));
+
+            //Daten in Passende Liste einfügen
+            List<RAW_DataPoint> myRawDataList = new List<RAW_DataPoint>();
+
+            for (int sample = 0; sample < myTTA.Binary_Raw_Values.Length; sample += steps)
+            {
+                myRawDataList.Add(
+                    new RAW_DataPoint()
+                    {
+                        Value = myTTA.Binary_Raw_Values[sample],
+                        Time = (decimal)sample / 10000000,
+                    }
+                    );
+            }
+
+            //Muss so kompliziert sein, da UI nicht im Thread liegt
+            chartControl_RAW.Invoke((MethodInvoker)delegate
+            {
+                var neueSerie = new Series("Raw Values ", ViewType.Line)
+                {
+                    CheckableInLegend = true,
+
+
+
+                    DataSource = myRawDataList,
+                    ArgumentScaleType = ScaleType.Numerical,
+                    ArgumentDataMember = "Time",
+                    ValueScaleType = ScaleType.Numerical,
+                };
+
+                neueSerie.ValueDataMembers.AddRange(new string[] { "Value" });
+
+                chartControl_RAW.Series.Add(neueSerie);
+
+                //Resize x-Achse 
+
+                //((LineSeriesView)neueSerie.View).LineMarkerOptions.Kind = MarkerKind.Triangle;
+                //((LineSeriesView)neueSerie.View).MarkerVisibility = DevExpress.Utils.DefaultBoolean.True;
+            });
+
+        }
+
+
+        public void Add_Series_to_Data(TTA_DPA myTTA, string SeriesName)
+        {
+            //Heat gibt es nicht
+            /*
+            chartControl_DATA_Top.Invoke((MethodInvoker)delegate
+            {
+                var neueSerie = new Series(SeriesName, ViewType.Line)
+                {
+                    CheckableInLegend = true,
+
+                    DataSource = myTTA.Average_Heat_Compressed,
+                    ArgumentScaleType = ScaleType.Numerical,
+                    ArgumentDataMember = "Time",
+                    ValueScaleType = ScaleType.Numerical,
+                    CrosshairLabelPattern = "{S} : {V:0.000} V"
+                };
+
+                neueSerie.ValueDataMembers.AddRange(new string[] { "Voltage" });
+
+                chartControl_DATA_Top.Series.Add(neueSerie);
+            });
+            */
+
+            chartControl_DATA_Bottom.Invoke((MethodInvoker)delegate
+            {
+                var neueSerie = new Series(SeriesName, ViewType.Line)
+                {
+                    CheckableInLegend = true,
+
+                    DataSource = myTTA.Compressed_Data,
+                    ArgumentScaleType = ScaleType.Numerical,
+                    ArgumentDataMember = "Time",
+                    ValueScaleType = ScaleType.Numerical,
+                    CrosshairLabelPattern = "{S} : {V:0.000} V"
+                };
+
+                neueSerie.ValueDataMembers.AddRange(new string[] { "Voltage" });
+
+                chartControl_DATA_Bottom.Series.Add(neueSerie);
+            });
+
+
+        }
+
     }
 }

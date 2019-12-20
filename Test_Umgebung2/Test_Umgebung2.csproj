@@ -81,6 +81,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DXApplication3\ATIM_GUI.csproj">
+      <Project>{450d51d8-3f12-45ae-8fef-f144bb275a8f}</Project>
+      <Name>ATIM_GUI</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Power_Supply_HamegHMP\Power_Supply_HamegHMP.csproj">
       <Project>{8f71037f-2ab4-47a7-8fe3-c30c929c6642}</Project>
       <Name>Power_Supply_HamegHMP</Name>

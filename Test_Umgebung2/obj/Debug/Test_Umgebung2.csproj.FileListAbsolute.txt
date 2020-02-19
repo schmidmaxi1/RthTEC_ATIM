@@ -462,3 +462,7 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung2\
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung2\bin\Debug\AltaxoCore.dll
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung2\bin\Debug\Accord.IO.dll
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung2\bin\Debug\Accord.IO.xml
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung2\bin\Debug\MathNet.Numerics.dll
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung2\bin\Debug\MathNet.Numerics.Data.Matlab.dll
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung2\bin\Debug\MathNet.Numerics.xml
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\Test_Umgebung2\bin\Debug\MathNet.Numerics.Data.Matlab.xml

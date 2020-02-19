@@ -240,12 +240,19 @@
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="MathNet.Numerics, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.4.0.0\lib\net40\MathNet.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="MathNet.Numerics.Data.Matlab, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.Data.Matlab.4.0.0\lib\net40\MathNet.Numerics.Data.Matlab.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -261,6 +268,7 @@
     <Compile Include="01_TTA\RAW_DataPoint.cs" />
     <Compile Include="01_TTA\TTA_DataPoint.cs" />
     <Compile Include="01_TTA\TTA_measurement_new.cs" />
+    <Compile Include="01_TTA_DPA\TTA_DPA_InportExport.cs" />
     <Compile Include="01_TTA_DPA\TTA_DPA_localFCT.cs" />
     <Compile Include="01_TTA_DPA\TTA_DPA_globalFCT.cs" />
     <Compile Include="01_TTA_DPA\TTA_DPA_main.cs" />

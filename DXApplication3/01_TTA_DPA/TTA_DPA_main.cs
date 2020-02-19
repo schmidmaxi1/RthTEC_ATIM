@@ -160,6 +160,12 @@ namespace ATIM_GUI
 
         public decimal V_f_at_Imeas_Troom { get; set; } = 2;
 
+        //Flags ----------------------------------------------------------------------------------------------------
+        /// <summary>
+        /// Indicator if single or Auto-Measurment
+        /// </summary>
+        private bool AutoRun { get; set; }
+
 
         //********************************************************************************************************************
         //                                           Konstruktor

@@ -30,6 +30,8 @@ namespace ATIM_GUI
         /// </summary>
         public bool Start_Single_TTA()
         {
+            AutoRun = false;
+
             /*
             //Plots initisieren
             GUI.Graph_new_Measurment_for_TTA(this);
@@ -107,6 +109,9 @@ namespace ATIM_GUI
         /// </summary>
         public bool Start_Automatic_TTA()
         {
+            //Settings
+            AutoRun = true;
+
 
             return true;
 
@@ -255,56 +260,28 @@ namespace ATIM_GUI
             
         }
 
-
         /// <summary>
         /// Test-FCT for .mat Files (Output of Spectrum)
         /// </summary>
         public bool DPA_Test_matFILE()
         {
+            //Settings
+            AutoRun = false;
 
-            //File Dialog erstellen
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                //Settings
-                openFileDialog.Filter = "mat files (*.mat)|*.mat|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 1;
-                openFileDialog.RestoreDirectory = true;
-                openFileDialog.Multiselect = true;
+            //Daten einlesen aus .mat File (Kommt sonst von Spectrum-Karte)
+            Binary_Read_From_matFILE();
 
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-
-                    //Alle Files abarbeiten
-                    foreach (string filePath in openFileDialog.FileNames)
-                    {
-                        //Pfad und File übernhemen
-                        Output_File_Name = filePath.Substring(filePath.LastIndexOf('\\') + 1).Replace(".mat", "");
-                        Output_File_Folder = filePath.Substring(0, filePath.LastIndexOf('\\'));
-
-                        //Read .mat File into a stream
-                        MatReader reader = new MatReader(filePath);
-
-                        //Daten herauslösen
-                        var values = reader["AI_Ch0"].GetValue<Int16[,]>();
-
-                        //Daten in Binary_Raw_Values schreiben
-                        Binary_Raw_Values = new short[values.Length];
-                        Buffer.BlockCopy(values, 0, Binary_Raw_Values, 0, 2 * values.Length);
-
-                        //Reader schließen
-                        reader.Dispose();
-
-                        //Daten Analysieren
-                        DPA_Analyse();
-
-                    }
-                }
-            }
-
-
+            //Save Binary_as_Mat-File
+            Binary_Save_As_matFILE("C:\\Users\\schmidm\\Desktop\\THI-MAXI\\1_PTTA\\11_AP1_Pulse\\2_DPA_Messdaten\\DPA_Lumileds4_Therminic\\LED1_DPA_M1test.mat");
+                        
+            //Daten Analysieren
+            DPA_Analyse();
 
             return true;
         }
+
+
+
 
         /// <summary>
         /// Compleate Analyse on a short[] of DPA data

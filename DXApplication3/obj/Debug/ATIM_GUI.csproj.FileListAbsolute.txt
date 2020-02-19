@@ -994,3 +994,7 @@ C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\obj\Debug\ATIM_GUI.exe
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\obj\Debug\ATIM_GUI.pdb
 C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\bin\Debug\AltaxoCore.dll
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\bin\Debug\MathNet.Numerics.Data.Matlab.dll
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\bin\Debug\MathNet.Numerics.dll
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\bin\Debug\MathNet.Numerics.xml
+C:\Users\schmidm\Desktop\THI-MAXI\1_RthTEC\3_SW_ATIM\GIT_Version\DXApplication3\bin\Debug\MathNet.Numerics.Data.Matlab.xml

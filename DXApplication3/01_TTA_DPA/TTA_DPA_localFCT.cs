@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
+
 using DAQ_Units;
 using XYZ_Table;
 using RthTEC_Rack;
@@ -12,7 +13,13 @@ using RthTEC_Rack;
 using Read_Coordinates;
 using Hilfsfunktionen;
 
-using Accord.IO;
+
+
+
+
+
+
+
 
 using ATIM_GUI._01_TTA;
 
@@ -716,61 +723,9 @@ namespace ATIM_GUI
             return output;
         }
 
-        /// <summary>
-        /// Export Powersteps, Correction-Vektors as .csv
-        /// </summary>
-        private bool Export_as_CSV()
-        {
-            //Powersteps
-            using (var myCSV_Writer = new CsvWriter(Path.Combine(Output_File_Folder, Output_File_Name + "_PS.csv"), ';'))
-            {
-                //Hilfs-Array definieren
-                decimal[,] helpArray = new decimal[PowerSteps_2Heat_DPA.Length, 4];
-
-                for (int i = 0; i < PowerSteps_2Heat_DPA.Length; i++)
-                {
-                    helpArray[i, 0] = PowerSteps_2Heat_DPA[i];
-                    helpArray[i, 1] = PowerSteps_2Sense_DPA[i];
-                }
-
-                helpArray[0, 2] = PowerStep_2Heat_STD;
-                helpArray[0, 3] = PowerStep_2Sense_STD;
-
-                //Settings ändern
-                myCSV_Writer.Escape = ' ';
-                myCSV_Writer.Quote = ' ';
-
-                //Header & Daten
-                myCSV_Writer.WriteHeaders(new string[] { "DPA_Heat", "DPA_Sense" , "STD Heat", "STD Sense"});
-                myCSV_Writer.Write<decimal>(helpArray);
-            }
-
-            //Correction-Vektors
-            //Powersteps
-            using (var myCSV_Writer = new CsvWriter(Path.Combine(Output_File_Folder, Output_File_Name + "_CV.csv"), ';'))
-            {
-                //Hilfs-Array definieren
-                decimal[,] helpArray = new decimal[CorrVec_B.Length, 2];
-
-                for (int i = 0; i < CorrVec_A.Length; i++)
-                    helpArray[i, 0] = CorrVec_A[i];
-
-                for (int i = 0; i < CorrVec_B.Length; i++)
-                    helpArray[i, 1] = CorrVec_B[i];
-
-                //Settings ändern
-                myCSV_Writer.Escape = ' ';
-                myCSV_Writer.Quote = ' ';
-
-                //Header & Daten
-                myCSV_Writer.WriteHeaders(new string[] { "A", "B"});
-                myCSV_Writer.Write<decimal>(helpArray);
-            }
 
 
 
-            return true;
-        }
 
     }
 }
